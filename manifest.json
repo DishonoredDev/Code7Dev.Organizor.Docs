@@ -1,0 +1,998 @@
+{
+  "source_base_path": "/home/runner/work/Code7Dev.Organizor.Api/Code7Dev.Organizor.Api/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.TenantsController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.CorsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.CorsExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.CorsExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.LoggingExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.LoggingExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.LoggingExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.OpenApiExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.OpenApiExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.OpenApiExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.SerilogExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.SerilogExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.SerilogExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.TenantApiMapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.yml\" sourcestartlinenumber=\"1\">Global Exception Middleware:\nRFC 7807 standard for api error responses.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Middleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Middleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Extensions.DependencyInjection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Domain.Tenants.Tenant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Domain.Tenants.Tenant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Domain.Tenants.Tenant",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Domain.Tenants.TenantStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Domain.Tenants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Domain.Tenants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Domain.Tenants",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Organizor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Helpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

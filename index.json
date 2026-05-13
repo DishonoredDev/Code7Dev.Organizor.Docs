@@ -1,0 +1,342 @@
+{
+  "api/Code7Dev.Organizor.Api.Controllers.TenantsController.html": {
+    "href": "api/Code7Dev.Organizor.Api.Controllers.TenantsController.html",
+    "title": "Class TenantsController | Organizor",
+    "summary": "Class TenantsController Namespace Code7Dev.Organizor.Api.Controllers Assembly Code7Dev.Organizor.Api.dll [ApiController] [Route(\"api/v1/tenants\")] public class TenantsController : ControllerBase Inheritance object ControllerBase TenantsController Inherited Members ControllerBase.StatusCode(int) ControllerBase.StatusCode(int, object) ControllerBase.Content(string) ControllerBase.Content(string, string) ControllerBase.Content(string, string, Encoding) ControllerBase.Content(string, MediaTypeHeaderValue) ControllerBase.NoContent() ControllerBase.Ok() ControllerBase.Ok(object) ControllerBase.Redirect(string) ControllerBase.RedirectPermanent(string) ControllerBase.RedirectPreserveMethod(string) ControllerBase.RedirectPermanentPreserveMethod(string) ControllerBase.LocalRedirect(string) ControllerBase.LocalRedirectPermanent(string) ControllerBase.LocalRedirectPreserveMethod(string) ControllerBase.LocalRedirectPermanentPreserveMethod(string) ControllerBase.RedirectToAction() ControllerBase.RedirectToAction(string) ControllerBase.RedirectToAction(string, object) ControllerBase.RedirectToAction(string, string) ControllerBase.RedirectToAction(string, string, object) ControllerBase.RedirectToAction(string, string, string) ControllerBase.RedirectToAction(string, string, object, string) ControllerBase.RedirectToActionPreserveMethod(string, string, object, string) ControllerBase.RedirectToActionPermanent(string) ControllerBase.RedirectToActionPermanent(string, object) ControllerBase.RedirectToActionPermanent(string, string) ControllerBase.RedirectToActionPermanent(string, string, string) ControllerBase.RedirectToActionPermanent(string, string, object) ControllerBase.RedirectToActionPermanent(string, string, object, string) ControllerBase.RedirectToActionPermanentPreserveMethod(string, string, object, string) ControllerBase.RedirectToRoute(string) ControllerBase.RedirectToRoute(object) ControllerBase.RedirectToRoute(string, object) ControllerBase.RedirectToRoute(string, string) ControllerBase.RedirectToRoute(string, object, string) ControllerBase.RedirectToRoutePreserveMethod(string, object, string) ControllerBase.RedirectToRoutePermanent(string) ControllerBase.RedirectToRoutePermanent(object) ControllerBase.RedirectToRoutePermanent(string, object) ControllerBase.RedirectToRoutePermanent(string, string) ControllerBase.RedirectToRoutePermanent(string, object, string) ControllerBase.RedirectToRoutePermanentPreserveMethod(string, object, string) ControllerBase.RedirectToPage(string) ControllerBase.RedirectToPage(string, object) ControllerBase.RedirectToPage(string, string) ControllerBase.RedirectToPage(string, string, object) ControllerBase.RedirectToPage(string, string, string) ControllerBase.RedirectToPage(string, string, object, string) ControllerBase.RedirectToPagePermanent(string) ControllerBase.RedirectToPagePermanent(string, object) ControllerBase.RedirectToPagePermanent(string, string) ControllerBase.RedirectToPagePermanent(string, string, string) ControllerBase.RedirectToPagePermanent(string, string, object, string) ControllerBase.RedirectToPagePreserveMethod(string, string, object, string) ControllerBase.RedirectToPagePermanentPreserveMethod(string, string, object, string) ControllerBase.File(byte[], string) ControllerBase.File(byte[], string, bool) ControllerBase.File(byte[], string, string) ControllerBase.File(byte[], string, string, bool) ControllerBase.File(byte[], string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(byte[], string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.File(byte[], string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(byte[], string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.File(Stream, string) ControllerBase.File(Stream, string, bool) ControllerBase.File(Stream, string, string) ControllerBase.File(Stream, string, string, bool) ControllerBase.File(Stream, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(Stream, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.File(Stream, string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(Stream, string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.File(string, string) ControllerBase.File(string, string, bool) ControllerBase.File(string, string, string) ControllerBase.File(string, string, string, bool) ControllerBase.File(string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.File(string, string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.File(string, string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.PhysicalFile(string, string) ControllerBase.PhysicalFile(string, string, bool) ControllerBase.PhysicalFile(string, string, string) ControllerBase.PhysicalFile(string, string, string, bool) ControllerBase.PhysicalFile(string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.PhysicalFile(string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.PhysicalFile(string, string, string, DateTimeOffset?, EntityTagHeaderValue) ControllerBase.PhysicalFile(string, string, string, DateTimeOffset?, EntityTagHeaderValue, bool) ControllerBase.Unauthorized() ControllerBase.Unauthorized(object) ControllerBase.NotFound() ControllerBase.NotFound(object) ControllerBase.BadRequest() ControllerBase.BadRequest(object) ControllerBase.BadRequest(ModelStateDictionary) ControllerBase.UnprocessableEntity() ControllerBase.UnprocessableEntity(object) ControllerBase.UnprocessableEntity(ModelStateDictionary) ControllerBase.Conflict() ControllerBase.Conflict(object) ControllerBase.Conflict(ModelStateDictionary) ControllerBase.Problem(string, string, int?, string, string) ControllerBase.Problem(string, string, int?, string, string, IDictionary<string, object>) ControllerBase.ValidationProblem(ValidationProblemDetails) ControllerBase.ValidationProblem(ModelStateDictionary) ControllerBase.ValidationProblem() ControllerBase.ValidationProblem(string, string, int?, string, string, ModelStateDictionary) ControllerBase.ValidationProblem(string, string, int?, string, string, ModelStateDictionary, IDictionary<string, object>) ControllerBase.Created() ControllerBase.Created(string, object) ControllerBase.Created(Uri, object) ControllerBase.CreatedAtAction(string, object) ControllerBase.CreatedAtAction(string, object, object) ControllerBase.CreatedAtAction(string, string, object, object) ControllerBase.CreatedAtRoute(string, object) ControllerBase.CreatedAtRoute(object, object) ControllerBase.CreatedAtRoute(string, object, object) ControllerBase.Accepted() ControllerBase.Accepted(object) ControllerBase.Accepted(Uri) ControllerBase.Accepted(string) ControllerBase.Accepted(string, object) ControllerBase.Accepted(Uri, object) ControllerBase.AcceptedAtAction(string) ControllerBase.AcceptedAtAction(string, string) ControllerBase.AcceptedAtAction(string, object) ControllerBase.AcceptedAtAction(string, string, object) ControllerBase.AcceptedAtAction(string, object, object) ControllerBase.AcceptedAtAction(string, string, object, object) ControllerBase.AcceptedAtRoute(object) ControllerBase.AcceptedAtRoute(string) ControllerBase.AcceptedAtRoute(string, object) ControllerBase.AcceptedAtRoute(object, object) ControllerBase.AcceptedAtRoute(string, object, object) ControllerBase.Challenge() ControllerBase.Challenge(params string[]) ControllerBase.Challenge(AuthenticationProperties) ControllerBase.Challenge(AuthenticationProperties, params string[]) ControllerBase.Forbid() ControllerBase.Forbid(params string[]) ControllerBase.Forbid(AuthenticationProperties) ControllerBase.Forbid(AuthenticationProperties, params string[]) ControllerBase.SignIn(ClaimsPrincipal) ControllerBase.SignIn(ClaimsPrincipal, string) ControllerBase.SignIn(ClaimsPrincipal, AuthenticationProperties) ControllerBase.SignIn(ClaimsPrincipal, AuthenticationProperties, string) ControllerBase.SignOut() ControllerBase.SignOut(AuthenticationProperties) ControllerBase.SignOut(params string[]) ControllerBase.SignOut(AuthenticationProperties, params string[]) ControllerBase.TryUpdateModelAsync<TModel>(TModel) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string, IValueProvider) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string, params Expression<Func<TModel, object>>[]) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string, Func<ModelMetadata, bool>) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string, IValueProvider, params Expression<Func<TModel, object>>[]) ControllerBase.TryUpdateModelAsync<TModel>(TModel, string, IValueProvider, Func<ModelMetadata, bool>) ControllerBase.TryUpdateModelAsync(object, Type, string) ControllerBase.TryUpdateModelAsync(object, Type, string, IValueProvider, Func<ModelMetadata, bool>) ControllerBase.TryValidateModel(object) ControllerBase.TryValidateModel(object, string) ControllerBase.HttpContext ControllerBase.Request ControllerBase.Response ControllerBase.RouteData ControllerBase.ModelState ControllerBase.ControllerContext ControllerBase.MetadataProvider ControllerBase.ModelBinderFactory ControllerBase.Url ControllerBase.ObjectValidator ControllerBase.ProblemDetailsFactory ControllerBase.User ControllerBase.Empty object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors TenantsController(ITenantService) public TenantsController(ITenantService service) Parameters service ITenantService Methods Create(TenantRequestDto) [HttpPost] public Task<IActionResult> Create(TenantRequestDto request) Parameters request TenantRequestDto Returns Task<IActionResult> GetAll() [HttpGet] public Task<IActionResult> GetAll() Returns Task<IActionResult> GetBySlug(string) [HttpGet(\"{slug}\")] public Task<IActionResult> GetBySlug(string slug) Parameters slug string Returns Task<IActionResult>"
+  },
+  "api/Code7Dev.Organizor.Api.Controllers.html": {
+    "href": "api/Code7Dev.Organizor.Api.Controllers.html",
+    "title": "Namespace Code7Dev.Organizor.Api.Controllers | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Api.Controllers Classes TenantsController"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.html",
+    "title": "Class ApplicationBuilderExtensions | Organizor",
+    "summary": "Class ApplicationBuilderExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class ApplicationBuilderExtensions Inheritance object ApplicationBuilderExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods MapApiEndpoints(IEndpointRouteBuilder) public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints) Parameters endpoints IEndpointRouteBuilder Returns IEndpointRouteBuilder UseApiPipeline(IApplicationBuilder) public static IApplicationBuilder UseApiPipeline(this IApplicationBuilder app) Parameters app IApplicationBuilder Returns IApplicationBuilder"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.CorsExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.CorsExtensions.html",
+    "title": "Class CorsExtensions | Organizor",
+    "summary": "Class CorsExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class CorsExtensions Inheritance object CorsExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddApiCors(IServiceCollection) public static IServiceCollection AddApiCors(this IServiceCollection services) Parameters services IServiceCollection Returns IServiceCollection"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions.html",
+    "title": "Class HealthCheckExtensions | Organizor",
+    "summary": "Class HealthCheckExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class HealthCheckExtensions Inheritance object HealthCheckExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddApiHealthChecks(IServiceCollection) public static IServiceCollection AddApiHealthChecks(this IServiceCollection services) Parameters services IServiceCollection Returns IServiceCollection"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.LoggingExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.LoggingExtensions.html",
+    "title": "Class LoggingExtensions | Organizor",
+    "summary": "Class LoggingExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class LoggingExtensions Inheritance object LoggingExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods LogCatalogDatabase(WebApplicationBuilder) public static void LogCatalogDatabase(this WebApplicationBuilder builder) Parameters builder WebApplicationBuilder LogTenantDatabase(WebApplicationBuilder, string) public static void LogTenantDatabase(this WebApplicationBuilder builder, string connectionString) Parameters builder WebApplicationBuilder connectionString string"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.OpenApiExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.OpenApiExtensions.html",
+    "title": "Class OpenApiExtensions | Organizor",
+    "summary": "Class OpenApiExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class OpenApiExtensions Inheritance object OpenApiExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddApiDocumentation(IServiceCollection) public static IServiceCollection AddApiDocumentation(this IServiceCollection services) Parameters services IServiceCollection Returns IServiceCollection MapApiDocumentation(IEndpointRouteBuilder) public static IEndpointRouteBuilder MapApiDocumentation(this IEndpointRouteBuilder endpoints) Parameters endpoints IEndpointRouteBuilder Returns IEndpointRouteBuilder"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.SerilogExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.SerilogExtensions.html",
+    "title": "Class SerilogExtensions | Organizor",
+    "summary": "Class SerilogExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class SerilogExtensions Inheritance object SerilogExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddSerilogLogging(ConfigureHostBuilder) public static void AddSerilogLogging(this ConfigureHostBuilder host) Parameters host ConfigureHostBuilder CreateBootstrapLogger() public static ILogger CreateBootstrapLogger() Returns ILogger"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html",
+    "title": "Class ServiceCollectionExtensions | Organizor",
+    "summary": "Class ServiceCollectionExtensions Namespace Code7Dev.Organizor.Api.Extensions Assembly Code7Dev.Organizor.Api.dll public static class ServiceCollectionExtensions Inheritance object ServiceCollectionExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddApiServices(IServiceCollection, IConfiguration) public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration config) Parameters services IServiceCollection config IConfiguration Returns IServiceCollection"
+  },
+  "api/Code7Dev.Organizor.Api.Extensions.html": {
+    "href": "api/Code7Dev.Organizor.Api.Extensions.html",
+    "title": "Namespace Code7Dev.Organizor.Api.Extensions | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Api.Extensions Classes ApplicationBuilderExtensions CorsExtensions HealthCheckExtensions LoggingExtensions OpenApiExtensions SerilogExtensions ServiceCollectionExtensions"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.html",
+    "title": "Class TenantOnboardingRequestDto | Organizor",
+    "summary": "Class TenantOnboardingRequestDto Namespace Code7Dev.Organizor.Api.Mappers.DTO Assembly Code7Dev.Organizor.Api.dll public class TenantOnboardingRequestDto Inheritance object TenantOnboardingRequestDto Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Extension Methods TenantOnboardingApiMapper.ToRequest(TenantOnboardingRequestDto) Properties Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.html",
+    "title": "Class TenantOnboardingResponseDto | Organizor",
+    "summary": "Class TenantOnboardingResponseDto Namespace Code7Dev.Organizor.Api.Mappers.DTO Assembly Code7Dev.Organizor.Api.dll public class TenantOnboardingResponseDto Inheritance object TenantOnboardingResponseDto Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties DatabaseName public required string DatabaseName { get; set; } Property Value string Id public Guid Id { get; set; } Property Value Guid Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html",
+    "title": "Class TenantRequestDto | Organizor",
+    "summary": "Class TenantRequestDto Namespace Code7Dev.Organizor.Api.Mappers.DTO Assembly Code7Dev.Organizor.Api.dll public class TenantRequestDto Inheritance object TenantRequestDto Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Extension Methods TenantApiMapper.ToCreateModel(TenantRequestDto) Properties Culture public string? Culture { get; set; } Property Value string Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html",
+    "title": "Class TenantResponseDto | Organizor",
+    "summary": "Class TenantResponseDto Namespace Code7Dev.Organizor.Api.Mappers.DTO Assembly Code7Dev.Organizor.Api.dll public class TenantResponseDto Inheritance object TenantResponseDto Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties CreatedAt public required DateTime CreatedAt { get; set; } Property Value DateTime DatabaseName public required string DatabaseName { get; set; } Property Value string Id public Guid Id { get; set; } Property Value Guid Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html",
+    "title": "Class TenantSoftDeleteRequest | Organizor",
+    "summary": "Class TenantSoftDeleteRequest Namespace Code7Dev.Organizor.Api.Mappers.DTO Assembly Code7Dev.Organizor.Api.dll public class TenantSoftDeleteRequest Inheritance object TenantSoftDeleteRequest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Reason public string Reason { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.DTO.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.DTO.html",
+    "title": "Namespace Code7Dev.Organizor.Api.Mappers.DTO | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Api.Mappers.DTO Classes TenantOnboardingRequestDto TenantOnboardingResponseDto TenantRequestDto TenantResponseDto TenantSoftDeleteRequest"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html",
+    "title": "Class TenantApiMapper | Organizor",
+    "summary": "Class TenantApiMapper Namespace Code7Dev.Organizor.Api.Mappers Assembly Code7Dev.Organizor.Api.dll public static class TenantApiMapper Inheritance object TenantApiMapper Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ToCreateModel(TenantRequestDto) public static TenantCreateModel ToCreateModel(this TenantRequestDto dto) Parameters dto TenantRequestDto Returns TenantCreateModel ToResponse(TenantModel) public static TenantResponseDto ToResponse(this TenantModel model) Parameters model TenantModel Returns TenantResponseDto"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.html",
+    "title": "Class TenantOnboardingApiMapper | Organizor",
+    "summary": "Class TenantOnboardingApiMapper Namespace Code7Dev.Organizor.Api.Mappers Assembly Code7Dev.Organizor.Api.dll public static class TenantOnboardingApiMapper Inheritance object TenantOnboardingApiMapper Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ToRequest(TenantOnboardingRequestDto) public static TenantOnboardingRequest ToRequest(this TenantOnboardingRequestDto dto) Parameters dto TenantOnboardingRequestDto Returns TenantOnboardingRequest ToResponse(TenantOnboardingResult) public static TenantOnboardingResponseDto ToResponse(this TenantOnboardingResult result) Parameters result TenantOnboardingResult Returns TenantOnboardingResponseDto"
+  },
+  "api/Code7Dev.Organizor.Api.Mappers.html": {
+    "href": "api/Code7Dev.Organizor.Api.Mappers.html",
+    "title": "Namespace Code7Dev.Organizor.Api.Mappers | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Api.Mappers Classes TenantApiMapper TenantOnboardingApiMapper"
+  },
+  "api/Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware.html": {
+    "href": "api/Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware.html",
+    "title": "Class CorrelationIdMiddleware | Organizor",
+    "summary": "Class CorrelationIdMiddleware Namespace Code7Dev.Organizor.Api.Middleware Assembly Code7Dev.Organizor.Api.dll public class CorrelationIdMiddleware Inheritance object CorrelationIdMiddleware Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors CorrelationIdMiddleware(RequestDelegate) public CorrelationIdMiddleware(RequestDelegate next) Parameters next RequestDelegate Methods Invoke(HttpContext) public Task Invoke(HttpContext context) Parameters context HttpContext Returns Task"
+  },
+  "api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html": {
+    "href": "api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html",
+    "title": "Class ExceptionHandlingMiddleware | Organizor",
+    "summary": "Class ExceptionHandlingMiddleware Namespace Code7Dev.Organizor.Api.Middleware Assembly Code7Dev.Organizor.Api.dll Global Exception Middleware: RFC 7807 standard for api error responses. public class ExceptionHandlingMiddleware Inheritance object ExceptionHandlingMiddleware Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>) public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger) Parameters next RequestDelegate logger ILogger<ExceptionHandlingMiddleware> Methods Invoke(HttpContext) public Task Invoke(HttpContext context) Parameters context HttpContext Returns Task"
+  },
+  "api/Code7Dev.Organizor.Api.Middleware.html": {
+    "href": "api/Code7Dev.Organizor.Api.Middleware.html",
+    "title": "Namespace Code7Dev.Organizor.Api.Middleware | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Api.Middleware Classes CorrelationIdMiddleware ExceptionHandlingMiddleware Global Exception Middleware: RFC 7807 standard for api error responses."
+  },
+  "api/Code7Dev.Organizor.Application.Extensions.DependencyInjection.html": {
+    "href": "api/Code7Dev.Organizor.Application.Extensions.DependencyInjection.html",
+    "title": "Class DependencyInjection | Organizor",
+    "summary": "Class DependencyInjection Namespace Code7Dev.Organizor.Application.Extensions Assembly Code7Dev.Organizor.Application.dll public static class DependencyInjection Inheritance object DependencyInjection Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddApplication(IServiceCollection) public static IServiceCollection AddApplication(this IServiceCollection services) Parameters services IServiceCollection Returns IServiceCollection"
+  },
+  "api/Code7Dev.Organizor.Application.Extensions.html": {
+    "href": "api/Code7Dev.Organizor.Application.Extensions.html",
+    "title": "Namespace Code7Dev.Organizor.Application.Extensions | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Application.Extensions Classes DependencyInjection"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.html",
+    "title": "Interface IConnectionStringBuilder | Organizor",
+    "summary": "Interface IConnectionStringBuilder Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface IConnectionStringBuilder Methods BuildAdminConnectionString() string BuildAdminConnectionString() Returns string BuildConnectionString(string) string BuildConnectionString(string databaseName) Parameters databaseName string Returns string ExtractDatabaseName(string) string ExtractDatabaseName(string connectionString) Parameters connectionString string Returns string"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html",
+    "title": "Interface ITenantLifecycleService | Organizor",
+    "summary": "Interface ITenantLifecycleService Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantLifecycleService Methods HardDeleteAsync(Guid, CancellationToken) Task HardDeleteAsync(Guid tenantId, CancellationToken ct = default) Parameters tenantId Guid ct CancellationToken Returns Task SoftDeleteAsync(Guid, string?, CancellationToken) Task SoftDeleteAsync(Guid tenantId, string? reason = null, CancellationToken ct = default) Parameters tenantId Guid reason string ct CancellationToken Returns Task"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html",
+    "title": "Interface ITenantMigrator | Organizor",
+    "summary": "Interface ITenantMigrator Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantMigrator Methods MigrateAsync(string, CancellationToken) Task<TenantMigrationResult> MigrateAsync(string tenantDbName, CancellationToken ct = default) Parameters tenantDbName string ct CancellationToken Returns Task<TenantMigrationResult>"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html",
+    "title": "Interface ITenantOnboardingService | Organizor",
+    "summary": "Interface ITenantOnboardingService Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantOnboardingService Methods OnboardAsync(TenantOnboardingRequest, CancellationToken) Task<TenantOnboardingResult> OnboardAsync(TenantOnboardingRequest request, CancellationToken cancellationToken = default) Parameters request TenantOnboardingRequest cancellationToken CancellationToken Returns Task<TenantOnboardingResult>"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html",
+    "title": "Interface ITenantProvisioningWorkflow | Organizor",
+    "summary": "Interface ITenantProvisioningWorkflow Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantProvisioningWorkflow Methods ExecuteAsync(Tenant, CancellationToken) Task<ProvisioningResult> ExecuteAsync(Tenant tenant, CancellationToken ct) Parameters tenant Tenant ct CancellationToken Returns Task<ProvisioningResult>"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html",
+    "title": "Interface ITenantRepository | Organizor",
+    "summary": "Interface ITenantRepository Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantRepository Methods AddAsync(Tenant) Task AddAsync(Tenant tenant) Parameters tenant Tenant Returns Task DeleteAsync(Guid) Task DeleteAsync(Guid id) Parameters id Guid Returns Task GetAllAsync(bool) Task<List<Tenant>> GetAllAsync(bool includeSoftDeleted = false) Parameters includeSoftDeleted bool Returns Task<List<Tenant>> GetByIdAsync(Guid, bool) Task<Tenant?> GetByIdAsync(Guid id, bool includeSoftDeleted = false) Parameters id Guid includeSoftDeleted bool Returns Task<Tenant> GetBySlugAsync(string, bool) Task<Tenant?> GetBySlugAsync(string slug, bool includeSoftDeleted = false) Parameters slug string includeSoftDeleted bool Returns Task<Tenant> UpdateAsync(Tenant) Task UpdateAsync(Tenant tenant) Parameters tenant Tenant Returns Task"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html",
+    "title": "Interface ITenantService | Organizor",
+    "summary": "Interface ITenantService Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantService Methods CreateAsync(TenantCreateModel) Task<TenantModel> CreateAsync(TenantCreateModel model) Parameters model TenantCreateModel Returns Task<TenantModel> GetAllAsync() Task<List<TenantModel>> GetAllAsync() Returns Task<List<TenantModel>> GetBySlugAsync(string) Task<TenantModel?> GetBySlugAsync(string slug) Parameters slug string Returns Task<TenantModel>"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html",
+    "title": "Interface ITenantUpgradeService | Organizor",
+    "summary": "Interface ITenantUpgradeService Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Assembly Code7Dev.Organizor.Application.dll public interface ITenantUpgradeService Methods UpgradeAsync(Guid, CancellationToken) Task<TenantMigrationResult> UpgradeAsync(Guid tenantId, CancellationToken ct = default) Parameters tenantId Guid ct CancellationToken Returns Task<TenantMigrationResult>"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Interfaces.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.html",
+    "title": "Namespace Code7Dev.Organizor.Application.Tenants.Interfaces | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Application.Tenants.Interfaces Interfaces IConnectionStringBuilder ITenantLifecycleService ITenantMigrator ITenantOnboardingService ITenantProvisioningWorkflow ITenantRepository ITenantService ITenantUpgradeService"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.html",
+    "title": "Class ProvisioningResult | Organizor",
+    "summary": "Class ProvisioningResult Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public sealed class ProvisioningResult Inheritance object ProvisioningResult Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Properties Error public string? Error { get; set; } Property Value string Success public required bool Success { get; set; } Property Value bool"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html",
+    "title": "Class TenantCreateModel | Organizor",
+    "summary": "Class TenantCreateModel Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public class TenantCreateModel Inheritance object TenantCreateModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html",
+    "title": "Class TenantMigrationResult | Organizor",
+    "summary": "Class TenantMigrationResult Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public sealed class TenantMigrationResult Inheritance object TenantMigrationResult Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Properties AppliedMigrations public required int AppliedMigrations { get; set; } Property Value int Database public required string Database { get; set; } Property Value string Duration public required TimeSpan Duration { get; set; } Property Value TimeSpan Error public string? Error { get; set; } Property Value string Success public required bool Success { get; set; } Property Value bool"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html",
+    "title": "Class TenantModel | Organizor",
+    "summary": "Class TenantModel Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public class TenantModel Inheritance object TenantModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties CreatedAt public required DateTime CreatedAt { get; set; } Property Value DateTime DatabaseName public required string DatabaseName { get; set; } Property Value string Id public required Guid Id { get; set; } Property Value Guid Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html",
+    "title": "Class TenantOnboardingRequest | Organizor",
+    "summary": "Class TenantOnboardingRequest Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public class TenantOnboardingRequest Inheritance object TenantOnboardingRequest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.html",
+    "title": "Class TenantOnboardingResult | Organizor",
+    "summary": "Class TenantOnboardingResult Namespace Code7Dev.Organizor.Application.Tenants.Models Assembly Code7Dev.Organizor.Application.dll public class TenantOnboardingResult Inheritance object TenantOnboardingResult Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties DatabaseName public required string DatabaseName { get; set; } Property Value string Id public required Guid Id { get; set; } Property Value Guid Name public required string Name { get; set; } Property Value string Slug public required string Slug { get; set; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Models.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Models.html",
+    "title": "Namespace Code7Dev.Organizor.Application.Tenants.Models | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Application.Tenants.Models Classes ProvisioningResult TenantCreateModel TenantMigrationResult TenantModel TenantOnboardingRequest TenantOnboardingResult"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html",
+    "title": "Class TenantLifecycleService | Organizor",
+    "summary": "Class TenantLifecycleService Namespace Code7Dev.Organizor.Application.Tenants.Services Assembly Code7Dev.Organizor.Application.dll public sealed class TenantLifecycleService : ITenantLifecycleService Inheritance object TenantLifecycleService Implements ITenantLifecycleService Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Constructors TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger<TenantLifecycleService>) public TenantLifecycleService(ITenantRepository repo, ITenantDatabaseManager dbManager, ILogger<TenantLifecycleService> logger) Parameters repo ITenantRepository dbManager ITenantDatabaseManager logger ILogger<TenantLifecycleService> Methods HardDeleteAsync(Guid, CancellationToken) public Task HardDeleteAsync(Guid tenantId, CancellationToken ct = default) Parameters tenantId Guid ct CancellationToken Returns Task SoftDeleteAsync(Guid, string?, CancellationToken) public Task SoftDeleteAsync(Guid tenantId, string? reason = null, CancellationToken ct = default) Parameters tenantId Guid reason string ct CancellationToken Returns Task"
+  },
+  "api/Code7Dev.Organizor.Application.Tenants.Services.html": {
+    "href": "api/Code7Dev.Organizor.Application.Tenants.Services.html",
+    "title": "Namespace Code7Dev.Organizor.Application.Tenants.Services | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Application.Tenants.Services Classes TenantLifecycleService"
+  },
+  "api/Code7Dev.Organizor.Domain.Tenants.Tenant.html": {
+    "href": "api/Code7Dev.Organizor.Domain.Tenants.Tenant.html",
+    "title": "Class Tenant | Organizor",
+    "summary": "Class Tenant Namespace Code7Dev.Organizor.Domain.Tenants Assembly Code7Dev.Organizor.Domain.dll public class Tenant Inheritance object Tenant Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties CreatedAt public DateTime CreatedAt { get; set; } Property Value DateTime DatabaseName public string DatabaseName { get; set; } Property Value string DeletedAt public DateTime? DeletedAt { get; set; } Property Value DateTime? DeletionReason public string? DeletionReason { get; set; } Property Value string FailureReason public string? FailureReason { get; set; } Property Value string Id public Guid Id { get; set; } Property Value Guid IsDeleted public bool IsDeleted { get; set; } Property Value bool Name public string Name { get; set; } Property Value string Slug public string Slug { get; set; } Property Value string Status public TenantStatus Status { get; set; } Property Value TenantStatus"
+  },
+  "api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.html": {
+    "href": "api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.html",
+    "title": "Enum TenantStatus | Organizor",
+    "summary": "Enum TenantStatus Namespace Code7Dev.Organizor.Domain.Tenants Assembly Code7Dev.Organizor.Domain.dll public enum TenantStatus Fields Active = 1 Deleted = 4 Failed = 3 Pending = 0 Upgrading = 2"
+  },
+  "api/Code7Dev.Organizor.Domain.Tenants.html": {
+    "href": "api/Code7Dev.Organizor.Domain.Tenants.html",
+    "title": "Namespace Code7Dev.Organizor.Domain.Tenants | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Domain.Tenants Classes Tenant Enums TenantStatus"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions.html",
+    "title": "Class DbExtensions | Organizor",
+    "summary": "Class DbExtensions Namespace Code7Dev.Organizor.Infrastructure.Extensions Assembly Code7Dev.Organizor.Infrastructure.dll public static class DbExtensions Inheritance object DbExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddCatalogDb(IServiceCollection, IConfiguration) public static IServiceCollection AddCatalogDb(this IServiceCollection services, IConfiguration configuration) Parameters services IServiceCollection configuration IConfiguration Returns IServiceCollection AddOrganizorDb(IServiceCollection, IConfiguration) public static IServiceCollection AddOrganizorDb(this IServiceCollection services, IConfiguration configuration) Parameters services IServiceCollection configuration IConfiguration Returns IServiceCollection SeedCatalogDbAsync(IServiceProvider) public static Task SeedCatalogDbAsync(this IServiceProvider services) Parameters services IServiceProvider Returns Task"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.html",
+    "title": "Class DependencyInjection | Organizor",
+    "summary": "Class DependencyInjection Namespace Code7Dev.Organizor.Infrastructure.Extensions Assembly Code7Dev.Organizor.Infrastructure.dll public static class DependencyInjection Inheritance object DependencyInjection Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AddInfrastructure(IServiceCollection) public static IServiceCollection AddInfrastructure(this IServiceCollection services) Parameters services IServiceCollection Returns IServiceCollection"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Extensions.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Extensions.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Extensions | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Extensions Classes DbExtensions DependencyInjection"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html",
+    "title": "Class CatalogDbContext | Organizor",
+    "summary": "Class CatalogDbContext Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog Assembly Code7Dev.Organizor.Infrastructure.dll public class CatalogDbContext : DbContext, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable Inheritance object DbContext CatalogDbContext Implements IInfrastructure<IServiceProvider> IDbContextDependencies IDbSetCache IDbContextPoolable IResettableService IDisposable IAsyncDisposable Inherited Members DbContext.Set<TEntity>() DbContext.Set<TEntity>(string) DbContext.OnConfiguring(DbContextOptionsBuilder) DbContext.ConfigureConventions(ModelConfigurationBuilder) DbContext.SaveChanges() DbContext.SaveChanges(bool) DbContext.SaveChangesAsync(CancellationToken) DbContext.SaveChangesAsync(bool, CancellationToken) DbContext.Dispose() DbContext.DisposeAsync() DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Add<TEntity>(TEntity) DbContext.AddAsync<TEntity>(TEntity, CancellationToken) DbContext.Attach<TEntity>(TEntity) DbContext.Update<TEntity>(TEntity) DbContext.Remove<TEntity>(TEntity) DbContext.Add(object) DbContext.AddAsync(object, CancellationToken) DbContext.Attach(object) DbContext.Update(object) DbContext.Remove(object) DbContext.AddRange(params object[]) DbContext.AddRangeAsync(params object[]) DbContext.AttachRange(params object[]) DbContext.UpdateRange(params object[]) DbContext.RemoveRange(params object[]) DbContext.AddRange(IEnumerable<object>) DbContext.AddRangeAsync(IEnumerable<object>, CancellationToken) DbContext.AttachRange(IEnumerable<object>) DbContext.UpdateRange(IEnumerable<object>) DbContext.RemoveRange(IEnumerable<object>) DbContext.Find(Type, params object[]) DbContext.FindAsync(Type, params object[]) DbContext.FindAsync(Type, object[], CancellationToken) DbContext.Find<TEntity>(params object[]) DbContext.FindAsync<TEntity>(params object[]) DbContext.FindAsync<TEntity>(object[], CancellationToken) DbContext.FromExpression<TResult>(Expression<Func<IQueryable<TResult>>>) DbContext.Database DbContext.ChangeTracker DbContext.Model DbContext.ContextId DbContext.SavingChanges DbContext.SavedChanges DbContext.SaveChangesFailed object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors CatalogDbContext(DbContextOptions<CatalogDbContext>) public CatalogDbContext(DbContextOptions<CatalogDbContext> options) Parameters options DbContextOptions<CatalogDbContext> Properties Tenants public DbSet<Tenant> Tenants { get; } Property Value DbSet<Tenant> Methods OnModelCreating(ModelBuilder) Override this method to further configure the model that was discovered by convention from the entity types exposed in DbSet<TEntity> properties on your derived context. The resulting model may be cached and re-used for subsequent instances of your derived context. protected override void OnModelCreating(ModelBuilder modelBuilder) Parameters modelBuilder ModelBuilder The builder being used to construct the model for this context. Databases (and other extensions) typically define extension methods on this object that allow you to configure aspects of the model that are specific to a given database. Remarks If a model is explicitly set on the options for this context (via UseModel(IModel)) then this method will not be run. However, it will still run when creating a compiled model. See Modeling entity types and relationships for more information and examples."
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html",
+    "title": "Class CatalogDbContextSeed | Organizor",
+    "summary": "Class CatalogDbContextSeed Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions Assembly Code7Dev.Organizor.Infrastructure.dll public static class CatalogDbContextSeed Inheritance object CatalogDbContextSeed Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods SeedAsync(CatalogDbContext) public static Task SeedAsync(CatalogDbContext db) Parameters db CatalogDbContext Returns Task"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions Classes CatalogDbContextSeed"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.html",
+    "title": "Class Init | Organizor",
+    "summary": "Class Init Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations Assembly Code7Dev.Organizor.Infrastructure.dll A base class inherited by each EF Core migration. [DbContext(typeof(CatalogDbContext))] [Migration(\"20260512175319_Init\")] public class Init : Migration Inheritance object Migration Init Inherited Members Migration.InitialDatabase Migration.TargetModel Migration.UpOperations Migration.DownOperations Migration.ActiveProvider object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks See Database migrations for more information and examples. Methods BuildTargetModel(ModelBuilder) Implemented to build the TargetModel. protected override void BuildTargetModel(ModelBuilder modelBuilder) Parameters modelBuilder ModelBuilder The ModelBuilder to use to build the model. Remarks See Database migrations for more information and examples. Down(MigrationBuilder) Builds the operations that will migrate the database 'down'. protected override void Down(MigrationBuilder migrationBuilder) Parameters migrationBuilder MigrationBuilder The MigrationBuilder that will build the operations. Remarks That is, builds the operations that will take the database from the state left in by this migration so that it returns to the state that it was in before this migration was applied. This method must be overridden in each class that inherits from Migration if both 'up' and 'down' migrations are to be supported. If it is not overridden, then calling it will throw and it will not be possible to migrate in the 'down' direction. See Database migrations for more information and examples. Up(MigrationBuilder) Builds the operations that will migrate the database 'up'. protected override void Up(MigrationBuilder migrationBuilder) Parameters migrationBuilder MigrationBuilder The MigrationBuilder that will build the operations. Remarks That is, builds the operations that will take the database from the state left in by the previous migration so that it is up-to-date with regard to this migration. This method must be overridden in each class that inherits from Migration. See Database migrations for more information and examples."
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations Classes Init A base class inherited by each EF Core migration."
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Catalog Classes CatalogDbContext"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.html",
+    "title": "Class OrganizorDbContext | Organizor",
+    "summary": "Class OrganizorDbContext Namespace Code7Dev.Organizor.Infrastructure.Persistence.Organizor Assembly Code7Dev.Organizor.Infrastructure.dll public class OrganizorDbContext : DbContext, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable Inheritance object DbContext OrganizorDbContext Implements IInfrastructure<IServiceProvider> IDbContextDependencies IDbSetCache IDbContextPoolable IResettableService IDisposable IAsyncDisposable Inherited Members DbContext.Set<TEntity>() DbContext.Set<TEntity>(string) DbContext.OnConfiguring(DbContextOptionsBuilder) DbContext.ConfigureConventions(ModelConfigurationBuilder) DbContext.SaveChanges() DbContext.SaveChanges(bool) DbContext.SaveChangesAsync(CancellationToken) DbContext.SaveChangesAsync(bool, CancellationToken) DbContext.Dispose() DbContext.DisposeAsync() DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Add<TEntity>(TEntity) DbContext.AddAsync<TEntity>(TEntity, CancellationToken) DbContext.Attach<TEntity>(TEntity) DbContext.Update<TEntity>(TEntity) DbContext.Remove<TEntity>(TEntity) DbContext.Add(object) DbContext.AddAsync(object, CancellationToken) DbContext.Attach(object) DbContext.Update(object) DbContext.Remove(object) DbContext.AddRange(params object[]) DbContext.AddRangeAsync(params object[]) DbContext.AttachRange(params object[]) DbContext.UpdateRange(params object[]) DbContext.RemoveRange(params object[]) DbContext.AddRange(IEnumerable<object>) DbContext.AddRangeAsync(IEnumerable<object>, CancellationToken) DbContext.AttachRange(IEnumerable<object>) DbContext.UpdateRange(IEnumerable<object>) DbContext.RemoveRange(IEnumerable<object>) DbContext.Find(Type, params object[]) DbContext.FindAsync(Type, params object[]) DbContext.FindAsync(Type, object[], CancellationToken) DbContext.Find<TEntity>(params object[]) DbContext.FindAsync<TEntity>(params object[]) DbContext.FindAsync<TEntity>(object[], CancellationToken) DbContext.FromExpression<TResult>(Expression<Func<IQueryable<TResult>>>) DbContext.Database DbContext.ChangeTracker DbContext.Model DbContext.ContextId DbContext.SavingChanges DbContext.SavedChanges DbContext.SaveChangesFailed object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors OrganizorDbContext(DbContextOptions<OrganizorDbContext>) public OrganizorDbContext(DbContextOptions<OrganizorDbContext> options) Parameters options DbContextOptions<OrganizorDbContext> Methods OnModelCreating(ModelBuilder) Override this method to further configure the model that was discovered by convention from the entity types exposed in DbSet<TEntity> properties on your derived context. The resulting model may be cached and re-used for subsequent instances of your derived context. protected override void OnModelCreating(ModelBuilder modelBuilder) Parameters modelBuilder ModelBuilder The builder being used to construct the model for this context. Databases (and other extensions) typically define extension methods on this object that allow you to configure aspects of the model that are specific to a given database. Remarks If a model is explicitly set on the options for this context (via UseModel(IModel)) then this method will not be run. However, it will still run when creating a compiled model. See Modeling entity types and relationships for more information and examples."
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Organizor | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Persistence.Organizor Classes OrganizorDbContext"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming.html",
+    "title": "Class TenantDbNaming | Organizor",
+    "summary": "Class TenantDbNaming Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Helpers Assembly Code7Dev.Organizor.Infrastructure.dll public static class TenantDbNaming Inheritance object TenantDbNaming Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ToDbName(string) public static string ToDbName(string slug) Parameters slug string Returns string"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Helpers | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Helpers Classes TenantDbNaming"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html",
+    "title": "Interface ITenantContext | Organizor",
+    "summary": "Interface ITenantContext Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces Assembly Code7Dev.Organizor.Infrastructure.dll public interface ITenantContext Properties Current TenantInfo? Current { get; } Property Value TenantInfo IsResolved bool IsResolved { get; } Property Value bool Methods Clear() void Clear() SetTenant(TenantInfo) void SetTenant(TenantInfo info) Parameters info TenantInfo"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver.html",
+    "title": "Interface ITenantDatabaseResolver | Organizor",
+    "summary": "Interface ITenantDatabaseResolver Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces Assembly Code7Dev.Organizor.Infrastructure.dll public interface ITenantDatabaseResolver Methods GetConnectionString(TenantInfo) string GetConnectionString(TenantInfo tenant) Parameters tenant TenantInfo Returns string"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces Interfaces ITenantContext ITenantDatabaseResolver"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo.html",
+    "title": "Class TenantInfo | Organizor",
+    "summary": "Class TenantInfo Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Models Assembly Code7Dev.Organizor.Infrastructure.dll public sealed record TenantInfo : IEquatable<TenantInfo> Inheritance object TenantInfo Implements IEquatable<TenantInfo> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Constructors TenantInfo(Guid, string) public TenantInfo(Guid Id, string Slug) Parameters Id Guid Slug string Properties Id public Guid Id { get; init; } Property Value Guid Slug public string Slug { get; init; } Property Value string"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Models | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Models Classes TenantInfo"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.html",
+    "title": "Class ConnectionStringBuilder | Organizor",
+    "summary": "Class ConnectionStringBuilder Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Services Assembly Code7Dev.Organizor.Infrastructure.dll public sealed class ConnectionStringBuilder : IConnectionStringBuilder Inheritance object ConnectionStringBuilder Implements IConnectionStringBuilder Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Constructors ConnectionStringBuilder(IConfiguration) public ConnectionStringBuilder(IConfiguration config) Parameters config IConfiguration Methods BuildAdminConnectionString() public string BuildAdminConnectionString() Returns string BuildConnectionString(string) public string BuildConnectionString(string databaseName) Parameters databaseName string Returns string ExtractDatabaseName(string) public string ExtractDatabaseName(string connectionString) Parameters connectionString string Returns string"
+  },
+  "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.html": {
+    "href": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.html",
+    "title": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Services | Organizor",
+    "summary": "Namespace Code7Dev.Organizor.Infrastructure.Tenancy.Services Classes ConnectionStringBuilder"
+  },
+  "articles/getting-started.html": {
+    "href": "articles/getting-started.html",
+    "title": "Getting Started | Organizor",
+    "summary": "Getting Started"
+  },
+  "articles/introduction.html": {
+    "href": "articles/introduction.html",
+    "title": "Introduction | Organizor",
+    "summary": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE. | Organizor",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  }
+}
