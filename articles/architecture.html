@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | Organizor </title>
+      <title>Architecture | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | Organizor ">
+      <meta name="title" content="Architecture | Organizor ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/architecture.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,61 +85,94 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="architecture">Architecture</h1>
 
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>.NET SDK 10.</li>
-<li>PostgreSQL available to the API.</li>
-<li>A catalog database connection string named <code>Catalog</code>.</li>
-<li>PostgreSQL server settings under the <code>Postgres</code> configuration section for tenant database creation and resolution.</li>
-<li>DocFX installed as a .NET tool when building documentation locally.</li>
-</ul>
-<h2 id="run-the-api">Run the API</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+<p>Organizor follows a layered structure around tenant management.</p>
+<pre><code class="lang-mermaid">flowchart LR
+    Client[HTTP client] --&gt; Api[Code7Dev.Organizor.Api]
+    Api --&gt; Application[Code7Dev.Organizor.Application]
+    Application --&gt; Domain[Code7Dev.Organizor.Domain]
+    Application --&gt; Infrastructure[Code7Dev.Organizor.Infrastructure]
+    Infrastructure --&gt; Catalog[(Catalog database)]
+    Infrastructure --&gt; TenantDb[(Tenant databases)]
 </code></pre>
-<p>On startup the API:</p>
-<ol>
-<li>configures Serilog;</li>
-<li>registers catalog and tenant database services;</li>
-<li>registers application and infrastructure services;</li>
-<li>seeds or migrates the catalog database;</li>
-<li>maps controllers, health checks, OpenAPI, and Scalar in development.</li>
-</ol>
-<h2 id="development-endpoints">Development Endpoints</h2>
+<h2 id="api-layer">API Layer</h2>
+<p>The API project owns transport concerns:</p>
+<ul>
+<li>controller routes for tenant catalog and tenant operations;</li>
+<li>request and response DTOs;</li>
+<li>mapping between API DTOs and application models;</li>
+<li>correlation ID, exception handling, and tenant resolution middleware;</li>
+<li>Serilog request logging;</li>
+<li>CORS, health checks, OpenAPI, and Scalar setup.</li>
+</ul>
+<p>The startup flow in <code>Program.cs</code> composes the application by registering catalog persistence, tenant persistence, application services, infrastructure services, and API services.</p>
+<h2 id="application-layer">Application Layer</h2>
+<p>The application project owns use cases and contracts. It defines interfaces for repository access, tenant database management, migration, provisioning, onboarding, upgrades, and lifecycle operations.</p>
+<p>Current services:</p>
 <table>
 <thead>
 <tr>
-<th>Endpoint</th>
-<th>Purpose</th>
+<th>Service</th>
+<th>Responsibility</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/health</code></td>
-<td>ASP.NET Core health checks.</td>
+<td><code>TenantService</code></td>
+<td>Creates catalog tenant records and reads tenants by slug or as a list.</td>
 </tr>
 <tr>
-<td><code>/openapi/v1.json</code></td>
-<td>OpenAPI document, available in development.</td>
+<td><code>TenantOnboardingService</code></td>
+<td>Creates a catalog tenant, runs provisioning, and marks the tenant active or failed.</td>
 </tr>
 <tr>
-<td><code>/scalar</code></td>
-<td>Scalar API reference, available in development.</td>
+<td><code>TenantLifecycleService</code></td>
+<td>Soft-deletes tenants and hard-deletes already soft-deleted tenants.</td>
+</tr>
+<tr>
+<td><code>TenantUpgradeService</code></td>
+<td>Runs migrations for an existing tenant database.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="build-the-documentation">Build the Documentation</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">docfx .\docs\docfx.json
+<h2 id="domain-layer">Domain Layer</h2>
+<p>The domain project currently contains the tenant entity and status enum. A tenant stores identity, slug, database name, creation date, lifecycle status, provisioning failure reason, and deletion metadata.</p>
+<h2 id="infrastructure-layer">Infrastructure Layer</h2>
+<p>The infrastructure project owns external resources:</p>
+<ul>
+<li><code>CatalogDbContext</code> stores tenant records.</li>
+<li><code>OrganizorDbContext</code> connects to the current tenant database after tenant resolution.</li>
+<li><code>TenantRepository</code> implements catalog tenant persistence.</li>
+<li><code>ConnectionStringBuilder</code> builds PostgreSQL connection strings from configuration.</li>
+<li><code>TenantDatabaseManager</code> creates and drops tenant databases.</li>
+<li><code>TenantMigrator</code> applies EF Core migrations to tenant databases.</li>
+<li><code>TenantProvisioningWorkflow</code> creates a tenant database and applies migrations during onboarding.</li>
+</ul>
+<h2 id="request-pipeline">Request Pipeline</h2>
+<pre><code class="lang-mermaid">sequenceDiagram
+    participant Client
+    participant Api
+    participant TenantResolution
+    participant Application
+    participant Infrastructure
+
+    Client-&gt;&gt;Api: HTTP request
+    Api-&gt;&gt;Api: Correlation ID and exception handling
+    Api-&gt;&gt;TenantResolution: Resolve tenant when required
+    TenantResolution-&gt;&gt;Infrastructure: Load tenant by X-Tenant-Slug
+    Infrastructure--&gt;&gt;TenantResolution: Tenant record
+    TenantResolution-&gt;&gt;Application: Continue with current tenant context
+    Application-&gt;&gt;Infrastructure: Use catalog or tenant database services
+    Infrastructure--&gt;&gt;Application: Result
+    Application--&gt;&gt;Api: Model
+    Api--&gt;&gt;Client: HTTP response
 </code></pre>
-<p>DocFX writes the generated site to <code>docs/_site</code> and generated API metadata to <code>docs/api</code>. Both folders are ignored by git and can be rebuilt.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/architecture.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

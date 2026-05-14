@@ -1,2 +1,2 @@
 
-{"items":[{"name":"Introduction","href":"introduction.html","topicHref":"introduction.html"},{"name":"Getting Started","href":"getting-started.html","topicHref":"getting-started.html"}],"pdf":true}
+{"items":[{"name":"Introduction","href":"introduction.html","topicHref":"introduction.html"},{"name":"Getting Started","href":"getting-started.html","topicHref":"getting-started.html"},{"name":"Architecture","href":"architecture.html","topicHref":"architecture.html"},{"name":"Tenancy","href":"tenancy.html","topicHref":"tenancy.html"},{"name":"API","href":"api.html","topicHref":"api.html"},{"name":"Configuration","href":"configuration.html","topicHref":"configuration.html"},{"name":"Operations","href":"operations.html","topicHref":"operations.html"}],"pdf":true}

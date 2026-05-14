@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | Organizor </title>
+      <title>API | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | Organizor ">
+      <meta name="title" content="API | Organizor ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/api.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,61 +85,69 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="api">API</h1>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<p>The API exposes platform-level tenant management endpoints. Tenant-scoped endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
+<h2 id="tenant-catalog">Tenant Catalog</h2>
+<h3 id="create-tenant">Create Tenant</h3>
+<pre><code class="lang-http">POST /api/v1/tenants
+Content-Type: application/json
+
+{
+  &quot;name&quot;: &quot;Acme&quot;,
+  &quot;slug&quot;: &quot;acme&quot;,
+  &quot;culture&quot;: &quot;en-US&quot;
+}
+</code></pre>
+<p>Creates a catalog tenant record with <code>Pending</code> status and returns tenant metadata. This route does not provision a tenant database.</p>
+<h3 id="get-tenant-by-slug">Get Tenant By Slug</h3>
+<pre><code class="lang-http">GET /api/v1/tenants/acme
+</code></pre>
+<p>Returns a tenant by slug, or <code>404 Not Found</code> when no tenant exists.</p>
+<h3 id="list-tenants">List Tenants</h3>
+<pre><code class="lang-http">GET /api/v1/tenants
+</code></pre>
+<p>Returns all catalog tenants visible through the tenant repository.</p>
+<h2 id="tenant-operations">Tenant Operations</h2>
+<h3 id="onboard-tenant">Onboard Tenant</h3>
+<pre><code class="lang-http">POST /api/admin/tenants/onboard
+Content-Type: application/json
+
+{
+  &quot;name&quot;: &quot;Acme&quot;,
+  &quot;slug&quot;: &quot;acme&quot;
+}
+</code></pre>
+<p>Creates the catalog tenant, creates the tenant database, applies tenant migrations, and marks the tenant <code>Active</code> or <code>Failed</code>.</p>
+<h3 id="upgrade-tenant">Upgrade Tenant</h3>
+<pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
+</code></pre>
+<p>Runs tenant database migrations for the tenant identified by <code>id</code>. Returns a migration result with the database name, success flag, applied migration count, duration, and optional error.</p>
+<h3 id="soft-delete-tenant">Soft Delete Tenant</h3>
+<pre><code class="lang-http">DELETE /api/admin/tenants/{id}
+Content-Type: application/json
+
+{
+  &quot;reason&quot;: &quot;Customer cancellation&quot;
+}
+</code></pre>
+<p>Marks the tenant as deleted in the catalog. The tenant database is not dropped during soft deletion.</p>
+<h3 id="hard-delete-tenant">Hard Delete Tenant</h3>
+<pre><code class="lang-http">POST /api/admin/tenants/{id}/hard-delete
+</code></pre>
+<p>Drops the tenant database and removes the catalog record. The tenant must already be soft-deleted.</p>
+<h2 id="local-api-reference">Local API Reference</h2>
+<p>When the API runs in development:</p>
 <ul>
-<li>.NET SDK 10.</li>
-<li>PostgreSQL available to the API.</li>
-<li>A catalog database connection string named <code>Catalog</code>.</li>
-<li>PostgreSQL server settings under the <code>Postgres</code> configuration section for tenant database creation and resolution.</li>
-<li>DocFX installed as a .NET tool when building documentation locally.</li>
+<li>OpenAPI JSON is available at <code>/openapi/v1.json</code>.</li>
+<li>Scalar is available at <code>/scalar</code>.</li>
 </ul>
-<h2 id="run-the-api">Run the API</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
-</code></pre>
-<p>On startup the API:</p>
-<ol>
-<li>configures Serilog;</li>
-<li>registers catalog and tenant database services;</li>
-<li>registers application and infrastructure services;</li>
-<li>seeds or migrates the catalog database;</li>
-<li>maps controllers, health checks, OpenAPI, and Scalar in development.</li>
-</ol>
-<h2 id="development-endpoints">Development Endpoints</h2>
-<table>
-<thead>
-<tr>
-<th>Endpoint</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>/health</code></td>
-<td>ASP.NET Core health checks.</td>
-</tr>
-<tr>
-<td><code>/openapi/v1.json</code></td>
-<td>OpenAPI document, available in development.</td>
-</tr>
-<tr>
-<td><code>/scalar</code></td>
-<td>Scalar API reference, available in development.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="build-the-documentation">Build the Documentation</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">docfx .\docs\docfx.json
-</code></pre>
-<p>DocFX writes the generated site to <code>docs/_site</code> and generated API metadata to <code>docs/api</code>. Both folders are ignored by git and can be rebuilt.</p>
+<p>The DocFX API navigation tab contains the generated C# reference for controllers, DTOs, services, interfaces, middleware, and persistence types.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/api.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

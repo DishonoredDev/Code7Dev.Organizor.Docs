@@ -935,6 +935,36 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/api.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/getting-started.md",
       "output": {
         ".html": {
@@ -949,6 +979,26 @@
       "output": {
         ".html": {
           "relative_path": "articles/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/operations.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/operations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tenancy.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tenancy.html"
         }
       },
       "version": ""

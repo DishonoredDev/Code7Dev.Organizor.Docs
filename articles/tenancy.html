@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | Organizor </title>
+      <title>Tenancy | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | Organizor ">
+      <meta name="title" content="Tenancy | Organizor ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenancy.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,61 +85,86 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="tenancy">Tenancy</h1>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<p>Organizor uses catalog-driven, database-per-tenant tenancy.</p>
+<h2 id="tenant-catalog">Tenant Catalog</h2>
+<p>The catalog database stores tenant metadata through <code>CatalogDbContext</code>. Each tenant includes:</p>
 <ul>
-<li>.NET SDK 10.</li>
-<li>PostgreSQL available to the API.</li>
-<li>A catalog database connection string named <code>Catalog</code>.</li>
-<li>PostgreSQL server settings under the <code>Postgres</code> configuration section for tenant database creation and resolution.</li>
-<li>DocFX installed as a .NET tool when building documentation locally.</li>
+<li><code>Id</code>;</li>
+<li><code>Name</code>;</li>
+<li><code>Slug</code>;</li>
+<li><code>DatabaseName</code>;</li>
+<li><code>CreatedAt</code>;</li>
+<li><code>Status</code>;</li>
+<li><code>FailureReason</code>;</li>
+<li>soft-delete metadata.</li>
 </ul>
-<h2 id="run-the-api">Run the API</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
-</code></pre>
-<p>On startup the API:</p>
-<ol>
-<li>configures Serilog;</li>
-<li>registers catalog and tenant database services;</li>
-<li>registers application and infrastructure services;</li>
-<li>seeds or migrates the catalog database;</li>
-<li>maps controllers, health checks, OpenAPI, and Scalar in development.</li>
-</ol>
-<h2 id="development-endpoints">Development Endpoints</h2>
+<p>The database name convention is <code>tenant_{slug}</code>. Slugs are normalized to lowercase before they are stored or used for lookups.</p>
+<h2 id="tenant-statuses">Tenant Statuses</h2>
 <table>
 <thead>
 <tr>
-<th>Endpoint</th>
-<th>Purpose</th>
+<th>Status</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/health</code></td>
-<td>ASP.NET Core health checks.</td>
+<td><code>Pending</code></td>
+<td>Tenant exists in the catalog but provisioning is not complete.</td>
 </tr>
 <tr>
-<td><code>/openapi/v1.json</code></td>
-<td>OpenAPI document, available in development.</td>
+<td><code>Active</code></td>
+<td>Tenant provisioning completed successfully.</td>
 </tr>
 <tr>
-<td><code>/scalar</code></td>
-<td>Scalar API reference, available in development.</td>
+<td><code>Upgrading</code></td>
+<td>Reserved for upgrade lifecycle state.</td>
+</tr>
+<tr>
+<td><code>Failed</code></td>
+<td>Provisioning failed or an unexpected onboarding error occurred.</td>
+</tr>
+<tr>
+<td><code>Deleted</code></td>
+<td>Tenant has been soft-deleted.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="build-the-documentation">Build the Documentation</h2>
-<p>From the repository root:</p>
-<pre><code class="lang-powershell">docfx .\docs\docfx.json
+<h2 id="tenant-resolution">Tenant Resolution</h2>
+<p><code>TenantResolutionMiddleware</code> resolves tenant context for tenant-scoped routes.</p>
+<p>It skips platform endpoints such as:</p>
+<ul>
+<li><code>/api/admin</code>;</li>
+<li><code>/api/v1/tenants</code>;</li>
+<li><code>/scalar</code>;</li>
+<li><code>/openapi</code>;</li>
+<li><code>/health</code> through route behavior;</li>
+<li>root and common static paths.</li>
+</ul>
+<p>For tenant-scoped requests, clients must send:</p>
+<pre><code class="lang-http">X-Tenant-Slug: acme
 </code></pre>
-<p>DocFX writes the generated site to <code>docs/_site</code> and generated API metadata to <code>docs/api</code>. Both folders are ignored by git and can be rebuilt.</p>
+<p>The middleware loads the tenant from the catalog and stores <code>TenantInfo</code> in <code>ITenantContext</code>. If the header is missing, the response is <code>400 Bad Request</code>. If the slug does not match a catalog tenant, the response is <code>404 Not Found</code>.</p>
+<h2 id="tenant-database-resolution">Tenant Database Resolution</h2>
+<p><code>OrganizorDbContext</code> uses a fallback in-memory database when no tenant has been resolved. This supports startup, Scalar, migrations, and design-time tooling.</p>
+<p>When a tenant is resolved, <code>PerTenantDbResolver</code> loads the catalog tenant, builds a PostgreSQL connection string for that tenant database, and <code>OrganizorDbContext</code> uses that database.</p>
+<h2 id="provisioning-flow">Provisioning Flow</h2>
+<pre><code class="lang-mermaid">flowchart TD
+    A[Onboard request] --&gt; B[Create catalog tenant as Pending]
+    B --&gt; C[Create tenant database]
+    C --&gt; D[Apply tenant migrations]
+    D --&gt; E{Success?}
+    E --&gt;|Yes| F[Mark tenant Active]
+    E --&gt;|No| G[Mark tenant Failed]
+</code></pre>
+<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> drops the tenant database and removes the catalog record.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenancy.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

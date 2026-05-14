@@ -87,6 +87,76 @@
         <article data-uid="">
 <h1 id="introduction">Introduction</h1>
 
+<p>Organizor is the backend API for managing tenant environments. It keeps tenant records in a central catalog database and provisions a separate PostgreSQL database for each tenant.</p>
+<p>The current implementation focuses on tenant lifecycle operations:</p>
+<ul>
+<li>creating tenant catalog records;</li>
+<li>onboarding tenants by creating a tenant database and applying migrations;</li>
+<li>resolving tenant context for tenant-scoped requests;</li>
+<li>upgrading tenant databases by running migrations;</li>
+<li>soft-deleting tenants before hard deletion;</li>
+<li>exposing health checks, OpenAPI JSON, and Scalar API reference in development.</li>
+</ul>
+<h2 id="main-concepts">Main Concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant</td>
+<td>A customer or isolated workspace tracked by <code>Id</code>, <code>Name</code>, <code>Slug</code>, <code>DatabaseName</code>, lifecycle status, and deletion metadata.</td>
+</tr>
+<tr>
+<td>Catalog database</td>
+<td>Central PostgreSQL database that stores all tenant records.</td>
+</tr>
+<tr>
+<td>Tenant database</td>
+<td>PostgreSQL database named from the tenant slug, currently using the <code>tenant_{slug}</code> convention.</td>
+</tr>
+<tr>
+<td>Tenant resolution</td>
+<td>Middleware step that reads <code>X-Tenant-Slug</code>, loads the tenant, and stores the current tenant in <code>ITenantContext</code>.</td>
+</tr>
+<tr>
+<td>Provisioning workflow</td>
+<td>Infrastructure workflow that creates the tenant database and applies tenant migrations.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-layout">Project Layout</h2>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Code7Dev.Organizor.Api</code></td>
+<td>ASP.NET Core host, controllers, DTOs, mappers, middleware, OpenAPI/Scalar, health checks, CORS, and logging setup.</td>
+</tr>
+<tr>
+<td><code>Code7Dev.Organizor.Application</code></td>
+<td>Tenant service contracts, tenant models, onboarding, lifecycle, upgrade, and catalog-facing application logic.</td>
+</tr>
+<tr>
+<td><code>Code7Dev.Organizor.Domain</code></td>
+<td>Tenant entity and <code>TenantStatus</code> enum.</td>
+</tr>
+<tr>
+<td><code>Code7Dev.Organizor.Infrastructure</code></td>
+<td>EF Core contexts, repository implementation, PostgreSQL connection string building, database creation/deletion, migration, and tenant context storage.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generated-reference">Generated Reference</h2>
+<p>DocFX builds API reference pages from the C# projects into the <code>api</code> section. Use those pages for class, interface, and method signatures, and use these articles for workflow-level documentation.</p>
 
 </article>
 
