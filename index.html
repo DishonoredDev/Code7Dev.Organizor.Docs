@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Organizor API | Organizor ">
       
-      
-      <link rel="icon" href="favicon.ico">
+      <meta name="description" content="Professional documentation for Organizor, a multi-tenant ASP.NET Core API for tenant provisioning, lifecycle management, and per-tenant database resolution.">
+      <link rel="icon" href="images/logo.svg">
       <link rel="stylesheet" href="public/docfx.min.css">
       <link rel="stylesheet" href="public/main.css">
       <meta name="docfx:navrel" content="toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="index.html">
-            <img id="logo" class="svg" src="logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,14 +74,92 @@
 <h1 id="organizor-api">Organizor API</h1>
 
 <p>Organizor is a multi-tenant ASP.NET Core API for creating, provisioning, resolving, upgrading, and deleting tenant environments.</p>
-<p>The solution is split into four projects:</p>
+<h2 id="documentation-map">Documentation Map</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="articles/getting-started.html">Getting Started</a></td>
+<td>Running the API locally and building the documentation.</td>
+</tr>
+<tr>
+<td><a href="articles/architecture.html">Architecture</a></td>
+<td>Understanding the API, application, domain, and infrastructure layers.</td>
+</tr>
+<tr>
+<td><a href="articles/tenancy.html">Tenancy</a></td>
+<td>Tenant catalog, tenant resolution, provisioning, and database-per-tenant behavior.</td>
+</tr>
+<tr>
+<td><a href="articles/api.html">API</a></td>
+<td>Public tenant catalog routes, response shapes, status codes, and client examples.</td>
+</tr>
+<tr>
+<td><a href="articles/errors-and-observability.html">Errors and Observability</a></td>
+<td>Correlation IDs, error responses, and logging context.</td>
+</tr>
+<tr>
+<td><a href="articles/database-provisioning.html">Database Provisioning</a></td>
+<td>Catalog database, tenant databases, PostgreSQL permissions, extensions, and migrations.</td>
+</tr>
+<tr>
+<td><a href="articles/configuration.html">Configuration</a></td>
+<td>Connection strings, PostgreSQL settings, logging, CORS, OpenAPI, and Scalar.</td>
+</tr>
+<tr>
+<td><a href="articles/security.html">Security</a></td>
+<td>CORS, admin route exposure, error detail, and destructive operation notes.</td>
+</tr>
+<tr>
+<td><a href="articles/internal-operations.html">Internal Operations</a></td>
+<td>Admin routes, tenant onboarding, upgrades, deletion, documentation deployment, and sitemap output.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="solution-structure">Solution Structure</h2>
 <ul>
 <li><code>Code7Dev.Organizor.Api</code> hosts the HTTP API, middleware, OpenAPI/Scalar setup, health checks, CORS, and logging pipeline.</li>
 <li><code>Code7Dev.Organizor.Application</code> contains tenant use cases and service contracts.</li>
 <li><code>Code7Dev.Organizor.Domain</code> contains the tenant aggregate and lifecycle status.</li>
 <li><code>Code7Dev.Organizor.Infrastructure</code> contains EF Core persistence, PostgreSQL database provisioning, tenant database resolution, and migration support.</li>
 </ul>
-<p>Start with the <a href="articles/introduction.html">overview</a>, then use the <a href="articles/api.html">API guide</a> and the generated API reference available from the API navigation tab when working with the code.</p>
+<h2 id="runtime-surface">Runtime Surface</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/v1/tenants</code></td>
+<td>Public tenant catalog operations.</td>
+</tr>
+<tr>
+<td><code>/api/admin/tenants</code></td>
+<td>Internal tenant onboarding, upgrades, and deletion operations.</td>
+</tr>
+<tr>
+<td><code>/health</code></td>
+<td>Health checks.</td>
+</tr>
+<tr>
+<td><code>/openapi/v1.json</code></td>
+<td>OpenAPI document in development.</td>
+</tr>
+<tr>
+<td><code>/scalar</code></td>
+<td>Scalar API reference in development.</td>
+</tr>
+</tbody>
+</table>
+<p>Start with the <a href="articles/introduction.html">overview</a>, then use the <a href="articles/api.html">API guide</a>, <a href="articles/internal-operations.html">internal operations guide</a>, and the generated API reference available from the API navigation tab when working with the code or IDE AI tooling.</p>
 
 </article>
 

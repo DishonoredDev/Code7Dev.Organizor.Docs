@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ITenantService | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Provides public tenant catalog use cases.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService" class="text-break">
-Interface ITenantService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Interface ITenantService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Application.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides public tenant catalog use cases.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,10 +125,11 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_CreateAsync_Code7Dev_Organizor_Application_Tenants_Models_TenantCreateModel_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.CreateAsync(Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel)">
   CreateAsync(TenantCreateModel)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a tenant catalog record without provisioning a database.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -137,13 +139,15 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>model</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html">TenantCreateModel</a></dt>
-    <dd></dd>
+    <dd><p>Tenant creation input.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html">TenantModel</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Created tenant metadata.</p>
+</dd>
   </dl>
 
 
@@ -160,10 +164,11 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync">
   GetAllAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Lists non-deleted tenants.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -174,7 +179,8 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html">TenantModel</a>&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>Visible tenant metadata.</p>
+</dd>
   </dl>
 
 
@@ -191,10 +197,11 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetBySlugAsync_System_String_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetBySlugAsync(System.String)">
   GetBySlugAsync(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a non-deleted tenant by slug.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -204,13 +211,15 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>slug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Tenant slug.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html">TenantModel</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Tenant metadata when found; otherwise, null.</p>
+</dd>
   </dl>
 
 
@@ -227,7 +236,7 @@ Interface ITenantService  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

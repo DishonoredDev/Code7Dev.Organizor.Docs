@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Getting Started | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Local setup, runtime prerequisites, development endpoints, and DocFX build steps for Organizor.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,6 +99,25 @@
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
 </code></pre>
+<p>Development launch profiles expose:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http</code></td>
+<td><code>http://localhost:5100</code></td>
+</tr>
+<tr>
+<td><code>https</code></td>
+<td><code>https://localhost:7184</code> and <code>http://localhost:5100</code></td>
+</tr>
+</tbody>
+</table>
 <p>On startup the API:</p>
 <ol>
 <li>configures Serilog;</li>
@@ -130,6 +149,13 @@
 </tr>
 </tbody>
 </table>
+<p>Example tenant catalog request:</p>
+<pre><code class="lang-powershell">Invoke-RestMethod `
+  -Method Post `
+  -Uri &quot;http://localhost:5100/api/v1/tenants&quot; `
+  -ContentType &quot;application/json&quot; `
+  -Body '{&quot;name&quot;:&quot;Acme&quot;,&quot;slug&quot;:&quot;acme&quot;,&quot;culture&quot;:&quot;en-US&quot;}'
+</code></pre>
 <h2 id="build-the-documentation">Build the Documentation</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json

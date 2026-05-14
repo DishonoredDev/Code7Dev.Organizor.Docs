@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/sitemap.xml

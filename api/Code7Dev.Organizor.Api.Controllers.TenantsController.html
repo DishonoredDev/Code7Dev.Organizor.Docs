@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class TenantsController | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Exposes public tenant catalog operations.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Api_Controllers_TenantsController" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController" class="text-break">
-Class TenantsController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class TenantsController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class TenantsController  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Api.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Exposes public tenant catalog operations.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -674,6 +675,9 @@ public class TenantsController : ControllerBase</code></pre>
 
 
 
+  <h2 id="Code7Dev_Organizor_Api_Controllers_TenantsController_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>These endpoints manage catalog records only. Creating a tenant through this controller does not provision the tenant database.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -684,7 +688,7 @@ public class TenantsController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)">
   TenantsController(ITenantService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -719,10 +723,11 @@ public class TenantsController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_Create_Code7Dev_Organizor_Api_Mappers_DTO_TenantRequestDto_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.Create(Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto)">
   Create(TenantRequestDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a tenant catalog record with a pending lifecycle status.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -733,13 +738,15 @@ public Task&lt;IActionResult&gt; Create(TenantRequestDto request)</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html">TenantRequestDto</a></dt>
-    <dd></dd>
+    <dd><p>Tenant name, slug, and optional culture metadata from the API client.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The created tenant catalog record.</p>
+</dd>
   </dl>
 
 
@@ -756,10 +763,11 @@ public Task&lt;IActionResult&gt; Create(TenantRequestDto request)</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetAll" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetAll">
   GetAll()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Lists tenant catalog records that have not been soft-deleted.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -771,7 +779,8 @@ public Task&lt;IActionResult&gt; GetAll()</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>All visible tenant catalog records.</p>
+</dd>
   </dl>
 
 
@@ -788,10 +797,11 @@ public Task&lt;IActionResult&gt; GetAll()</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetBySlug_System_String_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetBySlug(System.String)">
   GetBySlug(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an active, non-deleted tenant catalog record by slug.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -802,13 +812,15 @@ public Task&lt;IActionResult&gt; GetBySlug(string slug)</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>slug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Lowercase tenant slug used as the tenant's public identifier.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The tenant when found; otherwise, a 404 response.</p>
+</dd>
   </dl>
 
 
@@ -825,7 +837,7 @@ public Task&lt;IActionResult&gt; GetBySlug(string slug)</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

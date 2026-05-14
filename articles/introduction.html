@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Introduction | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Overview of Organizor concepts, project layout, tenant lifecycle operations, and generated API reference.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,7 @@
 <p>The current implementation focuses on tenant lifecycle operations:</p>
 <ul>
 <li>creating tenant catalog records;</li>
-<li>onboarding tenants by creating a tenant database and applying migrations;</li>
+<li>onboarding tenants by creating a tenant database and applying migrations through internal operations;</li>
 <li>resolving tenant context for tenant-scoped requests;</li>
 <li>upgrading tenant databases by running migrations;</li>
 <li>soft-deleting tenants before hard deletion;</li>
@@ -116,7 +116,7 @@
 </tr>
 <tr>
 <td>Tenant database</td>
-<td>PostgreSQL database named from the tenant slug, currently using the <code>tenant_{slug}</code> convention.</td>
+<td>PostgreSQL database named from the tenant slug, currently using the <code>organizor_tenant_{slug}</code> convention.</td>
 </tr>
 <tr>
 <td>Tenant resolution</td>
@@ -156,7 +156,7 @@
 </tbody>
 </table>
 <h2 id="generated-reference">Generated Reference</h2>
-<p>DocFX builds API reference pages from the C# projects into the <code>api</code> section. Use those pages for class, interface, and method signatures, and use these articles for workflow-level documentation.</p>
+<p>DocFX builds API reference pages from the C# projects into the <code>api</code> section. Use those pages for class, interface, and method signatures, and use these articles for workflow-level documentation. The site is intended for internal developers and as an outside-IDE AI reference, so implementation details are documented where they affect behavior.</p>
 
 </article>
 

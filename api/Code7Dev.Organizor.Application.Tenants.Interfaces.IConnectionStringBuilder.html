@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IConnectionStringBuilder | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Builds PostgreSQL connection strings for catalog, admin, and tenant database operations.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder" class="text-break">
-Interface IConnectionStringBuilder  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Interface IConnectionStringBuilder  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
   <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Application.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Builds PostgreSQL connection strings for catalog, admin, and tenant database operations.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,10 +125,11 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder_BuildAdminConnectionString" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.BuildAdminConnectionString">
   BuildAdminConnectionString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Builds an administrative PostgreSQL connection string used for database creation and deletion.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -138,7 +140,8 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>A PostgreSQL connection string targeting the admin database.</p>
+</dd>
   </dl>
 
 
@@ -155,10 +158,11 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder_BuildConnectionString_System_String_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.BuildConnectionString(System.String)">
   BuildConnectionString(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Builds a connection string for a specific PostgreSQL database.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -168,13 +172,15 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>databaseName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Database name to connect to.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>A PostgreSQL connection string.</p>
+</dd>
   </dl>
 
 
@@ -191,10 +197,11 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder_ExtractDatabaseName_System_String_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.ExtractDatabaseName(System.String)">
   ExtractDatabaseName(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Extracts the database name from a PostgreSQL connection string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -204,13 +211,15 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Connection string to inspect.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The database name from the connection string.</p>
+</dd>
   </dl>
 
 
@@ -227,7 +236,7 @@ Interface IConnectionStringBuilder  <a class="header-action link-secondary" titl
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/IConnectionStringBuilder.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

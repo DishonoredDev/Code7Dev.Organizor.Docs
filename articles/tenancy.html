@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Tenancy | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="How Organizor resolves tenants, manages catalog records, creates tenant databases, and handles tenant lifecycle status.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,8 @@
 <li><code>FailureReason</code>;</li>
 <li>soft-delete metadata.</li>
 </ul>
-<p>The database name convention is <code>tenant_{slug}</code>. Slugs are normalized to lowercase before they are stored or used for lookups.</p>
+<p>The database name convention is <code>organizor_tenant_{slug}</code>. Slugs are normalized to lowercase before they are stored or used for lookups.</p>
+<p>Normal catalog reads exclude soft-deleted tenants. Repository methods can include soft-deleted records when an internal operation explicitly asks for them.</p>
 <h2 id="tenant-statuses">Tenant Statuses</h2>
 <table>
 <thead>
@@ -138,9 +139,9 @@
 <ul>
 <li><code>/api/admin</code>;</li>
 <li><code>/api/v1/tenants</code>;</li>
+<li><code>/health</code>;</li>
 <li><code>/scalar</code>;</li>
 <li><code>/openapi</code>;</li>
-<li><code>/health</code> through route behavior;</li>
 <li>root and common static paths.</li>
 </ul>
 <p>For tenant-scoped requests, clients must send:</p>

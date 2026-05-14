@@ -1,4 +1,7 @@
 {
+  "sitemap": {
+    "baseUrl": "https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/"
+  },
   "source_base_path": "/home/runner/work/Code7Dev.Organizor.Api/Code7Dev.Organizor.Api/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -9,6 +12,16 @@
           "relative_path": "index.json"
         }
       }
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": ".nojekyll",
+      "output": {
+        "resource": {
+          "relative_path": ".nojekyll"
+        }
+      },
+      "version": ""
     },
     {
       "type": "ManagedReference",
@@ -22,7 +35,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Controllers.TenantsController",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Controllers.TenantsController.yml\" sourcestartlinenumber=\"1\">Exposes public tenant catalog operations.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -162,7 +175,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.yml\" sourcestartlinenumber=\"1\">API request body for internal tenant onboarding.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -176,7 +189,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.yml\" sourcestartlinenumber=\"1\">API response returned after tenant onboarding.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -190,7 +203,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.yml\" sourcestartlinenumber=\"1\">Request body for creating a tenant catalog record.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -204,7 +217,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.yml\" sourcestartlinenumber=\"1\">Public tenant catalog response.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -218,7 +231,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.yml\" sourcestartlinenumber=\"1\">Request body for soft-deleting a tenant.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,7 +371,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.yml\" sourcestartlinenumber=\"1\">Builds PostgreSQL connection strings for catalog, admin, and tenant database operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.yml\" sourcestartlinenumber=\"1\">Creates and drops physical tenant databases.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -372,7 +399,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.yml\" sourcestartlinenumber=\"1\">Handles tenant deletion lifecycle operations.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -386,7 +413,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.yml\" sourcestartlinenumber=\"1\">Applies EF Core migrations to a tenant database.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -400,7 +427,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.yml\" sourcestartlinenumber=\"1\">Coordinates tenant onboarding from catalog creation through database provisioning.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -414,7 +441,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.yml\" sourcestartlinenumber=\"1\">Provisions tenant infrastructure after the tenant catalog record has been created.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -428,7 +455,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.yml\" sourcestartlinenumber=\"1\">Persists and queries tenant catalog records.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -442,7 +469,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.yml\" sourcestartlinenumber=\"1\">Provides public tenant catalog use cases.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -456,7 +483,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.yml\" sourcestartlinenumber=\"1\">Handles tenant database upgrade operations.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -484,7 +511,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.yml\" sourcestartlinenumber=\"1\">Result of the tenant database provisioning workflow.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -498,7 +525,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.yml\" sourcestartlinenumber=\"1\">Application model used to create a tenant catalog record.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -512,7 +539,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.yml\" sourcestartlinenumber=\"1\">Result of applying migrations to a tenant database.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -526,7 +553,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantModel",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.yml\" sourcestartlinenumber=\"1\">Application-facing tenant catalog projection.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -540,7 +567,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.yml\" sourcestartlinenumber=\"1\">Application request for tenant onboarding.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -554,7 +581,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.yml\" sourcestartlinenumber=\"1\">Result returned after tenant onboarding completes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -610,7 +637,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Domain.Tenants.Tenant",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Domain.Tenants.Tenant.yml\" sourcestartlinenumber=\"1\">Catalog record for a tenant managed by Organizor.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -624,7 +651,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Domain.Tenants.TenantStatus",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.yml\" sourcestartlinenumber=\"1\">Lifecycle status for a tenant catalog record.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -924,11 +951,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -965,10 +992,40 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/database-provisioning.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/database-provisioning.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/errors-and-observability.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/errors-and-observability.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/getting-started.md",
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/internal-operations.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/internal-operations.html"
         }
       },
       "version": ""
@@ -985,10 +1042,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/operations.md",
+      "source_relative_path": "articles/security.md",
       "output": {
         ".html": {
-          "relative_path": "articles/operations.html"
+          "relative_path": "articles/security.html"
         }
       },
       "version": ""
@@ -1007,11 +1064,21 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "articles/toc.html"
-        },
         ".json": {
           "relative_path": "articles/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
         }
       },
       "version": ""
@@ -1027,14 +1094,24 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "robots.txt",
+      "output": {
+        "resource": {
+          "relative_path": "robots.txt"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""

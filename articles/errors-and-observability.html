@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Errors and Observability | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Errors and Observability | Organizor ">
+      
+      <meta name="description" content="Correlation IDs, RFC 7807 error responses, and logging context for Organizor.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/errors-and-observability.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="errors-and-observability">Errors and Observability</h1>
+
+<h2 id="correlation-ids">Correlation IDs</h2>
+<p>Every request passes through <code>CorrelationIdMiddleware</code>.</p>
+<p>Clients can provide a correlation ID:</p>
+<pre><code class="lang-http">X-Correlation-ID: request-123
+</code></pre>
+<p>If the header is missing, the API generates a GUID. The final value is returned in the response header:</p>
+<pre><code class="lang-http">X-Correlation-ID: 2ad71e7a-13cb-4ef8-a4c7-f3a37ad9dc71
+</code></pre>
+<p>The same value is pushed into Serilog context as <code>CorrelationId</code>.</p>
+<h2 id="error-shape">Error Shape</h2>
+<p>Unhandled exceptions are returned as RFC 7807-style problem details:</p>
+<pre><code class="lang-json">{
+  &quot;type&quot;: &quot;https://httpstatuses.com/500&quot;,
+  &quot;title&quot;: &quot;An unexpected error occurred.&quot;,
+  &quot;status&quot;: 500,
+  &quot;detail&quot;: &quot;Exception message&quot;,
+  &quot;instance&quot;: &quot;/api/v1/tenants&quot;,
+  &quot;correlationId&quot;: &quot;2ad71e7a-13cb-4ef8-a4c7-f3a37ad9dc71&quot;
+}
+</code></pre>
+<p>The response content type is:</p>
+<pre><code class="lang-http">application/problem+json
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The current middleware includes exception messages in <code>detail</code>. Treat that as useful during development, but review it before exposing production environments.</p>
+</div>
+<h2 id="tenant-resolution-errors">Tenant Resolution Errors</h2>
+<p>Tenant-scoped requests require:</p>
+<pre><code class="lang-http">X-Tenant-Slug: acme
+</code></pre>
+<p>Missing tenant slug returns <code>400 Bad Request</code> with a plain text response. Unknown tenant slug returns <code>404 Not Found</code> with a plain text response.</p>
+<h2 id="log-context">Log Context</h2>
+<p>Serilog output is configured to include:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CorrelationId</code></td>
+<td>Request header or generated GUID.</td>
+</tr>
+<tr>
+<td><code>Id</code></td>
+<td>Resolved tenant ID.</td>
+</tr>
+<tr>
+<td><code>Slug</code></td>
+<td>Resolved tenant slug.</td>
+</tr>
+<tr>
+<td><code>DatabaseName</code></td>
+<td>Tenant database selection when available.</td>
+</tr>
+<tr>
+<td><code>SourceContext</code></td>
+<td>Logger source in file logs.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/errors-and-observability.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

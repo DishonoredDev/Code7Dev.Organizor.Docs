@@ -733,6 +733,44 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.ExtractDatabaseName
   nameWithType: IConnectionStringBuilder.ExtractDatabaseName
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager
+  name: ITenantDatabaseManager
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager
+  nameWithType: ITenantDatabaseManager
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name: CreateDatabaseAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_CreateDatabaseAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name.vb: CreateDatabaseAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync(String, System.Threading.CancellationToken)
+  nameWithType: ITenantDatabaseManager.CreateDatabaseAsync(string, CancellationToken)
+  nameWithType.vb: ITenantDatabaseManager.CreateDatabaseAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync*
+  name: CreateDatabaseAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_CreateDatabaseAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.CreateDatabaseAsync
+  nameWithType: ITenantDatabaseManager.CreateDatabaseAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name: DropDatabaseAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_DropDatabaseAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DropDatabaseAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync(String, System.Threading.CancellationToken)
+  nameWithType: ITenantDatabaseManager.DropDatabaseAsync(string, CancellationToken)
+  nameWithType.vb: ITenantDatabaseManager.DropDatabaseAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync*
+  name: DropDatabaseAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_DropDatabaseAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync
+  nameWithType: ITenantDatabaseManager.DropDatabaseAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService
   name: ITenantLifecycleService
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html
@@ -1302,13 +1340,13 @@ references:
   commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   nameWithType: TenantLifecycleService
-- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
   name: TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger<TenantLifecycleService>)
-  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_ITenantDatabaseManager_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__
-  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
   name.vb: New(ITenantRepository, ITenantDatabaseManager, ILogger(Of TenantLifecycleService))
-  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.TenantLifecycleService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService>)
-  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService))
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.TenantLifecycleService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService>)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService))
   nameWithType: TenantLifecycleService.TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger<TenantLifecycleService>)
   nameWithType.vb: TenantLifecycleService.New(ITenantRepository, ITenantDatabaseManager, ILogger(Of TenantLifecycleService))
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor*

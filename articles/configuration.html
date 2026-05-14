@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Configuration | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Configuration reference for catalog connection strings, PostgreSQL tenant settings, logging, CORS, OpenAPI, and Scalar.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,10 +126,10 @@
 <h2 id="cors">CORS</h2>
 <p>The API selects a CORS policy by environment:</p>
 <ul>
-<li><code>DevCors</code> in development;</li>
-<li><code>ProdCors</code> outside development.</li>
+<li><code>DevCors</code> in development allows any origin, header, and method.</li>
+<li><code>ProdCors</code> outside development must be configured with explicit allowed origins before browser clients can call the API.</li>
 </ul>
-<p>See <code>CorsExtensions</code> for the concrete allowed origins and policy behavior.</p>
+<p>The current production policy has no origins configured. Treat that as a deployment checklist item, not a complete production setting.</p>
 <h2 id="openapi-and-scalar">OpenAPI and Scalar</h2>
 <p>OpenAPI and Scalar endpoints are mapped only in development. This keeps the production surface smaller while retaining local API exploration during development.</p>
 

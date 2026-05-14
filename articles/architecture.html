@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Architecture | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Layered architecture for the Organizor API, including API, application, domain, infrastructure, and request pipeline responsibilities.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,7 @@
 <h2 id="api-layer">API Layer</h2>
 <p>The API project owns transport concerns:</p>
 <ul>
-<li>controller routes for tenant catalog and tenant operations;</li>
+<li>controller routes for public tenant catalog operations and internal tenant operations;</li>
 <li>request and response DTOs;</li>
 <li>mapping between API DTOs and application models;</li>
 <li>correlation ID, exception handling, and tenant resolution middleware;</li>

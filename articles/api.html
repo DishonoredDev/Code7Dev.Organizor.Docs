@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="API | Organizor ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Public HTTP endpoint guide for tenant catalog operations, response shapes, status codes, and client examples.">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +87,8 @@
         <article data-uid="">
 <h1 id="api">API</h1>
 
-<p>The API exposes platform-level tenant management endpoints. Tenant-scoped endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
+<p>The public API currently exposes tenant catalog endpoints. Tenant-scoped application endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
+<p>Internal tenant administration endpoints are documented separately in <a href="internal-operations.html">Internal Operations</a>.</p>
 <h2 id="tenant-catalog">Tenant Catalog</h2>
 <h3 id="create-tenant">Create Tenant</h3>
 <pre><code class="lang-http">POST /api/v1/tenants
@@ -100,42 +101,65 @@ Content-Type: application/json
 }
 </code></pre>
 <p>Creates a catalog tenant record with <code>Pending</code> status and returns tenant metadata. This route does not provision a tenant database.</p>
+<p>Example response:</p>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
+  &quot;name&quot;: &quot;Acme&quot;,
+  &quot;slug&quot;: &quot;acme&quot;,
+  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
+  &quot;createdAt&quot;: &quot;2026-05-15T10:00:00Z&quot;
+}
+</code></pre>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>Tenant catalog record was created.</td>
+</tr>
+<tr>
+<td><code>500 Internal Server Error</code></td>
+<td>Duplicate slug or unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="get-tenant-by-slug">Get Tenant By Slug</h3>
 <pre><code class="lang-http">GET /api/v1/tenants/acme
 </code></pre>
-<p>Returns a tenant by slug, or <code>404 Not Found</code> when no tenant exists.</p>
+<p>Returns a tenant by slug, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded.</p>
 <h3 id="list-tenants">List Tenants</h3>
 <pre><code class="lang-http">GET /api/v1/tenants
 </code></pre>
-<p>Returns all catalog tenants visible through the tenant repository.</p>
-<h2 id="tenant-operations">Tenant Operations</h2>
-<h3 id="onboard-tenant">Onboard Tenant</h3>
-<pre><code class="lang-http">POST /api/admin/tenants/onboard
-Content-Type: application/json
-
-{
-  &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;
-}
-</code></pre>
-<p>Creates the catalog tenant, creates the tenant database, applies tenant migrations, and marks the tenant <code>Active</code> or <code>Failed</code>.</p>
-<h3 id="upgrade-tenant">Upgrade Tenant</h3>
-<pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
-</code></pre>
-<p>Runs tenant database migrations for the tenant identified by <code>id</code>. Returns a migration result with the database name, success flag, applied migration count, duration, and optional error.</p>
-<h3 id="soft-delete-tenant">Soft Delete Tenant</h3>
-<pre><code class="lang-http">DELETE /api/admin/tenants/{id}
-Content-Type: application/json
-
-{
-  &quot;reason&quot;: &quot;Customer cancellation&quot;
-}
-</code></pre>
-<p>Marks the tenant as deleted in the catalog. The tenant database is not dropped during soft deletion.</p>
-<h3 id="hard-delete-tenant">Hard Delete Tenant</h3>
-<pre><code class="lang-http">POST /api/admin/tenants/{id}/hard-delete
-</code></pre>
-<p>Drops the tenant database and removes the catalog record. The tenant must already be soft-deleted.</p>
+<p>Returns all catalog tenants visible through the tenant repository. Soft-deleted tenants are excluded.</p>
+<h2 id="platform-endpoints">Platform Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/health</code></td>
+<td>Public health check endpoint.</td>
+</tr>
+<tr>
+<td><code>/openapi/v1.json</code></td>
+<td>OpenAPI document in development.</td>
+</tr>
+<tr>
+<td><code>/scalar</code></td>
+<td>Scalar API reference in development.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="local-api-reference">Local API Reference</h2>
 <p>When the API runs in development:</p>
 <ul>

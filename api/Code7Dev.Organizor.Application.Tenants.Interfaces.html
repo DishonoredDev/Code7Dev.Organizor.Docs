@@ -7,7 +7,7 @@
       <meta name="title" content="Namespace Code7Dev.Organizor.Application.Tenants.Interfaces | Organizor ">
       
       
-      <link rel="icon" href="../favicon.ico">
+      <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Organizor">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
             Organizor
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,35 +96,48 @@ Interfaces
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.html">IConnectionStringBuilder</a></dt>
-      <dd></dd>
+      <dd><p>Builds PostgreSQL connection strings for catalog, admin, and tenant database operations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html">ITenantDatabaseManager</a></dt>
+      <dd><p>Creates and drops physical tenant databases.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html">ITenantLifecycleService</a></dt>
-      <dd></dd>
+      <dd><p>Handles tenant deletion lifecycle operations.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html">ITenantMigrator</a></dt>
-      <dd></dd>
+      <dd><p>Applies EF Core migrations to a tenant database.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html">ITenantOnboardingService</a></dt>
-      <dd></dd>
+      <dd><p>Coordinates tenant onboarding from catalog creation through database provisioning.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html">ITenantProvisioningWorkflow</a></dt>
-      <dd></dd>
+      <dd><p>Provisions tenant infrastructure after the tenant catalog record has been created.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html">ITenantRepository</a></dt>
-      <dd></dd>
+      <dd><p>Persists and queries tenant catalog records.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html">ITenantService</a></dt>
-      <dd></dd>
+      <dd><p>Provides public tenant catalog use cases.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html">ITenantUpgradeService</a></dt>
-      <dd></dd>
+      <dd><p>Handles tenant database upgrade operations.</p>
+</dd>
     </dl>
 
 
