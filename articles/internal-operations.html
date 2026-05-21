@@ -140,6 +140,22 @@ Content-Type: application/json
 <pre><code class="lang-http">POST /api/admin/tenants/{id}/hard-delete
 </code></pre>
 <p>Hard deletion requires the tenant to already be soft-deleted. It drops the tenant database and removes the catalog record.</p>
+<h2 id="scheduled-tenant-jobs">Scheduled Tenant Jobs</h2>
+<p>Organizor uses Quartz for recurring background work. During startup, <code>Program.cs</code> resolves <code>TenantJobScheduler</code> and calls <code>ScheduleAllTenantsAsync</code>.</p>
+<p>The scheduler:</p>
+<ol>
+<li>loads all tenants from the catalog database;</li>
+<li>creates a durable <code>SyncTenantJob</code> with job key <code>sync-{tenantId}</code> in the <code>tenant-jobs</code> group;</li>
+<li>stores <code>TenantId</code> and <code>TenantSlug</code> in the Quartz job data map;</li>
+<li>creates a trigger named <code>sync-{tenantId}-trigger</code> in the <code>tenant-triggers</code> group;</li>
+<li>schedules the job when it is new, or replaces and reschedules it when it already exists.</li>
+</ol>
+<p>Current trigger cadence:</p>
+<pre><code class="lang-text">0/10 * * * * ?
+</code></pre>
+<p>That Quartz cron expression runs the tenant synchronization job every 10 seconds.</p>
+<p><code>SyncTenantJob</code> reads the tenant data from the job data map, sets <code>ITenantContext</code>, and then runs tenant-scoped work through <code>OrganizorDbContext</code>. The current implementation logs execution and contains placeholder synchronization work.</p>
+<p>Quartz persistence is stored in the catalog database and uses the PostgreSQL tables added by the <code>AddQuartzTables</code> migration. The API configures Quartz with the <code>Catalog</code> connection string, JSON serialization, and clustering enabled.</p>
 <h2 id="documentation-deployment">Documentation Deployment</h2>
 <p>The repository contains a GitHub Actions workflow at <code>.github/workflows/docfx-deploy.yml</code>.</p>
 <p>On pushes to <code>master</code>, it:</p>

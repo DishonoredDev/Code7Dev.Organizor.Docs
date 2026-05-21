@@ -109,6 +109,16 @@
 }
 </code></pre>
 <p>The admin connection uses the <code>postgres</code> database. Tenant connections use the tenant database name stored in the catalog.</p>
+<h2 id="quartz">Quartz</h2>
+<p>Quartz uses the <code>Catalog</code> connection string for its persistent store. The same catalog database stores tenant records and Quartz scheduler tables.</p>
+<p>The API registration configures:</p>
+<ul>
+<li>PostgreSQL-backed Quartz persistence;</li>
+<li>Newtonsoft JSON serialization for persisted job data;</li>
+<li>clustering support;</li>
+<li>hosted service startup for Quartz background processing.</li>
+</ul>
+<p>Tenant jobs are scheduled on application startup by <code>TenantJobScheduler</code>.</p>
 <h2 id="logging">Logging</h2>
 <p>Serilog is configured in <code>appsettings.json</code>.</p>
 <p>Current sinks:</p>

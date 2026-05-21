@@ -93,6 +93,8 @@
     Api --&gt; Application[Code7Dev.Organizor.Application]
     Application --&gt; Domain[Code7Dev.Organizor.Domain]
     Application --&gt; Infrastructure[Code7Dev.Organizor.Infrastructure]
+    Api --&gt; Quartz[Quartz scheduler]
+    Quartz --&gt; Infrastructure
     Infrastructure --&gt; Catalog[(Catalog database)]
     Infrastructure --&gt; TenantDb[(Tenant databases)]
 </code></pre>
@@ -148,7 +150,12 @@
 <li><code>TenantDatabaseManager</code> creates and drops tenant databases.</li>
 <li><code>TenantMigrator</code> applies EF Core migrations to tenant databases.</li>
 <li><code>TenantProvisioningWorkflow</code> creates a tenant database and applies migrations during onboarding.</li>
+<li><code>TenantJobScheduler</code> schedules tenant-scoped Quartz jobs from catalog tenant records.</li>
+<li><code>TenantAwareJobFactory</code> creates Quartz jobs through dependency injection.</li>
+<li><code>SyncTenantJob</code> runs recurring tenant synchronization work with <code>ITenantContext</code> populated from Quartz job data.</li>
 </ul>
+<h2 id="background-jobs">Background Jobs</h2>
+<p>Quartz is registered by the API layer and backed by persistent PostgreSQL storage in the catalog database. On startup, the application schedules a recurring synchronization job for each catalog tenant. Each job carries the tenant ID and slug in Quartz job data, then sets the tenant context before running tenant database work.</p>
 <h2 id="request-pipeline">Request Pipeline</h2>
 <pre><code class="lang-mermaid">sequenceDiagram
     participant Client

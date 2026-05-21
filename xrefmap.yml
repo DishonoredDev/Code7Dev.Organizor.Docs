@@ -7,6 +7,83 @@ references:
   commentId: N:Code7Dev.Organizor.Api.Controllers
   fullName: Code7Dev.Organizor.Api.Controllers
   nameWithType: Code7Dev.Organizor.Api.Controllers
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController
+  name: TenantOperationsController
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.TenantOperationsController
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController
+  nameWithType: TenantOperationsController
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService)
+  name: TenantOperationsController(ITenantOnboardingService, ITenantUpgradeService, ITenantLifecycleService)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantOnboardingService_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantUpgradeService_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantLifecycleService_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService)
+  name.vb: New(ITenantOnboardingService, ITenantUpgradeService, ITenantLifecycleService)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.TenantOperationsController(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService)
+  nameWithType: TenantOperationsController.TenantOperationsController(ITenantOnboardingService, ITenantUpgradeService, ITenantLifecycleService)
+  nameWithType.vb: TenantOperationsController.New(ITenantOnboardingService, ITenantUpgradeService, ITenantLifecycleService)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor*
+  name: TenantOperationsController
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.TenantOperationsController
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.New
+  nameWithType: TenantOperationsController.TenantOperationsController
+  nameWithType.vb: TenantOperationsController.New
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete(System.Guid)
+  name: HardDelete(Guid)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_HardDelete_System_Guid_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete(System.Guid)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete(System.Guid)
+  nameWithType: TenantOperationsController.HardDelete(Guid)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete*
+  name: HardDelete
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_HardDelete_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete
+  nameWithType: TenantOperationsController.HardDelete
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest)
+  name: Onboard(TenantOnboardingRequest)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Onboard_Code7Dev_Organizor_Application_Tenants_Models_TenantOnboardingRequest_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest)
+  nameWithType: TenantOperationsController.Onboard(TenantOnboardingRequest)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard*
+  name: Onboard
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Onboard_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard
+  nameWithType: TenantOperationsController.Onboard
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest)
+  name: SoftDelete(Guid, TenantSoftDeleteRequest)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_SoftDelete_System_Guid_Code7Dev_Organizor_Api_Mappers_DTO_TenantSoftDeleteRequest_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete(System.Guid, Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest)
+  nameWithType: TenantOperationsController.SoftDelete(Guid, TenantSoftDeleteRequest)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete*
+  name: SoftDelete
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_SoftDelete_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete
+  nameWithType: TenantOperationsController.SoftDelete
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade(System.Guid,System.Threading.CancellationToken)
+  name: Upgrade(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Upgrade_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade(System.Guid, System.Threading.CancellationToken)
+  nameWithType: TenantOperationsController.Upgrade(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade*
+  name: Upgrade
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html#Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Upgrade_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade
+  nameWithType: TenantOperationsController.Upgrade
 - uid: Code7Dev.Organizor.Api.Controllers.TenantsController
   name: TenantsController
   href: api/Code7Dev.Organizor.Api.Controllers.TenantsController.html
@@ -619,15 +696,15 @@ references:
   commentId: T:Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware
   fullName: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware
   nameWithType: ExceptionHandlingMiddleware
-- uid: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware})
-  name: ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>)
-  href: api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html#Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__
-  commentId: M:Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware})
-  name.vb: New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware))
-  fullName: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware>)
-  fullName.vb: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware))
-  nameWithType: ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>)
-  nameWithType.vb: ExceptionHandlingMiddleware.New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware))
+- uid: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware},Microsoft.Extensions.Localization.IStringLocalizer{Code7Dev.Organizor.Api.Resources.Shared})
+  name: ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>, IStringLocalizer<Shared>)
+  href: api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html#Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__Microsoft_Extensions_Localization_IStringLocalizer_Code7Dev_Organizor_Api_Resources_Shared__
+  commentId: M:Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware},Microsoft.Extensions.Localization.IStringLocalizer{Code7Dev.Organizor.Api.Resources.Shared})
+  name.vb: New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware), IStringLocalizer(Of Shared))
+  fullName: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware>, Microsoft.Extensions.Localization.IStringLocalizer<Code7Dev.Organizor.Api.Resources.Shared>)
+  fullName.vb: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware), Microsoft.Extensions.Localization.IStringLocalizer(Of Code7Dev.Organizor.Api.Resources.Shared))
+  nameWithType: ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(RequestDelegate, ILogger<ExceptionHandlingMiddleware>, IStringLocalizer<Shared>)
+  nameWithType.vb: ExceptionHandlingMiddleware.New(RequestDelegate, ILogger(Of ExceptionHandlingMiddleware), IStringLocalizer(Of Shared))
 - uid: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor*
   name: ExceptionHandlingMiddleware
   href: api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html#Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_
@@ -651,6 +728,431 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.Invoke
   nameWithType: ExceptionHandlingMiddleware.Invoke
+- uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware
+  name: TenantResolutionMiddleware
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html
+  commentId: T:Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware
+  nameWithType: TenantResolutionMiddleware
+- uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware})
+  name: TenantResolutionMiddleware(RequestDelegate, ILogger<TenantResolutionMiddleware>)
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantResolutionMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Api_Middleware_TenantResolutionMiddleware__
+  commentId: M:Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware})
+  name.vb: New(RequestDelegate, ILogger(Of TenantResolutionMiddleware))
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.TenantResolutionMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware>)
+  fullName.vb: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware))
+  nameWithType: TenantResolutionMiddleware.TenantResolutionMiddleware(RequestDelegate, ILogger<TenantResolutionMiddleware>)
+  nameWithType.vb: TenantResolutionMiddleware.New(RequestDelegate, ILogger(Of TenantResolutionMiddleware))
+- uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.#ctor*
+  name: TenantResolutionMiddleware
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantResolutionMiddleware__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.TenantResolutionMiddleware
+  fullName.vb: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.New
+  nameWithType: TenantResolutionMiddleware.TenantResolutionMiddleware
+  nameWithType.vb: TenantResolutionMiddleware.New
+- uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  name: InvokeAsync(HttpContext, ITenantRepository, ITenantContext)
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantResolutionMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_
+  commentId: M:Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  nameWithType: TenantResolutionMiddleware.InvokeAsync(HttpContext, ITenantRepository, ITenantContext)
+- uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantResolutionMiddleware_InvokeAsync_
+  commentId: Overload:Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.InvokeAsync
+  nameWithType: TenantResolutionMiddleware.InvokeAsync
+- uid: Code7Dev.Organizor.Api.Resources
+  name: Code7Dev.Organizor.Api.Resources
+  href: api/Code7Dev.Organizor.Api.Resources.html
+  commentId: N:Code7Dev.Organizor.Api.Resources
+  fullName: Code7Dev.Organizor.Api.Resources
+  nameWithType: Code7Dev.Organizor.Api.Resources
+- uid: Code7Dev.Organizor.Api.Resources.Shared
+  name: Shared
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html
+  commentId: T:Code7Dev.Organizor.Api.Resources.Shared
+  fullName: Code7Dev.Organizor.Api.Resources.Shared
+  nameWithType: Shared
+- uid: Code7Dev.Organizor.Api.Resources.Shared.Culture
+  name: Culture
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_Culture
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.Culture
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.Culture
+  nameWithType: Shared.Culture
+- uid: Code7Dev.Organizor.Api.Resources.Shared.Culture*
+  name: Culture
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_Culture_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.Culture
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.Culture
+  nameWithType: Shared.Culture
+- uid: Code7Dev.Organizor.Api.Resources.Shared.ResourceManager
+  name: ResourceManager
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_ResourceManager
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.ResourceManager
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.ResourceManager
+  nameWithType: Shared.ResourceManager
+- uid: Code7Dev.Organizor.Api.Resources.Shared.ResourceManager*
+  name: ResourceManager
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_ResourceManager_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.ResourceManager
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.ResourceManager
+  nameWithType: Shared.ResourceManager
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS
+  name: TENANT_ALREADY_EXISTS
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_ALREADY_EXISTS
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS
+  nameWithType: Shared.TENANT_ALREADY_EXISTS
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS*
+  name: TENANT_ALREADY_EXISTS
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_ALREADY_EXISTS_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_ALREADY_EXISTS
+  nameWithType: Shared.TENANT_ALREADY_EXISTS
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG
+  name: TENANT_INVALID_SLUG
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_INVALID_SLUG
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG
+  nameWithType: Shared.TENANT_INVALID_SLUG
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG*
+  name: TENANT_INVALID_SLUG
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_INVALID_SLUG_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_INVALID_SLUG
+  nameWithType: Shared.TENANT_INVALID_SLUG
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED
+  name: TENANT_MIGRATION_FAILED
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_MIGRATION_FAILED
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED
+  nameWithType: Shared.TENANT_MIGRATION_FAILED
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED*
+  name: TENANT_MIGRATION_FAILED
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_MIGRATION_FAILED_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MIGRATION_FAILED
+  nameWithType: Shared.TENANT_MIGRATION_FAILED
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+  name: TENANT_MUST_BE_SOFT_DELETED_FIRST
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_MUST_BE_SOFT_DELETED_FIRST
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+  nameWithType: Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST*
+  name: TENANT_MUST_BE_SOFT_DELETED_FIRST
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_MUST_BE_SOFT_DELETED_FIRST_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+  nameWithType: Shared.TENANT_MUST_BE_SOFT_DELETED_FIRST
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND
+  name: TENANT_NOT_FOUND
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_NOT_FOUND
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND
+  nameWithType: Shared.TENANT_NOT_FOUND
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND*
+  name: TENANT_NOT_FOUND
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_NOT_FOUND_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_NOT_FOUND
+  nameWithType: Shared.TENANT_NOT_FOUND
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED
+  name: TENANT_PROVISIONING_FAILED
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_PROVISIONING_FAILED
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED
+  nameWithType: Shared.TENANT_PROVISIONING_FAILED
+- uid: Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED*
+  name: TENANT_PROVISIONING_FAILED
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_TENANT_PROVISIONING_FAILED_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.TENANT_PROVISIONING_FAILED
+  nameWithType: Shared.TENANT_PROVISIONING_FAILED
+- uid: Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR
+  name: UNEXPECTED_ERROR
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_UNEXPECTED_ERROR
+  commentId: P:Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR
+  nameWithType: Shared.UNEXPECTED_ERROR
+- uid: Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR*
+  name: UNEXPECTED_ERROR
+  href: api/Code7Dev.Organizor.Api.Resources.Shared.html#Code7Dev_Organizor_Api_Resources_Shared_UNEXPECTED_ERROR_
+  commentId: Overload:Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Resources.Shared.UNEXPECTED_ERROR
+  nameWithType: Shared.UNEXPECTED_ERROR
+- uid: Code7Dev.Organizor.Application.Common
+  name: Code7Dev.Organizor.Application.Common
+  href: api/Code7Dev.Organizor.Application.Common.html
+  commentId: N:Code7Dev.Organizor.Application.Common
+  fullName: Code7Dev.Organizor.Application.Common
+  nameWithType: Code7Dev.Organizor.Application.Common
+- uid: Code7Dev.Organizor.Application.Common.ApiException
+  name: ApiException
+  href: api/Code7Dev.Organizor.Application.Common.ApiException.html
+  commentId: T:Code7Dev.Organizor.Application.Common.ApiException
+  fullName: Code7Dev.Organizor.Application.Common.ApiException
+  nameWithType: ApiException
+- uid: Code7Dev.Organizor.Application.Common.ApiException.#ctor(System.String)
+  name: ApiException(string)
+  href: api/Code7Dev.Organizor.Application.Common.ApiException.html#Code7Dev_Organizor_Application_Common_ApiException__ctor_System_String_
+  commentId: M:Code7Dev.Organizor.Application.Common.ApiException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Code7Dev.Organizor.Application.Common.ApiException.ApiException(string)
+  fullName.vb: Code7Dev.Organizor.Application.Common.ApiException.New(String)
+  nameWithType: ApiException.ApiException(string)
+  nameWithType.vb: ApiException.New(String)
+- uid: Code7Dev.Organizor.Application.Common.ApiException.#ctor*
+  name: ApiException
+  href: api/Code7Dev.Organizor.Application.Common.ApiException.html#Code7Dev_Organizor_Application_Common_ApiException__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.ApiException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Common.ApiException.ApiException
+  fullName.vb: Code7Dev.Organizor.Application.Common.ApiException.New
+  nameWithType: ApiException.ApiException
+  nameWithType.vb: ApiException.New
+- uid: Code7Dev.Organizor.Application.Common.ApiException.ErrorCode
+  name: ErrorCode
+  href: api/Code7Dev.Organizor.Application.Common.ApiException.html#Code7Dev_Organizor_Application_Common_ApiException_ErrorCode
+  commentId: P:Code7Dev.Organizor.Application.Common.ApiException.ErrorCode
+  fullName: Code7Dev.Organizor.Application.Common.ApiException.ErrorCode
+  nameWithType: ApiException.ErrorCode
+- uid: Code7Dev.Organizor.Application.Common.ApiException.ErrorCode*
+  name: ErrorCode
+  href: api/Code7Dev.Organizor.Application.Common.ApiException.html#Code7Dev_Organizor_Application_Common_ApiException_ErrorCode_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.ApiException.ErrorCode
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.ApiException.ErrorCode
+  nameWithType: ApiException.ErrorCode
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes
+  name: ErrorCodes
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.html
+  commentId: T:Code7Dev.Organizor.Application.Common.ErrorCodes
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes
+  nameWithType: ErrorCodes
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.General
+  name: ErrorCodes.General
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.General.html
+  commentId: T:Code7Dev.Organizor.Application.Common.ErrorCodes.General
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.General
+  nameWithType: ErrorCodes.General
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.General.Unexpected
+  name: Unexpected
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.General.html#Code7Dev_Organizor_Application_Common_ErrorCodes_General_Unexpected
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.General.Unexpected
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.General.Unexpected
+  nameWithType: ErrorCodes.General.Unexpected
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant
+  name: ErrorCodes.Tenant
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html
+  commentId: T:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant
+  nameWithType: ErrorCodes.Tenant
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.AlreadyExists
+  name: AlreadyExists
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_AlreadyExists
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.AlreadyExists
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.AlreadyExists
+  nameWithType: ErrorCodes.Tenant.AlreadyExists
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidSlug
+  name: InvalidSlug
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_InvalidSlug
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidSlug
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidSlug
+  nameWithType: ErrorCodes.Tenant.InvalidSlug
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MigrationFailed
+  name: MigrationFailed
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_MigrationFailed
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MigrationFailed
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MigrationFailed
+  nameWithType: ErrorCodes.Tenant.MigrationFailed
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MustBeSoftDeletedFirst
+  name: MustBeSoftDeletedFirst
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_MustBeSoftDeletedFirst
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MustBeSoftDeletedFirst
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.MustBeSoftDeletedFirst
+  nameWithType: ErrorCodes.Tenant.MustBeSoftDeletedFirst
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.NotFound
+  name: NotFound
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_NotFound
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.NotFound
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.NotFound
+  nameWithType: ErrorCodes.Tenant.NotFound
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.ProvisioningFailed
+  name: ProvisioningFailed
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_ProvisioningFailed
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.ProvisioningFailed
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.ProvisioningFailed
+  nameWithType: ErrorCodes.Tenant.ProvisioningFailed
+- uid: Code7Dev.Organizor.Application.Common.Result
+  name: Result
+  href: api/Code7Dev.Organizor.Application.Common.Result.html
+  commentId: T:Code7Dev.Organizor.Application.Common.Result
+  fullName: Code7Dev.Organizor.Application.Common.Result
+  nameWithType: Result
+- uid: Code7Dev.Organizor.Application.Common.Result.#ctor(System.Boolean,System.String)
+  name: Result(bool, string)
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result__ctor_System_Boolean_System_String_
+  commentId: M:Code7Dev.Organizor.Application.Common.Result.#ctor(System.Boolean,System.String)
+  name.vb: New(Boolean, String)
+  fullName: Code7Dev.Organizor.Application.Common.Result.Result(bool, string)
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result.New(Boolean, String)
+  nameWithType: Result.Result(bool, string)
+  nameWithType.vb: Result.New(Boolean, String)
+- uid: Code7Dev.Organizor.Application.Common.Result.#ctor*
+  name: Result
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Common.Result.Result
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result.New
+  nameWithType: Result.Result
+  nameWithType.vb: Result.New
+- uid: Code7Dev.Organizor.Application.Common.Result.ErrorCode
+  name: ErrorCode
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_ErrorCode
+  commentId: P:Code7Dev.Organizor.Application.Common.Result.ErrorCode
+  fullName: Code7Dev.Organizor.Application.Common.Result.ErrorCode
+  nameWithType: Result.ErrorCode
+- uid: Code7Dev.Organizor.Application.Common.Result.ErrorCode*
+  name: ErrorCode
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_ErrorCode_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.ErrorCode
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result.ErrorCode
+  nameWithType: Result.ErrorCode
+- uid: Code7Dev.Organizor.Application.Common.Result.Fail(System.String)
+  name: Fail(string)
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_Fail_System_String_
+  commentId: M:Code7Dev.Organizor.Application.Common.Result.Fail(System.String)
+  name.vb: Fail(String)
+  fullName: Code7Dev.Organizor.Application.Common.Result.Fail(string)
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result.Fail(String)
+  nameWithType: Result.Fail(string)
+  nameWithType.vb: Result.Fail(String)
+- uid: Code7Dev.Organizor.Application.Common.Result.Fail*
+  name: Fail
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_Fail_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.Fail
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result.Fail
+  nameWithType: Result.Fail
+- uid: Code7Dev.Organizor.Application.Common.Result.IsSuccess
+  name: IsSuccess
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_IsSuccess
+  commentId: P:Code7Dev.Organizor.Application.Common.Result.IsSuccess
+  fullName: Code7Dev.Organizor.Application.Common.Result.IsSuccess
+  nameWithType: Result.IsSuccess
+- uid: Code7Dev.Organizor.Application.Common.Result.IsSuccess*
+  name: IsSuccess
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_IsSuccess_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.IsSuccess
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result.IsSuccess
+  nameWithType: Result.IsSuccess
+- uid: Code7Dev.Organizor.Application.Common.Result.Success
+  name: Success()
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_Success
+  commentId: M:Code7Dev.Organizor.Application.Common.Result.Success
+  fullName: Code7Dev.Organizor.Application.Common.Result.Success()
+  nameWithType: Result.Success()
+- uid: Code7Dev.Organizor.Application.Common.Result.Success*
+  name: Success
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_Success_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.Success
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result.Success
+  nameWithType: Result.Success
+- uid: Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed
+  name: ThrowIfFailed()
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_ThrowIfFailed
+  commentId: M:Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed
+  fullName: Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed()
+  nameWithType: Result.ThrowIfFailed()
+- uid: Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed*
+  name: ThrowIfFailed
+  href: api/Code7Dev.Organizor.Application.Common.Result.html#Code7Dev_Organizor_Application_Common_Result_ThrowIfFailed_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result.ThrowIfFailed
+  nameWithType: Result.ThrowIfFailed
+- uid: Code7Dev.Organizor.Application.Common.Result`1
+  name: Result<T>
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html
+  commentId: T:Code7Dev.Organizor.Application.Common.Result`1
+  name.vb: Result(Of T)
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T)
+  nameWithType: Result<T>
+  nameWithType.vb: Result(Of T)
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Fail(System.String)
+  name: Fail(string)
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Fail_System_String_
+  commentId: M:Code7Dev.Organizor.Application.Common.Result`1.Fail(System.String)
+  name.vb: Fail(String)
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Fail(string)
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Fail(String)
+  nameWithType: Result<T>.Fail(string)
+  nameWithType.vb: Result(Of T).Fail(String)
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Fail*
+  name: Fail
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Fail_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result`1.Fail
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Fail
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Fail
+  nameWithType: Result<T>.Fail
+  nameWithType.vb: Result(Of T).Fail
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Success(`0)
+  name: Success(T)
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Success__0_
+  commentId: M:Code7Dev.Organizor.Application.Common.Result`1.Success(`0)
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Success(T)
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Success(T)
+  nameWithType: Result<T>.Success(T)
+  nameWithType.vb: Result(Of T).Success(T)
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Success*
+  name: Success
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Success_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result`1.Success
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Success
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Success
+  nameWithType: Result<T>.Success
+  nameWithType.vb: Result(Of T).Success
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Value
+  name: Value
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Value
+  commentId: P:Code7Dev.Organizor.Application.Common.Result`1.Value
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Value
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Value
+  nameWithType: Result<T>.Value
+  nameWithType.vb: Result(Of T).Value
+- uid: Code7Dev.Organizor.Application.Common.Result`1.Value*
+  name: Value
+  href: api/Code7Dev.Organizor.Application.Common.Result-1.html#Code7Dev_Organizor_Application_Common_Result_1_Value_
+  commentId: Overload:Code7Dev.Organizor.Application.Common.Result`1.Value
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Common.Result<T>.Value
+  fullName.vb: Code7Dev.Organizor.Application.Common.Result(Of T).Value
+  nameWithType: Result<T>.Value
+  nameWithType.vb: Result(Of T).Value
 - uid: Code7Dev.Organizor.Application.Extensions
   name: Code7Dev.Organizor.Application.Extensions
   href: api/Code7Dev.Organizor.Application.Extensions.html
@@ -676,6 +1178,50 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Extensions.DependencyInjection.AddApplication
   nameWithType: DependencyInjection.AddApplication
+- uid: Code7Dev.Organizor.Application.Jobs
+  name: Code7Dev.Organizor.Application.Jobs
+  href: api/Code7Dev.Organizor.Application.Jobs.html
+  commentId: N:Code7Dev.Organizor.Application.Jobs
+  fullName: Code7Dev.Organizor.Application.Jobs
+  nameWithType: Code7Dev.Organizor.Application.Jobs
+- uid: Code7Dev.Organizor.Application.Jobs.TestEmailJob
+  name: TestEmailJob
+  href: api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html
+  commentId: T:Code7Dev.Organizor.Application.Jobs.TestEmailJob
+  fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob
+  nameWithType: TestEmailJob
+- uid: Code7Dev.Organizor.Application.Jobs.TestEmailJob.#ctor(Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Jobs.TestEmailJob})
+  name: TestEmailJob(ILogger<TestEmailJob>)
+  href: api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html#Code7Dev_Organizor_Application_Jobs_TestEmailJob__ctor_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Jobs_TestEmailJob__
+  commentId: M:Code7Dev.Organizor.Application.Jobs.TestEmailJob.#ctor(Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Jobs.TestEmailJob})
+  name.vb: New(ILogger(Of TestEmailJob))
+  fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob.TestEmailJob(Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Jobs.TestEmailJob>)
+  fullName.vb: Code7Dev.Organizor.Application.Jobs.TestEmailJob.New(Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Jobs.TestEmailJob))
+  nameWithType: TestEmailJob.TestEmailJob(ILogger<TestEmailJob>)
+  nameWithType.vb: TestEmailJob.New(ILogger(Of TestEmailJob))
+- uid: Code7Dev.Organizor.Application.Jobs.TestEmailJob.#ctor*
+  name: TestEmailJob
+  href: api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html#Code7Dev_Organizor_Application_Jobs_TestEmailJob__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Jobs.TestEmailJob.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob.TestEmailJob
+  fullName.vb: Code7Dev.Organizor.Application.Jobs.TestEmailJob.New
+  nameWithType: TestEmailJob.TestEmailJob
+  nameWithType.vb: TestEmailJob.New
+- uid: Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute(Quartz.IJobExecutionContext)
+  name: Execute(IJobExecutionContext)
+  href: api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html#Code7Dev_Organizor_Application_Jobs_TestEmailJob_Execute_Quartz_IJobExecutionContext_
+  commentId: M:Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute(Quartz.IJobExecutionContext)
+  fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute(Quartz.IJobExecutionContext)
+  nameWithType: TestEmailJob.Execute(IJobExecutionContext)
+- uid: Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute*
+  name: Execute
+  href: api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html#Code7Dev_Organizor_Application_Jobs_TestEmailJob_Execute_
+  commentId: Overload:Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute
+  nameWithType: TestEmailJob.Execute
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces
   name: Code7Dev.Organizor.Application.Tenants.Interfaces
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.html
@@ -1388,6 +1934,82 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.SoftDeleteAsync
   nameWithType: TenantLifecycleService.SoftDeleteAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService
+  name: TenantOnboardingService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService
+  nameWithType: TenantOnboardingService
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
+  name: TenantOnboardingService(ITenantRepository, ITenantProvisioningWorkflow)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantProvisioningWorkflow_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
+  name.vb: New(ITenantRepository, ITenantProvisioningWorkflow)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.TenantOnboardingService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
+  nameWithType: TenantOnboardingService.TenantOnboardingService(ITenantRepository, ITenantProvisioningWorkflow)
+  nameWithType.vb: TenantOnboardingService.New(ITenantRepository, ITenantProvisioningWorkflow)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor*
+  name: TenantOnboardingService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.TenantOnboardingService
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.New
+  nameWithType: TenantOnboardingService.TenantOnboardingService
+  nameWithType.vb: TenantOnboardingService.New
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest,System.Threading.CancellationToken)
+  name: OnboardAsync(TenantOnboardingRequest, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService_OnboardAsync_Code7Dev_Organizor_Application_Tenants_Models_TenantOnboardingRequest_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest, System.Threading.CancellationToken)
+  nameWithType: TenantOnboardingService.OnboardAsync(TenantOnboardingRequest, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync*
+  name: OnboardAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService_OnboardAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync
+  nameWithType: TenantOnboardingService.OnboardAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService
+  name: TenantUpgradeService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService
+  nameWithType: TenantUpgradeService
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService})
+  name: TenantUpgradeService(ITenantRepository, ITenantMigrator, ILogger<TenantUpgradeService>)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantUpgradeService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantMigrator_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantUpgradeService__
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService})
+  name.vb: New(ITenantRepository, ITenantMigrator, ILogger(Of TenantUpgradeService))
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.TenantUpgradeService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService>)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService))
+  nameWithType: TenantUpgradeService.TenantUpgradeService(ITenantRepository, ITenantMigrator, ILogger<TenantUpgradeService>)
+  nameWithType.vb: TenantUpgradeService.New(ITenantRepository, ITenantMigrator, ILogger(Of TenantUpgradeService))
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.#ctor*
+  name: TenantUpgradeService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantUpgradeService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.TenantUpgradeService
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.New
+  nameWithType: TenantUpgradeService.TenantUpgradeService
+  nameWithType.vb: TenantUpgradeService.New
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync(System.Guid,System.Threading.CancellationToken)
+  name: UpgradeAsync(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantUpgradeService_UpgradeAsync_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync(System.Guid, System.Threading.CancellationToken)
+  nameWithType: TenantUpgradeService.UpgradeAsync(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync*
+  name: UpgradeAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantUpgradeService_UpgradeAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.UpgradeAsync
+  nameWithType: TenantUpgradeService.UpgradeAsync
 - uid: Code7Dev.Organizor.Domain.Tenants
   name: Code7Dev.Organizor.Domain.Tenants
   href: api/Code7Dev.Organizor.Domain.Tenants.html
@@ -1636,6 +2258,57 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.AddInfrastructure
   nameWithType: DependencyInjection.AddInfrastructure
+- uid: Code7Dev.Organizor.Infrastructure.Migrations
+  name: Code7Dev.Organizor.Infrastructure.Migrations
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Migrations
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations
+  nameWithType: Code7Dev.Organizor.Infrastructure.Migrations
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema
+  name: AddQuartzSchema
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema
+  nameWithType: AddQuartzSchema
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddQuartzSchema.BuildTargetModel(ModelBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_BuildTargetModel_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.BuildTargetModel
+  nameWithType: AddQuartzSchema.BuildTargetModel
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddQuartzSchema.Down(MigrationBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down*
+  name: Down
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_Down_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Down
+  nameWithType: AddQuartzSchema.Down
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddQuartzSchema.Up(MigrationBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up*
+  name: Up
+  href: api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html#Code7Dev_Organizor_Infrastructure_Migrations_AddQuartzSchema_Up_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.Up
+  nameWithType: AddQuartzSchema.Up
 - uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog
   name: Code7Dev.Organizor.Infrastructure.Persistence.Catalog
   href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.html
@@ -1693,31 +2366,6 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.Tenants
   nameWithType: CatalogDbContext.Tenants
-- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions
-  name: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions
-  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.html
-  commentId: N:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions
-  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions
-  nameWithType: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions
-- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed
-  name: CatalogDbContextSeed
-  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html
-  commentId: T:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed
-  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed
-  nameWithType: CatalogDbContextSeed
-- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext)
-  name: SeedAsync(CatalogDbContext)
-  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Extensions_CatalogDbContextSeed_SeedAsync_Code7Dev_Organizor_Infrastructure_Persistence_Catalog_CatalogDbContext_
-  commentId: M:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext)
-  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext)
-  nameWithType: CatalogDbContextSeed.SeedAsync(CatalogDbContext)
-- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync*
-  name: SeedAsync
-  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Extensions_CatalogDbContextSeed_SeedAsync_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync
-  isSpec: "True"
-  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.SeedAsync
-  nameWithType: CatalogDbContextSeed.SeedAsync
 - uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations
   name: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations
   href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.html
@@ -1813,6 +2461,145 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.OnModelCreating
   nameWithType: OrganizorDbContext.OnModelCreating
+- uid: Code7Dev.Organizor.Infrastructure.Quartz
+  name: Code7Dev.Organizor.Infrastructure.Quartz
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Quartz
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz
+  nameWithType: Code7Dev.Organizor.Infrastructure.Quartz
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs
+  name: Code7Dev.Organizor.Infrastructure.Quartz.Jobs
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Quartz.Jobs
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs
+  nameWithType: Code7Dev.Organizor.Infrastructure.Quartz.Jobs
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob
+  name: SyncTenantJob
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob
+  nameWithType: SyncTenantJob
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.#ctor(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob})
+  name: SyncTenantJob(ITenantContext, OrganizorDbContext, ILogger<SyncTenantJob>)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html#Code7Dev_Organizor_Infrastructure_Quartz_Jobs_SyncTenantJob__ctor_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Quartz_Jobs_SyncTenantJob__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.#ctor(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob})
+  name.vb: New(ITenantContext, OrganizorDbContext, ILogger(Of SyncTenantJob))
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.SyncTenantJob(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext, Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.New(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext, Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob))
+  nameWithType: SyncTenantJob.SyncTenantJob(ITenantContext, OrganizorDbContext, ILogger<SyncTenantJob>)
+  nameWithType.vb: SyncTenantJob.New(ITenantContext, OrganizorDbContext, ILogger(Of SyncTenantJob))
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.#ctor*
+  name: SyncTenantJob
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html#Code7Dev_Organizor_Infrastructure_Quartz_Jobs_SyncTenantJob__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.SyncTenantJob
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.New
+  nameWithType: SyncTenantJob.SyncTenantJob
+  nameWithType.vb: SyncTenantJob.New
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute(Quartz.IJobExecutionContext)
+  name: Execute(IJobExecutionContext)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html#Code7Dev_Organizor_Infrastructure_Quartz_Jobs_SyncTenantJob_Execute_Quartz_IJobExecutionContext_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute(Quartz.IJobExecutionContext)
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute(Quartz.IJobExecutionContext)
+  nameWithType: SyncTenantJob.Execute(IJobExecutionContext)
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute*
+  name: Execute
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html#Code7Dev_Organizor_Infrastructure_Quartz_Jobs_SyncTenantJob_Execute_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.Execute
+  nameWithType: SyncTenantJob.Execute
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory
+  name: TenantAwareJobFactory
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory
+  nameWithType: TenantAwareJobFactory
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  name: TenantAwareJobFactory(IServiceScopeFactory)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory__ctor_Microsoft_Extensions_DependencyInjection_IServiceScopeFactory_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  name.vb: New(IServiceScopeFactory)
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.TenantAwareJobFactory(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.New(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  nameWithType: TenantAwareJobFactory.TenantAwareJobFactory(IServiceScopeFactory)
+  nameWithType.vb: TenantAwareJobFactory.New(IServiceScopeFactory)
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.#ctor*
+  name: TenantAwareJobFactory
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.TenantAwareJobFactory
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.New
+  nameWithType: TenantAwareJobFactory.TenantAwareJobFactory
+  nameWithType.vb: TenantAwareJobFactory.New
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)
+  name: NewJob(TriggerFiredBundle, IScheduler)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory_NewJob_Quartz_Spi_TriggerFiredBundle_Quartz_IScheduler_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle, Quartz.IScheduler)
+  nameWithType: TenantAwareJobFactory.NewJob(TriggerFiredBundle, IScheduler)
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob*
+  name: NewJob
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory_NewJob_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.NewJob
+  nameWithType: TenantAwareJobFactory.NewJob
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob(Quartz.IJob)
+  name: ReturnJob(IJob)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory_ReturnJob_Quartz_IJob_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob(Quartz.IJob)
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob(Quartz.IJob)
+  nameWithType: TenantAwareJobFactory.ReturnJob(IJob)
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob*
+  name: ReturnJob
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantAwareJobFactory_ReturnJob_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.ReturnJob
+  nameWithType: TenantAwareJobFactory.ReturnJob
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler
+  name: TenantJobScheduler
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler
+  nameWithType: TenantJobScheduler
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.#ctor(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext,Quartz.ISchedulerFactory)
+  name: TenantJobScheduler(CatalogDbContext, ISchedulerFactory)
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantJobScheduler__ctor_Code7Dev_Organizor_Infrastructure_Persistence_Catalog_CatalogDbContext_Quartz_ISchedulerFactory_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.#ctor(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext,Quartz.ISchedulerFactory)
+  name.vb: New(CatalogDbContext, ISchedulerFactory)
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.TenantJobScheduler(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext, Quartz.ISchedulerFactory)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.New(Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext, Quartz.ISchedulerFactory)
+  nameWithType: TenantJobScheduler.TenantJobScheduler(CatalogDbContext, ISchedulerFactory)
+  nameWithType.vb: TenantJobScheduler.New(CatalogDbContext, ISchedulerFactory)
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.#ctor*
+  name: TenantJobScheduler
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantJobScheduler__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.TenantJobScheduler
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.New
+  nameWithType: TenantJobScheduler.TenantJobScheduler
+  nameWithType.vb: TenantJobScheduler.New
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync
+  name: ScheduleAllTenantsAsync()
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantJobScheduler_ScheduleAllTenantsAsync
+  commentId: M:Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync()
+  nameWithType: TenantJobScheduler.ScheduleAllTenantsAsync()
+- uid: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync*
+  name: ScheduleAllTenantsAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html#Code7Dev_Organizor_Infrastructure_Quartz_TenantJobScheduler_ScheduleAllTenantsAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.ScheduleAllTenantsAsync
+  nameWithType: TenantJobScheduler.ScheduleAllTenantsAsync
 - uid: Code7Dev.Organizor.Infrastructure.Tenancy.Helpers
   name: Code7Dev.Organizor.Infrastructure.Tenancy.Helpers
   href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.html
@@ -2057,3 +2844,139 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.ExtractDatabaseName
   nameWithType: ConnectionStringBuilder.ExtractDatabaseName
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager
+  name: TenantDatabaseManager
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager
+  nameWithType: TenantDatabaseManager
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.#ctor(Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager},Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder)
+  name: TenantDatabaseManager(ILogger<TenantDatabaseManager>, IConnectionStringBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager__ctor_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager__Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.#ctor(Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager},Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder)
+  name.vb: New(ILogger(Of TenantDatabaseManager), IConnectionStringBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.TenantDatabaseManager(Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager>, Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.New(Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager), Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder)
+  nameWithType: TenantDatabaseManager.TenantDatabaseManager(ILogger<TenantDatabaseManager>, IConnectionStringBuilder)
+  nameWithType.vb: TenantDatabaseManager.New(ILogger(Of TenantDatabaseManager), IConnectionStringBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.#ctor*
+  name: TenantDatabaseManager
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.TenantDatabaseManager
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.New
+  nameWithType: TenantDatabaseManager.TenantDatabaseManager
+  nameWithType.vb: TenantDatabaseManager.New
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name: CreateDatabaseAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager_CreateDatabaseAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name.vb: CreateDatabaseAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync(String, System.Threading.CancellationToken)
+  nameWithType: TenantDatabaseManager.CreateDatabaseAsync(string, CancellationToken)
+  nameWithType.vb: TenantDatabaseManager.CreateDatabaseAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync*
+  name: CreateDatabaseAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager_CreateDatabaseAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.CreateDatabaseAsync
+  nameWithType: TenantDatabaseManager.CreateDatabaseAsync
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name: DropDatabaseAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager_DropDatabaseAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DropDatabaseAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync(String, System.Threading.CancellationToken)
+  nameWithType: TenantDatabaseManager.DropDatabaseAsync(string, CancellationToken)
+  nameWithType.vb: TenantDatabaseManager.DropDatabaseAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync*
+  name: DropDatabaseAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantDatabaseManager_DropDatabaseAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync
+  nameWithType: TenantDatabaseManager.DropDatabaseAsync
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator
+  name: TenantMigrator
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator
+  nameWithType: TenantMigrator
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator})
+  name: TenantMigrator(IConnectionStringBuilder, ILogger<TenantMigrator>)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantMigrator__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_IConnectionStringBuilder_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantMigrator__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator})
+  name.vb: New(IConnectionStringBuilder, ILogger(Of TenantMigrator))
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.TenantMigrator(Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.New(Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator))
+  nameWithType: TenantMigrator.TenantMigrator(IConnectionStringBuilder, ILogger<TenantMigrator>)
+  nameWithType.vb: TenantMigrator.New(IConnectionStringBuilder, ILogger(Of TenantMigrator))
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.#ctor*
+  name: TenantMigrator
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantMigrator__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.TenantMigrator
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.New
+  nameWithType: TenantMigrator.TenantMigrator
+  nameWithType.vb: TenantMigrator.New
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync(System.String,System.Threading.CancellationToken)
+  name: MigrateAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantMigrator_MigrateAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync(System.String,System.Threading.CancellationToken)
+  name.vb: MigrateAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync(String, System.Threading.CancellationToken)
+  nameWithType: TenantMigrator.MigrateAsync(string, CancellationToken)
+  nameWithType.vb: TenantMigrator.MigrateAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync*
+  name: MigrateAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantMigrator_MigrateAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync
+  nameWithType: TenantMigrator.MigrateAsync
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
+  name: TenantProvisioningWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
+  nameWithType: TenantProvisioningWorkflow
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
+  name: TenantProvisioningWorkflow(ITenantDatabaseManager, ITenantMigrator)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantMigrator_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
+  name.vb: New(ITenantDatabaseManager, ITenantMigrator)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.TenantProvisioningWorkflow(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
+  nameWithType: TenantProvisioningWorkflow.TenantProvisioningWorkflow(ITenantDatabaseManager, ITenantMigrator)
+  nameWithType.vb: TenantProvisioningWorkflow.New(ITenantDatabaseManager, ITenantMigrator)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor*
+  name: TenantProvisioningWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.TenantProvisioningWorkflow
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.New
+  nameWithType: TenantProvisioningWorkflow.TenantProvisioningWorkflow
+  nameWithType.vb: TenantProvisioningWorkflow.New
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  name: ExecuteAsync(Tenant, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
+  nameWithType: TenantProvisioningWorkflow.ExecuteAsync(Tenant, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync
+  nameWithType: TenantProvisioningWorkflow.ExecuteAsync

@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class TenantsController | Organizor </title>
+      <title>Class TenantOperationsController | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class TenantsController | Organizor ">
+      <meta name="title" content="Class TenantOperationsController | Organizor ">
       
-      <meta name="description" content="Exposes public tenant catalog operations.">
+      <meta name="description" content="Exposes internal tenant operations for provisioning, upgrades, and deletion.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Api_Controllers_TenantsController.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Api.Controllers.TenantsController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Api_Controllers_TenantOperationsController.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Api.Controllers.TenantOperationsController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController">
+        <article data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController">
 
 
 
-  <h1 id="Code7Dev_Organizor_Api_Controllers_TenantsController" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController" class="text-break">
-Class TenantsController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController" class="text-break">
+Class TenantOperationsController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,14 +97,14 @@ Class TenantsController  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Api.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Exposes public tenant catalog operations.</p>
+  <div class="markdown summary"><p>Exposes internal tenant operations for provisioning, upgrades, and deletion.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ApiController]
-[Route(&quot;api/v1/tenants&quot;)]
-public class TenantsController : ControllerBase</code></pre>
+[Route(&quot;api/admin/tenants&quot;)]
+public class TenantOperationsController : ControllerBase</code></pre>
   </div>
 
 
@@ -115,7 +115,7 @@ public class TenantsController : ControllerBase</code></pre>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controllerbase">ControllerBase</a></div>
-      <div><span class="xref">TenantsController</span></div>
+      <div><span class="xref">TenantOperationsController</span></div>
     </dd>
   </dl>
 
@@ -675,8 +675,8 @@ public class TenantsController : ControllerBase</code></pre>
 
 
 
-  <h2 id="Code7Dev_Organizor_Api_Controllers_TenantsController_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>These endpoints manage catalog records only. Creating a tenant through this controller does not provision the tenant database.</p>
+  <h2 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>These endpoints are intended for internal operators and automation. They should be protected before production use.</p>
 </div>
 
 
@@ -684,23 +684,27 @@ public class TenantsController : ControllerBase</code></pre>
 </h2>
 
 
-  <a id="Code7Dev_Organizor_Api_Controllers_TenantsController__ctor_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.#ctor*"></a>
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController__ctor_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)">
-  TenantsController(ITenantService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantOnboardingService_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantUpgradeService_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantLifecycleService_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService)">
+  TenantOperationsController(ITenantOnboardingService, ITenantUpgradeService, ITenantLifecycleService)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TenantsController(ITenantService service)</code></pre>
+    <pre><code class="lang-csharp hljs">public TenantOperationsController(ITenantOnboardingService onboarding, ITenantUpgradeService upgrade, ITenantLifecycleService lifecycle)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>service</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html">ITenantService</a></dt>
+    <dt><code>onboarding</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html">ITenantOnboardingService</a></dt>
+    <dd></dd>
+    <dt><code>upgrade</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html">ITenantUpgradeService</a></dt>
+    <dd></dd>
+    <dt><code>lifecycle</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html">ITenantLifecycleService</a></dt>
     <dd></dd>
   </dl>
 
@@ -719,32 +723,34 @@ public class TenantsController : ControllerBase</code></pre>
 </h2>
 
 
-  <a id="Code7Dev_Organizor_Api_Controllers_TenantsController_Create_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.Create*"></a>
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_HardDelete_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_Create_Code7Dev_Organizor_Api_Mappers_DTO_TenantRequestDto_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.Create(Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto)">
-  Create(TenantRequestDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_HardDelete_System_Guid_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete(System.Guid)">
+  HardDelete(Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a tenant catalog record with a pending lifecycle status.</p>
+  <div class="markdown level1 summary"><p>Permanently deletes a previously soft-deleted tenant and drops its tenant database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpPost]
-public Task&lt;IActionResult&gt; Create(TenantRequestDto request)</code></pre>
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;{id:guid}/hard-delete&quot;)]
+public Task&lt;IActionResult&gt; HardDelete(Guid id)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html">TenantRequestDto</a></dt>
-    <dd></dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Tenant catalog identifier.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A 204 response when the catalog record and database are removed.</p>
+</dd>
   </dl>
 
 
@@ -757,65 +763,120 @@ public Task&lt;IActionResult&gt; Create(TenantRequestDto request)</code></pre>
 
 
 
-  <a id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetAll_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetAll*"></a>
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Onboard_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetAll" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetAll">
-  GetAll()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Onboard_Code7Dev_Organizor_Application_Tenants_Models_TenantOnboardingRequest_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard(Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest)">
+  Onboard(TenantOnboardingRequest)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Lists tenant catalog records that have not been soft-deleted.</p>
+  <div class="markdown level1 summary"><p>Onboards a tenant by creating the catalog record, creating the tenant database, and applying migrations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpGet]
-public Task&lt;IActionResult&gt; GetAll()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetBySlug_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetBySlug*"></a>
-
-  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantsController_GetBySlug_System_String_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantsController.GetBySlug(System.String)">
-  GetBySlug(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L39"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets an active, non-deleted tenant catalog record by slug.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpGet(&quot;{slug}&quot;)]
-public Task&lt;IActionResult&gt; GetBySlug(string slug)</code></pre>
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;onboard&quot;)]
+public Task&lt;IActionResult&gt; Onboard(TenantOnboardingRequest request)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>slug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html">TenantOnboardingRequest</a></dt>
+    <dd><p>Tenant name and slug used to create the catalog record and database name.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The onboarded tenant metadata when provisioning completes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_SoftDelete_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete*"></a>
+
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_SoftDelete_System_Guid_Code7Dev_Organizor_Api_Mappers_DTO_TenantSoftDeleteRequest_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest)">
+  SoftDelete(Guid, TenantSoftDeleteRequest)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Soft-deletes a tenant catalog record without dropping the tenant database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpDelete(&quot;{id:guid}&quot;)]
+public Task&lt;IActionResult&gt; SoftDelete(Guid id, TenantSoftDeleteRequest request)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Tenant catalog identifier.</p>
+</dd>
+    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html">TenantSoftDeleteRequest</a></dt>
+    <dd><p>Reason captured for the deletion audit trail.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>A 204 response when the tenant is marked as deleted.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Upgrade_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade*"></a>
+
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Upgrade_System_Guid_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade(System.Guid,System.Threading.CancellationToken)">
+  Upgrade(Guid, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies pending migrations to an existing tenant database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;{id:guid}/upgrade&quot;)]
+public Task&lt;IActionResult&gt; Upgrade(Guid id, CancellationToken ct)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Tenant catalog identifier.</p>
+</dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token for the migration operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>The migration result, including success state, duration, and error details when applicable.</p>
+</dd>
   </dl>
 
 
@@ -832,7 +893,7 @@ public Task&lt;IActionResult&gt; GetBySlug(string slug)</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantsController.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

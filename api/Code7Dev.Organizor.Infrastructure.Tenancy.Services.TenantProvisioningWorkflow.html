@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ApplicationBuilderExtensions | Organizor </title>
+      <title>Class TenantProvisioningWorkflow | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ApplicationBuilderExtensions | Organizor ">
+      <meta name="title" content="Class TenantProvisioningWorkflow | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,24 +84,24 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions">
+        <article data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow">
 
 
 
-  <h1 id="Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions" data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions" class="text-break">
-Class ApplicationBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Extensions/ApplicationBuilderExtensions.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow" data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow" class="text-break">
+Class TenantProvisioningWorkflow  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Tenancy/Services/TenantProvisioningWorkflow.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Code7Dev.html">Code7Dev</a>.<a class="xref" href="Code7Dev.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Api.html">Api</a>.<a class="xref" href="Code7Dev.Organizor.Api.Extensions.html">Extensions</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Api.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Code7Dev.html">Code7Dev</a>.<a class="xref" href="Code7Dev.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Infrastructure.html">Infrastructure</a>.<a class="xref" href="Code7Dev.Organizor.Infrastructure.Tenancy.html">Tenancy</a>.<a class="xref" href="Code7Dev.Organizor.Infrastructure.Tenancy.Services.html">Services</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Infrastructure.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ApplicationBuilderExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class TenantProvisioningWorkflow : ITenantProvisioningWorkflow</code></pre>
   </div>
 
 
@@ -111,10 +111,16 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">ApplicationBuilderExtensions</span></div>
+      <div><span class="xref">TenantProvisioningWorkflow</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html">ITenantProvisioningWorkflow</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -133,9 +139,6 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
@@ -148,70 +151,77 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_" data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantMigrator_" data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)">
+  TenantProvisioningWorkflow(ITenantDatabaseManager, ITenantMigrator)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Tenancy/Services/TenantProvisioningWorkflow.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TenantProvisioningWorkflow(ITenantDatabaseManager dbManager, ITenantMigrator migrator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbManager</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html">ITenantDatabaseManager</a></dt>
+    <dd></dd>
+    <dt><code>migrator</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html">ITenantMigrator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions_MapApiEndpoints_" data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.MapApiEndpoints*"></a>
+  <a id="Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions_MapApiEndpoints_Microsoft_AspNetCore_Routing_IEndpointRouteBuilder_" data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.MapApiEndpoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
-  MapApiEndpoints(IEndpointRouteBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Extensions/ApplicationBuilderExtensions.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)">
+  ExecuteAsync(Tenant, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Tenancy/Services/TenantProvisioningWorkflow.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates the tenant database and applies tenant migrations.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ProvisioningResult&gt; ExecuteAsync(Tenant tenant, CancellationToken ct)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>endpoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.routing.iendpointroutebuilder">IEndpointRouteBuilder</a></dt>
-    <dd></dd>
+    <dt><code>tenant</code> <a class="xref" href="Code7Dev.Organizor.Domain.Tenants.Tenant.html">Tenant</a></dt>
+    <dd><p>Tenant catalog record to provision.</p>
+</dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.routing.iendpointroutebuilder">IEndpointRouteBuilder</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions_UseApiPipeline_" data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.UseApiPipeline*"></a>
-
-  <h3 id="Code7Dev_Organizor_Api_Extensions_ApplicationBuilderExtensions_UseApiPipeline_Microsoft_AspNetCore_Builder_IApplicationBuilder_" data-uid="Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.UseApiPipeline(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-  UseApiPipeline(IApplicationBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Extensions/ApplicationBuilderExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseApiPipeline(this IApplicationBuilder app)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>app</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.html">ProvisioningResult</a>&gt;</dt>
+    <dd><p>Provisioning result.</p>
+</dd>
   </dl>
 
 
@@ -228,7 +238,7 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Extensions/ApplicationBuilderExtensions.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Tenancy/Services/TenantProvisioningWorkflow.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

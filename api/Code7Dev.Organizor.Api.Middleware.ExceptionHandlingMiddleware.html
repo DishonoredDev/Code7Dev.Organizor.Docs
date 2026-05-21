@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware" data-uid="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware" class="text-break">
-Class ExceptionHandlingMiddleware  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class ExceptionHandlingMiddleware  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,16 +156,16 @@ RFC 7807 standard for api error responses.</p>
 
   <a id="Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_" data-uid="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__" data-uid="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware})">
-  ExceptionHandlingMiddleware(RequestDelegate, ILogger&lt;ExceptionHandlingMiddleware&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware__Microsoft_Extensions_Localization_IStringLocalizer_Code7Dev_Organizor_Api_Resources_Shared__" data-uid="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware},Microsoft.Extensions.Localization.IStringLocalizer{Code7Dev.Organizor.Api.Resources.Shared})">
+  ExceptionHandlingMiddleware(RequestDelegate, ILogger&lt;ExceptionHandlingMiddleware&gt;, IStringLocalizer&lt;Shared&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExceptionHandlingMiddleware(RequestDelegate next, ILogger&lt;ExceptionHandlingMiddleware&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public ExceptionHandlingMiddleware(RequestDelegate next, ILogger&lt;ExceptionHandlingMiddleware&gt; logger, IStringLocalizer&lt;Shared&gt; localizer)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -173,6 +173,8 @@ RFC 7807 standard for api error responses.</p>
     <dt><code>next</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.requestdelegate">RequestDelegate</a></dt>
     <dd></dd>
     <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html">ExceptionHandlingMiddleware</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>localizer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer-1">IStringLocalizer</a>&lt;<a class="xref" href="Code7Dev.Organizor.Api.Resources.Shared.html">Shared</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -195,7 +197,7 @@ RFC 7807 standard for api error responses.</p>
 
   <h3 id="Code7Dev_Organizor_Api_Middleware_ExceptionHandlingMiddleware_Invoke_Microsoft_AspNetCore_Http_HttpContext_" data-uid="Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
   Invoke(HttpContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -231,7 +233,7 @@ RFC 7807 standard for api error responses.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/ExceptionHandlingMiddleware.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

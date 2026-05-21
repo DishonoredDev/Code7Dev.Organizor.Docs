@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantUpgradeService" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService" class="text-break">
-Interface ITenantUpgradeService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Interface ITenantUpgradeService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -125,7 +125,7 @@ Interface ITenantUpgradeService  <a class="header-action link-secondary" title="
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantUpgradeService_UpgradeAsync_System_Guid_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.UpgradeAsync(System.Guid,System.Threading.CancellationToken)">
   UpgradeAsync(Guid, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies pending migrations to the tenant database for a catalog tenant.</p>
@@ -133,7 +133,7 @@ Interface ITenantUpgradeService  <a class="header-action link-secondary" title="
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;TenantMigrationResult&gt; UpgradeAsync(Guid tenantId, CancellationToken ct = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Result&lt;TenantMigrationResult&gt;&gt; UpgradeAsync(Guid tenantId, CancellationToken ct = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -148,7 +148,7 @@ Interface ITenantUpgradeService  <a class="header-action link-secondary" title="
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html">TenantMigrationResult</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html">TenantMigrationResult</a>&gt;&gt;</dt>
     <dd><p>Migration result.</p>
 </dd>
   </dl>
@@ -167,7 +167,7 @@ Interface ITenantUpgradeService  <a class="header-action link-secondary" title="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantUpgradeService.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

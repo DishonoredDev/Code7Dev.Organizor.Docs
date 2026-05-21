@@ -25,6 +25,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.TenantOperationsController",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.yml\" sourcestartlinenumber=\"1\">Exposes internal tenant operations for provisioning, upgrades, and deletion.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantsController.yml",
       "output": {
         ".html": {
@@ -147,7 +161,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Registers API-layer services, including localization, controllers, and scheduled job infrastructure.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -319,6 +333,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.yml",
       "output": {
         ".html": {
@@ -329,6 +357,132 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Middleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Resources.Shared.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Resources.Shared.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Resources.Shared",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Resources.Shared.yml\" sourcestartlinenumber=\"1\">A strongly-typed resource class, for looking up localized strings, etc.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Resources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Resources",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.ApiException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.ApiException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.General.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.General.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.ErrorCodes.General",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.ErrorCodes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.Result-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.Result-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.Result<T>",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Common.Result-1.yml\" sourcestartlinenumber=\"1\">Represents the outcome of an operation that returns a value.\nProvides both success and failure flows while carrying a typed payload.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.Result.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.Result",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Common.Result.yml\" sourcestartlinenumber=\"1\">Represents the outcome of an operation without a return value.\nUsed for both success and failure flows in the application layer.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common",
       "Summary": null
     },
     {
@@ -357,6 +511,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Jobs.TestEmailJob",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.yml\" sourcestartlinenumber=\"1\">Quartz job that writes a test email execution message to the application log.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Jobs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Jobs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Jobs",
       "Summary": null
     },
     {
@@ -613,6 +795,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.yml",
       "output": {
         ".html": {
@@ -711,6 +921,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.yml",
       "output": {
         ".html": {
@@ -721,34 +959,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.CatalogDbContextSeed",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Extensions",
       "Summary": null
     },
     {
@@ -819,6 +1029,76 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Organizor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.yml\" sourcestartlinenumber=\"1\">Quartz job that runs tenant-scoped synchronization work.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Quartz.Jobs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.yml\" sourcestartlinenumber=\"1\">Creates Quartz job instances from the application's dependency injection container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.yml\" sourcestartlinenumber=\"1\">Schedules recurring Quartz jobs for tenants stored in the catalog database.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Quartz.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Quartz",
       "Summary": null
     },
     {
@@ -935,6 +1215,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.yml",
       "output": {
         ".html": {
@@ -1036,6 +1358,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/localization.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/localization.html"
         }
       },
       "version": ""
