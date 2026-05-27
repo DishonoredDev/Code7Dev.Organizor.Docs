@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Keycloak Setup | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Keycloak Setup | Organizor ">
+      
+      <meta name="description" content="Development Keycloak realm, clients, groups, claim mapping, users, and token testing for Organizor.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-setup.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="keycloak-setup">Keycloak Setup</h1>
+
+<p>This document describes the Keycloak configuration for the Organizor development environment. It includes realm setup, API/UI clients, tenant groups, claim mapping, and user/role setup.</p>
+<h2 id="realm-setup">Realm Setup</h2>
+<ul>
+<li>Open Keycloak Admin Console.</li>
+<li>Realm dropdown -&gt; <strong>Create Realm</strong>.</li>
+<li>Name: <code>organizor-dev</code>.</li>
+<li>Save.</li>
+</ul>
+<h2 id="api-client-organizor-api">API Client (<code>organizor-api</code>)</h2>
+<p>Settings:</p>
+<ul>
+<li>Client type: OpenID Connect</li>
+<li>Client ID: <code>organizor-api</code></li>
+<li>Name: Organizor API</li>
+</ul>
+<p>Required values:</p>
+<ul>
+<li>Client authentication: <strong>OFF</strong></li>
+<li>Authorization: OFF</li>
+<li>Standard flow: OFF</li>
+<li>Direct access grants: <strong>ON</strong></li>
+<li>Implicit flow: OFF</li>
+<li>Service accounts roles: <strong>ON</strong></li>
+</ul>
+<p>Credentials:</p>
+<ul>
+<li>Open the <strong>Credentials</strong> tab.</li>
+<li>Copy the <strong>Client Secret</strong>.</li>
+<li>Store it in development tooling that requests tokens.</li>
+</ul>
+<p>The API currently validates bearer tokens only; it does not read the client secret from application configuration. The client secret is only needed by tooling or services that request tokens with the <code>client_credentials</code> flow.</p>
+<h2 id="ui-client-organizor-ui">UI Client (<code>organizor-ui</code>)</h2>
+<p>Settings:</p>
+<ul>
+<li>Client type: OpenID Connect</li>
+<li>Client ID: <code>organizor-ui</code></li>
+<li>Name: Organizor UI</li>
+</ul>
+<p>Required values:</p>
+<ul>
+<li>Client authentication: OFF</li>
+<li>Authorization: OFF</li>
+<li>Standard flow: <strong>ON</strong></li>
+<li>Direct access grants: OFF</li>
+<li>Implicit flow: OFF</li>
+<li>Service accounts roles: OFF</li>
+</ul>
+<p>Development redirect URIs:</p>
+<ul>
+<li><code>https://localhost:5001/*</code></li>
+<li><code>https://localhost:5002/*</code></li>
+<li><code>http://localhost:5001/*</code></li>
+<li><code>http://localhost:5002/*</code></li>
+</ul>
+<p>Web origins:</p>
+<ul>
+<li><code>*</code></li>
+</ul>
+<h2 id="tenant-groups">Tenant Groups</h2>
+<p>Group structure:</p>
+<ul>
+<li><code>/tenants</code></li>
+<li><code>/tenants/acme</code></li>
+<li><code>/tenants/acme/users</code></li>
+<li><code>/tenants/acme/admins</code></li>
+</ul>
+<p>Each tenant has:</p>
+<ul>
+<li><code>/users</code> group</li>
+<li><code>/admins</code> group</li>
+</ul>
+<h2 id="tenant-membership-claim-mapper">Tenant Membership Claim Mapper</h2>
+<p>Location:</p>
+<ul>
+<li>Clients -&gt; <code>organizor-api</code></li>
+<li>Client scopes -&gt; <code>organizor-api-dedicated</code></li>
+<li>Mappers -&gt; Create</li>
+</ul>
+<p>Values:</p>
+<ul>
+<li>Name: <code>tenant-membership</code></li>
+<li>Mapper type: <strong>Group Membership</strong></li>
+<li>Token Claim Name: <code>tenant</code></li>
+<li>Full group path: <strong>ON</strong></li>
+<li>Add to ID token: ON</li>
+<li>Add to access token: ON</li>
+<li>Add to userinfo: ON</li>
+</ul>
+<h2 id="user-setup">User Setup</h2>
+<p>Platform admin:</p>
+<ul>
+<li>Username: <code>admin@organizor.dev</code></li>
+<li>Password: <code>Admin123!</code></li>
+<li>Assign realm role: <code>organizor-admin</code></li>
+<li>No tenant groups assigned</li>
+</ul>
+<p>Tenant admin:</p>
+<ul>
+<li>Username: <code>admin@acme.dev</code></li>
+<li>Password: <code>Admin123!</code></li>
+<li>Assign realm role: <code>organizor-user</code></li>
+<li>Assign group: <code>/tenants/acme/admins</code></li>
+</ul>
+<p>Tenant user:</p>
+<ul>
+<li>Username: <code>user@acme.dev</code></li>
+<li>Password: <code>Admin123!</code></li>
+<li>Assign realm role: <code>tenant-user</code></li>
+<li>Assign group: <code>/tenants/acme/users</code></li>
+</ul>
+<h2 id="token-testing">Token Testing</h2>
+<p>Token endpoint:</p>
+<ul>
+<li><code>http://localhost:8080/realms/organizor-dev/protocol/openid-connect/token</code></li>
+</ul>
+<p>Example tenant claim:</p>
+<pre><code class="lang-json">&quot;tenant&quot;: [&quot;/tenants/acme/admins&quot;]
+</code></pre>
+<h2 id="keycloak-architecture-diagram">Keycloak Architecture Diagram</h2>
+<pre><code class="lang-mermaid">flowchart TD
+    subgraph Realm[&quot;organizor-dev Realm&quot;]
+        APIClient[&quot;Client: organizor-api&quot;]
+        UIClient[&quot;Client: organizor-ui&quot;]
+        Groups[&quot;Tenant Groups&quot;]
+        Mapper[&quot;Claim Mapper: tenant-membership&quot;]
+        Users[&quot;Users + Roles&quot;]
+    end
+
+    subgraph Backend[&quot;Organizor API (.NET)&quot;]
+        Auth[&quot;JWT Validation&quot;]
+        TenantAccess[&quot;Tenant Access Middleware&quot;]
+        Controllers[&quot;Controllers&quot;]
+    end
+
+    subgraph Frontend[&quot;Organizor UI&quot;]
+        Login[&quot;OIDC Login Flow&quot;]
+    end
+
+    UIClient --&gt; Keycloak[(Keycloak Login UI)]
+    Keycloak --&gt; UIClient
+    UIClient --&gt; Backend
+
+    APIClient --&gt; Keycloak
+    Keycloak --&gt; APIClient
+
+    Users --&gt; Groups
+    Groups --&gt; Mapper
+    Mapper --&gt; Keycloak
+
+    Backend --&gt; Auth --&gt; TenantAccess --&gt; Controllers
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-setup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

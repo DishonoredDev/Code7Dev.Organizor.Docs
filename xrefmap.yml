@@ -7,6 +7,25 @@ references:
   commentId: N:Code7Dev.Organizor.Api.Controllers
   fullName: Code7Dev.Organizor.Api.Controllers
   nameWithType: Code7Dev.Organizor.Api.Controllers
+- uid: Code7Dev.Organizor.Api.Controllers.AuthController
+  name: AuthController
+  href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.AuthController
+  fullName: Code7Dev.Organizor.Api.Controllers.AuthController
+  nameWithType: AuthController
+- uid: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
+  name: WhoAmI()
+  href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html#Code7Dev_Organizor_Api_Controllers_AuthController_WhoAmI
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
+  fullName: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI()
+  nameWithType: AuthController.WhoAmI()
+- uid: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI*
+  name: WhoAmI
+  href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html#Code7Dev_Organizor_Api_Controllers_AuthController_WhoAmI_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
+  nameWithType: AuthController.WhoAmI
 - uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController
   name: TenantOperationsController
   href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html
@@ -332,12 +351,12 @@ references:
   commentId: T:Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions
   fullName: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions
   nameWithType: ServiceCollectionExtensions
-- uid: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
-  name: AddApiServices(IServiceCollection, IConfiguration)
-  href: api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html#Code7Dev_Organizor_Api_Extensions_ServiceCollectionExtensions_AddApiServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_
-  commentId: M:Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
-  fullName: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration)
-  nameWithType: ServiceCollectionExtensions.AddApiServices(IServiceCollection, IConfiguration)
+- uid: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  name: AddApiServices(IServiceCollection, IConfiguration, IWebHostEnvironment)
+  href: api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html#Code7Dev_Organizor_Api_Extensions_ServiceCollectionExtensions_AddApiServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_AspNetCore_Hosting_IWebHostEnvironment_
+  commentId: M:Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  fullName: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  nameWithType: ServiceCollectionExtensions.AddApiServices(IServiceCollection, IConfiguration, IWebHostEnvironment)
 - uid: Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.AddApiServices*
   name: AddApiServices
   href: api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html#Code7Dev_Organizor_Api_Extensions_ServiceCollectionExtensions_AddApiServices_
@@ -728,6 +747,44 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.Invoke
   nameWithType: ExceptionHandlingMiddleware.Invoke
+- uid: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware
+  name: TenantAccessMiddleware
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html
+  commentId: T:Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware
+  nameWithType: TenantAccessMiddleware
+- uid: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name: TenantAccessMiddleware(RequestDelegate)
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_
+  commentId: M:Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name.vb: New(RequestDelegate)
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.TenantAccessMiddleware(Microsoft.AspNetCore.Http.RequestDelegate)
+  fullName.vb: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate)
+  nameWithType: TenantAccessMiddleware.TenantAccessMiddleware(RequestDelegate)
+  nameWithType.vb: TenantAccessMiddleware.New(RequestDelegate)
+- uid: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.#ctor*
+  name: TenantAccessMiddleware
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.TenantAccessMiddleware
+  fullName.vb: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.New
+  nameWithType: TenantAccessMiddleware.TenantAccessMiddleware
+  nameWithType.vb: TenantAccessMiddleware.New
+- uid: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService)
+  name: InvokeAsync(HttpContext, ITenantContext, ITenantAccessService)
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantAccessService_
+  commentId: M:Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService)
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext, Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService)
+  nameWithType: TenantAccessMiddleware.InvokeAsync(HttpContext, ITenantContext, ITenantAccessService)
+- uid: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html#Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware_InvokeAsync_
+  commentId: Overload:Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync
+  nameWithType: TenantAccessMiddleware.InvokeAsync
 - uid: Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware
   name: TenantResolutionMiddleware
   href: api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html
@@ -1279,6 +1336,28 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.ExtractDatabaseName
   nameWithType: IConnectionStringBuilder.ExtractDatabaseName
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService
+  name: ITenantAccessService
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService
+  nameWithType: ITenantAccessService
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync(System.String,System.Guid)
+  name: UserHasAccessAsync(string, Guid)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantAccessService_UserHasAccessAsync_System_String_System_Guid_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync(System.String,System.Guid)
+  name.vb: UserHasAccessAsync(String, Guid)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync(string, System.Guid)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync(String, System.Guid)
+  nameWithType: ITenantAccessService.UserHasAccessAsync(string, Guid)
+  nameWithType.vb: ITenantAccessService.UserHasAccessAsync(String, Guid)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync*
+  name: UserHasAccessAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantAccessService_UserHasAccessAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync
+  nameWithType: ITenantAccessService.UserHasAccessAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager
   name: ITenantDatabaseManager
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html
@@ -1880,6 +1959,28 @@ references:
   commentId: N:Code7Dev.Organizor.Application.Tenants.Services
   fullName: Code7Dev.Organizor.Application.Tenants.Services
   nameWithType: Code7Dev.Organizor.Application.Tenants.Services
+- uid: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService
+  name: AllowAllTenantAccessService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService
+  nameWithType: AllowAllTenantAccessService
+- uid: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync(System.String,System.Guid)
+  name: UserHasAccessAsync(string, Guid)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.html#Code7Dev_Organizor_Application_Tenants_Services_AllowAllTenantAccessService_UserHasAccessAsync_System_String_System_Guid_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync(System.String,System.Guid)
+  name.vb: UserHasAccessAsync(String, Guid)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync(string, System.Guid)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync(String, System.Guid)
+  nameWithType: AllowAllTenantAccessService.UserHasAccessAsync(string, Guid)
+  nameWithType.vb: AllowAllTenantAccessService.UserHasAccessAsync(String, Guid)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync*
+  name: UserHasAccessAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.html#Code7Dev_Organizor_Application_Tenants_Services_AllowAllTenantAccessService_UserHasAccessAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync
+  nameWithType: AllowAllTenantAccessService.UserHasAccessAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   name: TenantLifecycleService
   href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html

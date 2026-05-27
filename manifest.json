@@ -25,6 +25,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.AuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.AuthController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.yml",
       "output": {
         ".html": {
@@ -333,6 +347,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.yml",
       "output": {
         ".html": {
@@ -557,6 +585,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.yml",
       "output": {
         ".html": {
@@ -777,6 +819,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService",
       "Summary": null
     },
     {
@@ -1284,6 +1340,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/api-authentication.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/api-authentication.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/api.md",
       "output": {
         ".html": {
@@ -1364,6 +1430,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/keycloak-setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/keycloak-setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/localization.md",
       "output": {
         ".html": {
@@ -1388,6 +1464,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/tenancy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tenant-authorization.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tenant-authorization.html"
         }
       },
       "version": ""

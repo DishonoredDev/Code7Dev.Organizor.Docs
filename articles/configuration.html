@@ -118,7 +118,7 @@
 <li>clustering support;</li>
 <li>hosted service startup for Quartz background processing.</li>
 </ul>
-<p>Tenant jobs are scheduled on application startup by <code>TenantJobScheduler</code>.</p>
+<p>Tenant job scheduling is not enabled on application startup yet. <code>TenantJobScheduler</code> is available for future real tenant jobs, but the startup scheduling block is currently commented out until those jobs exist.</p>
 <h2 id="logging">Logging</h2>
 <p>Serilog is configured in <code>appsettings.json</code>.</p>
 <p>Current sinks:</p>
