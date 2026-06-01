@@ -91,10 +91,19 @@
 <ul>
 <li>.NET SDK 10.</li>
 <li>PostgreSQL available to the API.</li>
+<li>Keycloak available to the API. The repository includes a development Keycloak compose file.</li>
 <li>A catalog database connection string named <code>Catalog</code>.</li>
 <li>PostgreSQL server settings under the <code>Postgres</code> configuration section for tenant database creation and resolution.</li>
+<li>Keycloak bearer-token settings under the <code>Keycloak</code> configuration section.</li>
 <li>DocFX installed as a .NET tool when building documentation locally.</li>
 </ul>
+<p>Install DocFX if the <code>docfx</code> command is not available:</p>
+<pre><code class="lang-powershell">dotnet tool install -g docfx
+</code></pre>
+<p>Start the development Keycloak instance:</p>
+<pre><code class="lang-powershell">docker compose up -d
+</code></pre>
+<p>The compose file starts Keycloak at <code>http://localhost:8080</code>. Configure the <code>organizor-dev</code> realm, clients, roles, and users as described in <a href="keycloak-setup.html">Keycloak Setup</a>.</p>
 <h2 id="run-the-api">Run the API</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
@@ -150,12 +159,16 @@
 </tbody>
 </table>
 <p>Example tenant catalog request:</p>
-<pre><code class="lang-powershell">Invoke-RestMethod `
+<pre><code class="lang-powershell">$token = &quot;&lt;organizor-admin JWT&gt;&quot;
+
+Invoke-RestMethod `
   -Method Post `
   -Uri &quot;http://localhost:5100/api/v1/tenants&quot; `
+  -Headers @{ Authorization = &quot;Bearer $token&quot; } `
   -ContentType &quot;application/json&quot; `
-  -Body '{&quot;name&quot;:&quot;Acme&quot;,&quot;slug&quot;:&quot;acme&quot;,&quot;culture&quot;:&quot;en-US&quot;}'
+  -Body '{&quot;name&quot;:&quot;Acme&quot;,&quot;slug&quot;:&quot;acme&quot;}'
 </code></pre>
+<p><code>POST /api/v1/tenants</code> creates a catalog record only and requires an <code>organizor-admin</code> token. Use <code>POST /api/admin/tenants/onboard</code> when you also need tenant database and Keycloak provisioning.</p>
 <h2 id="build-the-documentation">Build the Documentation</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json

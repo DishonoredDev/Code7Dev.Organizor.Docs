@@ -87,20 +87,25 @@
         <article data-uid="">
 <h1 id="api">API</h1>
 
-<p>The public API currently exposes tenant catalog endpoints. Tenant-scoped application endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
+<p>The public API currently exposes tenant catalog endpoints. These endpoints are platform/catalog routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They are still authenticated:</p>
+<ul>
+<li><code>POST /api/v1/tenants</code> requires <code>organizor-admin</code>.</li>
+<li><code>GET /api/v1/tenants</code> and <code>GET /api/v1/tenants/{slug}</code> require <code>organizor-admin</code>, <code>tenant-admin</code>, or <code>tenant-user</code>.</li>
+</ul>
+<p>Tenant-scoped application endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
 <p>Internal tenant administration endpoints are documented separately in <a href="internal-operations.html">Internal Operations</a>.</p>
 <h2 id="tenant-catalog">Tenant Catalog</h2>
 <h3 id="create-tenant">Create Tenant</h3>
 <pre><code class="lang-http">POST /api/v1/tenants
+Authorization: Bearer &lt;organizor-admin-token&gt;
 Content-Type: application/json
 
 {
   &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;,
-  &quot;culture&quot;: &quot;en-US&quot;
+  &quot;slug&quot;: &quot;acme&quot;
 }
 </code></pre>
-<p>Creates a catalog tenant record with <code>Pending</code> status and returns tenant metadata. This route does not provision a tenant database.</p>
+<p>Creates a catalog tenant record with <code>Pending</code> status and returns tenant metadata. This route does not provision Keycloak groups, a default tenant admin, or a tenant database. Use <code>POST /api/admin/tenants/onboard</code> for the full onboarding workflow.</p>
 <p>Example response:</p>
 <pre><code class="lang-json">{
   &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
@@ -124,17 +129,31 @@ Content-Type: application/json
 <td>Tenant catalog record was created.</td>
 </tr>
 <tr>
+<td><code>401 Unauthorized</code></td>
+<td>Missing or invalid bearer token.</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code></td>
+<td>Token does not satisfy the <code>organizor-admin</code> role policy.</td>
+</tr>
+<tr>
+<td><code>409 Conflict</code></td>
+<td>Duplicate tenant slug.</td>
+</tr>
+<tr>
 <td><code>500 Internal Server Error</code></td>
-<td>Duplicate slug or unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
+<td>Unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-tenant-by-slug">Get Tenant By Slug</h3>
 <pre><code class="lang-http">GET /api/v1/tenants/acme
+Authorization: Bearer &lt;token&gt;
 </code></pre>
 <p>Returns a tenant by slug, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded.</p>
 <h3 id="list-tenants">List Tenants</h3>
 <pre><code class="lang-http">GET /api/v1/tenants
+Authorization: Bearer &lt;token&gt;
 </code></pre>
 <p>Returns all catalog tenants visible through the tenant repository. Soft-deleted tenants are excluded.</p>
 <h2 id="platform-endpoints">Platform Endpoints</h2>

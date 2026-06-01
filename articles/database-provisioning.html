@@ -122,6 +122,7 @@
 </tbody>
 </table>
 <p>On startup, the API checks whether the catalog database exists, creates it when needed, and applies catalog migrations.</p>
+<p>The full tenant onboarding workflow is documented in <a href="internal-operations.html">Internal Operations</a>. Database provisioning is one part of that workflow; Keycloak tenant access is provisioned before the tenant database is created.</p>
 <h2 id="tenant-database-naming">Tenant Database Naming</h2>
 <p>Tenant databases use:</p>
 <pre><code class="lang-text">organizor_tenant_{slug}
@@ -180,6 +181,16 @@ CREATE EXTENSION IF NOT EXISTS &quot;citext&quot;;
 </tr>
 </tbody>
 </table>
+<h2 id="onboarding-and-cleanup">Onboarding and Cleanup</h2>
+<p>During <code>POST /api/admin/tenants/onboard</code>, the database steps are:</p>
+<ol>
+<li>create the tenant database named <code>organizor_tenant_{slug}</code>;</li>
+<li>initialize required PostgreSQL extensions;</li>
+<li>apply pending <code>OrganizorDbContext</code> migrations;</li>
+<li>return success so the tenant can be marked <code>Active</code>.</li>
+</ol>
+<p>If the migration result fails or onboarding throws unexpectedly, the catalog tenant is marked <code>Failed</code>.</p>
+<p>During hard deletion, the tenant must already be soft-deleted. The hard-delete workflow drops the tenant database with <code>DROP DATABASE IF EXISTS ... WITH (FORCE)</code> after Keycloak cleanup and then removes the catalog record.</p>
 
 </article>
 

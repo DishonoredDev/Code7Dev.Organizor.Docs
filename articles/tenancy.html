@@ -151,16 +151,21 @@
 <h2 id="tenant-database-resolution">Tenant Database Resolution</h2>
 <p><code>OrganizorDbContext</code> uses a fallback in-memory database when no tenant has been resolved. This supports startup, Scalar, migrations, and design-time tooling.</p>
 <p>When a tenant is resolved, <code>PerTenantDbResolver</code> loads the catalog tenant, builds a PostgreSQL connection string for that tenant database, and <code>OrganizorDbContext</code> uses that database.</p>
-<h2 id="provisioning-flow">Provisioning Flow</h2>
+<h2 id="tenant-onboarding-flow">Tenant Onboarding Flow</h2>
 <pre><code class="lang-mermaid">flowchart TD
     A[Onboard request] --&gt; B[Create catalog tenant as Pending]
-    B --&gt; C[Create tenant database]
-    C --&gt; D[Apply tenant migrations]
-    D --&gt; E{Success?}
-    E --&gt;|Yes| F[Mark tenant Active]
-    E --&gt;|No| G[Mark tenant Failed]
+    B --&gt; C[Create Keycloak tenant groups]
+    C --&gt; D[Assign tenant roles to groups]
+    D --&gt; E[Create default tenant admin]
+    E --&gt; F[Create tenant database]
+    F --&gt; G[Apply tenant migrations]
+    G --&gt; H{Success?}
+    H --&gt;|Yes| I[Mark tenant Active]
+    H --&gt;|No| J[Mark tenant Failed]
 </code></pre>
-<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> drops the tenant database and removes the catalog record.</p>
+<p>The preferred full tenant creation route is <code>POST /api/admin/tenants/onboard</code>. It creates the catalog record, provisions Keycloak tenant access, creates the tenant database, applies migrations, and marks the tenant <code>Active</code> only after the workflow succeeds.</p>
+<p><code>POST /api/v1/tenants</code> creates only the catalog record with <code>Pending</code> status. It does not create Keycloak groups or a tenant database.</p>
+<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> runs the hard-delete workflow. That workflow removes the Keycloak tenant group and default admin user, drops the tenant database, and removes the catalog record.</p>
 
 </article>
 

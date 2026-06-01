@@ -90,6 +90,7 @@
 <p>This page documents internal routes and workflows for developers and operators.</p>
 <h2 id="onboard-tenant">Onboard Tenant</h2>
 <pre><code class="lang-http">POST /api/admin/tenants/onboard
+Authorization: Bearer &lt;organizor-admin-token&gt;
 Content-Type: application/json
 
 {
@@ -101,6 +102,9 @@ Content-Type: application/json
 <ol>
 <li>normalizes the slug to lowercase;</li>
 <li>creates a catalog tenant with <code>Pending</code> status;</li>
+<li>provisions Keycloak tenant groups under <code>/tenants/{slug}</code>;</li>
+<li>assigns <code>tenant-admin</code> to <code>/tenants/{slug}/admins</code> and <code>tenant-user</code> to <code>/tenants/{slug}/users</code>;</li>
+<li>creates a default tenant admin user named <code>{slug}-admin</code> with a temporary password of <code>ChangeMe123!</code>;</li>
 <li>creates the tenant database using <code>organizor_tenant_{slug}</code>;</li>
 <li>initializes PostgreSQL extensions;</li>
 <li>applies tenant migrations;</li>
@@ -116,6 +120,7 @@ Content-Type: application/json
 </code></pre>
 <h2 id="upgrade-tenant">Upgrade Tenant</h2>
 <pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
+Authorization: Bearer &lt;organizor-admin-token&gt;
 </code></pre>
 <p>Runs pending migrations for the tenant database.</p>
 <p>Example response:</p>
@@ -129,6 +134,7 @@ Content-Type: application/json
 </code></pre>
 <h2 id="soft-delete-tenant">Soft Delete Tenant</h2>
 <pre><code class="lang-http">DELETE /api/admin/tenants/{id}
+Authorization: Bearer &lt;organizor-admin-token&gt;
 Content-Type: application/json
 
 {
@@ -138,10 +144,18 @@ Content-Type: application/json
 <p>Soft deletion marks the tenant as deleted, stores deletion metadata, and sets status to <code>Deleted</code>. The tenant database is not dropped.</p>
 <h2 id="hard-delete-tenant">Hard Delete Tenant</h2>
 <pre><code class="lang-http">POST /api/admin/tenants/{id}/hard-delete
+Authorization: Bearer &lt;organizor-admin-token&gt;
 </code></pre>
-<p>Hard deletion requires the tenant to already be soft-deleted. It drops the tenant database and removes the catalog record.</p>
+<p>Hard deletion requires the tenant to already be soft-deleted. It:</p>
+<ol>
+<li>deletes the default Keycloak admin user named <code>{slug}-admin</code> when it exists;</li>
+<li>deletes the Keycloak tenant group <code>/tenants/{slug}</code> when it exists;</li>
+<li>drops the tenant database;</li>
+<li>removes the catalog record.</li>
+</ol>
+<p>Keycloak cleanup tolerates missing groups or users so a partially-provisioned tenant can still be cleaned up.</p>
 <h2 id="scheduled-tenant-jobs">Scheduled Tenant Jobs</h2>
-<p>Organizor uses Quartz for recurring background work. During startup, <code>Program.cs</code> resolves <code>TenantJobScheduler</code> and calls <code>ScheduleAllTenantsAsync</code>.</p>
+<p>Organizor is wired for Quartz recurring background work, but tenant job scheduling is not currently enabled on startup. <code>Program.cs</code> contains a commented-out scheduling block for future use.</p>
 <p>The scheduler:</p>
 <ol>
 <li>loads all tenants from the catalog database;</li>
@@ -153,7 +167,7 @@ Content-Type: application/json
 <p>Current trigger cadence:</p>
 <pre><code class="lang-text">0/10 * * * * ?
 </code></pre>
-<p>That Quartz cron expression runs the tenant synchronization job every 10 seconds.</p>
+<p>That Quartz cron expression would run the tenant synchronization job every 10 seconds when scheduling is enabled.</p>
 <p><code>SyncTenantJob</code> reads the tenant data from the job data map, sets <code>ITenantContext</code>, and then runs tenant-scoped work through <code>OrganizorDbContext</code>. The current implementation logs execution and contains placeholder synchronization work.</p>
 <p>Quartz persistence is stored in the catalog database and uses the PostgreSQL tables added by the <code>AddQuartzTables</code> migration. The API configures Quartz with the <code>Catalog</code> connection string, JSON serialization, and clustering enabled.</p>
 <h2 id="documentation-deployment">Documentation Deployment</h2>

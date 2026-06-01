@@ -92,7 +92,7 @@
 <p>Production CORS currently uses <code>ProdCors</code>, but no production origins are configured in code. Add explicit origins before relying on browser clients in production.</p>
 <h2 id="internal-admin-routes">Internal Admin Routes</h2>
 <p>Routes under <code>/api/admin/tenants</code> are internal operations routes. They perform provisioning, upgrades, soft deletion, and hard deletion.</p>
-<p>These endpoints should be protected before production use. The current code maps controllers and authorization middleware, but no authentication or authorization policy is configured yet.</p>
+<p>These endpoints require the <code>RequireAdminRole</code> policy. Only tokens with the <code>organizor-admin</code> role can call them.</p>
 <h2 id="error-detail">Error Detail</h2>
 <p>Unhandled exceptions currently include <code>ex.Message</code> in problem details. This is useful for internal development and AI-assisted debugging, but it may expose sensitive implementation details in production.</p>
 <h2 id="tenant-resolution">Tenant Resolution</h2>

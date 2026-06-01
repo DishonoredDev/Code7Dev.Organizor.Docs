@@ -1,6 +1,73 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Code7Dev.Organizor.Api.Authorization
+  name: Code7Dev.Organizor.Api.Authorization
+  href: api/Code7Dev.Organizor.Api.Authorization.html
+  commentId: N:Code7Dev.Organizor.Api.Authorization
+  fullName: Code7Dev.Organizor.Api.Authorization
+  nameWithType: Code7Dev.Organizor.Api.Authorization
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies
+  name: AuthorizationPolicies
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html
+  commentId: T:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies
+  nameWithType: AuthorizationPolicies
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.OrganizorAdminRole
+  name: OrganizorAdminRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_OrganizorAdminRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.OrganizorAdminRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.OrganizorAdminRole
+  nameWithType: AuthorizationPolicies.OrganizorAdminRole
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireOrganizorAdminRole
+  name: RequireOrganizorAdminRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_RequireOrganizorAdminRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireOrganizorAdminRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireOrganizorAdminRole
+  nameWithType: AuthorizationPolicies.RequireOrganizorAdminRole
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantAdminRole
+  name: RequireTenantAdminRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_RequireTenantAdminRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantAdminRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantAdminRole
+  nameWithType: AuthorizationPolicies.RequireTenantAdminRole
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantUserRole
+  name: RequireTenantUserRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_RequireTenantUserRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantUserRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.RequireTenantUserRole
+  nameWithType: AuthorizationPolicies.RequireTenantUserRole
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantAdminRole
+  name: TenantAdminRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_TenantAdminRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantAdminRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantAdminRole
+  nameWithType: AuthorizationPolicies.TenantAdminRole
+- uid: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantUserRole
+  name: TenantUserRole
+  href: api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html#Code7Dev_Organizor_Api_Authorization_AuthorizationPolicies_TenantUserRole
+  commentId: F:Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantUserRole
+  fullName: Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.TenantUserRole
+  nameWithType: AuthorizationPolicies.TenantUserRole
+- uid: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation
+  name: KeycloakRoleClaimsTransformation
+  href: api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.html
+  commentId: T:Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation
+  fullName: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation
+  nameWithType: KeycloakRoleClaimsTransformation
+- uid: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  name: TransformAsync(ClaimsPrincipal)
+  href: api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.html#Code7Dev_Organizor_Api_Authorization_KeycloakRoleClaimsTransformation_TransformAsync_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  fullName: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  nameWithType: KeycloakRoleClaimsTransformation.TransformAsync(ClaimsPrincipal)
+- uid: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync*
+  name: TransformAsync
+  href: api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.html#Code7Dev_Organizor_Api_Authorization_KeycloakRoleClaimsTransformation_TransformAsync_
+  commentId: Overload:Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.TransformAsync
+  nameWithType: KeycloakRoleClaimsTransformation.TransformAsync
 - uid: Code7Dev.Organizor.Api.Controllers
   name: Code7Dev.Organizor.Api.Controllers
   href: api/Code7Dev.Organizor.Api.Controllers.html
@@ -13,12 +80,12 @@ references:
   commentId: T:Code7Dev.Organizor.Api.Controllers.AuthController
   fullName: Code7Dev.Organizor.Api.Controllers.AuthController
   nameWithType: AuthController
-- uid: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
-  name: WhoAmI()
-  href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html#Code7Dev_Organizor_Api_Controllers_AuthController_WhoAmI
-  commentId: M:Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
-  fullName: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI()
-  nameWithType: AuthController.WhoAmI()
+- uid: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  name: WhoAmI(ITenantContext)
+  href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html#Code7Dev_Organizor_Api_Controllers_AuthController_WhoAmI_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  fullName: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI(Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  nameWithType: AuthController.WhoAmI(ITenantContext)
 - uid: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI*
   name: WhoAmI
   href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html#Code7Dev_Organizor_Api_Controllers_AuthController_WhoAmI_
@@ -1396,6 +1463,25 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.DropDatabaseAsync
   nameWithType: ITenantDatabaseManager.DropDatabaseAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow
+  name: ITenantHardDeleteWorkflow
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow
+  nameWithType: ITenantHardDeleteWorkflow
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  name: ExecuteAsync(Tenant, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantHardDeleteWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
+  nameWithType: ITenantHardDeleteWorkflow.ExecuteAsync(Tenant, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantHardDeleteWorkflow_ExecuteAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.ExecuteAsync
+  nameWithType: ITenantHardDeleteWorkflow.ExecuteAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService
   name: ITenantLifecycleService
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html
@@ -1472,25 +1558,25 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.OnboardAsync
   nameWithType: ITenantOnboardingService.OnboardAsync
-- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow
-  name: ITenantProvisioningWorkflow
-  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html
-  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow
-  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow
-  nameWithType: ITenantProvisioningWorkflow
-- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow
+  name: ITenantOnboardingWorkflow
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow
+  nameWithType: ITenantOnboardingWorkflow
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
   name: ExecuteAsync(Tenant, CancellationToken)
-  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantProvisioningWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
-  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
-  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
-  nameWithType: ITenantProvisioningWorkflow.ExecuteAsync(Tenant, CancellationToken)
-- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync*
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantOnboardingWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
+  nameWithType: ITenantOnboardingWorkflow.ExecuteAsync(Tenant, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync*
   name: ExecuteAsync
-  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantProvisioningWorkflow_ExecuteAsync_
-  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantOnboardingWorkflow_ExecuteAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync
   isSpec: "True"
-  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.ExecuteAsync
-  nameWithType: ITenantProvisioningWorkflow.ExecuteAsync
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync
+  nameWithType: ITenantOnboardingWorkflow.ExecuteAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository
   name: ITenantRepository
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html
@@ -1987,15 +2073,15 @@ references:
   commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   nameWithType: TenantLifecycleService
-- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
-  name: TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger<TenantLifecycleService>)
-  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__
-  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
-  name.vb: New(ITenantRepository, ITenantDatabaseManager, ILogger(Of TenantLifecycleService))
-  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.TenantLifecycleService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService>)
-  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService))
-  nameWithType: TenantLifecycleService.TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger<TenantLifecycleService>)
-  nameWithType.vb: TenantLifecycleService.New(ITenantRepository, ITenantDatabaseManager, ILogger(Of TenantLifecycleService))
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
+  name: TenantLifecycleService(ITenantRepository, ITenantHardDeleteWorkflow, ILogger<TenantLifecycleService>)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantHardDeleteWorkflow_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})
+  name.vb: New(ITenantRepository, ITenantHardDeleteWorkflow, ILogger(Of TenantLifecycleService))
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.TenantLifecycleService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService>)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService))
+  nameWithType: TenantLifecycleService.TenantLifecycleService(ITenantRepository, ITenantHardDeleteWorkflow, ILogger<TenantLifecycleService>)
+  nameWithType.vb: TenantLifecycleService.New(ITenantRepository, ITenantHardDeleteWorkflow, ILogger(Of TenantLifecycleService))
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor*
   name: TenantLifecycleService
   href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_
@@ -2041,15 +2127,15 @@ references:
   commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService
   fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService
   nameWithType: TenantOnboardingService
-- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
-  name: TenantOnboardingService(ITenantRepository, ITenantProvisioningWorkflow)
-  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantProvisioningWorkflow_
-  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
-  name.vb: New(ITenantRepository, ITenantProvisioningWorkflow)
-  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.TenantOnboardingService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
-  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow)
-  nameWithType: TenantOnboardingService.TenantOnboardingService(ITenantRepository, ITenantProvisioningWorkflow)
-  nameWithType.vb: TenantOnboardingService.New(ITenantRepository, ITenantProvisioningWorkflow)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow)
+  name: TenantOnboardingService(ITenantRepository, ITenantOnboardingWorkflow)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantOnboardingWorkflow_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow)
+  name.vb: New(ITenantRepository, ITenantOnboardingWorkflow)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.TenantOnboardingService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow)
+  nameWithType: TenantOnboardingService.TenantOnboardingService(ITenantRepository, ITenantOnboardingWorkflow)
+  nameWithType.vb: TenantOnboardingService.New(ITenantRepository, ITenantOnboardingWorkflow)
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.#ctor*
   name: TenantOnboardingService
   href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantOnboardingService__ctor_
@@ -2359,6 +2445,849 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.AddInfrastructure
   nameWithType: DependencyInjection.AddInfrastructure
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces
+  name: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces
+  nameWithType: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient
+  name: IKeycloakAdminClient
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient
+  nameWithType: IKeycloakAdminClient
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: AddUserToGroupAsync(string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AddUserToGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: AddUserToGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.AddUserToGroupAsync(string, string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.AddUserToGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync*
+  name: AddUserToGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AddUserToGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync
+  nameWithType: IKeycloakAdminClient.AddUserToGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: AssignRealmRoleToGroupAsync(string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AssignRealmRoleToGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: AssignRealmRoleToGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.AssignRealmRoleToGroupAsync(string, string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.AssignRealmRoleToGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync*
+  name: AssignRealmRoleToGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AssignRealmRoleToGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync
+  nameWithType: IKeycloakAdminClient.AssignRealmRoleToGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: CreateGroupAsync(string, string?, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: CreateGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync(string, string?, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.CreateGroupAsync(string, string?, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.CreateGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync*
+  name: CreateGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync
+  nameWithType: IKeycloakAdminClient.CreateGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  name: CreateUserAsync(string, string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  name.vb: CreateUserAsync(String, String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(string, string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(String, String, String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.CreateUserAsync(string, string, string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.CreateUserAsync(String, String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync*
+  name: CreateUserAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync
+  nameWithType: IKeycloakAdminClient.CreateUserAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync(System.String,System.Threading.CancellationToken)
+  name: DeleteGroupAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteGroupAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DeleteGroupAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync(String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.DeleteGroupAsync(string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.DeleteGroupAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync*
+  name: DeleteGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync
+  nameWithType: IKeycloakAdminClient.DeleteGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync(System.String,System.Threading.CancellationToken)
+  name: DeleteUserAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteUserAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DeleteUserAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync(String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.DeleteUserAsync(string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.DeleteUserAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync*
+  name: DeleteUserAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteUserAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync
+  nameWithType: IKeycloakAdminClient.DeleteUserAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync(System.String,System.Threading.CancellationToken)
+  name: GetGroupIdByPathAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetGroupIdByPathAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetGroupIdByPathAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync(String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.GetGroupIdByPathAsync(string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.GetGroupIdByPathAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync*
+  name: GetGroupIdByPathAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetGroupIdByPathAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync
+  nameWithType: IKeycloakAdminClient.GetGroupIdByPathAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync(System.String,System.Threading.CancellationToken)
+  name: GetUserIdByUsernameAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserIdByUsernameAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetUserIdByUsernameAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync(String, System.Threading.CancellationToken)
+  nameWithType: IKeycloakAdminClient.GetUserIdByUsernameAsync(string, CancellationToken)
+  nameWithType.vb: IKeycloakAdminClient.GetUserIdByUsernameAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync*
+  name: GetUserIdByUsernameAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserIdByUsernameAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync
+  nameWithType: IKeycloakAdminClient.GetUserIdByUsernameAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService
+  name: IKeycloakTenantCleanupService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService
+  nameWithType: IKeycloakTenantCleanupService
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  name: CleanupTenantAsync(KeycloakTenantContext, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantCleanupService_CleanupTenantAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext, System.Threading.CancellationToken)
+  nameWithType: IKeycloakTenantCleanupService.CleanupTenantAsync(KeycloakTenantContext, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync*
+  name: CleanupTenantAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantCleanupService_CleanupTenantAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.CleanupTenantAsync
+  nameWithType: IKeycloakTenantCleanupService.CleanupTenantAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService
+  name: IKeycloakTenantOnboardingService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService
+  nameWithType: IKeycloakTenantOnboardingService
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  name: OnboardTenantAsync(KeycloakTenantContext, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantOnboardingService_OnboardTenantAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext, System.Threading.CancellationToken)
+  nameWithType: IKeycloakTenantOnboardingService.OnboardTenantAsync(KeycloakTenantContext, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync*
+  name: OnboardTenantAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantOnboardingService_OnboardTenantAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.OnboardTenantAsync
+  nameWithType: IKeycloakTenantOnboardingService.OnboardTenantAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models
+  name: Code7Dev.Organizor.Infrastructure.Keycloak.Models
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Keycloak.Models
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models
+  nameWithType: Code7Dev.Organizor.Infrastructure.Keycloak.Models
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest
+  name: KeycloakCreateGroupRequest
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest
+  nameWithType: KeycloakCreateGroupRequest
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateGroupRequest_Name
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name
+  nameWithType: KeycloakCreateGroupRequest.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateGroupRequest_Name_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.Name
+  nameWithType: KeycloakCreateGroupRequest.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest
+  name: KeycloakCreateUserRequest
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest
+  nameWithType: KeycloakCreateUserRequest
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email
+  name: Email
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Email
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email
+  nameWithType: KeycloakCreateUserRequest.Email
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email*
+  name: Email
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Email_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email
+  nameWithType: KeycloakCreateUserRequest.Email
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled
+  name: Enabled
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Enabled
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled
+  nameWithType: KeycloakCreateUserRequest.Enabled
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled*
+  name: Enabled
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Enabled_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled
+  nameWithType: KeycloakCreateUserRequest.Enabled
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username
+  name: Username
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username
+  nameWithType: KeycloakCreateUserRequest.Username
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username*
+  name: Username
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username
+  nameWithType: KeycloakCreateUserRequest.Username
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults
+  name: KeycloakDefaults
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults
+  nameWithType: KeycloakDefaults
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients
+  name: KeycloakDefaults.Clients
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients
+  nameWithType: KeycloakDefaults.Clients
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Admin
+  name: Admin
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Clients_Admin
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Admin
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Admin
+  nameWithType: KeycloakDefaults.Clients.Admin
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Api
+  name: Api
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Clients_Api
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Api
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Api
+  nameWithType: KeycloakDefaults.Clients.Api
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Ui
+  name: Ui
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Clients_Ui
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Ui
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.Ui
+  nameWithType: KeycloakDefaults.Clients.Ui
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups
+  name: KeycloakDefaults.Groups
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups
+  nameWithType: KeycloakDefaults.Groups
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Admins
+  name: Admins
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Groups_Admins
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Admins
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Admins
+  nameWithType: KeycloakDefaults.Groups.Admins
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.TenantsRoot
+  name: TenantsRoot
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Groups_TenantsRoot
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.TenantsRoot
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.TenantsRoot
+  nameWithType: KeycloakDefaults.Groups.TenantsRoot
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Users
+  name: Users
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Groups_Users
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Users
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.Users
+  nameWithType: KeycloakDefaults.Groups.Users
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Realm
+  name: Realm
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Realm
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Realm
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Realm
+  nameWithType: KeycloakDefaults.Realm
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles
+  name: KeycloakDefaults.Roles
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles
+  nameWithType: KeycloakDefaults.Roles
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.PlatformAdmin
+  name: PlatformAdmin
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Roles_PlatformAdmin
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.PlatformAdmin
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.PlatformAdmin
+  nameWithType: KeycloakDefaults.Roles.PlatformAdmin
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantAdmin
+  name: TenantAdmin
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Roles_TenantAdmin
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantAdmin
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantAdmin
+  nameWithType: KeycloakDefaults.Roles.TenantAdmin
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantUser
+  name: TenantUser
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakDefaults_Roles_TenantUser
+  commentId: F:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantUser
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.TenantUser
+  nameWithType: KeycloakDefaults.Roles.TenantUser
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup
+  name: KeycloakGroup
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup
+  nameWithType: KeycloakGroup
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_Id
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id
+  nameWithType: KeycloakGroup.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id*
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_Id_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Id
+  nameWithType: KeycloakGroup.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_Name
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name
+  nameWithType: KeycloakGroup.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_Name_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.Name
+  nameWithType: KeycloakGroup.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
+  name: SubGroups
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_SubGroups
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
+  nameWithType: KeycloakGroup.SubGroups
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups*
+  name: SubGroups
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakGroup_SubGroups_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
+  nameWithType: KeycloakGroup.SubGroups
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole
+  name: KeycloakRole
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole
+  nameWithType: KeycloakRole
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakRole_Id
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id
+  nameWithType: KeycloakRole.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id*
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakRole_Id_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Id
+  nameWithType: KeycloakRole.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakRole_Name
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name
+  nameWithType: KeycloakRole.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakRole_Name_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.Name
+  nameWithType: KeycloakRole.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings
+  name: KeycloakSettings
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings
+  nameWithType: KeycloakSettings
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId
+  name: AdminClientId
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_AdminClientId
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId
+  nameWithType: KeycloakSettings.AdminClientId
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId*
+  name: AdminClientId
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_AdminClientId_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientId
+  nameWithType: KeycloakSettings.AdminClientId
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret
+  name: AdminClientSecret
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_AdminClientSecret
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret
+  nameWithType: KeycloakSettings.AdminClientSecret
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret*
+  name: AdminClientSecret
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_AdminClientSecret_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.AdminClientSecret
+  nameWithType: KeycloakSettings.AdminClientSecret
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
+  name: BaseUrl
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_BaseUrl
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
+  nameWithType: KeycloakSettings.BaseUrl
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl*
+  name: BaseUrl
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_BaseUrl_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
+  nameWithType: KeycloakSettings.BaseUrl
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
+  name: Realm
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_Realm
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
+  nameWithType: KeycloakSettings.Realm
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm*
+  name: Realm
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_Realm_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
+  nameWithType: KeycloakSettings.Realm
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext
+  name: KeycloakTenantContext
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext
+  nameWithType: KeycloakTenantContext
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor(System.Guid,System.String,System.String)
+  name: KeycloakTenantContext(Guid, string, string)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext__ctor_System_Guid_System_String_System_String_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor(System.Guid,System.String,System.String)
+  name.vb: New(Guid, String, String)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.KeycloakTenantContext(System.Guid, string, string)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.New(System.Guid, String, String)
+  nameWithType: KeycloakTenantContext.KeycloakTenantContext(Guid, string, string)
+  nameWithType.vb: KeycloakTenantContext.New(Guid, String, String)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor*
+  name: KeycloakTenantContext
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.KeycloakTenantContext
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.New
+  nameWithType: KeycloakTenantContext.KeycloakTenantContext
+  nameWithType.vb: KeycloakTenantContext.New
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Name
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name
+  nameWithType: KeycloakTenantContext.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Name_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name
+  nameWithType: KeycloakTenantContext.Name
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug
+  name: Slug
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Slug
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug
+  nameWithType: KeycloakTenantContext.Slug
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug*
+  name: Slug
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Slug_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug
+  nameWithType: KeycloakTenantContext.Slug
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId
+  name: TenantId
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_TenantId
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId
+  nameWithType: KeycloakTenantContext.TenantId
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId*
+  name: TenantId
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_TenantId_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId
+  nameWithType: KeycloakTenantContext.TenantId
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser
+  name: KeycloakUser
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser
+  nameWithType: KeycloakUser
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakUser_Id
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id
+  nameWithType: KeycloakUser.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id*
+  name: Id
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakUser_Id_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Id
+  nameWithType: KeycloakUser.Id
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username
+  name: Username
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakUser_Username
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username
+  nameWithType: KeycloakUser.Username
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username*
+  name: Username
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakUser_Username_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.Username
+  nameWithType: KeycloakUser.Username
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services
+  name: Code7Dev.Organizor.Infrastructure.Keycloak.Services
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.html
+  commentId: N:Code7Dev.Organizor.Infrastructure.Keycloak.Services
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services
+  nameWithType: Code7Dev.Organizor.Infrastructure.Keycloak.Services
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient
+  name: KeycloakAdminClient
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient
+  nameWithType: KeycloakAdminClient
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings},Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient})
+  name: KeycloakAdminClient(HttpClient, IOptions<KeycloakSettings>, ILogger<KeycloakAdminClient>)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient__ctor_System_Net_Http_HttpClient_Microsoft_Extensions_Options_IOptions_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings__Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings},Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient})
+  name.vb: New(HttpClient, IOptions(Of KeycloakSettings), ILogger(Of KeycloakAdminClient))
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.KeycloakAdminClient(System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptions<Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings>, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.New(System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptions(Of Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings), Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient))
+  nameWithType: KeycloakAdminClient.KeycloakAdminClient(HttpClient, IOptions<KeycloakSettings>, ILogger<KeycloakAdminClient>)
+  nameWithType.vb: KeycloakAdminClient.New(HttpClient, IOptions(Of KeycloakSettings), ILogger(Of KeycloakAdminClient))
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.#ctor*
+  name: KeycloakAdminClient
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.KeycloakAdminClient
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.New
+  nameWithType: KeycloakAdminClient.KeycloakAdminClient
+  nameWithType.vb: KeycloakAdminClient.New
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: AddUserToGroupAsync(string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_AddUserToGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: AddUserToGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.AddUserToGroupAsync(string, string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.AddUserToGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync*
+  name: AddUserToGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_AddUserToGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AddUserToGroupAsync
+  nameWithType: KeycloakAdminClient.AddUserToGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: AssignRealmRoleToGroupAsync(string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_AssignRealmRoleToGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: AssignRealmRoleToGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.AssignRealmRoleToGroupAsync(string, string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.AssignRealmRoleToGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync*
+  name: AssignRealmRoleToGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_AssignRealmRoleToGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.AssignRealmRoleToGroupAsync
+  nameWithType: KeycloakAdminClient.AssignRealmRoleToGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: CreateGroupAsync(string, string?, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_CreateGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: CreateGroupAsync(String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync(string, string?, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.CreateGroupAsync(string, string?, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.CreateGroupAsync(String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync*
+  name: CreateGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_CreateGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateGroupAsync
+  nameWithType: KeycloakAdminClient.CreateGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  name: CreateUserAsync(string, string, string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_CreateUserAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  name.vb: CreateUserAsync(String, String, String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync(string, string, string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync(String, String, String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.CreateUserAsync(string, string, string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.CreateUserAsync(String, String, String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync*
+  name: CreateUserAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_CreateUserAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.CreateUserAsync
+  nameWithType: KeycloakAdminClient.CreateUserAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync(System.String,System.Threading.CancellationToken)
+  name: DeleteGroupAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_DeleteGroupAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DeleteGroupAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync(String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.DeleteGroupAsync(string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.DeleteGroupAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync*
+  name: DeleteGroupAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_DeleteGroupAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteGroupAsync
+  nameWithType: KeycloakAdminClient.DeleteGroupAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync(System.String,System.Threading.CancellationToken)
+  name: DeleteUserAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_DeleteUserAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync(System.String,System.Threading.CancellationToken)
+  name.vb: DeleteUserAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync(String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.DeleteUserAsync(string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.DeleteUserAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync*
+  name: DeleteUserAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_DeleteUserAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.DeleteUserAsync
+  nameWithType: KeycloakAdminClient.DeleteUserAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync(System.String,System.Threading.CancellationToken)
+  name: GetGroupIdByPathAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_GetGroupIdByPathAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetGroupIdByPathAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync(String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.GetGroupIdByPathAsync(string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.GetGroupIdByPathAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync*
+  name: GetGroupIdByPathAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_GetGroupIdByPathAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetGroupIdByPathAsync
+  nameWithType: KeycloakAdminClient.GetGroupIdByPathAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync(System.String,System.Threading.CancellationToken)
+  name: GetUserIdByUsernameAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_GetUserIdByUsernameAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetUserIdByUsernameAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync(String, System.Threading.CancellationToken)
+  nameWithType: KeycloakAdminClient.GetUserIdByUsernameAsync(string, CancellationToken)
+  nameWithType.vb: KeycloakAdminClient.GetUserIdByUsernameAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync*
+  name: GetUserIdByUsernameAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakAdminClient_GetUserIdByUsernameAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync
+  nameWithType: KeycloakAdminClient.GetUserIdByUsernameAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
+  name: KeycloakResetPasswordRequest
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
+  nameWithType: KeycloakResetPasswordRequest
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
+  name: Temporary
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Temporary
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
+  nameWithType: KeycloakResetPasswordRequest.Temporary
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary*
+  name: Temporary
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Temporary_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
+  nameWithType: KeycloakResetPasswordRequest.Temporary
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
+  name: Type
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Type
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
+  nameWithType: KeycloakResetPasswordRequest.Type
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type*
+  name: Type
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Type_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
+  nameWithType: KeycloakResetPasswordRequest.Type
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
+  name: Value
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Value
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
+  nameWithType: KeycloakResetPasswordRequest.Value
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value*
+  name: Value
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Value_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
+  nameWithType: KeycloakResetPasswordRequest.Value
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService
+  name: KeycloakTenantCleanupService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService
+  nameWithType: KeycloakTenantCleanupService
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService})
+  name: KeycloakTenantCleanupService(IKeycloakAdminClient, ILogger<KeycloakTenantCleanupService>)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantCleanupService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantCleanupService__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService})
+  name.vb: New(IKeycloakAdminClient, ILogger(Of KeycloakTenantCleanupService))
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.KeycloakTenantCleanupService(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.New(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService))
+  nameWithType: KeycloakTenantCleanupService.KeycloakTenantCleanupService(IKeycloakAdminClient, ILogger<KeycloakTenantCleanupService>)
+  nameWithType.vb: KeycloakTenantCleanupService.New(IKeycloakAdminClient, ILogger(Of KeycloakTenantCleanupService))
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.#ctor*
+  name: KeycloakTenantCleanupService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantCleanupService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.KeycloakTenantCleanupService
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.New
+  nameWithType: KeycloakTenantCleanupService.KeycloakTenantCleanupService
+  nameWithType.vb: KeycloakTenantCleanupService.New
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  name: CleanupTenantAsync(KeycloakTenantContext, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantCleanupService_CleanupTenantAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext, System.Threading.CancellationToken)
+  nameWithType: KeycloakTenantCleanupService.CleanupTenantAsync(KeycloakTenantContext, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync*
+  name: CleanupTenantAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantCleanupService_CleanupTenantAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.CleanupTenantAsync
+  nameWithType: KeycloakTenantCleanupService.CleanupTenantAsync
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService
+  name: KeycloakTenantOnboardingService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService
+  nameWithType: KeycloakTenantOnboardingService
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService})
+  name: KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService})
+  name.vb: New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService))
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.New(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService))
+  nameWithType: KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>)
+  nameWithType.vb: KeycloakTenantOnboardingService.New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService))
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor*
+  name: KeycloakTenantOnboardingService
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.KeycloakTenantOnboardingService
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.New
+  nameWithType: KeycloakTenantOnboardingService.KeycloakTenantOnboardingService
+  nameWithType.vb: KeycloakTenantOnboardingService.New
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  name: OnboardTenantAsync(KeycloakTenantContext, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService_OnboardTenantAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext, System.Threading.CancellationToken)
+  nameWithType: KeycloakTenantOnboardingService.OnboardTenantAsync(KeycloakTenantContext, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync*
+  name: OnboardTenantAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService_OnboardTenantAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync
+  nameWithType: KeycloakTenantOnboardingService.OnboardTenantAsync
 - uid: Code7Dev.Organizor.Infrastructure.Migrations
   name: Code7Dev.Organizor.Infrastructure.Migrations
   href: api/Code7Dev.Organizor.Infrastructure.Migrations.html
@@ -3002,6 +3931,44 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.DropDatabaseAsync
   nameWithType: TenantDatabaseManager.DropDatabaseAsync
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow
+  name: TenantHardDeleteWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow
+  nameWithType: TenantHardDeleteWorkflow
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow})
+  name: TenantHardDeleteWorkflow(IKeycloakTenantCleanupService, ITenantDatabaseManager, ITenantRepository, ILogger<TenantHardDeleteWorkflow>)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantHardDeleteWorkflow__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantCleanupService_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantHardDeleteWorkflow__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow})
+  name.vb: New(IKeycloakTenantCleanupService, ITenantDatabaseManager, ITenantRepository, ILogger(Of TenantHardDeleteWorkflow))
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.TenantHardDeleteWorkflow(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.New(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow))
+  nameWithType: TenantHardDeleteWorkflow.TenantHardDeleteWorkflow(IKeycloakTenantCleanupService, ITenantDatabaseManager, ITenantRepository, ILogger<TenantHardDeleteWorkflow>)
+  nameWithType.vb: TenantHardDeleteWorkflow.New(IKeycloakTenantCleanupService, ITenantDatabaseManager, ITenantRepository, ILogger(Of TenantHardDeleteWorkflow))
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.#ctor*
+  name: TenantHardDeleteWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantHardDeleteWorkflow__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.TenantHardDeleteWorkflow
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.New
+  nameWithType: TenantHardDeleteWorkflow.TenantHardDeleteWorkflow
+  nameWithType.vb: TenantHardDeleteWorkflow.New
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  name: ExecuteAsync(Tenant, CancellationToken)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantHardDeleteWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
+  nameWithType: TenantHardDeleteWorkflow.ExecuteAsync(Tenant, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantHardDeleteWorkflow_ExecuteAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.ExecuteAsync
+  nameWithType: TenantHardDeleteWorkflow.ExecuteAsync
 - uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator
   name: TenantMigrator
   href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html
@@ -3043,41 +4010,41 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.MigrateAsync
   nameWithType: TenantMigrator.MigrateAsync
-- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
-  name: TenantProvisioningWorkflow
-  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html
-  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
-  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow
-  nameWithType: TenantProvisioningWorkflow
-- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
-  name: TenantProvisioningWorkflow(ITenantDatabaseManager, ITenantMigrator)
-  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantMigrator_
-  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
-  name.vb: New(ITenantDatabaseManager, ITenantMigrator)
-  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.TenantProvisioningWorkflow(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
-  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator)
-  nameWithType: TenantProvisioningWorkflow.TenantProvisioningWorkflow(ITenantDatabaseManager, ITenantMigrator)
-  nameWithType.vb: TenantProvisioningWorkflow.New(ITenantDatabaseManager, ITenantMigrator)
-- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor*
-  name: TenantProvisioningWorkflow
-  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow__ctor_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.#ctor
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow
+  name: TenantOnboardingWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow
+  nameWithType: TenantOnboardingWorkflow
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator,Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService)
+  name: TenantOnboardingWorkflow(ITenantDatabaseManager, ITenantMigrator, IKeycloakTenantOnboardingService)
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantOnboardingWorkflow__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantMigrator_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakTenantOnboardingService_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator,Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService)
+  name.vb: New(ITenantDatabaseManager, ITenantMigrator, IKeycloakTenantOnboardingService)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.TenantOnboardingWorkflow(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator, Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator, Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService)
+  nameWithType: TenantOnboardingWorkflow.TenantOnboardingWorkflow(ITenantDatabaseManager, ITenantMigrator, IKeycloakTenantOnboardingService)
+  nameWithType.vb: TenantOnboardingWorkflow.New(ITenantDatabaseManager, ITenantMigrator, IKeycloakTenantOnboardingService)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.#ctor*
+  name: TenantOnboardingWorkflow
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantOnboardingWorkflow__ctor_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.TenantProvisioningWorkflow
-  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.New
-  nameWithType: TenantProvisioningWorkflow.TenantProvisioningWorkflow
-  nameWithType.vb: TenantProvisioningWorkflow.New
-- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.TenantOnboardingWorkflow
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.New
+  nameWithType: TenantOnboardingWorkflow.TenantOnboardingWorkflow
+  nameWithType.vb: TenantOnboardingWorkflow.New
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
   name: ExecuteAsync(Tenant, CancellationToken)
-  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
-  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
-  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
-  nameWithType: TenantProvisioningWorkflow.ExecuteAsync(Tenant, CancellationToken)
-- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync*
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantOnboardingWorkflow_ExecuteAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync(Code7Dev.Organizor.Domain.Tenants.Tenant, System.Threading.CancellationToken)
+  nameWithType: TenantOnboardingWorkflow.ExecuteAsync(Tenant, CancellationToken)
+- uid: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync*
   name: ExecuteAsync
-  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantProvisioningWorkflow_ExecuteAsync_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync
+  href: api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html#Code7Dev_Organizor_Infrastructure_Tenancy_Services_TenantOnboardingWorkflow_ExecuteAsync_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync
   isSpec: "True"
-  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.ExecuteAsync
-  nameWithType: TenantProvisioningWorkflow.ExecuteAsync
+  fullName: Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.ExecuteAsync
+  nameWithType: TenantOnboardingWorkflow.ExecuteAsync

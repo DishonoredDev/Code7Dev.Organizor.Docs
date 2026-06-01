@@ -109,6 +109,25 @@
 }
 </code></pre>
 <p>The admin connection uses the <code>postgres</code> database. Tenant connections use the tenant database name stored in the catalog.</p>
+<h2 id="keycloak">Keycloak</h2>
+<p>The API requires Keycloak settings for two separate concerns:</p>
+<ul>
+<li>JWT validation uses <code>Keycloak:Authority</code>.</li>
+<li>Tenant onboarding uses the Keycloak admin client settings to create tenant groups, assign roles, and create the default tenant admin user.</li>
+</ul>
+<p>Example development shape:</p>
+<pre><code class="lang-json">{
+  &quot;Keycloak&quot;: {
+    &quot;Authority&quot;: &quot;http://localhost:8080/realms/organizor-dev&quot;,
+    &quot;BaseUrl&quot;: &quot;http://localhost:8080&quot;,
+    &quot;Realm&quot;: &quot;organizor-dev&quot;,
+    &quot;AdminClientId&quot;: &quot;organizor-api&quot;,
+    &quot;AdminClientSecret&quot;: &quot;&lt;client-secret&gt;&quot;
+  }
+}
+</code></pre>
+<p><code>Authority</code> must match the token issuer exactly. In development, HTTPS metadata validation is disabled; outside development, Keycloak should be served over HTTPS.</p>
+<p>Store client secrets in user secrets, environment variables, or deployment secrets rather than committing them to source.</p>
 <h2 id="quartz">Quartz</h2>
 <p>Quartz uses the <code>Catalog</code> connection string for its persistent store. The same catalog database stores tenant records and Quartz scheduler tables.</p>
 <p>The API registration configures:</p>

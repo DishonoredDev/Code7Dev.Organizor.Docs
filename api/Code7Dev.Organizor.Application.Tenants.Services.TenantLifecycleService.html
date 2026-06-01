@@ -157,8 +157,8 @@ Class TenantLifecycleService  <a class="header-action link-secondary" title="Vie
 
   <a id="Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantDatabaseManager_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})">
-  TenantLifecycleService(ITenantRepository, ITenantDatabaseManager, ILogger&lt;TenantLifecycleService&gt;)
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantHardDeleteWorkflow_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Application_Tenants_Services_TenantLifecycleService__" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService})">
+  TenantLifecycleService(ITenantRepository, ITenantHardDeleteWorkflow, ILogger&lt;TenantLifecycleService&gt;)
   <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Services/TenantLifecycleService.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -166,14 +166,14 @@ Class TenantLifecycleService  <a class="header-action link-secondary" title="Vie
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TenantLifecycleService(ITenantRepository repo, ITenantDatabaseManager dbManager, ILogger&lt;TenantLifecycleService&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public TenantLifecycleService(ITenantRepository repo, ITenantHardDeleteWorkflow hardDeleteWorkflow, ILogger&lt;TenantLifecycleService&gt; logger)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>repo</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html">ITenantRepository</a></dt>
     <dd></dd>
-    <dt><code>dbManager</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html">ITenantDatabaseManager</a></dt>
+    <dt><code>hardDeleteWorkflow</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html">ITenantHardDeleteWorkflow</a></dt>
     <dd></dd>
     <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html">TenantLifecycleService</a>&gt;</dt>
     <dd></dd>

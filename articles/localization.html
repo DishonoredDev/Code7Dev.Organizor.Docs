@@ -87,77 +87,73 @@
         <article data-uid="">
 <h1 id="localization">Localization</h1>
 
-<p>Organizor provides multilingual support for error responses using a simple, predictable, and API‑friendly localization pipeline.</p>
+<p>Organizor provides multilingual support for error responses using a simple, predictable, API-friendly localization pipeline.</p>
 <h2 id="supported-languages">Supported Languages</h2>
 <p>Organizor currently supports:</p>
 <ul>
-<li><code>nl</code> — Dutch</li>
-<li><code>en</code> — English (fallback)</li>
+<li><code>en</code> - English (fallback)</li>
+<li><code>nl</code> - Dutch</li>
 </ul>
-<p>Additional languages can be added by creating new resource files in the <code>/Resources</code> folder.</p>
-<hr>
+<p>Additional languages can be added by creating new resource files in the <code>Code7Dev.Organizor.Api/Resources</code> folder.</p>
 <h2 id="how-localization-works">How Localization Works</h2>
 <p>Localization is driven by the standard <code>Accept-Language</code> HTTP header.</p>
 <p>Example:</p>
 <pre><code class="lang-http">Accept-Language: nl
 </code></pre>
-<p>The API resolves the culture for the request and uses it to translate error messages.<br>
-If a translation is missing, the system falls back to English (<code>en</code>).</p>
+<p>The API resolves the culture for the request and uses it to translate error messages. If a translation is missing, the system falls back to English (<code>en</code>).</p>
 <h2 id="key-principles">Key Principles</h2>
 <ul>
-<li>Application services return <strong>error codes only</strong> (e.g. <code>TENANT_NOT_FOUND</code>).</li>
-<li>The API middleware maps these codes to localized resource strings.</li>
-<li>No hardcoded messages exist in the domain or application layers.</li>
-<li>Localization is deterministic and client‑controlled.</li>
+<li>Application services return error codes only, such as <code>TENANT_NOT_FOUND</code>.</li>
+<li>The API middleware maps those codes to localized resource strings.</li>
+<li>No hardcoded user-facing messages exist in the domain or application layers.</li>
+<li>Localization is deterministic and client-controlled.</li>
 </ul>
 <h2 id="culture-resolution">Culture Resolution</h2>
 <p>Organizor uses the following resolution order:</p>
 <ul>
-<li>Accept-Language header</li>
-<li>Fallback to English (en)</li>
+<li><code>Accept-Language</code> header.</li>
+<li>Fallback to English (<code>en</code>).</li>
 </ul>
-<p>This keeps behavior predictable and client‑controlled.</p>
+<p>This keeps behavior predictable and client-controlled.</p>
 <h2 id="error-code-translation">Error Code Translation</h2>
 <p>Each error code corresponds to a resource key.</p>
 <p>Examples:</p>
 <ul>
-<li>TENANT_NOT_FOUND</li>
-<li>TENANT_ALREADY_EXISTS</li>
-<li>UNEXPECTED_ERROR</li>
+<li><code>TENANT_NOT_FOUND</code></li>
+<li><code>TENANT_ALREADY_EXISTS</code></li>
+<li><code>UNEXPECTED_ERROR</code></li>
 </ul>
 <p>These keys exist in:</p>
 <ul>
-<li>/Resources/SharedResources.en.resx</li>
-<li>/Resources/SharedResources.nl.resx</li>
+<li><code>Code7Dev.Organizor.Api/Resources/Shared.en.resx</code></li>
+<li><code>Code7Dev.Organizor.Api/Resources/Shared.nl.resx</code></li>
 </ul>
-<p>The middleware retrieves the localized string and injects it into the RFC7807 error response.</p>
+<p>The middleware retrieves the localized string and injects it into the RFC 7807 problem response.</p>
 <h2 id="example-request-and-response">Example Request and Response</h2>
-<p><strong>Request</strong></p>
-<pre><code class="lang-http">GET /api/v1/tenants/unknown-id
+<p>Request:</p>
+<pre><code class="lang-http">GET /api/v1/tenants/unknown
+Authorization: Bearer &lt;token&gt;
 Accept-Language: nl
 </code></pre>
-<p><strong>Response</strong></p>
+<p>Response:</p>
 <pre><code class="lang-json">{
   &quot;type&quot;: &quot;https://httpstatuses.com/404&quot;,
   &quot;title&quot;: &quot;Tenant niet gevonden&quot;,
   &quot;status&quot;: 404,
-  &quot;errorCode&quot;: &quot;TENANT_NOT_FOUND&quot;,
-  &quot;traceId&quot;: &quot;00-abc123...&quot;
+  &quot;error&quot;: &quot;TENANT_NOT_FOUND&quot;,
+  &quot;correlationId&quot;: &quot;abc123&quot;
 }
 </code></pre>
-<p>The errorCode remains stable and language‑independent.
-The title is localized based on the request culture.</p>
-<hr>
+<p>The error code remains stable and language-independent. The title is localized based on the request culture.</p>
 <h2 id="adding-new-translations">Adding New Translations</h2>
 <p>To add a new language:</p>
-<p>Create a new .resx file, e.g.:</p>
-<ul>
-<li>SharedResources.fr.resx
-Add the same error keys as in the English file</li>
-</ul>
-<p>Provide translated values</p>
-<p>Restart the API</p>
-<hr>
+<ol>
+<li>Create a new <code>.resx</code> file, for example <code>Shared.fr.resx</code>.</li>
+<li>Add the same error keys as in the English file.</li>
+<li>Provide translated values.</li>
+<li>Register the culture in <code>AddApiLocalization</code>.</li>
+<li>Restart the API.</li>
+</ol>
 
 </article>
 

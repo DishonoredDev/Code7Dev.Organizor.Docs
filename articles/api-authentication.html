@@ -122,10 +122,18 @@
 <p>Example response:</p>
 <pre><code class="lang-json">{
   &quot;user&quot;: &quot;admin@acme.dev&quot;,
+  &quot;tenant&quot;: null,
+  &quot;tenantClaims&quot;: [
+    &quot;/tenants/acme/admins&quot;
+  ],
+  &quot;roles&quot;: [
+    &quot;tenant-admin&quot;,
+    &quot;tenant-user&quot;
+  ],
   &quot;claims&quot;: [
     { &quot;type&quot;: &quot;sub&quot;, &quot;value&quot;: &quot;...&quot; },
     { &quot;type&quot;: &quot;tenant&quot;, &quot;value&quot;: &quot;/tenants/acme/admins&quot; },
-    { &quot;type&quot;: &quot;role&quot;, &quot;value&quot;: &quot;organizor-user&quot; }
+    { &quot;type&quot;: &quot;role&quot;, &quot;value&quot;: &quot;tenant-admin&quot; }
   ]
 }
 </code></pre>

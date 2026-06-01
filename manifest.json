@@ -25,6 +25,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Authorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Authorization.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Authorization",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AuthController.yml",
       "output": {
         ".html": {
@@ -613,6 +655,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.yml",
       "output": {
         ".html": {
@@ -655,17 +711,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.yml",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.html"
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow",
-      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantProvisioningWorkflow.yml\" sourcestartlinenumber=\"1\">Provisions tenant infrastructure after the tenant catalog record has been created.</p>\n"
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.yml\" sourcestartlinenumber=\"1\">Provisions tenant infrastructure after the tenant catalog record has been created.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -973,6 +1029,300 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services",
       "Summary": null
     },
     {
@@ -1285,6 +1635,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.yml",
       "output": {
         ".html": {
@@ -1299,16 +1663,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.yml",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow.html"
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantProvisioningWorkflow",
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow",
       "Summary": null
     },
     {
@@ -1444,6 +1808,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/localization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/role-based-authorization.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/role-based-authorization.html"
         }
       },
       "version": ""

@@ -87,7 +87,7 @@
         <article data-uid="">
 <h1 id="keycloak-setup">Keycloak Setup</h1>
 
-<p>This document describes the Keycloak configuration for the Organizor development environment. It includes realm setup, API/UI clients, tenant groups, claim mapping, and user/role setup.</p>
+<p>This document describes the Keycloak configuration for the Organizor development environment. It includes realm setup, API/UI clients, tenant groups, claim mapping, user/role setup, and the admin-client permissions used by tenant onboarding.</p>
 <h2 id="realm-setup">Realm Setup</h2>
 <ul>
 <li>Open Keycloak Admin Console.</li>
@@ -104,7 +104,7 @@
 </ul>
 <p>Required values:</p>
 <ul>
-<li>Client authentication: <strong>OFF</strong></li>
+<li>Client authentication: <strong>ON</strong></li>
 <li>Authorization: OFF</li>
 <li>Standard flow: OFF</li>
 <li>Direct access grants: <strong>ON</strong></li>
@@ -118,6 +118,27 @@
 <li>Store it in development tooling that requests tokens.</li>
 </ul>
 <p>The API currently validates bearer tokens only; it does not read the client secret from application configuration. The client secret is only needed by tooling or services that request tokens with the <code>client_credentials</code> flow.</p>
+<p>The infrastructure Keycloak admin client also uses this client secret during tenant onboarding. Configure these application settings from the same Keycloak client:</p>
+<pre><code class="lang-json">{
+  &quot;Keycloak&quot;: {
+    &quot;Authority&quot;: &quot;http://localhost:8080/realms/organizor-dev&quot;,
+    &quot;BaseUrl&quot;: &quot;http://localhost:8080&quot;,
+    &quot;Realm&quot;: &quot;organizor-dev&quot;,
+    &quot;AdminClientId&quot;: &quot;organizor-api&quot;,
+    &quot;AdminClientSecret&quot;: &quot;&lt;client-secret&gt;&quot;
+  }
+}
+</code></pre>
+<p>For tenant onboarding and hard deletion, the <code>organizor-api</code> service account must be allowed to use the Keycloak Admin REST API. Assign the required <code>realm-management</code> client roles for:</p>
+<ul>
+<li>reading groups and users;</li>
+<li>creating and deleting tenant groups;</li>
+<li>assigning realm roles to groups;</li>
+<li>creating the default tenant admin user;</li>
+<li>resetting the default tenant admin password;</li>
+<li>adding users to groups;</li>
+<li>deleting the default tenant admin user during hard deletion.</li>
+</ul>
 <h2 id="ui-client-organizor-ui">UI Client (<code>organizor-ui</code>)</h2>
 <p>Settings:</p>
 <ul>
@@ -146,6 +167,7 @@
 <li><code>*</code></li>
 </ul>
 <h2 id="tenant-groups">Tenant Groups</h2>
+<p>Tenant onboarding creates the group structure automatically when <code>POST /api/admin/tenants/onboard</code> is used. Manual setup is only needed for bootstrap or testing.</p>
 <p>Group structure:</p>
 <ul>
 <li><code>/tenants</code></li>
@@ -158,6 +180,19 @@
 <li><code>/users</code> group</li>
 <li><code>/admins</code> group</li>
 </ul>
+<p>On onboarding, Organizor assigns:</p>
+<ul>
+<li><code>tenant-admin</code> to <code>/tenants/{slug}/admins</code>;</li>
+<li><code>tenant-user</code> to <code>/tenants/{slug}/users</code>.</li>
+</ul>
+<p>It also creates a default tenant admin user:</p>
+<ul>
+<li>Username: <code>{slug}-admin</code></li>
+<li>Email: <code>{slug}-admin@organizor.local</code></li>
+<li>Temporary password: <code>ChangeMe123!</code></li>
+<li>Group: <code>/tenants/{slug}/admins</code></li>
+</ul>
+<p>During hard deletion, Organizor removes the tenant group <code>/tenants/{slug}</code> and deletes the default <code>{slug}-admin</code> user when it exists.</p>
 <h2 id="tenant-membership-claim-mapper">Tenant Membership Claim Mapper</h2>
 <p>Location:</p>
 <ul>
@@ -176,6 +211,12 @@
 <li>Add to userinfo: ON</li>
 </ul>
 <h2 id="user-setup">User Setup</h2>
+<p>Create these realm roles before assigning users:</p>
+<ul>
+<li><code>organizor-admin</code></li>
+<li><code>tenant-admin</code></li>
+<li><code>tenant-user</code></li>
+</ul>
 <p>Platform admin:</p>
 <ul>
 <li>Username: <code>admin@organizor.dev</code></li>
@@ -187,7 +228,7 @@
 <ul>
 <li>Username: <code>admin@acme.dev</code></li>
 <li>Password: <code>Admin123!</code></li>
-<li>Assign realm role: <code>organizor-user</code></li>
+<li>Assign realm role: <code>tenant-admin</code></li>
 <li>Assign group: <code>/tenants/acme/admins</code></li>
 </ul>
 <p>Tenant user:</p>
@@ -202,6 +243,18 @@
 <ul>
 <li><code>http://localhost:8080/realms/organizor-dev/protocol/openid-connect/token</code></li>
 </ul>
+<p>Expected role claim examples:</p>
+<pre><code class="lang-json">{
+  &quot;realm_access&quot;: {
+    &quot;roles&quot;: [&quot;organizor-admin&quot;]
+  },
+  &quot;resource_access&quot;: {
+    &quot;organizor-api&quot;: {
+      &quot;roles&quot;: [&quot;tenant-user&quot;]
+    }
+  }
+}
+</code></pre>
 <p>Example tenant claim:</p>
 <pre><code class="lang-json">&quot;tenant&quot;: [&quot;/tenants/acme/admins&quot;]
 </code></pre>
