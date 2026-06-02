@@ -1714,6 +1714,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/api-integration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/api-integration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/api.md",
       "output": {
         ".html": {
@@ -1728,6 +1738,26 @@
       "output": {
         ".html": {
           "relative_path": "articles/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/authentication-flow.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/authentication-flow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/component-structure.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/component-structure.html"
         }
       },
       "version": ""
