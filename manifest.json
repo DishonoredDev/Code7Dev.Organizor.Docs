@@ -1824,6 +1824,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/keycloak-https.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/keycloak-https.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/keycloak-setup.md",
       "output": {
         ".html": {
@@ -1834,10 +1844,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/local-development.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/local-development.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/localization.md",
       "output": {
         ".html": {
           "relative_path": "articles/localization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/portal-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/portal-overview.html"
         }
       },
       "version": ""

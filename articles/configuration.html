@@ -118,16 +118,50 @@
 <p>Example development shape:</p>
 <pre><code class="lang-json">{
   &quot;Keycloak&quot;: {
-    &quot;Authority&quot;: &quot;http://localhost:8080/realms/organizor-dev&quot;,
-    &quot;BaseUrl&quot;: &quot;http://localhost:8080&quot;,
+    &quot;Authority&quot;: &quot;https://localhost:8443/realms/organizor-dev&quot;,
+    &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
     &quot;Realm&quot;: &quot;organizor-dev&quot;,
     &quot;AdminClientId&quot;: &quot;organizor-api&quot;,
     &quot;AdminClientSecret&quot;: &quot;&lt;client-secret&gt;&quot;
   }
 }
 </code></pre>
-<p><code>Authority</code> must match the token issuer exactly. In development, HTTPS metadata validation is disabled; outside development, Keycloak should be served over HTTPS.</p>
+<p><code>Authority</code> must match the token issuer exactly. The local Keycloak container runs at <code>https://localhost:8443</code>, so tokens from the Blazor portal will have issuer <code>https://localhost:8443/realms/organizor-dev</code>.</p>
 <p>Store client secrets in user secrets, environment variables, or deployment secrets rather than committing them to source.</p>
+<h2 id="portal-ui">Portal UI</h2>
+<p>The Blazor WebAssembly portal uses Keycloak for OIDC login and calls the API with bearer tokens.</p>
+<p>Current local development endpoints:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal URL</td>
+<td><code>https://localhost:7025</code></td>
+</tr>
+<tr>
+<td>Keycloak authority</td>
+<td><code>https://localhost:8443/realms/organizor-dev</code></td>
+</tr>
+<tr>
+<td>Keycloak client ID</td>
+<td><code>organizor-ui</code></td>
+</tr>
+<tr>
+<td>Login callback</td>
+<td><code>https://localhost:7025/authentication/login-callback</code></td>
+</tr>
+<tr>
+<td>API base URL</td>
+<td><code>https://localhost:7184</code></td>
+</tr>
+</tbody>
+</table>
+<p>These values must stay aligned with the <code>organizor-ui</code> client redirect URIs and web origins in Keycloak.</p>
 <h2 id="quartz">Quartz</h2>
 <p>Quartz uses the <code>Catalog</code> connection string for its persistent store. The same catalog database stores tenant records and Quartz scheduler tables.</p>
 <p>The API registration configures:</p>

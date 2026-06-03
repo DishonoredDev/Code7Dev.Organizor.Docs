@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>API | Organizor </title>
+      <title>Public API Behavior | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="API | Organizor ">
+      <meta name="title" content="Public API Behavior | Organizor ">
       
       <meta name="description" content="Public HTTP endpoint guide for tenant catalog operations, response shapes, status codes, and client examples.">
       <link rel="icon" href="../images/logo.svg">
@@ -85,7 +85,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="api">API</h1>
+<h1 id="public-api-behavior">Public API Behavior</h1>
 
 <p>The public API currently exposes tenant catalog endpoints. These endpoints are platform/catalog routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They are still authenticated:</p>
 <ul>
@@ -175,17 +175,17 @@ Authorization: Bearer &lt;token&gt;
 </tr>
 <tr>
 <td><code>/scalar</code></td>
-<td>Scalar API reference in development.</td>
+<td>Interactive OpenAPI/Scalar endpoint explorer in development.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="local-api-reference">Local API Reference</h2>
+<h2 id="openapi-and-scalar">OpenAPI And Scalar</h2>
 <p>When the API runs in development:</p>
 <ul>
 <li>OpenAPI JSON is available at <code>/openapi/v1.json</code>.</li>
 <li>Scalar is available at <code>/scalar</code>.</li>
 </ul>
-<p>The DocFX API navigation tab contains the generated C# reference for controllers, DTOs, services, interfaces, middleware, and persistence types.</p>
+<p>Use this article for behavior: routes, authorization expectations, tenant headers, response shapes, and operational meaning. Use the generated API reference only for C# type signatures.</p>
 
 </article>
 

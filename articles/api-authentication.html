@@ -92,7 +92,7 @@
 <h2 id="jwt-validation">JWT Validation</h2>
 <p>The API validates tokens using the Keycloak realm:</p>
 <ul>
-<li>Authority: <code>http://localhost:8080/realms/organizor-dev</code></li>
+<li>Authority: <code>https://localhost:8443/realms/organizor-dev</code></li>
 <li>Audience validation: disabled for the current development setup</li>
 <li>Token type: Bearer</li>
 </ul>
@@ -144,7 +144,7 @@
 <li>400 Bad Request -&gt; Missing or invalid tenant header on tenant-scoped routes.</li>
 </ul>
 <h2 id="test-request">Test Request</h2>
-<pre><code class="lang-http">GET http://localhost:5100/api/auth/whoami
+<pre><code class="lang-http">GET https://localhost:7184/api/auth/whoami
 Authorization: Bearer &lt;token&gt;
 </code></pre>
 

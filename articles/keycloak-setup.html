@@ -88,6 +88,7 @@
 <h1 id="keycloak-setup">Keycloak Setup</h1>
 
 <p>This document describes the Keycloak configuration for the Organizor development environment. It includes realm setup, API/UI clients, tenant groups, claim mapping, user/role setup, and the admin-client permissions used by tenant onboarding.</p>
+<p>The local Keycloak container is expected to run over HTTPS at <code>https://localhost:8443</code>. See <a href="keycloak-https.html">Keycloak HTTPS Setup</a> before configuring clients.</p>
 <h2 id="realm-setup">Realm Setup</h2>
 <ul>
 <li>Open Keycloak Admin Console.</li>
@@ -121,8 +122,8 @@
 <p>The infrastructure Keycloak admin client also uses this client secret during tenant onboarding. Configure these application settings from the same Keycloak client:</p>
 <pre><code class="lang-json">{
   &quot;Keycloak&quot;: {
-    &quot;Authority&quot;: &quot;http://localhost:8080/realms/organizor-dev&quot;,
-    &quot;BaseUrl&quot;: &quot;http://localhost:8080&quot;,
+    &quot;Authority&quot;: &quot;https://localhost:8443/realms/organizor-dev&quot;,
+    &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
     &quot;Realm&quot;: &quot;organizor-dev&quot;,
     &quot;AdminClientId&quot;: &quot;organizor-api&quot;,
     &quot;AdminClientSecret&quot;: &quot;&lt;client-secret&gt;&quot;
@@ -157,15 +158,16 @@
 </ul>
 <p>Development redirect URIs:</p>
 <ul>
-<li><code>https://localhost:5001/*</code></li>
-<li><code>https://localhost:5002/*</code></li>
-<li><code>http://localhost:5001/*</code></li>
-<li><code>http://localhost:5002/*</code></li>
+<li><code>https://localhost:7025/*</code></li>
+<li><code>https://localhost:7025/authentication/login-callback</code></li>
+<li><code>http://localhost:5080/*</code></li>
 </ul>
 <p>Web origins:</p>
 <ul>
-<li><code>*</code></li>
+<li><code>https://localhost:7025</code></li>
+<li><code>http://localhost:5080</code></li>
 </ul>
+<p>Use <code>*</code> only for quick local testing. Explicit origins are preferable because they catch redirect and CORS mistakes earlier.</p>
 <h2 id="tenant-groups">Tenant Groups</h2>
 <p>Tenant onboarding creates the group structure automatically when <code>POST /api/admin/tenants/onboard</code> is used. Manual setup is only needed for bootstrap or testing.</p>
 <p>Group structure:</p>
@@ -241,7 +243,7 @@
 <h2 id="token-testing">Token Testing</h2>
 <p>Token endpoint:</p>
 <ul>
-<li><code>http://localhost:8080/realms/organizor-dev/protocol/openid-connect/token</code></li>
+<li><code>https://localhost:8443/realms/organizor-dev/protocol/openid-connect/token</code></li>
 </ul>
 <p>Expected role claim examples:</p>
 <pre><code class="lang-json">{

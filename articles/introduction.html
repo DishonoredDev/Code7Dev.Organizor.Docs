@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Introduction | Organizor ">
       
-      <meta name="description" content="Overview of Organizor concepts, project layout, tenant lifecycle operations, and generated API reference.">
+      <meta name="description" content="Overview of Organizor concepts, project layout, tenant lifecycle operations, and documentation boundaries.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -95,7 +95,7 @@
 <li>resolving tenant context for tenant-scoped requests;</li>
 <li>upgrading tenant databases by running migrations;</li>
 <li>soft-deleting tenants before hard deletion;</li>
-<li>exposing health checks, OpenAPI JSON, and Scalar API reference in development.</li>
+<li>exposing health checks, OpenAPI JSON, and Scalar endpoint exploration in development.</li>
 </ul>
 <h2 id="main-concepts">Main Concepts</h2>
 <table>
@@ -155,8 +155,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="generated-reference">Generated Reference</h2>
-<p>DocFX builds API reference pages from the C# projects into the <code>api</code> section. Use those pages for class, interface, and method signatures, and use these articles for workflow-level documentation. The site is intended for internal developers and as an outside-IDE AI reference, so implementation details are documented where they affect behavior.</p>
+<h2 id="documentation-boundaries">Documentation Boundaries</h2>
+<p>The documentation is split into two intentionally different areas:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conceptual docs</td>
+<td>Explain behavior, workflows, configuration, security, local development, operations, and integration decisions.</td>
+</tr>
+<tr>
+<td>Generated API reference</td>
+<td>Lists C# namespaces, classes, interfaces, methods, and signatures generated from source.</td>
+</tr>
+</tbody>
+</table>
+<p>Do not use the generated reference to explain workflows or product behavior. Keep that content in the conceptual articles so it stays readable and can include context, examples, and operational guidance.</p>
 
 </article>
 

@@ -94,11 +94,39 @@
 <li>A secure access token is automatically added to each request.</li>
 <li>The API validates the token before processing the request.</li>
 </ul>
+<p>Local development configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal origin</td>
+<td><code>https://localhost:7025</code></td>
+</tr>
+<tr>
+<td>API base URL</td>
+<td><code>https://localhost:7184</code></td>
+</tr>
+<tr>
+<td>Authorized URL</td>
+<td><code>https://localhost:7184</code></td>
+</tr>
+<tr>
+<td>Token issuer</td>
+<td><code>https://localhost:8443/realms/organizor-dev</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="what-developers-should-know">What Developers Should Know</h2>
 <ul>
 <li>API calls are centralized through a configured HttpClient.</li>
 <li>Authentication is handled automatically.</li>
 <li>Errors from the API surface in the UI through standard Blazor patterns.</li>
+<li>If the API authority and portal token issuer differ by scheme, host, or port, API requests will fail with <code>401 Unauthorized</code>.</li>
 </ul>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>This approach ensures:</p>

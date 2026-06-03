@@ -91,9 +91,9 @@
 <h2 id="what-happens-during-login">What Happens During Login</h2>
 <ol>
 <li>The user clicks <strong>Login</strong>.</li>
-<li>The Portal redirects the user to Keycloak.</li>
+<li>The Portal redirects the user to Keycloak at <code>https://localhost:8443/realms/organizor-dev</code>.</li>
 <li>Keycloak handles the login form and verifies credentials.</li>
-<li>After successful login, Keycloak sends the user back to the Portal.</li>
+<li>After successful login, Keycloak sends the user back to <code>https://localhost:7025/authentication/login-callback</code>.</li>
 <li>The Portal receives a secure token and uses it for API requests.</li>
 </ol>
 <h2 id="why-keycloak">Why Keycloak</h2>
@@ -109,6 +109,7 @@
 <li>Tokens are automatically attached to API requests.</li>
 <li>Protected pages require the user to be authenticated.</li>
 <li>Keycloak configuration determines what each user can access.</li>
+<li>The <code>organizor-ui</code> Keycloak client must allow <code>https://localhost:7025/*</code> as a redirect URI and <code>https://localhost:7025</code> as a web origin.</li>
 </ul>
 
 </article>

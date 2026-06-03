@@ -74,6 +74,28 @@
 <h1 id="organizor-api">Organizor API</h1>
 
 <p>Organizor is a multi-tenant ASP.NET Core API for creating, provisioning, resolving, upgrading, and deleting tenant environments.</p>
+<div class="code7-callout local-only">
+  <div class="code7-callout-title">Local Only</div>
+  <p>The local development path uses HTTPS Keycloak at <code>https://localhost:8443</code>, the Blazor portal at <code>https://localhost:7025</code>, and the API at <code>https://localhost:7184</code>.</p>
+</div>
+<h2 id="runtime-architecture">Runtime Architecture</h2>
+<pre><code class="lang-mermaid">flowchart LR
+    Portal[&quot;Blazor Portal&lt;br/&gt;https://localhost:7025&quot;]
+    Keycloak[&quot;Keycloak&lt;br/&gt;OIDC + roles&quot;]
+    Api[&quot;Organizor API&lt;br/&gt;tenant lifecycle&quot;]
+    Catalog[&quot;Catalog DB&lt;br/&gt;tenant registry&quot;]
+    Tenants[&quot;Tenant DBs&lt;br/&gt;database per tenant&quot;]
+
+    Portal --&gt;|login + token| Keycloak
+    Portal --&gt;|Bearer token| Api
+    Api --&gt;|issuer metadata| Keycloak
+    Api --&gt; Catalog
+    Api --&gt; Tenants
+</code></pre>
+<div class="code7-callout note">
+  <div class="code7-callout-title">Note</div>
+  <p>Conceptual docs explain behavior and workflows. The generated API reference is reserved for C# namespaces, types, methods, and signatures.</p>
+</div>
 <h2 id="documentation-map">Documentation Map</h2>
 <table>
 <thead>
@@ -88,6 +110,14 @@
 <td>Running the API locally and building the documentation.</td>
 </tr>
 <tr>
+<td><a href="articles/local-development.html">Local Development</a></td>
+<td>Canonical local topology, ports, startup order, and verification checklist.</td>
+</tr>
+<tr>
+<td><a href="articles/portal-overview.html">Portal UI</a></td>
+<td>Blazor WebAssembly portal authentication and API integration.</td>
+</tr>
+<tr>
 <td><a href="articles/architecture.html">Architecture</a></td>
 <td>Understanding the API, application, domain, and infrastructure layers.</td>
 </tr>
@@ -96,7 +126,7 @@
 <td>Tenant catalog, tenant resolution, provisioning, and database-per-tenant behavior.</td>
 </tr>
 <tr>
-<td><a href="articles/api.html">API</a></td>
+<td><a href="articles/api.html">Public API Behavior</a></td>
 <td>Public tenant catalog routes, response shapes, status codes, and client examples.</td>
 </tr>
 <tr>
@@ -110,6 +140,10 @@
 <tr>
 <td><a href="articles/configuration.html">Configuration</a></td>
 <td>Connection strings, PostgreSQL settings, logging, CORS, OpenAPI, and Scalar.</td>
+</tr>
+<tr>
+<td><a href="articles/keycloak-https.html">Keycloak HTTPS</a></td>
+<td>Local trusted HTTPS setup for Keycloak.</td>
 </tr>
 <tr>
 <td><a href="articles/security.html">Security</a></td>
@@ -127,6 +161,7 @@
 <li><code>Code7Dev.Organizor.Application</code> contains tenant use cases and service contracts.</li>
 <li><code>Code7Dev.Organizor.Domain</code> contains the tenant aggregate and lifecycle status.</li>
 <li><code>Code7Dev.Organizor.Infrastructure</code> contains EF Core persistence, PostgreSQL database provisioning, tenant database resolution, and migration support.</li>
+<li><code>Code7Dev.Organizor.Portal.Ui</code> hosts the Blazor WebAssembly portal that authenticates with Keycloak and calls the API.</li>
 </ul>
 <h2 id="runtime-surface">Runtime Surface</h2>
 <table>
@@ -155,11 +190,11 @@
 </tr>
 <tr>
 <td><code>/scalar</code></td>
-<td>Scalar API reference in development.</td>
+<td>Interactive OpenAPI/Scalar endpoint explorer in development.</td>
 </tr>
 </tbody>
 </table>
-<p>Start with the <a href="articles/introduction.html">overview</a>, then use the <a href="articles/api.html">API guide</a>, <a href="articles/internal-operations.html">internal operations guide</a>, and the generated API reference available from the API navigation tab when working with the code or IDE AI tooling.</p>
+<p>Start with the <a href="articles/introduction.html">overview</a>, then use the <a href="articles/api.html">public API behavior guide</a> and <a href="articles/internal-operations.html">internal operations guide</a> for workflows. Use the generated API reference only when you need C# type and member signatures.</p>
 
 </article>
 

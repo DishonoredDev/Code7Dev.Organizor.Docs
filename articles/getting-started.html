@@ -87,6 +87,7 @@
         <article data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
+<p>For the full local topology, expected ports, startup order, and verification checklist, use <a href="local-development.html">Local Development</a>. This page keeps the shorter first-run flow.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>.NET SDK 10.</li>
@@ -103,7 +104,7 @@
 <p>Start the development Keycloak instance:</p>
 <pre><code class="lang-powershell">docker compose up -d
 </code></pre>
-<p>The compose file starts Keycloak at <code>http://localhost:8080</code>. Configure the <code>organizor-dev</code> realm, clients, roles, and users as described in <a href="keycloak-setup.html">Keycloak Setup</a>.</p>
+<p>The compose file starts Keycloak at <code>https://localhost:8443</code>. Generate and trust the local certificate first if <code>keycloak/certs/keycloak.p12</code> does not exist. Configure the <code>organizor-dev</code> realm, clients, roles, and users as described in <a href="keycloak-setup.html">Keycloak Setup</a>.</p>
 <h2 id="run-the-api">Run the API</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
@@ -154,7 +155,7 @@
 </tr>
 <tr>
 <td><code>/scalar</code></td>
-<td>Scalar API reference, available in development.</td>
+<td>Interactive OpenAPI/Scalar endpoint explorer, available in development.</td>
 </tr>
 </tbody>
 </table>
@@ -169,11 +170,22 @@ Invoke-RestMethod `
   -Body '{&quot;name&quot;:&quot;Acme&quot;,&quot;slug&quot;:&quot;acme&quot;}'
 </code></pre>
 <p><code>POST /api/v1/tenants</code> creates a catalog record only and requires an <code>organizor-admin</code> token. Use <code>POST /api/admin/tenants/onboard</code> when you also need tenant database and Keycloak provisioning.</p>
+<h2 id="run-the-portal-ui">Run the Portal UI</h2>
+<p>From the repository root:</p>
+<pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Portal.Ui\Code7Dev.Organizor.Portal.Ui.csproj --launch-profile https
+</code></pre>
+<p>The HTTPS profile exposes the portal at <code>https://localhost:7025</code>. The portal is configured to:</p>
+<ul>
+<li>authenticate against <code>https://localhost:8443/realms/organizor-dev</code>;</li>
+<li>use the <code>organizor-ui</code> Keycloak client;</li>
+<li>receive login callbacks at <code>https://localhost:7025/authentication/login-callback</code>;</li>
+<li>call the API at <code>https://localhost:7184</code>.</li>
+</ul>
 <h2 id="build-the-documentation">Build the Documentation</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json
 </code></pre>
-<p>DocFX writes the generated site to <code>docs/_site</code> and generated API metadata to <code>docs/api</code>. Both folders are ignored by git and can be rebuilt.</p>
+<p>DocFX writes the generated site to <code>docs/_site</code> and generated C# type-reference metadata to <code>docs/api</code>. Both folders are ignored by git and can be rebuilt.</p>
 
 </article>
 
