@@ -110,7 +110,7 @@
 </ul>
 <p>The startup flow in <code>Program.cs</code> composes the application by registering catalog persistence, tenant persistence, application services, infrastructure services, and API services.</p>
 <h2 id="application-layer">Application Layer</h2>
-<p>The application project owns use cases and contracts. It defines interfaces for repository access, tenant database management, migration, provisioning, onboarding, upgrades, and lifecycle operations.</p>
+<p>The application project owns use cases and contracts. It defines interfaces for repository access, tenant database management, migration, provisioning, onboarding, upgrades, lifecycle operations, tenant config resolution, config overrides, and plan management.</p>
 <p>Current services:</p>
 <table>
 <thead>
@@ -136,16 +136,29 @@
 <td><code>TenantUpgradeService</code></td>
 <td>Runs migrations for an existing tenant database.</td>
 </tr>
+<tr>
+<td><code>TenantConfigResolver</code></td>
+<td>Resolves effective tenant config from plan defaults plus tenant overrides.</td>
+</tr>
+<tr>
+<td><code>TenantConfigManagementService</code></td>
+<td>Reads and updates tenant-specific config overrides.</td>
+</tr>
+<tr>
+<td><code>TenantPlanManagementService</code></td>
+<td>Reads and updates tenant plan defaults.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="domain-layer">Domain Layer</h2>
-<p>The domain project currently contains the tenant entity and status enum. A tenant stores identity, slug, database name, creation date, lifecycle status, provisioning failure reason, and deletion metadata.</p>
+<p>The domain project contains the tenant entity, tenant plan entity, tenant feature-settings value object, and tenant status enum. A tenant stores identity, slug, database name, plan key, config overrides, creation date, lifecycle status, provisioning failure reason, and deletion metadata. Tenant plans store reusable defaults for feature limits and behavior.</p>
 <h2 id="infrastructure-layer">Infrastructure Layer</h2>
 <p>The infrastructure project owns external resources:</p>
 <ul>
 <li><code>CatalogDbContext</code> stores tenant records.</li>
 <li><code>OrganizorDbContext</code> connects to the current tenant database after tenant resolution.</li>
 <li><code>TenantRepository</code> implements catalog tenant persistence.</li>
+<li><code>TenantPlanRepository</code> implements tenant plan persistence.</li>
 <li><code>ConnectionStringBuilder</code> builds PostgreSQL connection strings from configuration.</li>
 <li><code>TenantDatabaseManager</code> creates and drops tenant databases.</li>
 <li><code>TenantMigrator</code> applies EF Core migrations to tenant databases.</li>

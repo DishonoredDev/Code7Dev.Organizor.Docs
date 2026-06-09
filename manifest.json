@@ -67,6 +67,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.yml\" sourcestartlinenumber=\"1\">Exposes tenant configuration inspection endpoints for platform administrators.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.yml\" sourcestartlinenumber=\"1\">Exposes tenant plan management endpoints for platform administrators.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.yml",
       "output": {
         ".html": {
@@ -92,6 +120,20 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Controllers.AuthController",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.TenantConfigController",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.yml\" sourcestartlinenumber=\"1\">Exposes effective configuration for the currently resolved tenant.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -249,6 +291,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.yml\" sourcestartlinenumber=\"1\">Admin tenant config overrides response.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.yml\" sourcestartlinenumber=\"1\">Admin request for updating tenant plan assignment and tenant-level overrides.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.yml\" sourcestartlinenumber=\"1\">Effective tenant configuration response.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.yml",
       "output": {
         ".html": {
@@ -274,6 +358,34 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.yml\" sourcestartlinenumber=\"1\">API response returned after tenant onboarding.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.yml\" sourcestartlinenumber=\"1\">Admin tenant plan response.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.yml\" sourcestartlinenumber=\"1\">Admin request for updating tenant plan defaults.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -627,6 +739,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.yml\" sourcestartlinenumber=\"1\">Provides safe system defaults for tenant configuration resolution.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.yml",
       "output": {
         ".html": {
@@ -652,6 +792,48 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.yml\" sourcestartlinenumber=\"1\">Provides centralized system-level tenant configuration defaults.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.yml\" sourcestartlinenumber=\"1\">Provides admin use cases for tenant plan assignment and tenant-level config overrides.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.yml\" sourcestartlinenumber=\"1\">Resolves effective tenant configuration from system defaults, plan defaults, and tenant overrides.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -739,6 +921,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.yml\" sourcestartlinenumber=\"1\">Provides admin use cases for tenant plan defaults.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.yml\" sourcestartlinenumber=\"1\">Queries persisted tenant plan definitions from the catalog.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.yml",
       "output": {
         ".html": {
@@ -809,6 +1019,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.yml\" sourcestartlinenumber=\"1\">System-level default tenant configuration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.yml\" sourcestartlinenumber=\"1\">Persisted tenant plan assignment and tenant-level config overrides.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.yml\" sourcestartlinenumber=\"1\">Admin update model for tenant plan assignment and tenant-level config overrides.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.yml",
       "output": {
         ".html": {
@@ -820,6 +1072,20 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.yml\" sourcestartlinenumber=\"1\">Application model used to create a tenant catalog record.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.yml\" sourcestartlinenumber=\"1\">Effective runtime tenant configuration after applying system defaults, plan defaults, and tenant overrides.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -879,6 +1145,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.yml\" sourcestartlinenumber=\"1\">Application-facing tenant plan definition.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.yml\" sourcestartlinenumber=\"1\">Admin update model for editable tenant plan fields.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.yml",
       "output": {
         ".html": {
@@ -907,6 +1201,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.yml\" sourcestartlinenumber=\"1\">Provides admin tenant config override management use cases.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.yml\" sourcestartlinenumber=\"1\">Resolves effective tenant configuration using deterministic merge rules.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.yml",
       "output": {
         ".html": {
@@ -932,6 +1254,20 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.yml\" sourcestartlinenumber=\"1\">Provides admin tenant plan management use cases.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -974,6 +1310,34 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Domain.Tenants.Tenant",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Domain.Tenants.Tenant.yml\" sourcestartlinenumber=\"1\">Catalog record for a tenant managed by Organizor.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Domain.Tenants.TenantPlan",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.yml\" sourcestartlinenumber=\"1\">Persisted plan definition containing default features and settings for assigned tenants.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.yml\" sourcestartlinenumber=\"1\">Stable tenant plan keys used by tenant records, seed data, and API contracts.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1383,6 +1747,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.yml",
       "output": {
         ".html": {
@@ -1707,11 +2085,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -1930,11 +2308,11 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "articles/toc.json"
-        },
         ".html": {
           "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
         }
       },
       "version": ""
@@ -1973,11 +2351,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""

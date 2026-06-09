@@ -91,12 +91,13 @@
 <p>Development CORS allows any origin, method, and header.</p>
 <p>Production CORS currently uses <code>ProdCors</code>, but no production origins are configured in code. Add explicit origins before relying on browser clients in production.</p>
 <h2 id="internal-admin-routes">Internal Admin Routes</h2>
-<p>Routes under <code>/api/admin/tenants</code> are internal operations routes. They perform provisioning, upgrades, soft deletion, and hard deletion.</p>
-<p>These endpoints require the <code>RequireAdminRole</code> policy. Only tokens with the <code>organizor-admin</code> role can call them.</p>
+<p>Routes under <code>/api/admin/tenants</code> and <code>/api/admin/tenant-plans</code> are internal operations routes. They perform provisioning, upgrades, soft deletion, hard deletion, effective-config reads, tenant override edits, and plan default edits.</p>
+<p>These endpoints require the <code>RequireOrganizorAdminRole</code> policy. Only tokens with the <code>organizor-admin</code> role can call them.</p>
+<p>Config override and plan default edits should be treated as privileged changes. They can affect tenant-visible limits and feature availability without changing tenant database data.</p>
 <h2 id="error-detail">Error Detail</h2>
 <p>Unhandled exceptions currently include <code>ex.Message</code> in problem details. This is useful for internal development and AI-assisted debugging, but it may expose sensitive implementation details in production.</p>
 <h2 id="tenant-resolution">Tenant Resolution</h2>
-<p>Tenant-scoped routes depend on <code>X-Tenant-Slug</code>. Platform routes such as <code>/api/v1/tenants</code>, <code>/api/admin</code>, <code>/health</code>, <code>/openapi</code>, and <code>/scalar</code> skip tenant resolution.</p>
+<p>Tenant-scoped routes depend on <code>X-Tenant-Slug</code>. <code>GET /api/v1/tenant/config</code> is tenant-scoped and returns the effective config for the current tenant. Platform routes such as <code>/api/v1/tenants</code>, <code>/api/admin</code>, <code>/health</code>, <code>/openapi</code>, and <code>/scalar</code> skip tenant resolution.</p>
 <h2 id="destructive-operations">Destructive Operations</h2>
 <p>Hard deletion drops the tenant database. The service requires a tenant to be soft-deleted before hard deletion, which protects active tenants from immediate physical removal.</p>
 

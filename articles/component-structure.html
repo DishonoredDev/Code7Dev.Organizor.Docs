@@ -124,6 +124,11 @@
 <td>Operational tenant catalog and lifecycle management.</td>
 </tr>
 <tr>
+<td><code>Admin/Plans</code></td>
+<td><code>/admin/plans</code></td>
+<td>Tenant plan default management.</td>
+</tr>
+<tr>
 <td><code>Tenant/Dashboard</code></td>
 <td><code>/tenant</code></td>
 <td>Tenant dashboard placeholder.</td>
@@ -134,13 +139,18 @@
 <td>Tenant profile placeholder.</td>
 </tr>
 <tr>
+<td><code>Tenant/Config</code></td>
+<td><code>/tenant/config</code></td>
+<td>Read-only effective tenant configuration.</td>
+</tr>
+<tr>
 <td><code>NotFound</code></td>
 <td>fallback</td>
 <td>Not-found page.</td>
 </tr>
 </tbody>
 </table>
-<p><code>AdminLayout</code> includes a navigation link for <code>/admin/users</code>, and <code>TenantLayout</code> includes a navigation link for <code>/tenant/camps</code>, but there are no Razor pages for those routes in this branch. Treat both as future navigation placeholders.</p>
+<p><code>AdminLayout</code> includes a navigation link for <code>/admin/users</code>, but there is no Razor page for that route yet. Treat it as a future navigation placeholder.</p>
 <h2 id="layouts">Layouts</h2>
 <table>
 <thead>
@@ -187,7 +197,7 @@
 </tr>
 <tr>
 <td><code>RoleRedirector</code></td>
-<td>Redirects authenticated users from neutral entry routes to <code>/admin</code> or <code>/tenant</code> based on role.</td>
+<td>Redirects authenticated users from neutral entry routes to <code>/admin</code>, <code>/tenant</code>, or <code>/tenant/config</code> based on role.</td>
 </tr>
 <tr>
 <td><code>RedirectToLogin</code></td>
@@ -240,7 +250,11 @@
 </tr>
 <tr>
 <td><code>AdminTenantService</code></td>
-<td>Typed client for admin tenant query and lifecycle operations used by the admin tenant page.</td>
+<td>Typed client for admin tenant, plan, config inspection, and override management operations.</td>
+</tr>
+<tr>
+<td><code>TenantConfigService</code></td>
+<td>Typed client for the tenant-scoped effective config endpoint used by <code>/tenant/config</code>.</td>
 </tr>
 <tr>
 <td><code>KeycloakClaimsPrincipalFactory</code></td>
@@ -280,6 +294,18 @@
 <tr>
 <td><code>TenantMigrationResult</code></td>
 <td>API response model for tenant database upgrades.</td>
+</tr>
+<tr>
+<td><code>TenantEffectiveConfigModel</code></td>
+<td>Effective tenant config response model used by tenant and admin config views.</td>
+</tr>
+<tr>
+<td><code>TenantPlanModel</code></td>
+<td>Tenant plan defaults model used by <code>/admin/plans</code>.</td>
+</tr>
+<tr>
+<td><code>TenantConfigOverridesModel</code></td>
+<td>Tenant plan assignment and override model used by <code>/admin/tenants</code>.</td>
 </tr>
 </tbody>
 </table>

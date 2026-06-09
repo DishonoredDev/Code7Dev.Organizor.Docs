@@ -74,6 +74,140 @@ references:
   commentId: N:Code7Dev.Organizor.Api.Controllers
   fullName: Code7Dev.Organizor.Api.Controllers
   nameWithType: Code7Dev.Organizor.Api.Controllers
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController
+  name: AdminTenantConfigController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController
+  nameWithType: AdminTenantConfigController
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService)
+  name: AdminTenantConfigController(ITenantConfigResolver, ITenantConfigManagementService)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigManagementService_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService)
+  name.vb: New(ITenantConfigResolver, ITenantConfigManagementService)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.AdminTenantConfigController(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService)
+  nameWithType: AdminTenantConfigController.AdminTenantConfigController(ITenantConfigResolver, ITenantConfigManagementService)
+  nameWithType.vb: AdminTenantConfigController.New(ITenantConfigResolver, ITenantConfigManagementService)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.#ctor*
+  name: AdminTenantConfigController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.AdminTenantConfigController
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.New
+  nameWithType: AdminTenantConfigController.AdminTenantConfigController
+  nameWithType.vb: AdminTenantConfigController.New
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig(System.Guid,System.Threading.CancellationToken)
+  name: GetTenantConfig(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_GetTenantConfig_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig(System.Guid, System.Threading.CancellationToken)
+  nameWithType: AdminTenantConfigController.GetTenantConfig(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig*
+  name: GetTenantConfig
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_GetTenantConfig_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfig
+  nameWithType: AdminTenantConfigController.GetTenantConfig
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides(System.Guid,System.Threading.CancellationToken)
+  name: GetTenantConfigOverrides(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_GetTenantConfigOverrides_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides(System.Guid, System.Threading.CancellationToken)
+  nameWithType: AdminTenantConfigController.GetTenantConfigOverrides(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides*
+  name: GetTenantConfigOverrides
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_GetTenantConfigOverrides_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.GetTenantConfigOverrides
+  nameWithType: AdminTenantConfigController.GetTenantConfigOverrides
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto,System.Threading.CancellationToken)
+  name: UpdateTenantConfigOverrides(Guid, TenantConfigOverridesUpdateRequestDto, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_UpdateTenantConfigOverrides_System_Guid_Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides(System.Guid, Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto, System.Threading.CancellationToken)
+  nameWithType: AdminTenantConfigController.UpdateTenantConfigOverrides(Guid, TenantConfigOverridesUpdateRequestDto, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides*
+  name: UpdateTenantConfigOverrides
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantConfigController_UpdateTenantConfigOverrides_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.UpdateTenantConfigOverrides
+  nameWithType: AdminTenantConfigController.UpdateTenantConfigOverrides
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController
+  name: AdminTenantPlansController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController
+  nameWithType: AdminTenantPlansController
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService)
+  name: AdminTenantPlansController(ITenantPlanManagementService)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService)
+  name.vb: New(ITenantPlanManagementService)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.AdminTenantPlansController(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService)
+  nameWithType: AdminTenantPlansController.AdminTenantPlansController(ITenantPlanManagementService)
+  nameWithType.vb: AdminTenantPlansController.New(ITenantPlanManagementService)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.#ctor*
+  name: AdminTenantPlansController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.AdminTenantPlansController
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.New
+  nameWithType: AdminTenantPlansController.AdminTenantPlansController
+  nameWithType.vb: AdminTenantPlansController.New
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll(System.Threading.CancellationToken)
+  name: GetAll(CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_GetAll_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll(System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll(System.Threading.CancellationToken)
+  nameWithType: AdminTenantPlansController.GetAll(CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll*
+  name: GetAll
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_GetAll_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetAll
+  nameWithType: AdminTenantPlansController.GetAll
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey(System.String,System.Threading.CancellationToken)
+  name: GetByKey(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_GetByKey_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey(System.String,System.Threading.CancellationToken)
+  name.vb: GetByKey(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey(String, System.Threading.CancellationToken)
+  nameWithType: AdminTenantPlansController.GetByKey(string, CancellationToken)
+  nameWithType.vb: AdminTenantPlansController.GetByKey(String, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey*
+  name: GetByKey
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_GetByKey_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.GetByKey
+  nameWithType: AdminTenantPlansController.GetByKey
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update(System.String,Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto,System.Threading.CancellationToken)
+  name: Update(string, TenantPlanUpdateRequestDto, CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_Update_System_String_Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update(System.String,Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto,System.Threading.CancellationToken)
+  name.vb: Update(String, TenantPlanUpdateRequestDto, CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update(string, Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update(String, Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto, System.Threading.CancellationToken)
+  nameWithType: AdminTenantPlansController.Update(string, TenantPlanUpdateRequestDto, CancellationToken)
+  nameWithType.vb: AdminTenantPlansController.Update(String, TenantPlanUpdateRequestDto, CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update*
+  name: Update
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantPlansController_Update_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.Update
+  nameWithType: AdminTenantPlansController.Update
 - uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController
   name: AdminTenantsQueryController
   href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html
@@ -144,6 +278,44 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Controllers.AuthController.WhoAmI
   nameWithType: AuthController.WhoAmI
+- uid: Code7Dev.Organizor.Api.Controllers.TenantConfigController
+  name: TenantConfigController
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.TenantConfigController
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantConfigController
+  nameWithType: TenantConfigController
+- uid: Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  name: TenantConfigController(ITenantConfigResolver, ITenantContext)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html#Code7Dev_Organizor_Api_Controllers_TenantConfigController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  name.vb: New(ITenantConfigResolver, ITenantContext)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantConfigController.TenantConfigController(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver, Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.TenantConfigController.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver, Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)
+  nameWithType: TenantConfigController.TenantConfigController(ITenantConfigResolver, ITenantContext)
+  nameWithType.vb: TenantConfigController.New(ITenantConfigResolver, ITenantContext)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor*
+  name: TenantConfigController
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html#Code7Dev_Organizor_Api_Controllers_TenantConfigController__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantConfigController.TenantConfigController
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.TenantConfigController.New
+  nameWithType: TenantConfigController.TenantConfigController
+  nameWithType.vb: TenantConfigController.New
+- uid: Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig(System.Threading.CancellationToken)
+  name: GetCurrentTenantConfig(CancellationToken)
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html#Code7Dev_Organizor_Api_Controllers_TenantConfigController_GetCurrentTenantConfig_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig(System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig(System.Threading.CancellationToken)
+  nameWithType: TenantConfigController.GetCurrentTenantConfig(CancellationToken)
+- uid: Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig*
+  name: GetCurrentTenantConfig
+  href: api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html#Code7Dev_Organizor_Api_Controllers_TenantConfigController_GetCurrentTenantConfig_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig
+  nameWithType: TenantConfigController.GetCurrentTenantConfig
 - uid: Code7Dev.Organizor.Api.Controllers.TenantOperationsController
   name: TenantOperationsController
   href: api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html
@@ -494,6 +666,206 @@ references:
   commentId: N:Code7Dev.Organizor.Api.Mappers.DTO
   fullName: Code7Dev.Organizor.Api.Mappers.DTO
   nameWithType: Code7Dev.Organizor.Api.Mappers.DTO
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto
+  name: TenantConfigOverridesResponseDto
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html
+  commentId: T:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto
+  nameWithType: TenantConfigOverridesResponseDto
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_Features
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features
+  nameWithType: TenantConfigOverridesResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_Features_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Features
+  nameWithType: TenantConfigOverridesResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_PlanKey
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey
+  nameWithType: TenantConfigOverridesResponseDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.PlanKey
+  nameWithType: TenantConfigOverridesResponseDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_Settings
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings
+  nameWithType: TenantConfigOverridesResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_Settings_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.Settings
+  nameWithType: TenantConfigOverridesResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId
+  name: TenantId
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_TenantId
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId
+  nameWithType: TenantConfigOverridesResponseDto.TenantId
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId*
+  name: TenantId
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_TenantId_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantId
+  nameWithType: TenantConfigOverridesResponseDto.TenantId
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_TenantSlug
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug
+  nameWithType: TenantConfigOverridesResponseDto.TenantSlug
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug*
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesResponseDto_TenantSlug_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.TenantSlug
+  nameWithType: TenantConfigOverridesResponseDto.TenantSlug
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto
+  name: TenantConfigOverridesUpdateRequestDto
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html
+  commentId: T:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto
+  nameWithType: TenantConfigOverridesUpdateRequestDto
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_Features
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features
+  nameWithType: TenantConfigOverridesUpdateRequestDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_Features_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Features
+  nameWithType: TenantConfigOverridesUpdateRequestDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_PlanKey
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey
+  nameWithType: TenantConfigOverridesUpdateRequestDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.PlanKey
+  nameWithType: TenantConfigOverridesUpdateRequestDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_Settings
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings
+  nameWithType: TenantConfigOverridesUpdateRequestDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_Settings_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.Settings
+  nameWithType: TenantConfigOverridesUpdateRequestDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto
+  name: TenantEffectiveConfigResponseDto
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html
+  commentId: T:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto
+  nameWithType: TenantEffectiveConfigResponseDto
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_Features
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features
+  nameWithType: TenantEffectiveConfigResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_Features_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Features
+  nameWithType: TenantEffectiveConfigResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_PlanKey
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey
+  nameWithType: TenantEffectiveConfigResponseDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanKey
+  nameWithType: TenantEffectiveConfigResponseDto.PlanKey
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName
+  name: PlanName
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_PlanName
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName
+  nameWithType: TenantEffectiveConfigResponseDto.PlanName
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName*
+  name: PlanName
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_PlanName_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.PlanName
+  nameWithType: TenantEffectiveConfigResponseDto.PlanName
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_Settings
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings
+  nameWithType: TenantEffectiveConfigResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_Settings_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.Settings
+  nameWithType: TenantEffectiveConfigResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId
+  name: TenantId
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_TenantId
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId
+  nameWithType: TenantEffectiveConfigResponseDto.TenantId
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId*
+  name: TenantId
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_TenantId_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantId
+  nameWithType: TenantEffectiveConfigResponseDto.TenantId
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_TenantSlug
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug
+  nameWithType: TenantEffectiveConfigResponseDto.TenantSlug
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug*
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantEffectiveConfigResponseDto_TenantSlug_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.TenantSlug
+  nameWithType: TenantEffectiveConfigResponseDto.TenantSlug
 - uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto
   name: TenantOnboardingRequestDto
   href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.html
@@ -584,6 +956,200 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.Slug
   nameWithType: TenantOnboardingResponseDto.Slug
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto
+  name: TenantPlanResponseDto
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html
+  commentId: T:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto
+  nameWithType: TenantPlanResponseDto
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_CreatedAt
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt
+  nameWithType: TenantPlanResponseDto.CreatedAt
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt*
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_CreatedAt_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.CreatedAt
+  nameWithType: TenantPlanResponseDto.CreatedAt
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description
+  name: Description
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Description
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description
+  nameWithType: TenantPlanResponseDto.Description
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description*
+  name: Description
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Description_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Description
+  nameWithType: TenantPlanResponseDto.Description
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Features
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features
+  nameWithType: TenantPlanResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Features_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Features
+  nameWithType: TenantPlanResponseDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive
+  name: IsActive
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_IsActive
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive
+  nameWithType: TenantPlanResponseDto.IsActive
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive*
+  name: IsActive
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_IsActive_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.IsActive
+  nameWithType: TenantPlanResponseDto.IsActive
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key
+  name: Key
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Key
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key
+  nameWithType: TenantPlanResponseDto.Key
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key*
+  name: Key
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Key_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Key
+  nameWithType: TenantPlanResponseDto.Key
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Name
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name
+  nameWithType: TenantPlanResponseDto.Name
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Name_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Name
+  nameWithType: TenantPlanResponseDto.Name
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Settings
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings
+  nameWithType: TenantPlanResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_Settings_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.Settings
+  nameWithType: TenantPlanResponseDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_SortOrder
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder
+  nameWithType: TenantPlanResponseDto.SortOrder
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder*
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanResponseDto_SortOrder_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.SortOrder
+  nameWithType: TenantPlanResponseDto.SortOrder
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto
+  name: TenantPlanUpdateRequestDto
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html
+  commentId: T:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto
+  nameWithType: TenantPlanUpdateRequestDto
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description
+  name: Description
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Description
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description
+  nameWithType: TenantPlanUpdateRequestDto.Description
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description*
+  name: Description
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Description_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Description
+  nameWithType: TenantPlanUpdateRequestDto.Description
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Features
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features
+  nameWithType: TenantPlanUpdateRequestDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Features_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Features
+  nameWithType: TenantPlanUpdateRequestDto.Features
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive
+  name: IsActive
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_IsActive
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive
+  nameWithType: TenantPlanUpdateRequestDto.IsActive
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive*
+  name: IsActive
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_IsActive_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.IsActive
+  nameWithType: TenantPlanUpdateRequestDto.IsActive
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Name
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name
+  nameWithType: TenantPlanUpdateRequestDto.Name
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Name_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Name
+  nameWithType: TenantPlanUpdateRequestDto.Name
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Settings
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings
+  nameWithType: TenantPlanUpdateRequestDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_Settings_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.Settings
+  nameWithType: TenantPlanUpdateRequestDto.Settings
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_SortOrder
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder
+  nameWithType: TenantPlanUpdateRequestDto.SortOrder
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder*
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_SortOrder_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.SortOrder
+  nameWithType: TenantPlanUpdateRequestDto.SortOrder
 - uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto
   name: TenantRequestDto
   href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html
@@ -777,12 +1343,30 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToCreateModel
   nameWithType: TenantApiMapper.ToCreateModel
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel)
+  name: ToResponse(TenantConfigOverridesModel)
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToResponse_Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_
+  commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel)
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel)
+  nameWithType: TenantApiMapper.ToResponse(TenantConfigOverridesModel)
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel)
+  name: ToResponse(TenantEffectiveConfigModel)
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToResponse_Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_
+  commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel)
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel)
+  nameWithType: TenantApiMapper.ToResponse(TenantEffectiveConfigModel)
 - uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantModel)
   name: ToResponse(TenantModel)
   href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToResponse_Code7Dev_Organizor_Application_Tenants_Models_TenantModel_
   commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantModel)
   fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantModel)
   nameWithType: TenantApiMapper.ToResponse(TenantModel)
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel)
+  name: ToResponse(TenantPlanModel)
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToResponse_Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_
+  commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel)
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse(Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel)
+  nameWithType: TenantApiMapper.ToResponse(TenantPlanModel)
 - uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse*
   name: ToResponse
   href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToResponse_
@@ -790,6 +1374,25 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToResponse
   nameWithType: TenantApiMapper.ToResponse
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto)
+  name: ToUpdateModel(TenantConfigOverridesUpdateRequestDto)
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToUpdateModel_Code7Dev_Organizor_Api_Mappers_DTO_TenantConfigOverridesUpdateRequestDto_
+  commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto)
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto)
+  nameWithType: TenantApiMapper.ToUpdateModel(TenantConfigOverridesUpdateRequestDto)
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto)
+  name: ToUpdateModel(TenantPlanUpdateRequestDto)
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToUpdateModel_Code7Dev_Organizor_Api_Mappers_DTO_TenantPlanUpdateRequestDto_
+  commentId: M:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto)
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel(Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto)
+  nameWithType: TenantApiMapper.ToUpdateModel(TenantPlanUpdateRequestDto)
+- uid: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel*
+  name: ToUpdateModel
+  href: api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html#Code7Dev_Organizor_Api_Mappers_TenantApiMapper_ToUpdateModel_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.TenantApiMapper.ToUpdateModel
+  nameWithType: TenantApiMapper.ToUpdateModel
 - uid: Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper
   name: TenantOnboardingApiMapper
   href: api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.html
@@ -1183,6 +1786,12 @@ references:
   commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.AlreadyExists
   fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.AlreadyExists
   nameWithType: ErrorCodes.Tenant.AlreadyExists
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidConfig
+  name: InvalidConfig
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_InvalidConfig
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidConfig
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidConfig
+  nameWithType: ErrorCodes.Tenant.InvalidConfig
 - uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.InvalidSlug
   name: InvalidSlug
   href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_InvalidSlug
@@ -1207,6 +1816,18 @@ references:
   commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.NotFound
   fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.NotFound
   nameWithType: ErrorCodes.Tenant.NotFound
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanInactive
+  name: PlanInactive
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_PlanInactive
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanInactive
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanInactive
+  nameWithType: ErrorCodes.Tenant.PlanInactive
+- uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanNotFound
+  name: PlanNotFound
+  href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_PlanNotFound
+  commentId: F:Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanNotFound
+  fullName: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.PlanNotFound
+  nameWithType: ErrorCodes.Tenant.PlanNotFound
 - uid: Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.ProvisioningFailed
   name: ProvisioningFailed
   href: api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html#Code7Dev_Organizor_Application_Common_ErrorCodes_Tenant_ProvisioningFailed
@@ -1436,6 +2057,31 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Jobs.TestEmailJob.Execute
   nameWithType: TestEmailJob.Execute
+- uid: Code7Dev.Organizor.Application.Tenants.Configuration
+  name: Code7Dev.Organizor.Application.Tenants.Configuration
+  href: api/Code7Dev.Organizor.Application.Tenants.Configuration.html
+  commentId: N:Code7Dev.Organizor.Application.Tenants.Configuration
+  fullName: Code7Dev.Organizor.Application.Tenants.Configuration
+  nameWithType: Code7Dev.Organizor.Application.Tenants.Configuration
+- uid: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults
+  name: StaticTenantConfigDefaults
+  href: api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults
+  fullName: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults
+  nameWithType: StaticTenantConfigDefaults
+- uid: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults
+  name: GetDefaults()
+  href: api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.html#Code7Dev_Organizor_Application_Tenants_Configuration_StaticTenantConfigDefaults_GetDefaults
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults
+  fullName: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults()
+  nameWithType: StaticTenantConfigDefaults.GetDefaults()
+- uid: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults*
+  name: GetDefaults
+  href: api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.html#Code7Dev_Organizor_Application_Tenants_Configuration_StaticTenantConfigDefaults_GetDefaults_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.GetDefaults
+  nameWithType: StaticTenantConfigDefaults.GetDefaults
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces
   name: Code7Dev.Organizor.Application.Tenants.Interfaces
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.html
@@ -1515,6 +2161,92 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.UserHasAccessAsync
   nameWithType: ITenantAccessService.UserHasAccessAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults
+  name: ITenantConfigDefaults
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults
+  nameWithType: ITenantConfigDefaults
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults
+  name: GetDefaults()
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigDefaults_GetDefaults
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults()
+  nameWithType: ITenantConfigDefaults.GetDefaults()
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults*
+  name: GetDefaults
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigDefaults_GetDefaults_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.GetDefaults
+  nameWithType: ITenantConfigDefaults.GetDefaults
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService
+  name: ITenantConfigManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService
+  nameWithType: ITenantConfigManagementService
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync(System.Guid,System.Threading.CancellationToken)
+  name: GetOverridesAsync(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigManagementService_GetOverridesAsync_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync(System.Guid, System.Threading.CancellationToken)
+  nameWithType: ITenantConfigManagementService.GetOverridesAsync(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync*
+  name: GetOverridesAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigManagementService_GetOverridesAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.GetOverridesAsync
+  nameWithType: ITenantConfigManagementService.GetOverridesAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync(System.Guid,Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel,System.Threading.CancellationToken)
+  name: UpdateOverridesAsync(Guid, TenantConfigOverridesUpdateModel, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigManagementService_UpdateOverridesAsync_System_Guid_Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync(System.Guid,Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync(System.Guid, Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel, System.Threading.CancellationToken)
+  nameWithType: ITenantConfigManagementService.UpdateOverridesAsync(Guid, TenantConfigOverridesUpdateModel, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync*
+  name: UpdateOverridesAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigManagementService_UpdateOverridesAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.UpdateOverridesAsync
+  nameWithType: ITenantConfigManagementService.UpdateOverridesAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver
+  name: ITenantConfigResolver
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver
+  nameWithType: ITenantConfigResolver
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync(System.Guid,System.Threading.CancellationToken)
+  name: ResolveAsync(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_ResolveAsync_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync(System.Guid, System.Threading.CancellationToken)
+  nameWithType: ITenantConfigResolver.ResolveAsync(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync*
+  name: ResolveAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_ResolveAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveAsync
+  nameWithType: ITenantConfigResolver.ResolveAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync(System.String,System.Threading.CancellationToken)
+  name: ResolveBySlugAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_ResolveBySlugAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync(System.String,System.Threading.CancellationToken)
+  name.vb: ResolveBySlugAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync(String, System.Threading.CancellationToken)
+  nameWithType: ITenantConfigResolver.ResolveBySlugAsync(string, CancellationToken)
+  nameWithType.vb: ITenantConfigResolver.ResolveBySlugAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync*
+  name: ResolveBySlugAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_ResolveBySlugAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.ResolveBySlugAsync
+  nameWithType: ITenantConfigResolver.ResolveBySlugAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager
   name: ITenantDatabaseManager
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html
@@ -1667,6 +2399,105 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.ExecuteAsync
   nameWithType: ITenantOnboardingWorkflow.ExecuteAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService
+  name: ITenantPlanManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService
+  nameWithType: ITenantPlanManagementService
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  name: GetAllAsync(CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_GetAllAsync_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  nameWithType: ITenantPlanManagementService.GetAllAsync(CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync*
+  name: GetAllAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_GetAllAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetAllAsync
+  nameWithType: ITenantPlanManagementService.GetAllAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name: GetByKeyAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_GetByKeyAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetByKeyAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync(String, System.Threading.CancellationToken)
+  nameWithType: ITenantPlanManagementService.GetByKeyAsync(string, CancellationToken)
+  nameWithType.vb: ITenantPlanManagementService.GetByKeyAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync*
+  name: GetByKeyAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_GetByKeyAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.GetByKeyAsync
+  nameWithType: ITenantPlanManagementService.GetByKeyAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync(System.String,Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel,System.Threading.CancellationToken)
+  name: UpdateAsync(string, TenantPlanUpdateModel, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_UpdateAsync_System_String_Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync(System.String,Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel,System.Threading.CancellationToken)
+  name.vb: UpdateAsync(String, TenantPlanUpdateModel, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync(string, Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync(String, Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel, System.Threading.CancellationToken)
+  nameWithType: ITenantPlanManagementService.UpdateAsync(string, TenantPlanUpdateModel, CancellationToken)
+  nameWithType.vb: ITenantPlanManagementService.UpdateAsync(String, TenantPlanUpdateModel, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync*
+  name: UpdateAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanManagementService_UpdateAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.UpdateAsync
+  nameWithType: ITenantPlanManagementService.UpdateAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository
+  name: ITenantPlanRepository
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository
+  nameWithType: ITenantPlanRepository
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync(System.Threading.CancellationToken)
+  name: GetAllAsync(CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_GetAllAsync_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync(System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync(System.Threading.CancellationToken)
+  nameWithType: ITenantPlanRepository.GetAllAsync(CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync*
+  name: GetAllAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_GetAllAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetAllAsync
+  nameWithType: ITenantPlanRepository.GetAllAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name: GetByKeyAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_GetByKeyAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetByKeyAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync(String, System.Threading.CancellationToken)
+  nameWithType: ITenantPlanRepository.GetByKeyAsync(string, CancellationToken)
+  nameWithType.vb: ITenantPlanRepository.GetByKeyAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync*
+  name: GetByKeyAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_GetByKeyAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.GetByKeyAsync
+  nameWithType: ITenantPlanRepository.GetByKeyAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync(Code7Dev.Organizor.Domain.Tenants.TenantPlan,System.Threading.CancellationToken)
+  name: UpdateAsync(TenantPlan, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_UpdateAsync_Code7Dev_Organizor_Domain_Tenants_TenantPlan_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync(Code7Dev.Organizor.Domain.Tenants.TenantPlan,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync(Code7Dev.Organizor.Domain.Tenants.TenantPlan, System.Threading.CancellationToken)
+  nameWithType: ITenantPlanRepository.UpdateAsync(TenantPlan, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync*
+  name: UpdateAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_UpdateAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.UpdateAsync
+  nameWithType: ITenantPlanRepository.UpdateAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository
   name: ITenantRepository
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html
@@ -1724,6 +2555,15 @@ references:
   fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync(System.Guid, Boolean)
   nameWithType: ITenantRepository.GetByIdAsync(Guid, bool)
   nameWithType.vb: ITenantRepository.GetByIdAsync(Guid, Boolean)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)
+  name: GetByIdAsync(Guid, bool, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdAsync_System_Guid_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByIdAsync(Guid, Boolean, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync(System.Guid, bool, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync(System.Guid, Boolean, System.Threading.CancellationToken)
+  nameWithType: ITenantRepository.GetByIdAsync(Guid, bool, CancellationToken)
+  nameWithType.vb: ITenantRepository.GetByIdAsync(Guid, Boolean, CancellationToken)
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdAsync*
   name: GetByIdAsync
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdAsync_
@@ -1740,6 +2580,15 @@ references:
   fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync(String, Boolean)
   nameWithType: ITenantRepository.GetBySlugAsync(string, bool)
   nameWithType.vb: ITenantRepository.GetBySlugAsync(String, Boolean)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  name: GetBySlugAsync(string, bool, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetBySlugAsync_System_String_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetBySlugAsync(String, Boolean, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync(string, bool, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync(String, Boolean, System.Threading.CancellationToken)
+  nameWithType: ITenantRepository.GetBySlugAsync(string, bool, CancellationToken)
+  nameWithType.vb: ITenantRepository.GetBySlugAsync(String, Boolean, CancellationToken)
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetBySlugAsync*
   name: GetBySlugAsync
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetBySlugAsync_
@@ -1884,6 +2733,154 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.Success
   nameWithType: ProvisioningResult.Success
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel
+  name: TenantConfigDefaultsModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel
+  nameWithType: TenantConfigDefaultsModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigDefaultsModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features
+  nameWithType: TenantConfigDefaultsModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigDefaultsModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Features
+  nameWithType: TenantConfigDefaultsModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigDefaultsModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings
+  nameWithType: TenantConfigDefaultsModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigDefaultsModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.Settings
+  nameWithType: TenantConfigDefaultsModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel
+  name: TenantConfigOverridesModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel
+  nameWithType: TenantConfigOverridesModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features
+  nameWithType: TenantConfigOverridesModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Features
+  nameWithType: TenantConfigOverridesModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_PlanKey
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey
+  nameWithType: TenantConfigOverridesModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.PlanKey
+  nameWithType: TenantConfigOverridesModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings
+  nameWithType: TenantConfigOverridesModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.Settings
+  nameWithType: TenantConfigOverridesModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId
+  name: TenantId
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_TenantId
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId
+  nameWithType: TenantConfigOverridesModel.TenantId
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId*
+  name: TenantId
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_TenantId_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantId
+  nameWithType: TenantConfigOverridesModel.TenantId
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_TenantSlug
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug
+  nameWithType: TenantConfigOverridesModel.TenantSlug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug*
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesModel_TenantSlug_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.TenantSlug
+  nameWithType: TenantConfigOverridesModel.TenantSlug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel
+  name: TenantConfigOverridesUpdateModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel
+  nameWithType: TenantConfigOverridesUpdateModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features
+  nameWithType: TenantConfigOverridesUpdateModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Features
+  nameWithType: TenantConfigOverridesUpdateModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_PlanKey
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey
+  nameWithType: TenantConfigOverridesUpdateModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.PlanKey
+  nameWithType: TenantConfigOverridesUpdateModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings
+  nameWithType: TenantConfigOverridesUpdateModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.Settings
+  nameWithType: TenantConfigOverridesUpdateModel.Settings
 - uid: Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel
   name: TenantCreateModel
   href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html
@@ -1916,6 +2913,90 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.Slug
   nameWithType: TenantCreateModel.Slug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel
+  name: TenantEffectiveConfigModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel
+  nameWithType: TenantEffectiveConfigModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features
+  nameWithType: TenantEffectiveConfigModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Features
+  nameWithType: TenantEffectiveConfigModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_PlanKey
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey
+  nameWithType: TenantEffectiveConfigModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanKey
+  nameWithType: TenantEffectiveConfigModel.PlanKey
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName
+  name: PlanName
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_PlanName
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName
+  nameWithType: TenantEffectiveConfigModel.PlanName
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName*
+  name: PlanName
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_PlanName_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.PlanName
+  nameWithType: TenantEffectiveConfigModel.PlanName
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings
+  nameWithType: TenantEffectiveConfigModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.Settings
+  nameWithType: TenantEffectiveConfigModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId
+  name: TenantId
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_TenantId
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId
+  nameWithType: TenantEffectiveConfigModel.TenantId
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId*
+  name: TenantId
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_TenantId_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantId
+  nameWithType: TenantEffectiveConfigModel.TenantId
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_TenantSlug
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug
+  nameWithType: TenantEffectiveConfigModel.TenantSlug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug*
+  name: TenantSlug
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantEffectiveConfigModel_TenantSlug_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.TenantSlug
+  nameWithType: TenantEffectiveConfigModel.TenantSlug
 - uid: Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult
   name: TenantMigrationResult
   href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html
@@ -2187,6 +3268,200 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.Slug
   nameWithType: TenantOnboardingResult.Slug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel
+  name: TenantPlanModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel
+  nameWithType: TenantPlanModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_CreatedAt
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt
+  nameWithType: TenantPlanModel.CreatedAt
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt*
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_CreatedAt_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.CreatedAt
+  nameWithType: TenantPlanModel.CreatedAt
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description
+  name: Description
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Description
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description
+  nameWithType: TenantPlanModel.Description
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description*
+  name: Description
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Description_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Description
+  nameWithType: TenantPlanModel.Description
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features
+  nameWithType: TenantPlanModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Features
+  nameWithType: TenantPlanModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive
+  name: IsActive
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_IsActive
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive
+  nameWithType: TenantPlanModel.IsActive
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive*
+  name: IsActive
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_IsActive_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.IsActive
+  nameWithType: TenantPlanModel.IsActive
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key
+  name: Key
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Key
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key
+  nameWithType: TenantPlanModel.Key
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key*
+  name: Key
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Key_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Key
+  nameWithType: TenantPlanModel.Key
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Name
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name
+  nameWithType: TenantPlanModel.Name
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Name_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Name
+  nameWithType: TenantPlanModel.Name
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings
+  nameWithType: TenantPlanModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.Settings
+  nameWithType: TenantPlanModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_SortOrder
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder
+  nameWithType: TenantPlanModel.SortOrder
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder*
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanModel_SortOrder_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.SortOrder
+  nameWithType: TenantPlanModel.SortOrder
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel
+  name: TenantPlanUpdateModel
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel
+  nameWithType: TenantPlanUpdateModel
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description
+  name: Description
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Description
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description
+  nameWithType: TenantPlanUpdateModel.Description
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description*
+  name: Description
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Description_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Description
+  nameWithType: TenantPlanUpdateModel.Description
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Features
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features
+  nameWithType: TenantPlanUpdateModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Features_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Features
+  nameWithType: TenantPlanUpdateModel.Features
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive
+  name: IsActive
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_IsActive
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive
+  nameWithType: TenantPlanUpdateModel.IsActive
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive*
+  name: IsActive
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_IsActive_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.IsActive
+  nameWithType: TenantPlanUpdateModel.IsActive
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Name
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name
+  nameWithType: TenantPlanUpdateModel.Name
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Name_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Name
+  nameWithType: TenantPlanUpdateModel.Name
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Settings
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings
+  nameWithType: TenantPlanUpdateModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_Settings_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.Settings
+  nameWithType: TenantPlanUpdateModel.Settings
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_SortOrder
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder
+  nameWithType: TenantPlanUpdateModel.SortOrder
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder*
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_SortOrder_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.SortOrder
+  nameWithType: TenantPlanUpdateModel.SortOrder
 - uid: Code7Dev.Organizor.Application.Tenants.Services
   name: Code7Dev.Organizor.Application.Tenants.Services
   href: api/Code7Dev.Organizor.Application.Tenants.Services.html
@@ -2215,6 +3490,111 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.UserHasAccessAsync
   nameWithType: AllowAllTenantAccessService.UserHasAccessAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService
+  name: TenantConfigManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService
+  nameWithType: TenantConfigManagementService
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  name: TenantConfigManagementService(ITenantRepository, ITenantPlanRepository)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  name.vb: New(ITenantRepository, ITenantPlanRepository)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.TenantConfigManagementService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  nameWithType: TenantConfigManagementService.TenantConfigManagementService(ITenantRepository, ITenantPlanRepository)
+  nameWithType.vb: TenantConfigManagementService.New(ITenantRepository, ITenantPlanRepository)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.#ctor*
+  name: TenantConfigManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.TenantConfigManagementService
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.New
+  nameWithType: TenantConfigManagementService.TenantConfigManagementService
+  nameWithType.vb: TenantConfigManagementService.New
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync(System.Guid,System.Threading.CancellationToken)
+  name: GetOverridesAsync(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService_GetOverridesAsync_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync(System.Guid, System.Threading.CancellationToken)
+  nameWithType: TenantConfigManagementService.GetOverridesAsync(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync*
+  name: GetOverridesAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService_GetOverridesAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.GetOverridesAsync
+  nameWithType: TenantConfigManagementService.GetOverridesAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync(System.Guid,Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel,System.Threading.CancellationToken)
+  name: UpdateOverridesAsync(Guid, TenantConfigOverridesUpdateModel, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService_UpdateOverridesAsync_System_Guid_Code7Dev_Organizor_Application_Tenants_Models_TenantConfigOverridesUpdateModel_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync(System.Guid,Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync(System.Guid, Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel, System.Threading.CancellationToken)
+  nameWithType: TenantConfigManagementService.UpdateOverridesAsync(Guid, TenantConfigOverridesUpdateModel, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync*
+  name: UpdateOverridesAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigManagementService_UpdateOverridesAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.UpdateOverridesAsync
+  nameWithType: TenantConfigManagementService.UpdateOverridesAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver
+  name: TenantConfigResolver
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver
+  nameWithType: TenantConfigResolver
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults)
+  name: TenantConfigResolver(ITenantRepository, ITenantPlanRepository, ITenantConfigDefaults)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigDefaults_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults)
+  name.vb: New(ITenantRepository, ITenantPlanRepository, ITenantConfigDefaults)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.TenantConfigResolver(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository, Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults)
+  nameWithType: TenantConfigResolver.TenantConfigResolver(ITenantRepository, ITenantPlanRepository, ITenantConfigDefaults)
+  nameWithType.vb: TenantConfigResolver.New(ITenantRepository, ITenantPlanRepository, ITenantConfigDefaults)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.#ctor*
+  name: TenantConfigResolver
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.TenantConfigResolver
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.New
+  nameWithType: TenantConfigResolver.TenantConfigResolver
+  nameWithType.vb: TenantConfigResolver.New
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync(System.Guid,System.Threading.CancellationToken)
+  name: ResolveAsync(Guid, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver_ResolveAsync_System_Guid_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync(System.Guid,System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync(System.Guid, System.Threading.CancellationToken)
+  nameWithType: TenantConfigResolver.ResolveAsync(Guid, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync*
+  name: ResolveAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver_ResolveAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveAsync
+  nameWithType: TenantConfigResolver.ResolveAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync(System.String,System.Threading.CancellationToken)
+  name: ResolveBySlugAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver_ResolveBySlugAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync(System.String,System.Threading.CancellationToken)
+  name.vb: ResolveBySlugAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync(String, System.Threading.CancellationToken)
+  nameWithType: TenantConfigResolver.ResolveBySlugAsync(string, CancellationToken)
+  nameWithType.vb: TenantConfigResolver.ResolveBySlugAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync*
+  name: ResolveBySlugAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html#Code7Dev_Organizor_Application_Tenants_Services_TenantConfigResolver_ResolveBySlugAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.ResolveBySlugAsync
+  nameWithType: TenantConfigResolver.ResolveBySlugAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService
   name: TenantLifecycleService
   href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html
@@ -2307,6 +3687,76 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.OnboardAsync
   nameWithType: TenantOnboardingService.OnboardAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService
+  name: TenantPlanManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html
+  commentId: T:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService
+  nameWithType: TenantPlanManagementService
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  name: TenantPlanManagementService(ITenantPlanRepository)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantPlanRepository_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  name.vb: New(ITenantPlanRepository)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.TenantPlanManagementService(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository)
+  nameWithType: TenantPlanManagementService.TenantPlanManagementService(ITenantPlanRepository)
+  nameWithType.vb: TenantPlanManagementService.New(ITenantPlanRepository)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.#ctor*
+  name: TenantPlanManagementService
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService__ctor_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.TenantPlanManagementService
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.New
+  nameWithType: TenantPlanManagementService.TenantPlanManagementService
+  nameWithType.vb: TenantPlanManagementService.New
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  name: GetAllAsync(CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_GetAllAsync_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync(System.Threading.CancellationToken)
+  nameWithType: TenantPlanManagementService.GetAllAsync(CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync*
+  name: GetAllAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_GetAllAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetAllAsync
+  nameWithType: TenantPlanManagementService.GetAllAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name: GetByKeyAsync(string, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_GetByKeyAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync(System.String,System.Threading.CancellationToken)
+  name.vb: GetByKeyAsync(String, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync(string, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync(String, System.Threading.CancellationToken)
+  nameWithType: TenantPlanManagementService.GetByKeyAsync(string, CancellationToken)
+  nameWithType.vb: TenantPlanManagementService.GetByKeyAsync(String, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync*
+  name: GetByKeyAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_GetByKeyAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.GetByKeyAsync
+  nameWithType: TenantPlanManagementService.GetByKeyAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync(System.String,Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel,System.Threading.CancellationToken)
+  name: UpdateAsync(string, TenantPlanUpdateModel, CancellationToken)
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_UpdateAsync_System_String_Code7Dev_Organizor_Application_Tenants_Models_TenantPlanUpdateModel_System_Threading_CancellationToken_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync(System.String,Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel,System.Threading.CancellationToken)
+  name.vb: UpdateAsync(String, TenantPlanUpdateModel, CancellationToken)
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync(string, Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel, System.Threading.CancellationToken)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync(String, Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel, System.Threading.CancellationToken)
+  nameWithType: TenantPlanManagementService.UpdateAsync(string, TenantPlanUpdateModel, CancellationToken)
+  nameWithType.vb: TenantPlanManagementService.UpdateAsync(String, TenantPlanUpdateModel, CancellationToken)
+- uid: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync*
+  name: UpdateAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html#Code7Dev_Organizor_Application_Tenants_Services_TenantPlanManagementService_UpdateAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.UpdateAsync
+  nameWithType: TenantPlanManagementService.UpdateAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService
   name: TenantUpgradeService
   href: api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html
@@ -2422,6 +3872,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.FailureReason
   nameWithType: Tenant.FailureReason
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Features
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.Tenant.Features
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Features
+  nameWithType: Tenant.Features
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Features_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.Tenant.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Features
+  nameWithType: Tenant.Features
 - uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Id
   name: Id
   href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Id
@@ -2461,6 +3924,32 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Name
   nameWithType: Tenant.Name
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_PlanKey
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey
+  nameWithType: Tenant.PlanKey
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey*
+  name: PlanKey
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_PlanKey_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.PlanKey
+  nameWithType: Tenant.PlanKey
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Settings
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.Tenant.Settings
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Settings
+  nameWithType: Tenant.Settings
+- uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Settings_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.Tenant.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Settings
+  nameWithType: Tenant.Settings
 - uid: Code7Dev.Organizor.Domain.Tenants.Tenant.Slug
   name: Slug
   href: api/Code7Dev.Organizor.Domain.Tenants.Tenant.html#Code7Dev_Organizor_Domain_Tenants_Tenant_Slug
@@ -2487,6 +3976,134 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Domain.Tenants.Tenant.Status
   nameWithType: Tenant.Status
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan
+  name: TenantPlan
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html
+  commentId: T:Code7Dev.Organizor.Domain.Tenants.TenantPlan
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan
+  nameWithType: TenantPlan
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_CreatedAt
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt
+  nameWithType: TenantPlan.CreatedAt
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt*
+  name: CreatedAt
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_CreatedAt_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.CreatedAt
+  nameWithType: TenantPlan.CreatedAt
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description
+  name: Description
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Description
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description
+  nameWithType: TenantPlan.Description
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description*
+  name: Description
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Description_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Description
+  nameWithType: TenantPlan.Description
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features
+  name: Features
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Features
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features
+  nameWithType: TenantPlan.Features
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features*
+  name: Features
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Features_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Features
+  nameWithType: TenantPlan.Features
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive
+  name: IsActive
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_IsActive
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive
+  nameWithType: TenantPlan.IsActive
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive*
+  name: IsActive
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_IsActive_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.IsActive
+  nameWithType: TenantPlan.IsActive
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key
+  name: Key
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Key
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key
+  nameWithType: TenantPlan.Key
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key*
+  name: Key
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Key_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Key
+  nameWithType: TenantPlan.Key
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name
+  name: Name
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Name
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name
+  nameWithType: TenantPlan.Name
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name*
+  name: Name
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Name_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Name
+  nameWithType: TenantPlan.Name
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings
+  name: Settings
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Settings
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings
+  nameWithType: TenantPlan.Settings
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings*
+  name: Settings
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_Settings_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.Settings
+  nameWithType: TenantPlan.Settings
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_SortOrder
+  commentId: P:Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder
+  nameWithType: TenantPlan.SortOrder
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder*
+  name: SortOrder
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html#Code7Dev_Organizor_Domain_Tenants_TenantPlan_SortOrder_
+  commentId: Overload:Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlan.SortOrder
+  nameWithType: TenantPlan.SortOrder
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys
+  name: TenantPlanKeys
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.html
+  commentId: T:Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys
+  nameWithType: TenantPlanKeys
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Pro
+  name: Pro
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.html#Code7Dev_Organizor_Domain_Tenants_TenantPlanKeys_Pro
+  commentId: F:Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Pro
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Pro
+  nameWithType: TenantPlanKeys.Pro
+- uid: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Starter
+  name: Starter
+  href: api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.html#Code7Dev_Organizor_Domain_Tenants_TenantPlanKeys_Starter
+  commentId: F:Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Starter
+  fullName: Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.Starter
+  nameWithType: TenantPlanKeys.Starter
 - uid: Code7Dev.Organizor.Domain.Tenants.TenantStatus
   name: TenantStatus
   href: api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.html
@@ -3531,6 +5148,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.OnModelCreating
   nameWithType: CatalogDbContext.OnModelCreating
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans
+  name: TenantPlans
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_CatalogDbContext_TenantPlans
+  commentId: P:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans
+  nameWithType: CatalogDbContext.TenantPlans
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans*
+  name: TenantPlans
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_CatalogDbContext_TenantPlans_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.TenantPlans
+  nameWithType: CatalogDbContext.TenantPlans
 - uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.Tenants
   name: Tenants
   href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_CatalogDbContext_Tenants
@@ -3550,6 +5180,51 @@ references:
   commentId: N:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations
   fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations
   nameWithType: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig
+  name: AddTenantPlansAndConfig
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig
+  nameWithType: AddTenantPlansAndConfig
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddTenantPlansAndConfig.BuildTargetModel(ModelBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_BuildTargetModel_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.BuildTargetModel
+  nameWithType: AddTenantPlansAndConfig.BuildTargetModel
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddTenantPlansAndConfig.Down(MigrationBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down*
+  name: Down
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_Down_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Down
+  nameWithType: AddTenantPlansAndConfig.Down
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddTenantPlansAndConfig.Up(MigrationBuilder)
+- uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up*
+  name: Up
+  href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html#Code7Dev_Organizor_Infrastructure_Persistence_Catalog_Migrations_AddTenantPlansAndConfig_Up_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.Up
+  nameWithType: AddTenantPlansAndConfig.Up
 - uid: Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init
   name: Init
   href: api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.html

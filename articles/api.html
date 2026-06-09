@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Public API Behavior | Organizor ">
       
-      <meta name="description" content="Public HTTP endpoint guide for tenant catalog operations, response shapes, status codes, and client examples.">
+      <meta name="description" content="Public HTTP endpoint guide for tenant catalog and tenant-scoped config operations, response shapes, status codes, and client examples.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -87,12 +87,12 @@
         <article data-uid="">
 <h1 id="public-api-behavior">Public API Behavior</h1>
 
-<p>The public API currently exposes tenant catalog endpoints. These endpoints are platform/catalog routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They are still authenticated:</p>
+<p>The public API exposes tenant catalog endpoints and tenant-scoped config reads. Tenant catalog endpoints are platform/catalog routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They are still authenticated:</p>
 <ul>
 <li><code>POST /api/v1/tenants</code> requires <code>organizor-admin</code>.</li>
 <li><code>GET /api/v1/tenants</code> and <code>GET /api/v1/tenants/{slug}</code> require <code>organizor-admin</code>, <code>tenant-admin</code>, or <code>tenant-user</code>.</li>
 </ul>
-<p>Tenant-scoped application endpoints should include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
+<p>Tenant-scoped application endpoints, including <code>GET /api/v1/tenant/config</code>, must include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
 <p>Internal tenant administration endpoints are documented separately in <a href="internal-operations.html">Internal Operations</a>.</p>
 <h2 id="tenant-catalog">Tenant Catalog</h2>
 <h3 id="create-tenant">Create Tenant</h3>
@@ -202,6 +202,13 @@ Authorization: Bearer &lt;token&gt;
 Authorization: Bearer &lt;token&gt;
 </code></pre>
 <p>Returns all catalog tenants visible through the tenant repository using the tenant catalog response shape above. Soft-deleted tenants are excluded.</p>
+<h2 id="tenant-config">Tenant Config</h2>
+<pre><code class="lang-http">GET /api/v1/tenant/config
+Authorization: Bearer &lt;tenant-token&gt;
+X-Tenant-Slug: acme
+</code></pre>
+<p>Returns the current tenant's effective config. Effective config is resolved from the tenant's assigned plan defaults plus tenant-specific overrides.</p>
+<p>This endpoint requires <code>organizor-admin</code>, <code>tenant-admin</code>, or <code>tenant-user</code> through the <code>RequireTenantUserRole</code> policy. Tenant access middleware also verifies that the authenticated user belongs to the tenant identified by <code>X-Tenant-Slug</code>.</p>
 <h2 id="platform-endpoints">Platform Endpoints</h2>
 <table>
 <thead>

@@ -89,7 +89,7 @@
 
 <p>Organizor uses one catalog database and one PostgreSQL database per tenant.</p>
 <h2 id="catalog-database">Catalog Database</h2>
-<p><code>CatalogDbContext</code> stores tenant records in the <code>tenants</code> table.</p>
+<p><code>CatalogDbContext</code> stores tenant records in the <code>tenants</code> table and tenant plan definitions in the <code>tenant_plans</code> table.</p>
 <p>Important constraints:</p>
 <table>
 <thead>
@@ -112,6 +112,18 @@
 <td>Required, max length 200.</td>
 </tr>
 <tr>
+<td><code>PlanKey</code></td>
+<td>Required, max length 100, defaults to <code>starter</code>, references <code>tenant_plans.key</code>.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Required PostgreSQL <code>jsonb</code>, defaults to <code>{}</code>.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Required PostgreSQL <code>jsonb</code>, defaults to <code>{}</code>.</td>
+</tr>
+<tr>
 <td><code>IsDeleted</code></td>
 <td>Required, defaults to <code>false</code>.</td>
 </tr>
@@ -121,6 +133,77 @@
 </tr>
 </tbody>
 </table>
+<p>Important <code>tenant_plans</code> constraints:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Key</code></td>
+<td>Required, max length 100, primary key.</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Required, max length 200.</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>Optional, max length 500.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Required PostgreSQL <code>jsonb</code>, defaults to <code>{}</code>.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Required PostgreSQL <code>jsonb</code>, defaults to <code>{}</code>.</td>
+</tr>
+<tr>
+<td><code>IsActive</code></td>
+<td>Required, defaults to <code>true</code>.</td>
+</tr>
+<tr>
+<td><code>SortOrder</code></td>
+<td>Required, defaults to <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>CreatedAt</code></td>
+<td>Required UTC timestamp.</td>
+</tr>
+</tbody>
+</table>
+<p>The tenant-config migration inserts a minimal <code>starter</code> plan row before adding the tenant plan foreign key. This keeps existing tenants migratable because their new <code>PlanKey</code> defaults to <code>starter</code>.</p>
+<p>After migrations are applied, startup seeding idempotently creates or updates the initial tenant plans:</p>
+<table>
+<thead>
+<tr>
+<th>Plan key</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>starter</code></td>
+<td>Default plan for new tenants with conservative limits.</td>
+</tr>
+<tr>
+<td><code>pro</code></td>
+<td>Larger customer plan with higher limits and more enabled features.</td>
+</tr>
+</tbody>
+</table>
+<p>The seed data is managed in <code>SeedCatalogDbAsync</code>. It runs after <code>CatalogDbContext</code> migrations so it can enrich the minimal migration-created <code>starter</code> row and add <code>pro</code>.</p>
+<p>Manual verification after startup:</p>
+<pre><code class="lang-sql">select key, name, features, settings
+from tenant_plans
+where key in ('starter', 'pro')
+order by sort_order;
+</code></pre>
+<p>Creating or onboarding a tenant without explicit plan selection should leave <code>tenants.plan_key</code> set to <code>starter</code>.</p>
 <p>On startup, the API checks whether the catalog database exists, creates it when needed, and applies catalog migrations.</p>
 <p>The full tenant onboarding workflow is documented in <a href="internal-operations.html">Internal Operations</a>. Database provisioning is one part of that workflow; Keycloak tenant access is provisioned before the tenant database is created.</p>
 <h2 id="tenant-database-naming">Tenant Database Naming</h2>

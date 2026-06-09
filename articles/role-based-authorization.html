@@ -166,6 +166,10 @@
 <td><code>RequireOrganizorAdminRole</code></td>
 </tr>
 <tr>
+<td><code>/api/admin/tenant-plans/*</code></td>
+<td><code>RequireOrganizorAdminRole</code></td>
+</tr>
+<tr>
 <td><code>POST /api/v1/tenants</code></td>
 <td><code>RequireOrganizorAdminRole</code></td>
 </tr>
@@ -175,6 +179,10 @@
 </tr>
 <tr>
 <td><code>GET /api/v1/tenants/{slug}</code></td>
+<td><code>RequireTenantUserRole</code></td>
+</tr>
+<tr>
+<td><code>GET /api/v1/tenant/config</code></td>
 <td><code>RequireTenantUserRole</code></td>
 </tr>
 <tr>
@@ -224,6 +232,14 @@
 <tr>
 <td><code>tenant-user</code> calls <code>GET /api/v1/tenants</code></td>
 <td>Allowed</td>
+</tr>
+<tr>
+<td><code>tenant-user</code> calls <code>GET /api/v1/tenant/config</code> for their tenant</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td><code>tenant-user</code> calls <code>/api/admin/tenant-plans</code></td>
+<td><code>403 Forbidden</code></td>
 </tr>
 <tr>
 <td>Token has no Organizor role and calls protected endpoint</td>

@@ -95,6 +95,9 @@
 <li><code>Name</code>;</li>
 <li><code>Slug</code>;</li>
 <li><code>DatabaseName</code>;</li>
+<li><code>PlanKey</code>;</li>
+<li>tenant feature overrides;</li>
+<li>tenant settings overrides;</li>
 <li><code>CreatedAt</code>;</li>
 <li><code>Status</code>;</li>
 <li><code>FailureReason</code>;</li>
@@ -102,6 +105,355 @@
 </ul>
 <p>The database name convention is <code>organizor_tenant_{slug}</code>. Slugs are normalized to lowercase before they are stored or used for lookups.</p>
 <p>Normal catalog reads exclude soft-deleted tenants. Repository methods can include soft-deleted records when an internal operation explicitly asks for them.</p>
+<h2 id="tenant-plans-and-config-overrides">Tenant Plans And Config Overrides</h2>
+<p>Tenant plans are persisted in the catalog database through the <code>tenant_plans</code> table. A plan defines default feature flags and structured settings for tenants assigned to that plan.</p>
+<p>Each tenant stores:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlanKey</code></td>
+<td>Stable key of the selected plan, such as <code>starter</code> or <code>pro</code>.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Tenant-level feature flag overrides stored as PostgreSQL <code>jsonb</code>.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Tenant-level structured setting overrides stored as PostgreSQL <code>jsonb</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Each plan stores:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Key</code></td>
+<td>Stable plan identifier referenced by tenants.</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Human-readable plan name.</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>Optional operator-facing description.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Plan default feature flags stored as PostgreSQL <code>jsonb</code>.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Plan default structured settings stored as PostgreSQL <code>jsonb</code>.</td>
+</tr>
+<tr>
+<td><code>IsActive</code></td>
+<td>Whether the plan can be assigned.</td>
+</tr>
+<tr>
+<td><code>SortOrder</code></td>
+<td>Display ordering for future admin UI surfaces.</td>
+</tr>
+<tr>
+<td><code>CreatedAt</code></td>
+<td>UTC creation timestamp.</td>
+</tr>
+</tbody>
+</table>
+<p>The catalog migration creates a minimal <code>starter</code> plan before adding the tenant foreign key. This allows existing tenants to receive <code>PlanKey = starter</code> safely during migration. Full seed data for <code>Starter</code> and <code>Pro</code> is handled separately by the tenant-plan seeding work.</p>
+<p>Startup seeding keeps the initial plans available and idempotently updates their defaults:</p>
+<table>
+<thead>
+<tr>
+<th>Plan key</th>
+<th>Name</th>
+<th>Intent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>starter</code></td>
+<td>Starter</td>
+<td>Default plan for new tenants with conservative limits.</td>
+</tr>
+<tr>
+<td><code>pro</code></td>
+<td>Pro</td>
+<td>Larger customer plan with higher limits and self-service registration.</td>
+</tr>
+</tbody>
+</table>
+<p>Initial feature keys:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Starter</th>
+<th>Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>camps.enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>branding.customLogo</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>registration.selfService</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Initial settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Starter</th>
+<th>Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limits.maxUsers</code></td>
+<td><code>10</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>limits.maxCamps</code></td>
+<td><code>3</code></td>
+<td><code>25</code></td>
+</tr>
+<tr>
+<td><code>registration.enabled</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>registration.requiresApproval</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>branding.theme</code></td>
+<td><code>default</code></td>
+<td><code>default</code></td>
+</tr>
+</tbody>
+</table>
+<p>New tenants default to <code>PlanKey = starter</code> unless a later workflow explicitly allows a different plan to be supplied.</p>
+<h2 id="effective-tenant-config">Effective Tenant Config</h2>
+<p><code>ITenantConfigResolver</code> resolves the runtime configuration a tenant should receive. The resolver is registered in DI and can resolve by tenant id or tenant slug.</p>
+<p>Effective config is built in this order:</p>
+<pre><code class="lang-text">SystemDefaults -&gt; PlanDefaults -&gt; TenantOverrides
+</code></pre>
+<p>Later layers override earlier layers.</p>
+<p>The returned model contains:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TenantId</code></td>
+<td>Catalog tenant identifier.</td>
+</tr>
+<tr>
+<td><code>TenantSlug</code></td>
+<td>Stable tenant slug.</td>
+</tr>
+<tr>
+<td><code>PlanKey</code></td>
+<td>Assigned plan key.</td>
+</tr>
+<tr>
+<td><code>PlanName</code></td>
+<td>Assigned plan name.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Effective flat feature flag dictionary.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Effective structured JSON settings object.</td>
+</tr>
+</tbody>
+</table>
+<p>Feature merge rules:</p>
+<ul>
+<li>feature dictionaries are flat;</li>
+<li>plan defaults override system defaults by key;</li>
+<li>tenant overrides override plan defaults by key;</li>
+<li>missing keys do not remove earlier defaults.</li>
+</ul>
+<p>Settings merge rules:</p>
+<ul>
+<li>JSON objects are deep-merged;</li>
+<li>scalar values replace earlier scalar or object values;</li>
+<li>arrays replace earlier arrays and their contents are not merged;</li>
+<li>type conflicts are resolved by replacement from the later layer;</li>
+<li>empty dictionaries behave as empty layers;</li>
+<li>JSON <code>null</code> values are preserved as explicit override values when supplied by the stored JSON model.</li>
+</ul>
+<p>Failure behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Result error code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant does not exist or is soft-deleted</td>
+<td><code>TENANT_NOT_FOUND</code></td>
+</tr>
+<tr>
+<td>Assigned plan key does not resolve</td>
+<td><code>TENANT_PLAN_NOT_FOUND</code></td>
+</tr>
+<tr>
+<td>Assigned plan is inactive</td>
+<td><code>TENANT_PLAN_INACTIVE</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tenant-config-api">Tenant Config API</h3>
+<p>Tenant-facing clients can fetch effective config for the current tenant:</p>
+<pre><code class="lang-http">GET /api/v1/tenant/config
+Authorization: Bearer &lt;tenant-user-or-admin-token&gt;
+X-Tenant-Slug: acme
+</code></pre>
+<p>The route uses the tenant resolved from <code>X-Tenant-Slug</code>; the tenant id is not accepted in the URL for this endpoint.</p>
+<p>Platform administrators can inspect a tenant directly:</p>
+<pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code class="lang-json">{
+  &quot;tenantId&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
+  &quot;tenantSlug&quot;: &quot;acme&quot;,
+  &quot;planKey&quot;: &quot;pro&quot;,
+  &quot;planName&quot;: &quot;Pro&quot;,
+  &quot;features&quot;: {
+    &quot;camps.enabled&quot;: true,
+    &quot;branding.customLogo&quot;: true,
+    &quot;registration.selfService&quot;: true
+  },
+  &quot;settings&quot;: {
+    &quot;limits&quot;: {
+      &quot;maxUsers&quot;: 100,
+      &quot;maxCamps&quot;: 25
+    },
+    &quot;registration&quot;: {
+      &quot;enabled&quot;: true,
+      &quot;requiresApproval&quot;: false
+    },
+    &quot;branding&quot;: {
+      &quot;theme&quot;: &quot;default&quot;
+    }
+  }
+}
+</code></pre>
+<p>Expected error behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>401 Unauthorized</code></td>
+<td>Missing or invalid bearer token.</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code></td>
+<td>Authenticated caller does not satisfy the endpoint policy or tenant access check.</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Tenant-scoped route is missing <code>X-Tenant-Slug</code>.</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>Tenant, assigned plan, or active plan cannot be resolved.</td>
+</tr>
+</tbody>
+</table>
+<p>Manual verification:</p>
+<ol>
+<li>Seed <code>starter</code> and <code>pro</code> plans.</li>
+<li>Create or onboard a tenant assigned to <code>pro</code>.</li>
+<li>Add a tenant-level feature or setting override in the catalog.</li>
+<li>Call <code>GET /api/v1/tenant/config</code> with <code>X-Tenant-Slug</code> set to that tenant.</li>
+<li>Confirm the response contains system defaults, plan defaults, and tenant overrides with tenant overrides taking precedence.</li>
+</ol>
+<h3 id="tenant-config-management">Tenant Config Management</h3>
+<p>Platform administrators can manage plan defaults and tenant-level overrides.</p>
+<p>Plan endpoints:</p>
+<pre><code class="lang-http">GET /api/admin/tenant-plans
+GET /api/admin/tenant-plans/{planKey}
+PUT /api/admin/tenant-plans/{planKey}
+</code></pre>
+<p>Tenant override endpoints:</p>
+<pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config-overrides
+PUT /api/admin/tenants/{tenantId}/config-overrides
+</code></pre>
+<p>Plan keys are immutable. A plan update can change name, description, feature defaults, settings defaults, active state, and sort order.</p>
+<p>Tenant override updates can change:</p>
+<ul>
+<li>assigned <code>planKey</code>;</li>
+<li>tenant-level feature overrides;</li>
+<li>tenant-level settings overrides.</li>
+</ul>
+<p>Validation rules:</p>
+<ul>
+<li>feature keys must be non-empty;</li>
+<li>settings payloads must be JSON objects;</li>
+<li>assigned plan keys must resolve to active plans;</li>
+<li>invalid config payloads return <code>TENANT_CONFIG_INVALID</code>;</li>
+<li>missing tenants return <code>TENANT_NOT_FOUND</code>;</li>
+<li>missing or inactive plans return <code>TENANT_PLAN_NOT_FOUND</code> or <code>TENANT_PLAN_INACTIVE</code>.</li>
+</ul>
+<p>Portal surfaces:</p>
+<ul>
+<li><code>/admin/plans</code> lists and edits tenant plan defaults;</li>
+<li><code>/admin/tenants</code> exposes each tenant's effective config and tenant-level override editor through the <code>Config</code> action.</li>
+</ul>
+<p>Manual verification:</p>
+<ol>
+<li>Open <code>/admin/plans</code> as an <code>organizor-admin</code>.</li>
+<li>Edit a plan feature default or setting default and save.</li>
+<li>Open <code>/admin/tenants</code>, choose a tenant assigned to that plan, and click <code>Config</code>.</li>
+<li>Confirm the effective config reflects the plan default change.</li>
+<li>Add a tenant feature or setting override and save.</li>
+<li>Confirm the effective preview refreshes and tenant override values take precedence.</li>
+</ol>
 <h2 id="tenant-statuses">Tenant Statuses</h2>
 <table>
 <thead>

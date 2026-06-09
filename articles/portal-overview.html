@@ -99,11 +99,14 @@
 <li>Separate admin and tenant shells.</li>
 <li>An admin dashboard route at <code>/admin</code>.</li>
 <li>Tenant administration at <code>/admin/tenants</code> for platform administrators.</li>
+<li>Tenant plan default management at <code>/admin/plans</code>.</li>
+<li>Tenant effective config inspection and override editing from <code>/admin/tenants</code>.</li>
+<li>Read-only tenant effective config at <code>/tenant/config</code>.</li>
 <li>Logout through <code>/logout</code> or the shared logout button.</li>
 <li>Current-user display with username, email, tenant claim, and Keycloak groups.</li>
 <li>Tenant dashboard/profile placeholders under <code>/tenant</code>.</li>
 </ul>
-<p>The <code>/admin/tenants</code> page is backed by real API routes under <code>/api/admin/tenants</code>. It is not mock UI. Tenant-facing feature routes are still placeholders.</p>
+<p>The <code>/admin/tenants</code>, <code>/admin/plans</code>, and <code>/tenant/config</code> pages are backed by real API routes. They are not mock UI.</p>
 <hr>
 <h2 id="technology-stack">Technology Stack</h2>
 <ul>
@@ -144,6 +147,12 @@
 <td>Tenant catalog and lifecycle management.</td>
 </tr>
 <tr>
+<td><code>/admin/plans</code></td>
+<td><code>AdminLayout</code></td>
+<td><code>organizor-admin</code></td>
+<td>Tenant plan default management.</td>
+</tr>
+<tr>
 <td><code>/tenant</code></td>
 <td><code>TenantLayout</code></td>
 <td><code>tenant-admin</code></td>
@@ -154,6 +163,12 @@
 <td><code>TenantLayout</code></td>
 <td><code>tenant-admin</code></td>
 <td>Tenant profile placeholder.</td>
+</tr>
+<tr>
+<td><code>/tenant/config</code></td>
+<td><code>TenantLayout</code></td>
+<td><code>tenant-admin</code>, <code>tenant-user</code></td>
+<td>Read-only effective tenant configuration.</td>
 </tr>
 <tr>
 <td><code>/logout</code></td>
@@ -169,8 +184,8 @@
 </tr>
 </tbody>
 </table>
-<p>The admin shell currently contains a navigation link for <code>/admin/users</code>, and the tenant shell contains a navigation link for <code>/tenant/camps</code>. Those are navigation placeholders only; this branch does not add backing Razor pages for those routes.</p>
-<p><code>RoleRedirector</code> is mounted globally in <code>App.razor</code>, but it only redirects from the neutral entry routes (<code>/</code> and the login callback). It must not redirect when the user is already on <code>/admin</code> or <code>/tenant</code>, otherwise the portal can reload-loop.</p>
+<p>The admin shell currently contains a navigation link for <code>/admin/users</code>. That is a navigation placeholder only; this branch does not add a backing Razor page for that route.</p>
+<p><code>RoleRedirector</code> is mounted globally in <code>App.razor</code>, but it only redirects from the neutral entry routes (<code>/</code> and the login callback). It sends <code>organizor-admin</code> users to <code>/admin</code>, <code>tenant-admin</code> users to <code>/tenant</code>, and <code>tenant-user</code> users to <code>/tenant/config</code>. It must not redirect when the user is already on a target area, otherwise the portal can reload-loop.</p>
 <hr>
 <h2 id="admin-tenant-management">Admin Tenant Management</h2>
 <p>The admin tenant page uses Radzen components and the <code>AdminTenantService</code> client. It supports:</p>
@@ -182,6 +197,8 @@
 <li>upgrading a tenant database by running pending migrations;</li>
 <li>soft-deleting a tenant with an operator reason;</li>
 <li>hard-deleting a previously soft-deleted tenant.</li>
+<li>inspecting effective tenant config;</li>
+<li>editing tenant plan assignment and tenant-level overrides.</li>
 </ul>
 <p>The page calls these backend endpoints:</p>
 <table>
@@ -209,6 +226,18 @@
 <td><code>POST /api/admin/tenants/{id}/upgrade</code></td>
 </tr>
 <tr>
+<td>Inspect effective config</td>
+<td><code>GET /api/admin/tenants/{id}/config</code></td>
+</tr>
+<tr>
+<td>Load tenant overrides</td>
+<td><code>GET /api/admin/tenants/{id}/config-overrides</code></td>
+</tr>
+<tr>
+<td>Save tenant overrides</td>
+<td><code>PUT /api/admin/tenants/{id}/config-overrides</code></td>
+</tr>
+<tr>
 <td>Soft delete tenant</td>
 <td><code>DELETE /api/admin/tenants/{id}</code></td>
 </tr>
@@ -219,6 +248,35 @@
 </tbody>
 </table>
 <p>All admin tenant operations require a valid bearer token with the <code>organizor-admin</code> role.</p>
+<h2 id="admin-plan-management">Admin Plan Management</h2>
+<p>The admin plans page uses <code>AdminTenantService</code> and supports:</p>
+<ul>
+<li>loading tenant plan definitions;</li>
+<li>editing plan name, description, active state, sort order, feature defaults, and settings defaults;</li>
+<li>saving plan changes through the admin plan API.</li>
+</ul>
+<p>The page calls these backend endpoints:</p>
+<table>
+<thead>
+<tr>
+<th>UI action</th>
+<th>API endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load plans</td>
+<td><code>GET /api/admin/tenant-plans</code></td>
+</tr>
+<tr>
+<td>Save plan defaults</td>
+<td><code>PUT /api/admin/tenant-plans/{planKey}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Plan keys are intentionally immutable.</p>
+<h2 id="tenant-config-page">Tenant Config Page</h2>
+<p>Tenant admins and tenant users can open <code>/tenant/config</code>. The page calls <code>GET /api/v1/tenant/config</code> through <code>TenantConfigService</code>. <code>ApiAuthorizationMessageHandler</code> adds <code>X-Tenant-Slug</code> from the authenticated user's tenant claim.</p>
 <p>Tenant rows expose the catalog and lifecycle fields used by the UI:</p>
 <table>
 <thead>
@@ -313,7 +371,7 @@
 <p>The handler is attached with <code>.AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;()</code> and configured once in its constructor. Do not configure the same <code>AuthorizationMessageHandler</code> instance more than once; Blazor will throw a handler already configured error.</p>
 <hr>
 <h2 id="summary">Summary</h2>
-<p>Issue 98 moved the portal from a basic authenticated shell toward an operational admin portal. The most complete workflow today is tenant control under <code>/admin/tenants</code>; user management and tenant feature pages are still placeholders until backing API use cases are added.</p>
+<p>The portal now supports tenant lifecycle operations, tenant plan defaults, tenant-level config overrides, and read-only tenant config inspection. User management remains a placeholder until backing API use cases are added.</p>
 
 </article>
 

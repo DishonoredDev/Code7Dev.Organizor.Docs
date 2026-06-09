@@ -116,6 +116,10 @@
 <td><code>tenant-admin</code></td>
 <td><code>/tenant</code></td>
 </tr>
+<tr>
+<td><code>tenant-user</code></td>
+<td><code>/tenant/config</code></td>
+</tr>
 </tbody>
 </table>
 <p>The redirector must only redirect from neutral routes such as <code>/</code> and <code>authentication/login-callback</code>. It should not force navigation when the user is already on <code>/admin</code> or <code>/tenant</code>, because forced self-navigation can create a reload loop.</p>
@@ -150,6 +154,10 @@
 <td><code>organizor-admin</code></td>
 </tr>
 <tr>
+<td><code>/admin/plans</code></td>
+<td><code>organizor-admin</code></td>
+</tr>
+<tr>
 <td><code>/tenant</code></td>
 <td><code>tenant-admin</code></td>
 </tr>
@@ -157,9 +165,13 @@
 <td><code>/tenant/profile</code></td>
 <td><code>tenant-admin</code></td>
 </tr>
+<tr>
+<td><code>/tenant/config</code></td>
+<td><code>tenant-admin</code>, <code>tenant-user</code></td>
+</tr>
 </tbody>
 </table>
-<p>The admin and tenant layouts contain placeholder navigation links for future pages, including <code>/admin/users</code> and <code>/tenant/camps</code>. They are not protected pages yet because this branch does not add Razor pages for those routes.</p>
+<p>The admin layout still contains a placeholder navigation link for <code>/admin/users</code>. There is no Razor page for that route yet.</p>
 <h2 id="api-tokens">API Tokens</h2>
 <p>The Portal never sends credentials to the API. It sends bearer tokens through the configured API <code>HttpClient</code>. The API validates token signature, issuer, expiration, and then applies authorization policies.</p>
 <p>The local issuer must be consistent everywhere:</p>

@@ -128,7 +128,7 @@
 })
 .AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;();
 </code></pre>
-<p><code>AdminTenantService</code> uses <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call admin tenant endpoints.</p>
+<p><code>AdminTenantService</code> and <code>TenantConfigService</code> use <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call API endpoints.</p>
 <h2 id="authorization-handler">Authorization Handler</h2>
 <p><code>ApiAuthorizationMessageHandler</code> extends Blazor's <code>AuthorizationMessageHandler</code>. It is responsible for:</p>
 <ul>
@@ -142,7 +142,7 @@
 </code></pre>
 <p>Keep handler configuration inside the handler constructor or inside the <code>AddHttpMessageHandler</code> factory, but not both. The current branch uses the constructor approach.</p>
 <h2 id="tenant-admin-api-client">Tenant Admin API Client</h2>
-<p><code>AdminTenantService</code> wraps the admin tenant API surface used by <code>/admin/tenants</code>. The read-only query endpoints are implemented by <code>AdminTenantsQueryController</code>; lifecycle operations are implemented by <code>TenantOperationsController</code>. Both controller surfaces share the <code>api/admin/tenants</code> route prefix and require the Organizor admin policy.</p>
+<p><code>AdminTenantService</code> wraps the admin tenant API surface used by <code>/admin/tenants</code> and <code>/admin/plans</code>. Tenant query, lifecycle, effective config, override, and plan-management endpoints require the Organizor admin policy.</p>
 <table>
 <thead>
 <tr>
@@ -177,6 +177,31 @@
 <td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
 <td>Drops the tenant database and removes the catalog record after soft deletion.</td>
 </tr>
+<tr>
+<td><code>GetConfigAsync</code></td>
+<td><code>GET /api/admin/tenants/{id}/config</code></td>
+<td>Loads the tenant's effective config after plan defaults and overrides are resolved.</td>
+</tr>
+<tr>
+<td><code>GetConfigOverridesAsync</code></td>
+<td><code>GET /api/admin/tenants/{id}/config-overrides</code></td>
+<td>Loads explicit tenant-level config overrides.</td>
+</tr>
+<tr>
+<td><code>UpdateConfigOverridesAsync</code></td>
+<td><code>PUT /api/admin/tenants/{id}/config-overrides</code></td>
+<td>Updates tenant-level config overrides.</td>
+</tr>
+<tr>
+<td><code>GetPlansAsync</code></td>
+<td><code>GET /api/admin/tenant-plans</code></td>
+<td>Loads tenant plan defaults.</td>
+</tr>
+<tr>
+<td><code>UpdatePlanAsync</code></td>
+<td><code>PUT /api/admin/tenant-plans/{planKey}</code></td>
+<td>Updates tenant plan defaults.</td>
+</tr>
 </tbody>
 </table>
 <p>The backend also exposes <code>GET /api/admin/tenants/{id}</code> for admin detail lookups. The current portal grid does not call that endpoint directly.</p>
@@ -194,6 +219,25 @@
 }
 </code></pre>
 <p><code>GET /api/v1/tenants</code> returns only non-deleted catalog records. <code>GET /api/admin/tenants</code> intentionally includes soft-deleted records so the portal can show deleted tenants and allow hard deletion.</p>
+<h2 id="tenant-config-api-client">Tenant Config API Client</h2>
+<p><code>TenantConfigService</code> wraps the tenant-scoped config endpoint used by <code>/tenant/config</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetConfigAsync</code></td>
+<td><code>GET /api/v1/tenant/config</code></td>
+<td>Loads the current tenant's effective config.</td>
+</tr>
+</tbody>
+</table>
+<p>The request must include a bearer token with a tenant role and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
 <h2 id="error-handling">Error Handling</h2>
 <p>The tenant API client uses <code>EnsureSuccessAsync</code> to surface failed API responses as <code>InvalidOperationException</code>. The exception message includes the status code and response body when present. The Radzen tenant page catches those exceptions and displays both a page alert and a Radzen notification.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>

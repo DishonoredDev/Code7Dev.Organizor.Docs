@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Internal Operations | Organizor ">
       
-      <meta name="description" content="Internal tenant operations for onboarding, tenant database upgrades, soft deletion, hard deletion, documentation deployment, and sitemap output.">
+      <meta name="description" content="Internal tenant operations for onboarding, tenant database upgrades, tenant config, tenant plans, soft deletion, hard deletion, documentation deployment, and sitemap output.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -143,6 +143,48 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
   &quot;isDeleted&quot;: false
 }
 </code></pre>
+<h2 id="tenant-config-administration">Tenant Config Administration</h2>
+<pre><code class="lang-http">GET /api/admin/tenants/{id}/config
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns the effective config for one tenant. Effective config is resolved from the tenant's assigned plan defaults plus any tenant-level overrides.</p>
+<pre><code class="lang-http">GET /api/admin/tenants/{id}/config-overrides
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns only explicit tenant-level overrides.</p>
+<pre><code class="lang-http">PUT /api/admin/tenants/{id}/config-overrides
+Authorization: Bearer &lt;organizor-admin-token&gt;
+Content-Type: application/json
+
+{
+  &quot;maxUsers&quot;: 25,
+  &quot;maxProjects&quot;: null,
+  &quot;allowAdvancedReporting&quot;: true
+}
+</code></pre>
+<p><code>null</code> clears an override and lets the tenant inherit the value from its plan. Override updates validate the resulting config before saving.</p>
+<p>Tenant users can view their own effective config through the tenant-scoped endpoint:</p>
+<pre><code class="lang-http">GET /api/v1/tenant/config
+Authorization: Bearer &lt;tenant-token&gt;
+X-Tenant-Slug: acme
+</code></pre>
+<p>This endpoint requires tenant access and the <code>RequireTenantUserRole</code> policy.</p>
+<h2 id="tenant-plan-administration">Tenant Plan Administration</h2>
+<pre><code class="lang-http">GET /api/admin/tenant-plans
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns available tenant plans and their default feature settings.</p>
+<pre><code class="lang-http">PUT /api/admin/tenant-plans/{planKey}
+Authorization: Bearer &lt;organizor-admin-token&gt;
+Content-Type: application/json
+
+{
+  &quot;maxUsers&quot;: 100,
+  &quot;maxProjects&quot;: 50,
+  &quot;allowAdvancedReporting&quot;: true
+}
+</code></pre>
+<p>Plan updates validate the resulting default settings before saving. Existing tenant overrides remain intact, so tenants can continue to diverge from their plan where an override is set.</p>
 <h2 id="upgrade-tenant">Upgrade Tenant</h2>
 <pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
 Authorization: Bearer &lt;organizor-admin-token&gt;
@@ -186,6 +228,9 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
 <li>view all tenants, including soft-deleted tenants;</li>
 <li>filter the catalog by name, slug, database, or status;</li>
 <li>onboard a new tenant;</li>
+<li>inspect effective tenant config;</li>
+<li>edit tenant config overrides;</li>
+<li>manage plan default settings from <code>/admin/plans</code>;</li>
 <li>run a tenant upgrade;</li>
 <li>soft-delete a tenant with a reason;</li>
 <li>hard-delete a tenant after it has been soft-deleted.</li>
