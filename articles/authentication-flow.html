@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Authentication Flow — High‑Level | Organizor </title>
+      <title>Authentication Flow — Portal UI | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Authentication Flow — High‑Level | Organizor ">
+      <meta name="title" content="Authentication Flow — Portal UI | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -85,32 +85,139 @@
         </div>
 
         <article data-uid="">
-<h1 id="authentication-flow--highlevel">Authentication Flow — High‑Level</h1>
+<h1 id="authentication-flow--portal-ui">Authentication Flow — Portal UI</h1>
 
-<p>The Portal UI uses Keycloak to authenticate users and determine what they are allowed to do. The process follows the standard OpenID Connect Authorization Code Flow with PKCE.</p>
-<h2 id="what-happens-during-login">What Happens During Login</h2>
+<p>The Portal UI uses Keycloak to authenticate users and determine which shell they should see. The process follows OpenID Connect Authorization Code Flow with PKCE.</p>
+<h2 id="login-flow">Login Flow</h2>
 <ol>
-<li>The user clicks <strong>Login</strong>.</li>
-<li>The Portal redirects the user to Keycloak at <code>https://localhost:8443/realms/organizor-dev</code>.</li>
-<li>Keycloak handles the login form and verifies credentials.</li>
-<li>After successful login, Keycloak sends the user back to <code>https://localhost:7025/authentication/login-callback</code>.</li>
-<li>The Portal receives a secure token and uses it for API requests.</li>
+<li>The user clicks <strong>Login</strong> or navigates to a protected route.</li>
+<li>The Portal redirects to Keycloak at <code>https://localhost:8443/realms/organizor-dev</code>.</li>
+<li>Keycloak validates the credentials.</li>
+<li>Keycloak redirects back to <code>https://localhost:7025/authentication/login-callback</code>.</li>
+<li>Blazor WebAssembly stores the authenticated state and access token.</li>
+<li><code>KeycloakClaimsPrincipalFactory</code> maps Keycloak roles into Blazor role claims.</li>
+<li><code>RoleRedirector</code> sends the user to the correct shell when they return from the neutral entry routes.</li>
 </ol>
-<h2 id="why-keycloak">Why Keycloak</h2>
+<h2 id="role-redirects">Role Redirects</h2>
+<p><code>RoleRedirector</code> currently routes users as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Redirect target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>organizor-admin</code></td>
+<td><code>/admin</code></td>
+</tr>
+<tr>
+<td><code>tenant-admin</code></td>
+<td><code>/tenant</code></td>
+</tr>
+</tbody>
+</table>
+<p>The redirector must only redirect from neutral routes such as <code>/</code> and <code>authentication/login-callback</code>. It should not force navigation when the user is already on <code>/admin</code> or <code>/tenant</code>, because forced self-navigation can create a reload loop.</p>
+<p>Logout is initiated either by <code>LogoutButton</code> or the <code>/logout</code> route. Both call Blazor WebAssembly authentication through <code>NavigateToLogout(&quot;authentication/logout&quot;, &quot;/&quot;)</code>, which clears the local authentication state and returns the browser to <code>/</code> after the identity-provider logout flow.</p>
+<h2 id="role-claims-in-the-portal">Role Claims in the Portal</h2>
+<p>The portal role factory reads roles from Keycloak claims and adds <code>ClaimTypes.Role</code> entries for Blazor authorization.</p>
+<p>Supported sources:</p>
 <ul>
-<li>Centralized user management</li>
-<li>Role‑based access control</li>
-<li>Secure token handling</li>
-<li>Standard OIDC protocol support</li>
+<li><code>realm_access.roles</code></li>
+<li><code>resource_access.organizor-ui.roles</code></li>
 </ul>
-<h2 id="what-developers-need-to-know">What Developers Need to Know</h2>
-<ul>
-<li>The Portal never handles passwords directly.</li>
-<li>Tokens are automatically attached to API requests.</li>
-<li>Protected pages require the user to be authenticated.</li>
-<li>Keycloak configuration determines what each user can access.</li>
-<li>The <code>organizor-ui</code> Keycloak client must allow <code>https://localhost:7025/*</code> as a redirect URI and <code>https://localhost:7025</code> as a web origin.</li>
-</ul>
+<p>This is separate from API role mapping, where the API also understands roles under <code>resource_access.organizor-api.roles</code>.</p>
+<h2 id="protected-routes">Protected Routes</h2>
+<p>Portal pages use role attributes:</p>
+<pre><code class="lang-razor">@attribute [Authorize(Roles = &quot;organizor-admin&quot;)]
+</code></pre>
+<p>Current route protection:</p>
+<table>
+<thead>
+<tr>
+<th>Route area</th>
+<th>Required role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/admin</code></td>
+<td><code>organizor-admin</code></td>
+</tr>
+<tr>
+<td><code>/admin/tenants</code></td>
+<td><code>organizor-admin</code></td>
+</tr>
+<tr>
+<td><code>/tenant</code></td>
+<td><code>tenant-admin</code></td>
+</tr>
+<tr>
+<td><code>/tenant/profile</code></td>
+<td><code>tenant-admin</code></td>
+</tr>
+</tbody>
+</table>
+<p>The admin and tenant layouts contain placeholder navigation links for future pages, including <code>/admin/users</code> and <code>/tenant/camps</code>. They are not protected pages yet because this branch does not add Razor pages for those routes.</p>
+<h2 id="api-tokens">API Tokens</h2>
+<p>The Portal never sends credentials to the API. It sends bearer tokens through the configured API <code>HttpClient</code>. The API validates token signature, issuer, expiration, and then applies authorization policies.</p>
+<p>The local issuer must be consistent everywhere:</p>
+<pre><code class="lang-text">https://localhost:8443/realms/organizor-dev
+</code></pre>
+<p>If the API is configured with <code>http://localhost:8443/realms/organizor-dev</code>, it will reject HTTPS-issued portal tokens with <code>401 Unauthorized</code>.</p>
+<h2 id="keycloak-client-requirements">Keycloak Client Requirements</h2>
+<p>The <code>organizor-ui</code> client must allow:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valid redirect URI</td>
+<td><code>https://localhost:7025/*</code></td>
+</tr>
+<tr>
+<td>Web origin</td>
+<td><code>https://localhost:7025</code></td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>Standard flow / Authorization Code with PKCE</td>
+</tr>
+</tbody>
+</table>
+<p>Users must receive the appropriate Organizor role before logging in. If roles are changed in Keycloak, log out and back in to refresh the token and claims.</p>
+<p>The current-user display reads these claims when present:</p>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>preferred_username</code></td>
+<td>Display name fallback before email.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>User contact display.</td>
+</tr>
+<tr>
+<td><code>tenant</code></td>
+<td>Tenant context and <code>X-Tenant-Slug</code> header source.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>Sidebar user context display.</td>
+</tr>
+</tbody>
+</table>
 
 </article>
 

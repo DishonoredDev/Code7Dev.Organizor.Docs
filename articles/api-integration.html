@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>API Integration — High‑Level | Organizor </title>
+      <title>API Integration — Portal UI | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="API Integration — High‑Level | Organizor ">
+      <meta name="title" content="API Integration — Portal UI | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -85,16 +85,10 @@
         </div>
 
         <article data-uid="">
-<h1 id="api-integration--highlevel">API Integration — High‑Level</h1>
+<h1 id="api-integration--portal-ui">API Integration — Portal UI</h1>
 
-<p>The Portal UI communicates with the Organizor API to perform all business operations. Every action — from loading data to updating records — goes through the API.</p>
-<h2 id="how-communication-works">How Communication Works</h2>
-<ul>
-<li>The Portal uses <code>HttpClient</code> to send requests.</li>
-<li>A secure access token is automatically added to each request.</li>
-<li>The API validates the token before processing the request.</li>
-</ul>
-<p>Local development configuration:</p>
+<p>The Portal UI communicates with the Organizor API through a named <code>HttpClient</code> called <code>api</code>. All tenant administration actions go through this client.</p>
+<h2 id="local-development-configuration">Local Development Configuration</h2>
 <table>
 <thead>
 <tr>
@@ -112,29 +106,128 @@
 <td><code>https://localhost:7184</code></td>
 </tr>
 <tr>
-<td>Authorized URL</td>
+<td>Authorized API URL</td>
 <td><code>https://localhost:7184</code></td>
 </tr>
 <tr>
 <td>Token issuer</td>
 <td><code>https://localhost:8443/realms/organizor-dev</code></td>
 </tr>
+<tr>
+<td>Portal OIDC client</td>
+<td><code>organizor-ui</code></td>
+</tr>
 </tbody>
 </table>
-<h2 id="what-developers-should-know">What Developers Should Know</h2>
+<p>The portal and API must agree on the Keycloak issuer. If the portal logs in through HTTPS but the API validates against the old HTTP authority, API requests fail with <code>401 Unauthorized</code>.</p>
+<h2 id="httpclient-registration">HttpClient Registration</h2>
+<p>The portal registers the API client in <code>Program.cs</code>:</p>
+<pre><code class="lang-csharp">builder.Services.AddHttpClient(&quot;api&quot;, client =&gt;
+{
+    client.BaseAddress = new Uri(&quot;https://localhost:7184&quot;);
+})
+.AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;();
+</code></pre>
+<p><code>AdminTenantService</code> uses <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call admin tenant endpoints.</p>
+<h2 id="authorization-handler">Authorization Handler</h2>
+<p><code>ApiAuthorizationMessageHandler</code> extends Blazor's <code>AuthorizationMessageHandler</code>. It is responsible for:</p>
 <ul>
-<li>API calls are centralized through a configured HttpClient.</li>
-<li>Authentication is handled automatically.</li>
-<li>Errors from the API surface in the UI through standard Blazor patterns.</li>
-<li>If the API authority and portal token issuer differ by scheme, host, or port, API requests will fail with <code>401 Unauthorized</code>.</li>
+<li>configuring the authorized API URL;</li>
+<li>requesting the portal OIDC scopes;</li>
+<li>attaching the access token to outgoing API requests;</li>
+<li>adding the <code>X-Tenant-Slug</code> header when a tenant claim is available.</li>
 </ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>This approach ensures:</p>
-<ul>
-<li>Consistent security across the platform</li>
-<li>A clean separation between UI and backend logic</li>
-<li>The ability to scale or replace parts of the system independently</li>
-</ul>
+<p>The handler is registered in DI and configured once in its constructor. This matters because <code>AuthorizationMessageHandler.ConfigureHandler(...)</code> can only be called once per handler instance. Calling <code>ConfigureHandler(...)</code> again for the same handler instance can cause this runtime error:</p>
+<pre><code class="lang-text">handler already configured
+</code></pre>
+<p>Keep handler configuration inside the handler constructor or inside the <code>AddHttpMessageHandler</code> factory, but not both. The current branch uses the constructor approach.</p>
+<h2 id="tenant-admin-api-client">Tenant Admin API Client</h2>
+<p><code>AdminTenantService</code> wraps the admin tenant API surface used by <code>/admin/tenants</code>. The read-only query endpoints are implemented by <code>AdminTenantsQueryController</code>; lifecycle operations are implemented by <code>TenantOperationsController</code>. Both controller surfaces share the <code>api/admin/tenants</code> route prefix and require the Organizor admin policy.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetTenantsAsync</code></td>
+<td><code>GET /api/admin/tenants</code></td>
+<td>Loads all tenants, including soft-deleted records.</td>
+</tr>
+<tr>
+<td><code>OnboardAsync</code></td>
+<td><code>POST /api/admin/tenants/onboard</code></td>
+<td>Creates the catalog tenant, provisions Keycloak resources, creates the database, and applies migrations.</td>
+</tr>
+<tr>
+<td><code>UpgradeAsync</code></td>
+<td><code>POST /api/admin/tenants/{id}/upgrade</code></td>
+<td>Runs pending migrations for the tenant database.</td>
+</tr>
+<tr>
+<td><code>SoftDeleteAsync</code></td>
+<td><code>DELETE /api/admin/tenants/{id}</code></td>
+<td>Marks a tenant as deleted without dropping the database.</td>
+</tr>
+<tr>
+<td><code>HardDeleteAsync</code></td>
+<td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
+<td>Drops the tenant database and removes the catalog record after soft deletion.</td>
+</tr>
+</tbody>
+</table>
+<p>The backend also exposes <code>GET /api/admin/tenants/{id}</code> for admin detail lookups. The current portal grid does not call that endpoint directly.</p>
+<p>All methods expect an authenticated <code>organizor-admin</code> user. <code>401 Unauthorized</code> means the token is missing or invalid. <code>403 Forbidden</code> means the token is valid but lacks the required role.</p>
+<p>Tenant query responses include lifecycle fields that the portal relies on:</p>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
+  &quot;name&quot;: &quot;Acme&quot;,
+  &quot;slug&quot;: &quot;acme&quot;,
+  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
+  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;failureReason&quot;: null,
+  &quot;isDeleted&quot;: false
+}
+</code></pre>
+<p><code>GET /api/v1/tenants</code> returns only non-deleted catalog records. <code>GET /api/admin/tenants</code> intentionally includes soft-deleted records so the portal can show deleted tenants and allow hard deletion.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>The tenant API client uses <code>EnsureSuccessAsync</code> to surface failed API responses as <code>InvalidOperationException</code>. The exception message includes the status code and response body when present. The Radzen tenant page catches those exceptions and displays both a page alert and a Radzen notification.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>handler already configured</code></td>
+<td>The same <code>AuthorizationMessageHandler</code> instance was configured more than once.</td>
+<td>Configure the handler in one place only. The current branch configures it in <code>ApiAuthorizationMessageHandler</code>'s constructor.</td>
+</tr>
+<tr>
+<td><code>401 Unauthorized</code> while logged in</td>
+<td>API <code>Keycloak:Authority</code> does not match the token issuer, or no access token was attached.</td>
+<td>Align API authority with <code>https://localhost:8443/realms/organizor-dev</code> and verify the named API client uses the auth handler.</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code> while logged in</td>
+<td>The token is valid but does not include <code>organizor-admin</code>.</td>
+<td>Assign the role in Keycloak and log in again to get a fresh token.</td>
+</tr>
+<tr>
+<td>Tenant-scoped API returns bad tenant errors</td>
+<td>Tenant header is missing or invalid.</td>
+<td>Verify the user has a tenant claim and <code>ApiAuthorizationMessageHandler</code> adds the header for tenant-scoped endpoints.</td>
+</tr>
+</tbody>
+</table>
 
 </article>
 

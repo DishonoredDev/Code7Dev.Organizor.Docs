@@ -112,9 +112,55 @@ Content-Type: application/json
   &quot;name&quot;: &quot;Acme&quot;,
   &quot;slug&quot;: &quot;acme&quot;,
   &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
-  &quot;createdAt&quot;: &quot;2026-05-15T10:00:00Z&quot;
+  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
+  &quot;status&quot;: &quot;Pending&quot;,
+  &quot;failureReason&quot;: null,
+  &quot;isDeleted&quot;: false
 }
 </code></pre>
+<p>All tenant catalog responses use the same shape:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Tenant catalog identifier.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Human-readable tenant name.</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td>Stable slug used for lookup and tenant routing.</td>
+</tr>
+<tr>
+<td><code>databaseName</code></td>
+<td>Tenant database name assigned by the catalog.</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>UTC catalog creation timestamp.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Current lifecycle status, such as <code>Pending</code>, <code>Active</code>, <code>Failed</code>, or <code>Deleted</code>.</td>
+</tr>
+<tr>
+<td><code>failureReason</code></td>
+<td>Provisioning or lifecycle failure detail when available.</td>
+</tr>
+<tr>
+<td><code>isDeleted</code></td>
+<td>Whether the catalog record has been soft-deleted. Public reads exclude deleted records.</td>
+</tr>
+</tbody>
+</table>
 <p>Possible responses:</p>
 <table>
 <thead>
@@ -150,12 +196,12 @@ Content-Type: application/json
 <pre><code class="lang-http">GET /api/v1/tenants/acme
 Authorization: Bearer &lt;token&gt;
 </code></pre>
-<p>Returns a tenant by slug, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded.</p>
+<p>Returns a tenant by slug using the tenant catalog response shape above, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded.</p>
 <h3 id="list-tenants">List Tenants</h3>
 <pre><code class="lang-http">GET /api/v1/tenants
 Authorization: Bearer &lt;token&gt;
 </code></pre>
-<p>Returns all catalog tenants visible through the tenant repository. Soft-deleted tenants are excluded.</p>
+<p>Returns all catalog tenants visible through the tenant repository using the tenant catalog response shape above. Soft-deleted tenants are excluded.</p>
 <h2 id="platform-endpoints">Platform Endpoints</h2>
 <table>
 <thead>

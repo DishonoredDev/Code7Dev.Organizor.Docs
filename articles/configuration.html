@@ -121,15 +121,17 @@
     &quot;Authority&quot;: &quot;https://localhost:8443/realms/organizor-dev&quot;,
     &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
     &quot;Realm&quot;: &quot;organizor-dev&quot;,
-    &quot;AdminClientId&quot;: &quot;organizor-api&quot;,
-    &quot;AdminClientSecret&quot;: &quot;&lt;client-secret&gt;&quot;
+    &quot;AdminClientId&quot;: &quot;organizor-admin&quot;,
+    &quot;AdminClientSecret&quot;: &quot;&lt;admin-client-secret&gt;&quot;
   }
 }
 </code></pre>
-<p><code>Authority</code> must match the token issuer exactly. The local Keycloak container runs at <code>https://localhost:8443</code>, so tokens from the Blazor portal will have issuer <code>https://localhost:8443/realms/organizor-dev</code>.</p>
+<p><code>Authority</code> must match the token issuer exactly. The local Keycloak container runs at <code>https://localhost:8443</code>, so tokens from the Blazor portal have issuer <code>https://localhost:8443/realms/organizor-dev</code>.</p>
+<p>A mismatch between <code>http</code> and <code>https</code> is enough to make API authentication fail with <code>401 Unauthorized</code>.</p>
+<p>The development API configures the Keycloak admin <code>HttpClient</code> to accept the local self-signed Keycloak certificate. This is development-only behavior and should not be used for production identity-provider calls.</p>
 <p>Store client secrets in user secrets, environment variables, or deployment secrets rather than committing them to source.</p>
 <h2 id="portal-ui">Portal UI</h2>
-<p>The Blazor WebAssembly portal uses Keycloak for OIDC login and calls the API with bearer tokens.</p>
+<p>The Blazor WebAssembly portal uses Keycloak for OIDC login and calls the API with bearer tokens. Admin tenant management uses Radzen components and <code>AdminTenantService</code> over the named <code>api</code> HttpClient.</p>
 <p>Current local development endpoints:</p>
 <table>
 <thead>

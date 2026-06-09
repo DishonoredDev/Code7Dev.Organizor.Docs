@@ -74,6 +74,57 @@ references:
   commentId: N:Code7Dev.Organizor.Api.Controllers
   fullName: Code7Dev.Organizor.Api.Controllers
   nameWithType: Code7Dev.Organizor.Api.Controllers
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController
+  name: AdminTenantsQueryController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html
+  commentId: T:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController
+  nameWithType: AdminTenantsQueryController
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)
+  name: AdminTenantsQueryController(ITenantService)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)
+  name.vb: New(ITenantService)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.AdminTenantsQueryController(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.New(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService)
+  nameWithType: AdminTenantsQueryController.AdminTenantsQueryController(ITenantService)
+  nameWithType.vb: AdminTenantsQueryController.New(ITenantService)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.#ctor*
+  name: AdminTenantsQueryController
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController__ctor_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.AdminTenantsQueryController
+  fullName.vb: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.New
+  nameWithType: AdminTenantsQueryController.AdminTenantsQueryController
+  nameWithType.vb: AdminTenantsQueryController.New
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll
+  name: GetAll()
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController_GetAll
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll()
+  nameWithType: AdminTenantsQueryController.GetAll()
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll*
+  name: GetAll
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController_GetAll_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetAll
+  nameWithType: AdminTenantsQueryController.GetAll
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById(System.Guid)
+  name: GetById(Guid)
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController_GetById_System_Guid_
+  commentId: M:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById(System.Guid)
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById(System.Guid)
+  nameWithType: AdminTenantsQueryController.GetById(Guid)
+- uid: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById*
+  name: GetById
+  href: api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html#Code7Dev_Organizor_Api_Controllers_AdminTenantsQueryController_GetById_
+  commentId: Overload:Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.GetById
+  nameWithType: AdminTenantsQueryController.GetById
 - uid: Code7Dev.Organizor.Api.Controllers.AuthController
   name: AuthController
   href: api/Code7Dev.Organizor.Api.Controllers.AuthController.html
@@ -610,6 +661,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.DatabaseName
   nameWithType: TenantResponseDto.DatabaseName
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason
+  name: FailureReason
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_FailureReason
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason
+  nameWithType: TenantResponseDto.FailureReason
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason*
+  name: FailureReason
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_FailureReason_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.FailureReason
+  nameWithType: TenantResponseDto.FailureReason
 - uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Id
   name: Id
   href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_Id
@@ -623,6 +687,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Id
   nameWithType: TenantResponseDto.Id
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted
+  name: IsDeleted
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_IsDeleted
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted
+  nameWithType: TenantResponseDto.IsDeleted
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted*
+  name: IsDeleted
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_IsDeleted_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.IsDeleted
+  nameWithType: TenantResponseDto.IsDeleted
 - uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Name
   name: Name
   href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_Name
@@ -649,6 +726,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Slug
   nameWithType: TenantResponseDto.Slug
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status
+  name: Status
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_Status
+  commentId: P:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status
+  nameWithType: TenantResponseDto.Status
+- uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status*
+  name: Status
+  href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html#Code7Dev_Organizor_Api_Mappers_DTO_TenantResponseDto_Status_
+  commentId: Overload:Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.Status
+  nameWithType: TenantResponseDto.Status
 - uid: Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest
   name: TenantSoftDeleteRequest
   href: api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html
@@ -1689,12 +1779,15 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.CreateAsync
   nameWithType: ITenantService.CreateAsync
-- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync
-  name: GetAllAsync()
-  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync
-  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync
-  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync()
-  nameWithType: ITenantService.GetAllAsync()
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync(System.Boolean)
+  name: GetAllAsync(bool)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync_System_Boolean_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync(System.Boolean)
+  name.vb: GetAllAsync(Boolean)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync(bool)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync(Boolean)
+  nameWithType: ITenantService.GetAllAsync(bool)
+  nameWithType.vb: ITenantService.GetAllAsync(Boolean)
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync*
   name: GetAllAsync
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync_
@@ -1702,6 +1795,22 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync
   nameWithType: ITenantService.GetAllAsync
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync(System.Guid,System.Boolean)
+  name: GetByIdAsync(Guid, bool)
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetByIdAsync_System_Guid_System_Boolean_
+  commentId: M:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync(System.Guid,System.Boolean)
+  name.vb: GetByIdAsync(Guid, Boolean)
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync(System.Guid, bool)
+  fullName.vb: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync(System.Guid, Boolean)
+  nameWithType: ITenantService.GetByIdAsync(Guid, bool)
+  nameWithType.vb: ITenantService.GetByIdAsync(Guid, Boolean)
+- uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync*
+  name: GetByIdAsync
+  href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetByIdAsync_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync
+  nameWithType: ITenantService.GetByIdAsync
 - uid: Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetBySlugAsync(System.String)
   name: GetBySlugAsync(string)
   href: api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html#Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetBySlugAsync_System_String_
@@ -1910,6 +2019,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.DatabaseName
   nameWithType: TenantModel.DatabaseName
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason
+  name: FailureReason
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_FailureReason
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason
+  nameWithType: TenantModel.FailureReason
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason*
+  name: FailureReason
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_FailureReason_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.FailureReason
+  nameWithType: TenantModel.FailureReason
 - uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Id
   name: Id
   href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_Id
@@ -1923,6 +2045,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Id
   nameWithType: TenantModel.Id
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted
+  name: IsDeleted
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_IsDeleted
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted
+  nameWithType: TenantModel.IsDeleted
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted*
+  name: IsDeleted
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_IsDeleted_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.IsDeleted
+  nameWithType: TenantModel.IsDeleted
 - uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Name
   name: Name
   href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_Name
@@ -1949,6 +2084,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Slug
   nameWithType: TenantModel.Slug
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status
+  name: Status
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_Status
+  commentId: P:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status
+  nameWithType: TenantModel.Status
+- uid: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status*
+  name: Status
+  href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html#Code7Dev_Organizor_Application_Tenants_Models_TenantModel_Status_
+  commentId: Overload:Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Application.Tenants.Models.TenantModel.Status
+  nameWithType: TenantModel.Status
 - uid: Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest
   name: TenantOnboardingRequest
   href: api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html
@@ -2822,6 +2970,51 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.SubGroups
   nameWithType: KeycloakGroup.SubGroups
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest
+  name: KeycloakResetPasswordRequest
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html
+  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest
+  nameWithType: KeycloakResetPasswordRequest
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary
+  name: Temporary
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Temporary
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary
+  nameWithType: KeycloakResetPasswordRequest.Temporary
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary*
+  name: Temporary
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Temporary_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Temporary
+  nameWithType: KeycloakResetPasswordRequest.Temporary
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type
+  name: Type
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Type
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type
+  nameWithType: KeycloakResetPasswordRequest.Type
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type*
+  name: Type
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Type_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Type
+  nameWithType: KeycloakResetPasswordRequest.Type
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value
+  name: Value
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Value
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value
+  nameWithType: KeycloakResetPasswordRequest.Value
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value*
+  name: Value
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakResetPasswordRequest_Value_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.Value
+  nameWithType: KeycloakResetPasswordRequest.Value
 - uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole
   name: KeycloakRole
   href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html
@@ -3167,51 +3360,6 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.GetUserIdByUsernameAsync
   nameWithType: KeycloakAdminClient.GetUserIdByUsernameAsync
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
-  name: KeycloakResetPasswordRequest
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html
-  commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest
-  nameWithType: KeycloakResetPasswordRequest
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
-  name: Temporary
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Temporary
-  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
-  nameWithType: KeycloakResetPasswordRequest.Temporary
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary*
-  name: Temporary
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Temporary_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
-  isSpec: "True"
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Temporary
-  nameWithType: KeycloakResetPasswordRequest.Temporary
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
-  name: Type
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Type
-  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
-  nameWithType: KeycloakResetPasswordRequest.Type
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type*
-  name: Type
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Type_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
-  isSpec: "True"
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Type
-  nameWithType: KeycloakResetPasswordRequest.Type
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
-  name: Value
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Value
-  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
-  nameWithType: KeycloakResetPasswordRequest.Value
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value*
-  name: Value
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakResetPasswordRequest_Value_
-  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
-  isSpec: "True"
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.Value
-  nameWithType: KeycloakResetPasswordRequest.Value
 - uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService
   name: KeycloakTenantCleanupService
   href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html

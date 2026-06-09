@@ -163,9 +163,9 @@ or a failure result with an appropriate error code.</p>
 
   <a id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync*"></a>
 
-  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync">
-  GetAllAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetAllAsync_System_Boolean_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetAllAsync(System.Boolean)">
+  GetAllAsync(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Lists non-deleted tenants.</p>
@@ -173,14 +173,63 @@ or a failure result with an appropriate error code.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Result&lt;List&lt;TenantModel&gt;&gt;&gt; GetAllAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Result&lt;List&lt;TenantModel&gt;&gt;&gt; GetAllAsync(bool includeSoftDeleted = false)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>When true, includes tenants that were soft-deleted. Intended for internal administration surfaces.</p>
+</dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html">TenantModel</a>&gt;&gt;&gt;</dt>
     <dd><p>A <a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result&lt;T&gt;</a> containing all visible tenant metadata.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetByIdAsync_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantService_GetByIdAsync_System_Guid_System_Boolean_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.GetByIdAsync(System.Guid,System.Boolean)">
+  GetByIdAsync(Guid, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantService.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a tenant by catalog identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Result&lt;TenantModel&gt;&gt; GetByIdAsync(Guid id, bool includeSoftDeleted = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Tenant catalog identifier.</p>
+</dd>
+    <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>When true, allows lookup of tenants that were soft-deleted. Intended for internal administration surfaces.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html">TenantModel</a>&gt;&gt;</dt>
+    <dd><p>A <a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result&lt;T&gt;</a> containing the tenant metadata when found,
+or a failure result when not found.</p>
 </dd>
   </dl>
 

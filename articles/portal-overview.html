@@ -87,43 +87,182 @@
         <article data-uid="">
 <h1 id="portal-ui-overview">Portal UI Overview</h1>
 
-<p>The Portal UI is the front‑end application of the Organizor platform. It provides the user‑facing interface for authentication, tenant selection, navigation, and all customer‑side functionality.</p>
-<p>This document gives a high‑level overview of the Portal UI architecture, its responsibilities, and how it integrates with the backend services.</p>
+<p>The Portal UI is the Blazor WebAssembly front end for Organizor. It handles Keycloak sign-in, role-based routing, tenant administration, and authenticated API calls to the backend.</p>
+<p>This page reflects the issue 98 portal work completed after the last documentation update.</p>
 <hr>
-<h2 id="purpose-of-the-portal-ui">Purpose of the Portal UI</h2>
+<h2 id="current-capabilities">Current Capabilities</h2>
+<p>The portal currently supports:</p>
 <ul>
-<li>Provide a clean and intuitive interface for end‑users.</li>
-<li>Handle authentication and session management via Keycloak.</li>
-<li>Communicate with the Organizor API using secure access tokens.</li>
-<li>Render tenant‑specific data and enforce authorization rules.</li>
-<li>Serve as the entry point for all customer‑facing features.</li>
+<li>Keycloak OIDC login with the <code>organizor-ui</code> client.</li>
+<li>Role extraction from Keycloak realm roles and <code>organizor-ui</code> client roles.</li>
+<li>Automatic role-based routing after login.</li>
+<li>Separate admin and tenant shells.</li>
+<li>An admin dashboard route at <code>/admin</code>.</li>
+<li>Tenant administration at <code>/admin/tenants</code> for platform administrators.</li>
+<li>Logout through <code>/logout</code> or the shared logout button.</li>
+<li>Current-user display with username, email, tenant claim, and Keycloak groups.</li>
+<li>Tenant dashboard/profile placeholders under <code>/tenant</code>.</li>
 </ul>
+<p>The <code>/admin/tenants</code> page is backed by real API routes under <code>/api/admin/tenants</code>. It is not mock UI. Tenant-facing feature routes are still placeholders.</p>
 <hr>
 <h2 id="technology-stack">Technology Stack</h2>
 <ul>
-<li><strong>Blazor WebAssembly</strong> for client‑side rendering.</li>
-<li><strong>.NET 10</strong> for the portal runtime and API integration.</li>
-<li><strong>Keycloak</strong> for authentication (OIDC + PKCE).</li>
-<li><strong>Component‑based architecture</strong> for maintainability.</li>
+<li><strong>Blazor WebAssembly</strong> for client-side rendering.</li>
+<li><strong>.NET 10</strong> for the portal project.</li>
+<li><strong>Keycloak</strong> for authentication using OIDC Authorization Code Flow with PKCE.</li>
+<li><strong>Radzen.Blazor</strong> for the admin tenant grid, cards, forms, buttons, badges, alerts, and notifications.</li>
+<li><strong>IHttpClientFactory</strong> plus a custom <code>AuthorizationMessageHandler</code> for API calls.</li>
 </ul>
 <hr>
-<h2 id="highlevel-structure">High‑Level Structure</h2>
-<p>The Portal UI is organized into:</p>
+<h2 id="routes-and-layouts">Routes and Layouts</h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Layout</th>
+<th>Required role</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>MainLayout</code></td>
+<td>none</td>
+<td>Entry page. Authenticated users are redirected by role.</td>
+</tr>
+<tr>
+<td><code>/admin</code></td>
+<td><code>AdminLayout</code></td>
+<td><code>organizor-admin</code></td>
+<td>Admin dashboard placeholder.</td>
+</tr>
+<tr>
+<td><code>/admin/tenants</code></td>
+<td><code>AdminLayout</code></td>
+<td><code>organizor-admin</code></td>
+<td>Tenant catalog and lifecycle management.</td>
+</tr>
+<tr>
+<td><code>/tenant</code></td>
+<td><code>TenantLayout</code></td>
+<td><code>tenant-admin</code></td>
+<td>Tenant dashboard placeholder.</td>
+</tr>
+<tr>
+<td><code>/tenant/profile</code></td>
+<td><code>TenantLayout</code></td>
+<td><code>tenant-admin</code></td>
+<td>Tenant profile placeholder.</td>
+</tr>
+<tr>
+<td><code>/logout</code></td>
+<td>none</td>
+<td>authenticated user</td>
+<td>Redirects to the Blazor OIDC logout endpoint and returns to <code>/</code>.</td>
+</tr>
+<tr>
+<td><code>/authentication/*</code></td>
+<td>authentication page</td>
+<td>none</td>
+<td>Blazor WebAssembly OIDC endpoints.</td>
+</tr>
+</tbody>
+</table>
+<p>The admin shell currently contains a navigation link for <code>/admin/users</code>, and the tenant shell contains a navigation link for <code>/tenant/camps</code>. Those are navigation placeholders only; this branch does not add backing Razor pages for those routes.</p>
+<p><code>RoleRedirector</code> is mounted globally in <code>App.razor</code>, but it only redirects from the neutral entry routes (<code>/</code> and the login callback). It must not redirect when the user is already on <code>/admin</code> or <code>/tenant</code>, otherwise the portal can reload-loop.</p>
+<hr>
+<h2 id="admin-tenant-management">Admin Tenant Management</h2>
+<p>The admin tenant page uses Radzen components and the <code>AdminTenantService</code> client. It supports:</p>
 <ul>
-<li><strong>Pages</strong> — top‑level routes (e.g., <code>/dashboard</code>, <code>/profile</code>)</li>
-<li><strong>Components</strong> — reusable UI building blocks</li>
-<li><strong>Services</strong> — API clients, auth handlers, state management</li>
-<li><strong>Layouts</strong> — shared UI shells (navigation, headers, footers)</li>
-<li><strong>wwwroot</strong> — static assets</li>
+<li>loading all tenants including soft-deleted tenants;</li>
+<li>filtering tenants by name, slug, database name, or status;</li>
+<li>viewing active, deleted, and failed tenant counts;</li>
+<li>onboarding a tenant with name and slug validation;</li>
+<li>upgrading a tenant database by running pending migrations;</li>
+<li>soft-deleting a tenant with an operator reason;</li>
+<li>hard-deleting a previously soft-deleted tenant.</li>
 </ul>
+<p>The page calls these backend endpoints:</p>
+<table>
+<thead>
+<tr>
+<th>UI action</th>
+<th>API endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load tenants</td>
+<td><code>GET /api/admin/tenants</code></td>
+</tr>
+<tr>
+<td>Load one tenant</td>
+<td><code>GET /api/admin/tenants/{id}</code></td>
+</tr>
+<tr>
+<td>Onboard tenant</td>
+<td><code>POST /api/admin/tenants/onboard</code></td>
+</tr>
+<tr>
+<td>Upgrade tenant</td>
+<td><code>POST /api/admin/tenants/{id}/upgrade</code></td>
+</tr>
+<tr>
+<td>Soft delete tenant</td>
+<td><code>DELETE /api/admin/tenants/{id}</code></td>
+</tr>
+<tr>
+<td>Hard delete tenant</td>
+<td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
+</tr>
+</tbody>
+</table>
+<p>All admin tenant operations require a valid bearer token with the <code>organizor-admin</code> role.</p>
+<p>Tenant rows expose the catalog and lifecycle fields used by the UI:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Action target for upgrade and delete calls.</td>
+</tr>
+<tr>
+<td><code>name</code>, <code>slug</code>, <code>databaseName</code></td>
+<td>Catalog display and search.</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>Created timestamp shown in local time.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Lifecycle state used for badges and failed counts.</td>
+</tr>
+<tr>
+<td><code>failureReason</code></td>
+<td>Failure detail shown below the tenant name when present.</td>
+</tr>
+<tr>
+<td><code>isDeleted</code></td>
+<td>Controls deleted badge state and whether hard delete is available.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="authentication-flow">Authentication Flow</h2>
 <p>The Portal UI uses:</p>
 <ul>
-<li>OIDC Authorization Code Flow with PKCE</li>
-<li>Keycloak as the identity provider</li>
-<li>Access tokens for API calls</li>
-<li>Refresh tokens handled by Keycloak session</li>
+<li>OIDC Authorization Code Flow with PKCE;</li>
+<li>Keycloak as the identity provider;</li>
+<li>access tokens for API calls;</li>
+<li>Blazor <code>AuthenticationState</code> for role and user context;</li>
+<li><code>KeycloakClaimsPrincipalFactory</code> to promote Keycloak roles into Blazor role claims.</li>
 </ul>
 <p>Current local configuration:</p>
 <table>
@@ -154,25 +293,27 @@
 <td>Logout callback</td>
 <td><code>https://localhost:7025/</code></td>
 </tr>
+<tr>
+<td>API base URL</td>
+<td><code>https://localhost:7184</code></td>
+</tr>
 </tbody>
 </table>
-<p>See:<br>
-<strong>Authentication Flow → <code>authentication-flow.md</code></strong></p>
+<p>The API <code>Keycloak:Authority</code> must match the token issuer exactly. A portal token issued by <code>https://localhost:8443/realms/organizor-dev</code> will fail API validation if the API is configured for <code>http://localhost:8443/realms/organizor-dev</code>.</p>
 <hr>
 <h2 id="api-integration">API Integration</h2>
-<p>The Portal UI communicates with the Organizor API using:</p>
+<p>The portal uses a named <code>HttpClient</code> called <code>api</code> with base address <code>https://localhost:7184</code>.</p>
+<p><code>ApiAuthorizationMessageHandler</code>:</p>
 <ul>
-<li>Typed <code>HttpClient</code> instances</li>
-<li>AuthorizationMessageHandler</li>
-<li>Automatic token injection</li>
-<li>Tenant‑aware endpoints</li>
+<li>configures the authorized API URL;</li>
+<li>requests the OIDC scopes used by the portal;</li>
+<li>attaches bearer tokens to API requests;</li>
+<li>adds <code>X-Tenant-Slug</code> when <code>UserContextService</code> can resolve a tenant claim.</li>
 </ul>
-<p>The local portal API client targets <code>https://localhost:7184</code> and attaches tokens issued by the <code>organizor-dev</code> realm.</p>
-<p>See:<br>
-<strong>API Integration → <code>api-integration.md</code></strong></p>
+<p>The handler is attached with <code>.AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;()</code> and configured once in its constructor. Do not configure the same <code>AuthorizationMessageHandler</code> instance more than once; Blazor will throw a handler already configured error.</p>
 <hr>
 <h2 id="summary">Summary</h2>
-<p>The Portal UI is a modular, secure, and scalable front‑end built on Blazor WebAssembly. It integrates tightly with Keycloak for authentication and the Organizor API for data access, providing a seamless experience for end‑users.</p>
+<p>Issue 98 moved the portal from a basic authenticated shell toward an operational admin portal. The most complete workflow today is tenant control under <code>/admin/tenants</code>; user management and tenant feature pages are still placeholders until backing API use cases are added.</p>
 
 </article>
 

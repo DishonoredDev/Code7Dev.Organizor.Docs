@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Portal UI Structure — High‑Level | Organizor </title>
+      <title>Portal UI Structure — High-Level | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Portal UI Structure — High‑Level | Organizor ">
+      <meta name="title" content="Portal UI Structure — High-Level | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -85,29 +85,212 @@
         </div>
 
         <article data-uid="">
-<h1 id="portal-ui-structure--highlevel">Portal UI Structure — High‑Level</h1>
+<h1 id="portal-ui-structure--high-level">Portal UI Structure — High-Level</h1>
 
-<p>The Portal UI is organized into a small set of logical building blocks that keep the application clean and maintainable.</p>
-<h2 id="main-building-blocks">Main Building Blocks</h2>
-<h3 id="pages">Pages</h3>
-<p>Screens the user can navigate to, such as:</p>
+<p>The Portal UI is organized into pages, layouts, components, services, and models. Issue 98 added the first operational admin workflow for tenant control.</p>
+<h2 id="pages">Pages</h2>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Route</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Home</code></td>
+<td><code>/</code></td>
+<td>Neutral entry page. Authenticated users can be redirected by role.</td>
+</tr>
+<tr>
+<td><code>Authentication</code></td>
+<td><code>/authentication/*</code></td>
+<td>Blazor WebAssembly OIDC login/logout callbacks.</td>
+</tr>
+<tr>
+<td><code>Logout</code></td>
+<td><code>/logout</code></td>
+<td>Convenience route that starts Blazor OIDC logout and returns to <code>/</code>.</td>
+</tr>
+<tr>
+<td><code>Admin/Dashboard</code></td>
+<td><code>/admin</code></td>
+<td>Admin dashboard placeholder.</td>
+</tr>
+<tr>
+<td><code>Admin/Tenants</code></td>
+<td><code>/admin/tenants</code></td>
+<td>Operational tenant catalog and lifecycle management.</td>
+</tr>
+<tr>
+<td><code>Tenant/Dashboard</code></td>
+<td><code>/tenant</code></td>
+<td>Tenant dashboard placeholder.</td>
+</tr>
+<tr>
+<td><code>Tenant/Profile</code></td>
+<td><code>/tenant/profile</code></td>
+<td>Tenant profile placeholder.</td>
+</tr>
+<tr>
+<td><code>NotFound</code></td>
+<td>fallback</td>
+<td>Not-found page.</td>
+</tr>
+</tbody>
+</table>
+<p><code>AdminLayout</code> includes a navigation link for <code>/admin/users</code>, and <code>TenantLayout</code> includes a navigation link for <code>/tenant/camps</code>, but there are no Razor pages for those routes in this branch. Treat both as future navigation placeholders.</p>
+<h2 id="layouts">Layouts</h2>
+<table>
+<thead>
+<tr>
+<th>Layout</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MainLayout</code></td>
+<td>General shell with login/logout controls and authenticated user context.</td>
+</tr>
+<tr>
+<td><code>AdminLayout</code></td>
+<td>Admin control-plane shell with dashboard, tenant management, current-user panel, logout, and public-site navigation.</td>
+</tr>
+<tr>
+<td><code>TenantLayout</code></td>
+<td>Tenant shell with tenant navigation, current-user panel, logout, and public-site navigation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="components">Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserInfo</code></td>
+<td>Displays tenant, username, email, and Keycloak groups from the current authentication state.</td>
+</tr>
+<tr>
+<td><code>CurrentUserPanel</code></td>
+<td>Sidebar user card used in admin and tenant shells. Shows display name, email, tenant, groups, logout, and back-to-website action.</td>
+</tr>
+<tr>
+<td><code>LogoutButton</code></td>
+<td>Starts Blazor OIDC logout through <code>NavigateToLogout(&quot;authentication/logout&quot;, &quot;/&quot;)</code>.</td>
+</tr>
+<tr>
+<td><code>RoleRedirector</code></td>
+<td>Redirects authenticated users from neutral entry routes to <code>/admin</code> or <code>/tenant</code> based on role.</td>
+</tr>
+<tr>
+<td><code>RedirectToLogin</code></td>
+<td>Sends unauthenticated users to the Blazor OIDC login route.</td>
+</tr>
+<tr>
+<td><code>AuthStateProvider</code></td>
+<td>Auth-related component wrapper used by the portal.</td>
+</tr>
+<tr>
+<td><code>AdminSidebar</code></td>
+<td>Admin navigation component retained for admin navigation reuse.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="radzen-usage">Radzen Usage</h2>
+<p>The portal references <code>Radzen.Blazor</code> and wires <code>RadzenComponents</code> in <code>App.razor</code>.</p>
+<p>The admin tenant page currently uses:</p>
 <ul>
-<li>Login</li>
-<li>Dashboard</li>
-<li>Not Found</li>
+<li><code>RadzenDataGrid</code> for tenant catalog display;</li>
+<li><code>RadzenTemplateForm</code>, <code>RadzenTextBox</code>, <code>RadzenTextArea</code>, and validators for tenant onboarding and deletion input;</li>
+<li><code>RadzenCard</code> for layout panels;</li>
+<li><code>RadzenButton</code> for actions;</li>
+<li><code>RadzenBadge</code> for tenant status;</li>
+<li><code>RadzenAlert</code> and <code>NotificationService</code> for errors and operation feedback.</li>
 </ul>
-<h3 id="components">Components</h3>
-<p>Reusable UI elements that appear across multiple pages.</p>
-<h3 id="layouts">Layouts</h3>
-<p>Define the overall structure of the application, including navigation and shared UI elements.</p>
-<h3 id="services">Services</h3>
-<p>Handle communication with the API and manage authentication state.</p>
-<h2 id="why-this-structure">Why This Structure</h2>
+<p>Radzen services registered in <code>Program.cs</code>:</p>
 <ul>
-<li>Easy to extend with new features</li>
-<li>Clear separation between UI, logic, and layout</li>
-<li>Reusable components reduce duplication</li>
-<li>Predictable folder structure for developers</li>
+<li><code>DialogService</code></li>
+<li><code>NotificationService</code></li>
+<li><code>TooltipService</code></li>
+<li><code>ContextMenuService</code></li>
+</ul>
+<h2 id="services">Services</h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserContextService</code></td>
+<td>Reads <code>AuthenticationState</code> and maps claims into <code>UserInfoModel</code>.</td>
+</tr>
+<tr>
+<td><code>ApiAuthorizationMessageHandler</code></td>
+<td>Attaches access tokens to API requests and adds tenant header context when available.</td>
+</tr>
+<tr>
+<td><code>AdminTenantService</code></td>
+<td>Typed client for admin tenant query and lifecycle operations used by the admin tenant page.</td>
+</tr>
+<tr>
+<td><code>KeycloakClaimsPrincipalFactory</code></td>
+<td>Promotes Keycloak roles into Blazor role claims.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="models">Models</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserInfoModel</code></td>
+<td>Display model for signed-in user context.</td>
+</tr>
+<tr>
+<td><code>TenantModel</code></td>
+<td>Portal-side tenant catalog projection.</td>
+</tr>
+<tr>
+<td><code>TenantOnboardingForm</code></td>
+<td>Validated form model for tenant onboarding.</td>
+</tr>
+<tr>
+<td><code>TenantOnboardingRequest</code></td>
+<td>API request body for onboarding.</td>
+</tr>
+<tr>
+<td><code>TenantSoftDeleteRequest</code></td>
+<td>API request body for soft deletion.</td>
+</tr>
+<tr>
+<td><code>TenantMigrationResult</code></td>
+<td>API response model for tenant database upgrades.</td>
+</tr>
+</tbody>
+</table>
+<p><code>TenantModel</code> mirrors the API tenant response used by the admin grid: <code>Id</code>, <code>Name</code>, <code>Slug</code>, <code>DatabaseName</code>, <code>CreatedAt</code>, <code>Status</code>, <code>FailureReason</code>, and <code>IsDeleted</code>.</p>
+<h2 id="extension-rules">Extension Rules</h2>
+<ul>
+<li>Add page-level authorization attributes to protected pages.</li>
+<li>Keep API calls inside services instead of Razor markup.</li>
+<li>Use the named <code>api</code> HttpClient for backend calls so tokens are attached consistently.</li>
+<li>Avoid forcing full page reloads for internal route redirects unless a complete browser reload is required.</li>
+<li>Do not add UI for operations until the backing API route exists, unless the page is clearly marked as a placeholder.</li>
 </ul>
 
 </article>

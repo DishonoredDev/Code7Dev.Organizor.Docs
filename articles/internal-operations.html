@@ -115,7 +115,32 @@ Content-Type: application/json
   &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
   &quot;name&quot;: &quot;Acme&quot;,
   &quot;slug&quot;: &quot;acme&quot;,
-  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;
+  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
+  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;failureReason&quot;: null,
+  &quot;isDeleted&quot;: false
+}
+</code></pre>
+<h2 id="query-tenants-for-administration">Query Tenants For Administration</h2>
+<pre><code class="lang-http">GET /api/admin/tenants
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns all tenant catalog records, including soft-deleted tenants. This differs from <code>GET /api/v1/tenants</code>, which returns only non-deleted records.</p>
+<pre><code class="lang-http">GET /api/admin/tenants/{id}
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns one tenant by catalog ID, including soft-deleted records. These query endpoints are used by the portal tenant-management surface and are protected by the same <code>RequireOrganizorAdminRole</code> policy as lifecycle operations.</p>
+<p>Example response:</p>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
+  &quot;name&quot;: &quot;Acme&quot;,
+  &quot;slug&quot;: &quot;acme&quot;,
+  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
+  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;failureReason&quot;: null,
+  &quot;isDeleted&quot;: false
 }
 </code></pre>
 <h2 id="upgrade-tenant">Upgrade Tenant</h2>
@@ -154,6 +179,18 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
 <li>removes the catalog record.</li>
 </ol>
 <p>Keycloak cleanup tolerates missing groups or users so a partially-provisioned tenant can still be cleaned up.</p>
+<h2 id="portal-admin-tenant-control">Portal Admin Tenant Control</h2>
+<p>The Blazor portal exposes the tenant operations above through <code>/admin/tenants</code> for users with the <code>organizor-admin</code> role.</p>
+<p>The page uses <code>AdminTenantService</code>, which calls the same admin endpoints documented in this article. Operators can:</p>
+<ul>
+<li>view all tenants, including soft-deleted tenants;</li>
+<li>filter the catalog by name, slug, database, or status;</li>
+<li>onboard a new tenant;</li>
+<li>run a tenant upgrade;</li>
+<li>soft-delete a tenant with a reason;</li>
+<li>hard-delete a tenant after it has been soft-deleted.</li>
+</ul>
+<p>The portal does not bypass API authorization. Each operation still requires a bearer token accepted by <code>RequireOrganizorAdminRole</code>.</p>
 <h2 id="scheduled-tenant-jobs">Scheduled Tenant Jobs</h2>
 <p>Organizor is wired for Quartz recurring background work, but tenant job scheduling is not currently enabled on startup. <code>Program.cs</code> contains a commented-out scheduling block for future use.</p>
 <p>The scheduler:</p>

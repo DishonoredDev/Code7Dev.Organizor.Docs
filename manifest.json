@@ -67,6 +67,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AuthController.yml",
       "output": {
         ".html": {
@@ -1187,6 +1201,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.yml",
       "output": {
         ".html": {
@@ -1267,20 +1295,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakResetPasswordRequest",
       "Summary": null
     },
     {

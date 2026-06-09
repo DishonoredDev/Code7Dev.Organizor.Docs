@@ -163,7 +163,14 @@ docker compose up -d
 </tr>
 </tbody>
 </table>
-<p>The portal and API must both use the HTTPS Keycloak authority. Tokens issued by <code>https://localhost:8443/realms/organizor-dev</code> will not validate against an API configured for the old HTTP Keycloak endpoint.</p>
+<p>The portal and API must both use the HTTPS Keycloak authority. Tokens issued by <code>https://localhost:8443/realms/organizor-dev</code> will not validate against an API configured for the old HTTP Keycloak endpoint. In local development, set both <code>Keycloak:Authority</code> and <code>Keycloak:BaseUrl</code> to HTTPS in API user secrets.</p>
+<h2 id="api-user-secrets">API User Secrets</h2>
+<p>For local development, verify the API user secrets use HTTPS:</p>
+<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:Authority&quot; &quot;https://localhost:8443/realms/organizor-dev&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:BaseUrl&quot; &quot;https://localhost:8443&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+</code></pre>
+<p>Restart the API after changing these values. Running API processes keep the old configuration in memory.</p>
+<p>The development API accepts the local Keycloak certificate for admin-client calls. Browser trust is still required for portal login.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <table>
 <thead>
