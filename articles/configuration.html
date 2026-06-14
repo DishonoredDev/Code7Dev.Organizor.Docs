@@ -113,7 +113,7 @@
 <p>The API requires Keycloak settings for two separate concerns:</p>
 <ul>
 <li>JWT validation uses <code>Keycloak:Authority</code>.</li>
-<li>Tenant onboarding uses the Keycloak admin client settings to create tenant groups, assign roles, and create the default tenant admin user.</li>
+<li>Tenant onboarding uses the Keycloak admin client settings to create tenant groups, assign roles, create/update tenant website clients, and create the default tenant admin user.</li>
 </ul>
 <p>Example development shape:</p>
 <pre><code class="lang-json">{
@@ -192,9 +192,9 @@
 <p>The API selects a CORS policy by environment:</p>
 <ul>
 <li><code>DevCors</code> in development allows any origin, header, and method.</li>
-<li><code>ProdCors</code> outside development must be configured with explicit allowed origins before browser clients can call the API.</li>
+<li><code>ProdCors</code> outside development dynamically allows origins from active tenant website configuration in the catalog.</li>
 </ul>
-<p>The current production policy has no origins configured. Treat that as a deployment checklist item, not a complete production setting.</p>
+<p>Production CORS uses tenant <code>auth.webOrigins</code> values and the origin of <code>website.baseUrl</code> as the allow-list source. Wildcards, malformed origins, URL fragments, non-origin <code>webOrigins</code>, and non-local HTTP origins are rejected. CORS is not authorization; bearer tokens, role policies, tenant resolution, and tenant access checks still enforce API access.</p>
 <h2 id="openapi-and-scalar">OpenAPI and Scalar</h2>
 <p>OpenAPI and Scalar endpoints are mapped only in development. This keeps the production surface smaller while retaining local API exploration during development.</p>
 

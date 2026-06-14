@@ -235,8 +235,8 @@
 <tbody>
 <tr>
 <td><code>limits.maxUsers</code></td>
-<td><code>10</code></td>
-<td><code>100</code></td>
+<td><code>50</code></td>
+<td><code>0</code></td>
 </tr>
 <tr>
 <td><code>limits.maxCamps</code></td>
@@ -260,6 +260,7 @@
 </tr>
 </tbody>
 </table>
+<p><code>limits.maxUsers = 0</code> means unlimited users for the assigned plan. The system default <code>limits.maxUsers = 5</code> remains a fallback only; it is not the default sold plan limit.</p>
 <p>New tenants default to <code>PlanKey = starter</code> unless a later workflow explicitly allows a different plan to be supplied.</p>
 <h2 id="effective-tenant-config">Effective Tenant Config</h2>
 <p><code>ITenantConfigResolver</code> resolves the runtime configuration a tenant should receive. The resolver is registered in DI and can resolve by tenant id or tenant slug.</p>
@@ -344,10 +345,11 @@
 <h3 id="tenant-config-api">Tenant Config API</h3>
 <p>Tenant-facing clients can fetch effective config for the current tenant:</p>
 <pre><code class="lang-http">GET /api/v1/tenant/config
-Authorization: Bearer &lt;tenant-user-or-admin-token&gt;
+Authorization: Bearer &lt;tenant-admin-token&gt;
 X-Tenant-Slug: acme
 </code></pre>
 <p>The route uses the tenant resolved from <code>X-Tenant-Slug</code>; the tenant id is not accepted in the URL for this endpoint.</p>
+<p>In the portal, this route is exposed only to tenant admins at <code>/tenant/config</code>. Regular tenant users are redirected to <code>/tenant/profile</code>.</p>
 <p>Platform administrators can inspect a tenant directly:</p>
 <pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config
 Authorization: Bearer &lt;organizor-admin-token&gt;
@@ -365,7 +367,7 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
   },
   &quot;settings&quot;: {
     &quot;limits&quot;: {
-      &quot;maxUsers&quot;: 100,
+      &quot;maxUsers&quot;: 0,
       &quot;maxCamps&quot;: 25
     },
     &quot;registration&quot;: {
@@ -413,6 +415,20 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
 <li>Call <code>GET /api/v1/tenant/config</code> with <code>X-Tenant-Slug</code> set to that tenant.</li>
 <li>Confirm the response contains system defaults, plan defaults, and tenant overrides with tenant overrides taking precedence.</li>
 </ol>
+<h2 id="tenant-user-self-registration">Tenant User Self-Registration</h2>
+<p>Anonymous tenant-user registration is exposed through:</p>
+<pre><code class="lang-http">POST /api/public/register
+</code></pre>
+<p>The request body includes the tenant slug, username, email, and password. The endpoint does not use <code>X-Tenant-Slug</code>; tenant resolution for this operation comes from the submitted <code>tenantSlug</code>.</p>
+<p>The registration workflow:</p>
+<ol>
+<li>Resolves the tenant by slug and requires it to be active.</li>
+<li>Resolves the tenant's effective config.</li>
+<li>Verifies self-service registration is enabled and the user limit is not exceeded.</li>
+<li>Creates an enabled Keycloak user.</li>
+<li>Assigns the user to <code>/tenants/{slug}/users</code>.</li>
+</ol>
+<p>The portal <code>/register</code> page is a temporary shell for manual testing. Tenant-specific static websites are expected to provide their own branded registration UI later and call the same public API contract.</p>
 <h3 id="tenant-config-management">Tenant Config Management</h3>
 <p>Platform administrators can manage plan defaults and tenant-level overrides.</p>
 <p>Plan endpoints:</p>
@@ -431,10 +447,12 @@ PUT /api/admin/tenants/{tenantId}/config-overrides
 <li>tenant-level feature overrides;</li>
 <li>tenant-level settings overrides.</li>
 </ul>
+<p>Tenant override updates replace the full persisted override dictionaries. Omitted keys are removed from that tenant's overrides and inherited again from the assigned plan or system defaults.</p>
 <p>Validation rules:</p>
 <ul>
 <li>feature keys must be non-empty;</li>
-<li>settings payloads must be JSON objects;</li>
+<li>setting keys must be non-empty;</li>
+<li>undefined JSON setting values are invalid;</li>
 <li>assigned plan keys must resolve to active plans;</li>
 <li>invalid config payloads return <code>TENANT_CONFIG_INVALID</code>;</li>
 <li>missing tenants return <code>TENANT_NOT_FOUND</code>;</li>
@@ -506,18 +524,53 @@ PUT /api/admin/tenants/{tenantId}/config-overrides
 <h2 id="tenant-onboarding-flow">Tenant Onboarding Flow</h2>
 <pre><code class="lang-mermaid">flowchart TD
     A[Onboard request] --&gt; B[Create catalog tenant as Pending]
-    B --&gt; C[Create Keycloak tenant groups]
-    C --&gt; D[Assign tenant roles to groups]
-    D --&gt; E[Create default tenant admin]
-    E --&gt; F[Create tenant database]
-    F --&gt; G[Apply tenant migrations]
-    G --&gt; H{Success?}
-    H --&gt;|Yes| I[Mark tenant Active]
-    H --&gt;|No| J[Mark tenant Failed]
+    B --&gt; C[Store centralized website/auth settings]
+    C --&gt; D[Create Keycloak tenant groups]
+    D --&gt; E[Assign tenant roles to groups]
+    E --&gt; F[Create or update tenant public website client]
+    F --&gt; G[Create default tenant admin]
+    G --&gt; H[Create tenant database]
+    H --&gt; I[Apply tenant migrations]
+    I --&gt; J{Success?}
+    J --&gt;|Yes| K[Mark tenant Active]
+    J --&gt;|No| L[Mark tenant Failed]
 </code></pre>
-<p>The preferred full tenant creation route is <code>POST /api/admin/tenants/onboard</code>. It creates the catalog record, provisions Keycloak tenant access, creates the tenant database, applies migrations, and marks the tenant <code>Active</code> only after the workflow succeeds.</p>
+<p>The preferred full tenant creation route is <code>POST /api/admin/tenants/onboard</code>. It creates the catalog record, stores centralized website/auth settings, provisions Keycloak tenant access, creates the tenant database, applies migrations, and marks the tenant <code>Active</code> only after the workflow succeeds.</p>
+<p>Onboarding accepts tenant website/auth settings for separate tenant UI projects:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>websiteBaseUrl</code></td>
+<td>Public tenant website base URL.</td>
+</tr>
+<tr>
+<td><code>loginRedirectUris</code></td>
+<td>OIDC login callback URLs allowed by Keycloak.</td>
+</tr>
+<tr>
+<td><code>logoutRedirectUris</code></td>
+<td>Post-logout redirect URLs allowed by Keycloak.</td>
+</tr>
+<tr>
+<td><code>webOrigins</code></td>
+<td>Browser origins allowed by the Keycloak public client. Defaults to the website origin when omitted.</td>
+</tr>
+<tr>
+<td><code>registrationRedirectUrl</code></td>
+<td>Optional tenant website URL used after registration flows.</td>
+</tr>
+</tbody>
+</table>
+<p>These values are stored in tenant <code>settings</code> under <code>website</code> and <code>auth</code>, so Organizor remains the source of truth. Organizor also stores a generated <code>auth.clientId</code> using the format <code>tenant-{slug}-web</code> and provisions that Keycloak public client during onboarding.</p>
+<p>The tenant public client is configured for Authorization Code Flow with PKCE, uses the configured login redirect URIs and web origins, stores the configured post-logout redirect URIs, and disables direct access grants, implicit flow, service accounts, and client authentication. Organizor also attaches a <code>tenant-membership</code> group mapper so tenant website tokens include the <code>tenant</code> claim used by API tenant authorization.</p>
 <p><code>POST /api/v1/tenants</code> creates only the catalog record with <code>Pending</code> status. It does not create Keycloak groups or a tenant database.</p>
-<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> runs the hard-delete workflow. That workflow removes the Keycloak tenant group and default admin user, drops the tenant database, and removes the catalog record.</p>
+<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> runs the hard-delete workflow. That workflow removes the tenant Keycloak public client, removes the Keycloak tenant group and default admin user, drops the tenant database, and removes the catalog record.</p>
 
 </article>
 

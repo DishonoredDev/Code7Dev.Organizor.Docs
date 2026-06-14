@@ -87,7 +87,7 @@
         <article data-uid="">
 <h1 id="portal-ui-structure--high-level">Portal UI Structure — High-Level</h1>
 
-<p>The Portal UI is organized into pages, layouts, components, services, and models. Issue 98 added the first operational admin workflow for tenant control.</p>
+<p>The Portal UI is organized into pages, layouts, components, services, and models.</p>
 <h2 id="pages">Pages</h2>
 <table>
 <thead>
@@ -129,19 +129,34 @@
 <td>Tenant plan default management.</td>
 </tr>
 <tr>
-<td><code>Tenant/Dashboard</code></td>
+<td><code>Admin/Users</code></td>
+<td><code>/admin/users?tenantId={id}</code></td>
+<td>Platform control-plane user management for one active tenant.</td>
+</tr>
+<tr>
+<td><code>TenantAdmin/Dashboard</code></td>
 <td><code>/tenant</code></td>
 <td>Tenant dashboard placeholder.</td>
 </tr>
 <tr>
-<td><code>Tenant/Profile</code></td>
-<td><code>/tenant/profile</code></td>
-<td>Tenant profile placeholder.</td>
+<td><code>TenantAdmin/Users</code></td>
+<td><code>/tenant/users</code></td>
+<td>Tenant-scoped user management.</td>
 </tr>
 <tr>
-<td><code>Tenant/Config</code></td>
+<td><code>TenantAdmin/Config</code></td>
 <td><code>/tenant/config</code></td>
-<td>Read-only effective tenant configuration.</td>
+<td>Tenant-admin effective tenant configuration.</td>
+</tr>
+<tr>
+<td><code>TenantShared/Profile</code></td>
+<td><code>/tenant/profile</code></td>
+<td>Shared read-only profile for tenant admins and tenant users.</td>
+</tr>
+<tr>
+<td><code>Register</code></td>
+<td><code>/register</code></td>
+<td>Temporary public self-registration shell.</td>
 </tr>
 <tr>
 <td><code>NotFound</code></td>
@@ -150,7 +165,7 @@
 </tr>
 </tbody>
 </table>
-<p><code>AdminLayout</code> includes a navigation link for <code>/admin/users</code>, but there is no Razor page for that route yet. Treat it as a future navigation placeholder.</p>
+<p>Tenant-admin-only pages live under <code>Pages/TenantAdmin</code>. Shared tenant pages live under <code>Pages/TenantShared</code>. This keeps future tenant-user-specific pages separate from tenant platform administration.</p>
 <h2 id="layouts">Layouts</h2>
 <table>
 <thead>
@@ -166,11 +181,11 @@
 </tr>
 <tr>
 <td><code>AdminLayout</code></td>
-<td>Admin control-plane shell with dashboard, tenant management, current-user panel, logout, and public-site navigation.</td>
+<td>Admin control-plane shell with dashboard, tenant management, plan management, current-user panel, logout, and tenant website navigation when available.</td>
 </tr>
 <tr>
 <td><code>TenantLayout</code></td>
-<td>Tenant shell with tenant navigation, current-user panel, logout, and public-site navigation.</td>
+<td>Tenant shell with role-aware tenant navigation, current-user panel, logout, and public-site navigation.</td>
 </tr>
 </tbody>
 </table>
@@ -189,7 +204,7 @@
 </tr>
 <tr>
 <td><code>CurrentUserPanel</code></td>
-<td>Sidebar user card used in admin and tenant shells. Shows display name, email, tenant, groups, logout, and back-to-website action.</td>
+<td>Sidebar user card used in admin and tenant shells. Shows display name, email, tenant, groups, logout, and tenant website navigation when available.</td>
 </tr>
 <tr>
 <td><code>LogoutButton</code></td>
@@ -197,7 +212,7 @@
 </tr>
 <tr>
 <td><code>RoleRedirector</code></td>
-<td>Redirects authenticated users from neutral entry routes to <code>/admin</code>, <code>/tenant</code>, or <code>/tenant/config</code> based on role.</td>
+<td>Redirects authenticated users from neutral entry routes to <code>/admin</code>, <code>/tenant</code>, or <code>/tenant/profile</code> based on role.</td>
 </tr>
 <tr>
 <td><code>RedirectToLogin</code></td>
@@ -210,6 +225,14 @@
 <tr>
 <td><code>AdminSidebar</code></td>
 <td>Admin navigation component retained for admin navigation reuse.</td>
+</tr>
+<tr>
+<td><code>UserCreateForm</code></td>
+<td>Shared user-create form used by platform and tenant user-management pages.</td>
+</tr>
+<tr>
+<td><code>UserGrid</code></td>
+<td>Shared user grid used by platform and tenant user-management pages.</td>
 </tr>
 </tbody>
 </table>
@@ -250,11 +273,23 @@
 </tr>
 <tr>
 <td><code>AdminTenantService</code></td>
-<td>Typed client for admin tenant, plan, config inspection, and override management operations.</td>
+<td>Typed client for admin tenant, plan, config inspection, override, and platform user-management operations.</td>
+</tr>
+<tr>
+<td><code>TenantUserService</code></td>
+<td>Typed client for tenant-scoped user-management operations used by <code>/tenant/users</code>.</td>
 </tr>
 <tr>
 <td><code>TenantConfigService</code></td>
-<td>Typed client for the tenant-scoped effective config endpoint used by <code>/tenant/config</code>.</td>
+<td>Typed client for the tenant-scoped effective config endpoint used by tenant admins at <code>/tenant/config</code>.</td>
+</tr>
+<tr>
+<td><code>PublicRegistrationService</code></td>
+<td>Typed client for anonymous tenant-user self-registration from <code>/register</code>.</td>
+</tr>
+<tr>
+<td><code>PublicTenantAuthService</code></td>
+<td>Typed client for anonymous tenant auth discovery used to resolve the tenant website link.</td>
 </tr>
 <tr>
 <td><code>KeycloakClaimsPrincipalFactory</code></td>
@@ -306,6 +341,14 @@
 <tr>
 <td><code>TenantConfigOverridesModel</code></td>
 <td>Tenant plan assignment and override model used by <code>/admin/tenants</code>.</td>
+</tr>
+<tr>
+<td><code>TenantUserModel</code></td>
+<td>Portal-side Keycloak tenant-user projection.</td>
+</tr>
+<tr>
+<td><code>TenantUserRegistrationForm</code></td>
+<td>Public registration form model used by <code>/register</code>.</td>
 </tr>
 </tbody>
 </table>

@@ -95,6 +95,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantUsersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantUsersController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.AdminTenantUsersController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.yml",
       "output": {
         ".html": {
@@ -119,6 +133,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Controllers.AuthController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.PublicRegistrationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.PublicRegistrationController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.PublicRegistrationController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.PublicTenantAuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.PublicTenantAuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.PublicTenantAuthController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantAccountActionsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantAccountActionsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.TenantAccountActionsController",
       "Summary": null
     },
     {
@@ -151,6 +207,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantUsersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantUsersController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Controllers.TenantUsersController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Api.Controllers.TenantsController.yml",
       "output": {
         ".html": {
@@ -175,6 +245,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Cors.TenantCorsPolicyProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Cors.TenantCorsPolicyProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Cors.TenantCorsPolicyProvider",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Cors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Cors.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Cors",
       "Summary": null
     },
     {
@@ -287,6 +385,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.PublicTenantRegistrationRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.PublicTenantRegistrationRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.PublicTenantRegistrationRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.StaticTenantAuthContractResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.StaticTenantAuthContractResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.StaticTenantAuthContractResponseDto",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.StaticTenantAuthContractResponseDto.yml\" sourcestartlinenumber=\"1\">Public authentication contract for a tenant-specific static website.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantAuthSettingsDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantAuthSettingsDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantAuthSettingsDto",
       "Summary": null
     },
     {
@@ -428,6 +568,76 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.yml\" sourcestartlinenumber=\"1\">Request body for soft-deleting a tenant.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserCreateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserCreateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantUserCreateRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserEnabledUpdateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserEnabledUpdateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantUserEnabledUpdateRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserProfileUpdateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserProfileUpdateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantUserProfileUpdateRequestDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantUserResponseDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserRoleUpdateRequestDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserRoleUpdateRequestDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Api.Mappers.DTO.TenantUserRoleUpdateRequestDto",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -627,6 +837,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Common.ErrorCodes.User",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Common.ErrorCodes.yml",
       "output": {
         ".html": {
@@ -739,6 +963,244 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionIdentityProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionIdentityProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionIdentityProvider",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserIdentityProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserIdentityProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserIdentityProvider",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserRegistrationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserRegistrationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserRegistrationService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.KeycloakRequiredActions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.KeycloakRequiredActions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.KeycloakRequiredActions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRegistrationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRegistrationModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRegistrationModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRoles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRoles.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRoles",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserAccountActionService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserAccountActionService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserAccountActionService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserManagementService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserManagementService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserManagementService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.TenantUsers.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.TenantUsers.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.yml",
       "output": {
         ".html": {
@@ -778,6 +1240,20 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.yml\" sourcestartlinenumber=\"1\">Builds PostgreSQL connection strings for catalog, admin, and tenant database operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IStaticTenantAuthContractService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.IStaticTenantAuthContractService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.IStaticTenantAuthContractService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -834,6 +1310,20 @@
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver",
       "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.yml\" sourcestartlinenumber=\"1\">Resolves effective tenant configuration from system defaults, plan defaults, and tenant overrides.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantCorsOriginService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantCorsOriginService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantCorsOriginService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1019,6 +1509,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantAuthContractModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantAuthContractModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.StaticTenantAuthContractModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantWebsiteAuthOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantWebsiteAuthOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.StaticTenantWebsiteAuthOptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel",
+      "Summary": "<p sourcefile=\"api/Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.yml\" sourcestartlinenumber=\"1\">Centralized tenant website and authentication URL settings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.yml",
       "output": {
         ".html": {
@@ -1197,6 +1729,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.StaticTenantAuthContractService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.StaticTenantAuthContractService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.StaticTenantAuthContractService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthClientId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthClientId.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantAuthClientId",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator",
       "Summary": null
     },
     {
@@ -1467,6 +2041,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakClientRepresentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakClientRepresentation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakClientRepresentation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.yml",
       "output": {
         ".html": {
@@ -1565,6 +2153,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakProtocolMapperRepresentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakProtocolMapperRepresentation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakProtocolMapperRepresentation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.yml",
       "output": {
         ".html": {
@@ -1617,6 +2233,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUpdateUserRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUpdateUserRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUpdateUserRequest",
       "Summary": null
     },
     {
@@ -1687,6 +2317,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider",
       "Summary": null
     },
     {
@@ -2013,6 +2657,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantCorsOriginService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantCorsOriginService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantCorsOriginService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.yml",
       "output": {
         ".html": {
@@ -2280,6 +2938,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/security.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/spec-driven-development.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/spec-driven-development.html"
         }
       },
       "version": ""

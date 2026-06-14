@@ -183,7 +183,11 @@
 </tr>
 <tr>
 <td><code>GET /api/v1/tenant/config</code></td>
-<td><code>RequireTenantUserRole</code></td>
+<td><code>RequireTenantAdminRole</code></td>
+</tr>
+<tr>
+<td><code>POST /api/public/register</code></td>
+<td>anonymous</td>
 </tr>
 <tr>
 <td><code>GET /api/auth/whoami</code></td>
@@ -235,6 +239,10 @@
 </tr>
 <tr>
 <td><code>tenant-user</code> calls <code>GET /api/v1/tenant/config</code> for their tenant</td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>anonymous user calls <code>POST /api/public/register</code> for an active tenant with registration enabled</td>
 <td>Allowed</td>
 </tr>
 <tr>

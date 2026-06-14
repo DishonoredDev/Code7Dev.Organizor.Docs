@@ -95,21 +95,40 @@ Content-Type: application/json
 
 {
   &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;
+  &quot;slug&quot;: &quot;acme&quot;,
+  &quot;authSettings&quot;: {
+    &quot;websiteBaseUrl&quot;: &quot;https://acme.example.com&quot;,
+    &quot;loginRedirectUris&quot;: [
+      &quot;https://acme.example.com/authentication/login-callback&quot;
+    ],
+    &quot;logoutRedirectUris&quot;: [
+      &quot;https://acme.example.com&quot;
+    ],
+    &quot;webOrigins&quot;: [
+      &quot;https://acme.example.com&quot;
+    ],
+    &quot;registrationRedirectUrl&quot;: &quot;https://acme.example.com/register/complete&quot;
+  }
 }
 </code></pre>
 <p>The onboarding flow:</p>
 <ol>
 <li>normalizes the slug to lowercase;</li>
+<li>validates and normalizes tenant website/auth URLs;</li>
+<li>generates <code>auth.clientId</code> as <code>tenant-{slug}-web</code>;</li>
+<li>stores website/auth settings in the catalog tenant <code>settings</code> JSON;</li>
 <li>creates a catalog tenant with <code>Pending</code> status;</li>
 <li>provisions Keycloak tenant groups under <code>/tenants/{slug}</code>;</li>
 <li>assigns <code>tenant-admin</code> to <code>/tenants/{slug}/admins</code> and <code>tenant-user</code> to <code>/tenants/{slug}/users</code>;</li>
+<li>creates or updates the tenant Keycloak public client from the centralized auth settings;</li>
 <li>creates a default tenant admin user named <code>{slug}-admin</code> with a temporary password of <code>ChangeMe123!</code>;</li>
 <li>creates the tenant database using <code>organizor_tenant_{slug}</code>;</li>
 <li>initializes PostgreSQL extensions;</li>
 <li>applies tenant migrations;</li>
 <li>marks the tenant <code>Active</code> on success or <code>Failed</code> on provisioning failure.</li>
 </ol>
+<p>URL validation rejects wildcards, requires absolute HTTPS URLs, and allows HTTP only for local development hosts such as <code>localhost</code> and <code>127.0.0.1</code>. Web origins must be origins only.</p>
+<p>The generated Keycloak public client uses Authorization Code Flow with PKCE, client authentication off, direct access grants off, implicit flow off, service accounts off, and the validated redirect/web-origin settings from the onboarding request. It also gets a <code>tenant-membership</code> group mapper so tenant website tokens include the <code>tenant</code> claim.</p>
 <p>Example response:</p>
 <pre><code class="lang-json">{
   &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
@@ -157,18 +176,24 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
 Content-Type: application/json
 
 {
-  &quot;maxUsers&quot;: 25,
-  &quot;maxProjects&quot;: null,
-  &quot;allowAdvancedReporting&quot;: true
+  &quot;planKey&quot;: &quot;pro&quot;,
+  &quot;features&quot;: {
+    &quot;branding.customLogo&quot;: true
+  },
+  &quot;settings&quot;: {
+    &quot;limits&quot;: {
+      &quot;maxUsers&quot;: 25
+    }
+  }
 }
 </code></pre>
-<p><code>null</code> clears an override and lets the tenant inherit the value from its plan. Override updates validate the resulting config before saving.</p>
-<p>Tenant users can view their own effective config through the tenant-scoped endpoint:</p>
+<p>Override updates replace the tenant's full assigned plan key, feature override dictionary, and setting override dictionary. Omitted override keys are removed and inherited again from the assigned plan or system defaults.</p>
+<p>Tenant admins can view their own effective config through the tenant-scoped endpoint:</p>
 <pre><code class="lang-http">GET /api/v1/tenant/config
-Authorization: Bearer &lt;tenant-token&gt;
+Authorization: Bearer &lt;tenant-admin-token&gt;
 X-Tenant-Slug: acme
 </code></pre>
-<p>This endpoint requires tenant access and the <code>RequireTenantUserRole</code> policy.</p>
+<p>This endpoint requires tenant access and the <code>RequireTenantAdminRole</code> policy.</p>
 <h2 id="tenant-plan-administration">Tenant Plan Administration</h2>
 <pre><code class="lang-http">GET /api/admin/tenant-plans
 Authorization: Bearer &lt;organizor-admin-token&gt;
@@ -179,12 +204,22 @@ Authorization: Bearer &lt;organizor-admin-token&gt;
 Content-Type: application/json
 
 {
-  &quot;maxUsers&quot;: 100,
-  &quot;maxProjects&quot;: 50,
-  &quot;allowAdvancedReporting&quot;: true
+  &quot;name&quot;: &quot;Pro&quot;,
+  &quot;description&quot;: &quot;Larger customer plan with higher limits and self-service registration.&quot;,
+  &quot;features&quot;: {
+    &quot;registration.selfService&quot;: true
+  },
+  &quot;settings&quot;: {
+    &quot;limits&quot;: {
+      &quot;maxUsers&quot;: 0,
+      &quot;maxCamps&quot;: 25
+    }
+  },
+  &quot;isActive&quot;: true,
+  &quot;sortOrder&quot;: 20
 }
 </code></pre>
-<p>Plan updates validate the resulting default settings before saving. Existing tenant overrides remain intact, so tenants can continue to diverge from their plan where an override is set.</p>
+<p>Plan updates replace the plan's editable metadata, feature defaults, setting defaults, active state, and sort order. Existing tenant overrides remain intact, so tenants can continue to diverge from their plan where an override is set.</p>
 <h2 id="upgrade-tenant">Upgrade Tenant</h2>
 <pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
 Authorization: Bearer &lt;organizor-admin-token&gt;

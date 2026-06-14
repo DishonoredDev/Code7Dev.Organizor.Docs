@@ -138,7 +138,8 @@
 <li>creating the default tenant admin user;</li>
 <li>resetting the default tenant admin password;</li>
 <li>adding users to groups;</li>
-<li>deleting the default tenant admin user during hard deletion.</li>
+<li>deleting the default tenant admin user during hard deletion;</li>
+<li>reading, creating, updating, and deleting clients for per-tenant static website clients.</li>
 </ul>
 <h2 id="ui-client-organizor-ui">UI Client (<code>organizor-ui</code>)</h2>
 <p>Settings:</p>
@@ -168,6 +169,32 @@
 <li><code>http://localhost:5080</code></li>
 </ul>
 <p>Use <code>*</code> only for quick local testing. Explicit origins are preferable because they catch redirect and CORS mistakes earlier.</p>
+<p>Tenant onboarding must not mutate the central <code>organizor-ui</code> portal client. Static tenant websites receive their own generated public client instead, using <code>tenant-{slug}-web</code> as the client ID.</p>
+<h2 id="tenant-website-clients">Tenant Website Clients</h2>
+<p><code>POST /api/admin/tenants/onboard</code> creates or updates a tenant-specific public client for the tenant website.</p>
+<p>Client shape:</p>
+<ul>
+<li>Client ID: <code>tenant-{slug}-web</code></li>
+<li>Client authentication: OFF</li>
+<li>Standard flow: ON</li>
+<li>PKCE method: <code>S256</code></li>
+<li>Direct access grants: OFF</li>
+<li>Implicit flow: OFF</li>
+<li>Service accounts: OFF</li>
+<li>Redirect URIs: onboarding <code>loginRedirectUris</code></li>
+<li>Web origins: onboarding <code>webOrigins</code>, or website origin when omitted</li>
+<li>Post-logout redirect URIs: onboarding <code>logoutRedirectUris</code></li>
+<li>Protocol mapper: <code>tenant-membership</code></li>
+<li>Mapper type: Group Membership</li>
+<li>Token claim name: <code>tenant</code></li>
+<li>Full group path: ON</li>
+<li>Add to access token, ID token, and userinfo: ON</li>
+</ul>
+<p>During hard deletion, Organizor deletes this tenant website client.</p>
+<p>Static websites can discover their public auth contract at:</p>
+<pre><code class="lang-http">GET /api/public/tenants/{slug}/auth
+</code></pre>
+<p>The response includes the Keycloak authority, generated client id, PKCE flag, required scopes, tenant header name, tenant claim name, expected tenant roles, expected tenant group paths, redirect metadata, and public registration endpoint.</p>
 <h2 id="tenant-groups">Tenant Groups</h2>
 <p>Tenant onboarding creates the group structure automatically when <code>POST /api/admin/tenants/onboard</code> is used. Manual setup is only needed for bootstrap or testing.</p>
 <p>Group structure:</p>
@@ -194,8 +221,9 @@
 <li>Temporary password: <code>ChangeMe123!</code></li>
 <li>Group: <code>/tenants/{slug}/admins</code></li>
 </ul>
-<p>During hard deletion, Organizor removes the tenant group <code>/tenants/{slug}</code> and deletes the default <code>{slug}-admin</code> user when it exists.</p>
+<p>During hard deletion, Organizor removes the tenant website client, removes the tenant group <code>/tenants/{slug}</code>, and deletes the default <code>{slug}-admin</code> user when it exists.</p>
 <h2 id="tenant-membership-claim-mapper">Tenant Membership Claim Mapper</h2>
+<p>Generated tenant website clients receive this mapper automatically during onboarding.</p>
 <p>Location:</p>
 <ul>
 <li>Clients -&gt; <code>organizor-api</code></li>

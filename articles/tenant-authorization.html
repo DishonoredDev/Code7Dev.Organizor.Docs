@@ -96,6 +96,7 @@
 <p>The tenant resolution middleware skips platform and infrastructure routes, including:</p>
 <ul>
 <li><code>/api/admin</code></li>
+<li><code>/api/public</code></li>
 <li><code>/api/v1/tenants</code></li>
 <li><code>/api/auth</code></li>
 <li><code>/health</code></li>
@@ -118,10 +119,12 @@
 }
 </code></pre>
 <p>The slug is extracted from the segment after <code>/tenants/</code>. For <code>/tenants/acme/admins</code>, the effective tenant slug is <code>acme</code>.</p>
+<p>Static tenant websites discover the expected tenant header and claim names through <code>GET /api/public/tenants/{slug}/auth</code>. That endpoint is anonymous and bypasses tenant resolution; authenticated tenant-scoped calls still require <code>X-Tenant-Slug</code>.</p>
 <h2 id="enforcement-rules">Enforcement Rules</h2>
 <p>For tenant-scoped routes:</p>
 <ul>
 <li>Missing or invalid <code>Authorization</code> returns <code>401 Unauthorized</code> when the endpoint requires <code>[Authorize]</code>.</li>
+<li>Missing endpoint roles such as <code>tenant-user</code> or <code>tenant-admin</code> returns <code>403 Forbidden</code>.</li>
 <li>Missing <code>X-Tenant-Slug</code> returns <code>400 Bad Request</code>.</li>
 <li>Unknown <code>X-Tenant-Slug</code> returns <code>404 Not Found</code>.</li>
 <li>A JWT with tenant claims must include the same slug as <code>X-Tenant-Slug</code>.</li>
@@ -191,6 +194,12 @@
 <td>omitted</td>
 <td>valid slug</td>
 <td><code>401 Unauthorized</code></td>
+</tr>
+<tr>
+<td>Missing endpoint role</td>
+<td>tenant JWT without required role</td>
+<td>valid slug</td>
+<td><code>403 Forbidden</code></td>
 </tr>
 <tr>
 <td><code>ITenantAccessService</code> denies matching user</td>

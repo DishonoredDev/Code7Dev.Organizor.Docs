@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest" class="text-break">
-Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -153,14 +153,15 @@ Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Email" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Email { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonPropertyName(&quot;email&quot;)]
+public string Email { get; set; }</code></pre>
   </div>
 
 
@@ -184,14 +185,15 @@ Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Enabled" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Enabled">
   Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonPropertyName(&quot;enabled&quot;)]
+public bool Enabled { get; set; }</code></pre>
   </div>
 
 
@@ -211,18 +213,51 @@ Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="
 
 
 
-  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username*"></a>
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_RequiredActions_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.RequiredActions*"></a>
 
-  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username">
-  Username
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_RequiredActions" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.RequiredActions">
+  RequiredActions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Username { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonPropertyName(&quot;requiredActions&quot;)]
+public IReadOnlyCollection&lt;string&gt; RequiredActions { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakCreateUserRequest_Username" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonPropertyName(&quot;username&quot;)]
+public string Username { get; set; }</code></pre>
   </div>
 
 
@@ -246,7 +281,7 @@ Class KeycloakCreateUserRequest  <a class="header-action link-secondary" title="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakCreateUserRequest.cs/#L5" class="edit-link">Edit this page</a>
         </div>
 
 

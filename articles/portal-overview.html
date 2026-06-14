@@ -87,7 +87,7 @@
         <article data-uid="">
 <h1 id="portal-ui-overview">Portal UI Overview</h1>
 
-<p>The Portal UI is the Blazor WebAssembly front end for Organizor. It handles Keycloak sign-in, role-based routing, tenant administration, and authenticated API calls to the backend.</p>
+<p>The Portal UI is the Blazor WebAssembly front end for Organizor. It handles Keycloak sign-in, role-based routing, platform administration, tenant administration, public registration testing, and authenticated API calls to the backend.</p>
 <p>This page reflects the issue 98 portal work completed after the last documentation update.</p>
 <hr>
 <h2 id="current-capabilities">Current Capabilities</h2>
@@ -100,13 +100,17 @@
 <li>An admin dashboard route at <code>/admin</code>.</li>
 <li>Tenant administration at <code>/admin/tenants</code> for platform administrators.</li>
 <li>Tenant plan default management at <code>/admin/plans</code>.</li>
+<li>Tenant user management from active tenant rows for platform administrators.</li>
 <li>Tenant effective config inspection and override editing from <code>/admin/tenants</code>.</li>
-<li>Read-only tenant effective config at <code>/tenant/config</code>.</li>
+<li>Tenant-scoped user management at <code>/tenant/users</code> for tenant administrators.</li>
+<li>Tenant effective config at <code>/tenant/config</code> for tenant administrators.</li>
+<li>Tenant profile at <code>/tenant/profile</code> for tenant administrators and tenant users.</li>
+<li>Temporary public registration shell at <code>/register</code> for testing tenant-user self-registration.</li>
 <li>Logout through <code>/logout</code> or the shared logout button.</li>
-<li>Current-user display with username, email, tenant claim, and Keycloak groups.</li>
-<li>Tenant dashboard/profile placeholders under <code>/tenant</code>.</li>
+<li>Current-user display with username, email, display name, tenant claim, roles, Keycloak groups, and tenant website navigation when available.</li>
+<li>Tenant dashboard placeholder under <code>/tenant</code>.</li>
 </ul>
-<p>The <code>/admin/tenants</code>, <code>/admin/plans</code>, and <code>/tenant/config</code> pages are backed by real API routes. They are not mock UI.</p>
+<p>The <code>/admin/tenants</code>, <code>/admin/plans</code>, <code>/admin/users</code>, <code>/tenant/users</code>, <code>/tenant/config</code>, and <code>/register</code> pages are backed by real API routes. The <code>/register</code> page is intentionally a temporary shell for exercising the public registration endpoint until tenant-specific static websites provide their own registration UI.</p>
 <hr>
 <h2 id="technology-stack">Technology Stack</h2>
 <ul>
@@ -153,22 +157,40 @@
 <td>Tenant plan default management.</td>
 </tr>
 <tr>
+<td><code>/admin/users?tenantId={id}</code></td>
+<td><code>AdminLayout</code></td>
+<td><code>organizor-admin</code></td>
+<td>Platform control-plane user management for one active tenant.</td>
+</tr>
+<tr>
 <td><code>/tenant</code></td>
 <td><code>TenantLayout</code></td>
 <td><code>tenant-admin</code></td>
 <td>Tenant dashboard placeholder.</td>
 </tr>
 <tr>
-<td><code>/tenant/profile</code></td>
+<td><code>/tenant/users</code></td>
 <td><code>TenantLayout</code></td>
 <td><code>tenant-admin</code></td>
-<td>Tenant profile placeholder.</td>
+<td>Tenant-scoped user management.</td>
 </tr>
 <tr>
 <td><code>/tenant/config</code></td>
 <td><code>TenantLayout</code></td>
+<td><code>tenant-admin</code></td>
+<td>Effective tenant configuration.</td>
+</tr>
+<tr>
+<td><code>/tenant/profile</code></td>
+<td><code>TenantLayout</code></td>
 <td><code>tenant-admin</code>, <code>tenant-user</code></td>
-<td>Read-only effective tenant configuration.</td>
+<td>Read-only Keycloak-backed profile.</td>
+</tr>
+<tr>
+<td><code>/register</code></td>
+<td><code>PublicLayout</code></td>
+<td>none</td>
+<td>Temporary public tenant-user self-registration shell.</td>
 </tr>
 <tr>
 <td><code>/logout</code></td>
@@ -184,8 +206,7 @@
 </tr>
 </tbody>
 </table>
-<p>The admin shell currently contains a navigation link for <code>/admin/users</code>. That is a navigation placeholder only; this branch does not add a backing Razor page for that route.</p>
-<p><code>RoleRedirector</code> is mounted globally in <code>App.razor</code>, but it only redirects from the neutral entry routes (<code>/</code> and the login callback). It sends <code>organizor-admin</code> users to <code>/admin</code>, <code>tenant-admin</code> users to <code>/tenant</code>, and <code>tenant-user</code> users to <code>/tenant/config</code>. It must not redirect when the user is already on a target area, otherwise the portal can reload-loop.</p>
+<p><code>RoleRedirector</code> is mounted globally in <code>App.razor</code>, but it only redirects from the neutral entry routes (<code>/</code> and the login callback). It sends <code>organizor-admin</code> users to <code>/admin</code>, <code>tenant-admin</code> users to <code>/tenant</code>, and <code>tenant-user</code> users to <code>/tenant/profile</code>. It must not redirect when the user is already on a target area, otherwise the portal can reload-loop.</p>
 <hr>
 <h2 id="admin-tenant-management">Admin Tenant Management</h2>
 <p>The admin tenant page uses Radzen components and the <code>AdminTenantService</code> client. It supports:</p>
@@ -193,10 +214,11 @@
 <li>loading all tenants including soft-deleted tenants;</li>
 <li>filtering tenants by name, slug, database name, or status;</li>
 <li>viewing active, deleted, and failed tenant counts;</li>
-<li>onboarding a tenant with name and slug validation;</li>
+<li>onboarding a tenant with name, slug, website base URL, login redirect URL, logout redirect URL, web origin, and optional registration redirect validation;</li>
 <li>upgrading a tenant database by running pending migrations;</li>
 <li>soft-deleting a tenant with an operator reason;</li>
 <li>hard-deleting a previously soft-deleted tenant.</li>
+<li>opening user management for active tenants.</li>
 <li>inspecting effective tenant config;</li>
 <li>editing tenant plan assignment and tenant-level overrides.</li>
 </ul>
@@ -248,6 +270,7 @@
 </tbody>
 </table>
 <p>All admin tenant operations require a valid bearer token with the <code>organizor-admin</code> role.</p>
+<p>Tenant onboarding stores website/auth settings in centralized tenant config so later tenant website and auth provisioning can use Organizor as the source of truth.</p>
 <h2 id="admin-plan-management">Admin Plan Management</h2>
 <p>The admin plans page uses <code>AdminTenantService</code> and supports:</p>
 <ul>
@@ -275,8 +298,23 @@
 </tbody>
 </table>
 <p>Plan keys are intentionally immutable.</p>
+<h2 id="admin-user-management">Admin User Management</h2>
+<p>The tenant catalog page is the entry point for platform tenant-user management. Platform administrators open users from an active tenant row, which navigates to <code>/admin/users?tenantId={id}</code>. The admin users page manages only that tenant's Keycloak users. It can create users, list users, toggle enabled state, delete users, and assign tenant roles within the selected tenant.</p>
+<p>The admin sidebar does not expose <code>/admin/users</code> as a standalone global directory. <code>/admin/users</code> without a valid active tenant id redirects to <code>/admin/tenants</code>. The page calls the admin user-management API through <code>AdminTenantService</code>. All operations require <code>organizor-admin</code>.</p>
+<h2 id="tenant-user-management">Tenant User Management</h2>
+<p>Tenant administrators can open <code>/tenant/users</code> to manage users for their own tenant. The page uses the tenant claim from the authenticated user; <code>ApiAuthorizationMessageHandler</code> adds <code>X-Tenant-Slug</code> to tenant-scoped requests.</p>
+<p>Regular <code>tenant-user</code> accounts do not see the tenant user-management route.</p>
 <h2 id="tenant-config-page">Tenant Config Page</h2>
-<p>Tenant admins and tenant users can open <code>/tenant/config</code>. The page calls <code>GET /api/v1/tenant/config</code> through <code>TenantConfigService</code>. <code>ApiAuthorizationMessageHandler</code> adds <code>X-Tenant-Slug</code> from the authenticated user's tenant claim.</p>
+<p>Tenant admins can open <code>/tenant/config</code>. The page calls <code>GET /api/v1/tenant/config</code> through <code>TenantConfigService</code>. <code>ApiAuthorizationMessageHandler</code> adds <code>X-Tenant-Slug</code> from the authenticated user's tenant claim.</p>
+<p>Regular <code>tenant-user</code> accounts should not see tenant configuration in the portal. Their default redirect target is <code>/tenant/profile</code>.</p>
+<h2 id="tenant-profile-page">Tenant Profile Page</h2>
+<p>Tenant admins and regular tenant users can open <code>/tenant/profile</code>. The page shows read-only Keycloak-backed identity data: display name, email, username, tenant, roles, and groups.</p>
+<p>Tenant configuration was intentionally removed from the profile page. The password-change action starts the controlled backend flow. Profile update allows only first name and last name edits. Security options remain a disabled placeholder.</p>
+<p>The account-action strategy is Organizor-mediated and Keycloak-completed. Password-change initiation uses <code>POST /api/v1/tenant/account-actions/change-password</code>, which passes through Organizor authorization and tenant-access checks before setting Keycloak <code>UPDATE_PASSWORD</code> for the authenticated user. After the action starts, the portal tells the user to sign out and sign in again to complete the Keycloak password update. The portal does not collect new passwords and does not expose a direct Keycloak account-console link to regular tenant users or tenant admins.</p>
+<p>Profile update uses <code>PUT /api/v1/tenant/account-actions/profile</code>, which passes through the same current-user tenant checks and writes only Keycloak <code>firstName</code> and <code>lastName</code>. The portal does not expose username, email, role, group, tenant membership, credential, enabled-state, required-action, or arbitrary-attribute editing from the current-user profile page.</p>
+<h2 id="public-registration-shell">Public Registration Shell</h2>
+<p>The <code>/register</code> page is a temporary public shell for exercising tenant-user self-registration. It posts to <code>POST /api/public/register</code> through <code>PublicRegistrationService</code>.</p>
+<p>The long-term model is that tenant-specific static websites own their registration UI and call the public API contract directly. This keeps tenant branding and UX independent from the Organizor portal.</p>
 <p>Tenant rows expose the catalog and lifecycle fields used by the UI:</p>
 <table>
 <thead>
@@ -321,6 +359,7 @@
 <li>access tokens for API calls;</li>
 <li>Blazor <code>AuthenticationState</code> for role and user context;</li>
 <li><code>KeycloakClaimsPrincipalFactory</code> to promote Keycloak roles into Blazor role claims.</li>
+<li>tenant group-membership claims emitted by the <code>organizor-ui</code> client mapper created during tenant onboarding.</li>
 </ul>
 <p>Current local configuration:</p>
 <table>
@@ -360,7 +399,7 @@
 <p>The API <code>Keycloak:Authority</code> must match the token issuer exactly. A portal token issued by <code>https://localhost:8443/realms/organizor-dev</code> will fail API validation if the API is configured for <code>http://localhost:8443/realms/organizor-dev</code>.</p>
 <hr>
 <h2 id="api-integration">API Integration</h2>
-<p>The portal uses a named <code>HttpClient</code> called <code>api</code> with base address <code>https://localhost:7184</code>.</p>
+<p>The portal uses a named <code>HttpClient</code> called <code>api</code> with base address <code>https://localhost:7184</code> for authenticated calls. It uses <code>public-api</code> for anonymous public contract calls such as resolving the current tenant website link.</p>
 <p><code>ApiAuthorizationMessageHandler</code>:</p>
 <ul>
 <li>configures the authorized API URL;</li>
@@ -368,10 +407,11 @@
 <li>attaches bearer tokens to API requests;</li>
 <li>adds <code>X-Tenant-Slug</code> when <code>UserContextService</code> can resolve a tenant claim.</li>
 </ul>
+<p><code>CurrentUserPanel</code> resolves the authenticated user's tenant website through <code>GET /api/public/tenants/{slug}/auth</code> and shows <strong>Back to Website</strong> only when the returned contract contains a website URL.</p>
 <p>The handler is attached with <code>.AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;()</code> and configured once in its constructor. Do not configure the same <code>AuthorizationMessageHandler</code> instance more than once; Blazor will throw a handler already configured error.</p>
 <hr>
 <h2 id="summary">Summary</h2>
-<p>The portal now supports tenant lifecycle operations, tenant plan defaults, tenant-level config overrides, and read-only tenant config inspection. User management remains a placeholder until backing API use cases are added.</p>
+<p>The portal now supports tenant lifecycle operations, tenant plan defaults, tenant-level config overrides, platform tenant-user management, tenant-admin user management, tenant-admin config inspection, tenant profile display, and public registration testing.</p>
 
 </article>
 

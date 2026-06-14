@@ -97,7 +97,7 @@
 <h2 id="error-detail">Error Detail</h2>
 <p>Unhandled exceptions currently include <code>ex.Message</code> in problem details. This is useful for internal development and AI-assisted debugging, but it may expose sensitive implementation details in production.</p>
 <h2 id="tenant-resolution">Tenant Resolution</h2>
-<p>Tenant-scoped routes depend on <code>X-Tenant-Slug</code>. <code>GET /api/v1/tenant/config</code> is tenant-scoped and returns the effective config for the current tenant. Platform routes such as <code>/api/v1/tenants</code>, <code>/api/admin</code>, <code>/health</code>, <code>/openapi</code>, and <code>/scalar</code> skip tenant resolution.</p>
+<p>Tenant-scoped routes depend on <code>X-Tenant-Slug</code>. <code>GET /api/v1/tenant/config</code> is tenant-scoped, requires a tenant-admin role, and returns the effective config for the current tenant. Platform routes such as <code>/api/v1/tenants</code>, <code>/api/admin</code>, <code>/health</code>, <code>/openapi</code>, and <code>/scalar</code> skip tenant resolution.</p>
 <h2 id="destructive-operations">Destructive Operations</h2>
 <p>Hard deletion drops the tenant database. The service requires a tenant to be soft-deleted before hard deletion, which protects active tenants from immediate physical removal.</p>
 

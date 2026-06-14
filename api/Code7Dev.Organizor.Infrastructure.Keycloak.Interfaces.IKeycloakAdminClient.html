@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient" class="text-break">
-Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -124,7 +124,7 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AddUserToGroupAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AddUserToGroupAsync(System.String,System.String,System.Threading.CancellationToken)">
   AddUserToGroupAsync(string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -164,7 +164,7 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_AssignRealmRoleToGroupAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.AssignRealmRoleToGroupAsync(System.String,System.String,System.Threading.CancellationToken)">
   AssignRealmRoleToGroupAsync(string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -204,7 +204,7 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateGroupAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateGroupAsync(System.String,System.String,System.Threading.CancellationToken)">
   CreateGroupAsync(string, string?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,9 +242,57 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync*"></a>
 
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_System_String_System_String_System_String_System_Boolean_System_Boolean_System_Collections_Generic_IReadOnlyCollection_System_String__System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Threading.CancellationToken)">
+  CreateUserAsync(string, string, string, bool, bool, IReadOnlyCollection&lt;string&gt;?, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;string&gt; CreateUserAsync(string username, string email, string password, bool temporaryPassword, bool enabled = true, IReadOnlyCollection&lt;string&gt;? requiredActions = null, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>temporaryPassword</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>requiredActions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync*"></a>
+
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_CreateUserAsync_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.CreateUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
   CreateUserAsync(string, string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -282,11 +330,49 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteClientByClientIdAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteClientByClientIdAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteClientByClientIdAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteClientByClientIdAsync(System.String,System.Threading.CancellationToken)">
+  DeleteClientByClientIdAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DeleteClientByClientIdAsync(string clientId, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>clientId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteGroupAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteGroupAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteGroupAsync(System.String,System.Threading.CancellationToken)">
   DeleteGroupAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -324,7 +410,7 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_DeleteUserAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.DeleteUserAsync(System.String,System.Threading.CancellationToken)">
   DeleteUserAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -358,11 +444,87 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_EnsurePublicClientAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.EnsurePublicClientAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_EnsurePublicClientAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakPublicClientRequest_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.EnsurePublicClientAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest,System.Threading.CancellationToken)">
+  EnsurePublicClientAsync(KeycloakPublicClientRequest, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task EnsurePublicClientAsync(KeycloakPublicClientRequest request, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest.html">KeycloakPublicClientRequest</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_EnsureTenantMembershipMapperAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.EnsureTenantMembershipMapperAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_EnsureTenantMembershipMapperAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.EnsureTenantMembershipMapperAsync(System.String,System.Threading.CancellationToken)">
+  EnsureTenantMembershipMapperAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task EnsureTenantMembershipMapperAsync(string clientId, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>clientId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetGroupIdByPathAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetGroupIdByPathAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetGroupIdByPathAsync(System.String,System.Threading.CancellationToken)">
   GetGroupIdByPathAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -396,11 +558,49 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserGroupsAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserGroupsAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserGroupsAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserGroupsAsync(System.String,System.Threading.CancellationToken)">
+  GetUserGroupsAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IReadOnlyList&lt;KeycloakGroup&gt;&gt; GetUserGroupsAsync(string userId, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html">KeycloakGroup</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserIdByUsernameAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUserIdByUsernameAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUserIdByUsernameAsync(System.String,System.Threading.CancellationToken)">
   GetUserIdByUsernameAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -434,11 +634,253 @@ Interface IKeycloakAdminClient  <a class="header-action link-secondary" title="V
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUsersInGroupAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUsersInGroupAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_GetUsersInGroupAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.GetUsersInGroupAsync(System.String,System.Threading.CancellationToken)">
+  GetUsersInGroupAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IReadOnlyList&lt;KeycloakUser&gt;&gt; GetUsersInGroupAsync(string groupId, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>groupId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html">KeycloakUser</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_RemoveUserFromGroupAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.RemoveUserFromGroupAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_RemoveUserFromGroupAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.RemoveUserFromGroupAsync(System.String,System.String,System.Threading.CancellationToken)">
+  RemoveUserFromGroupAsync(string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RemoveUserFromGroupAsync(string userId, string groupId, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>groupId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_ResetPasswordAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.ResetPasswordAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_ResetPasswordAsync_System_String_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.ResetPasswordAsync(System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
+  ResetPasswordAsync(string, string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task ResetPasswordAsync(string userId, string password, bool temporary, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>temporary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_SetRequiredActionsAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.SetRequiredActionsAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_SetRequiredActionsAsync_System_String_System_Collections_Generic_IReadOnlyCollection_System_String__System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.SetRequiredActionsAsync(System.String,System.Collections.Generic.IReadOnlyCollection{System.String},System.Threading.CancellationToken)">
+  SetRequiredActionsAsync(string, IReadOnlyCollection&lt;string&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SetRequiredActionsAsync(string userId, IReadOnlyCollection&lt;string&gt; requiredActions, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>requiredActions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_SetUserEnabledAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.SetUserEnabledAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_SetUserEnabledAsync_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.SetUserEnabledAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+  SetUserEnabledAsync(string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SetUserEnabledAsync(string userId, bool enabled, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_UpdateUserProfileAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.UpdateUserProfileAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_UpdateUserProfileAsync_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.UpdateUserProfileAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+  UpdateUserProfileAsync(string, string?, string?, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdateUserProfileAsync(string userId, string? firstName, string? lastName, CancellationToken ct = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>firstName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lastName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ct</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Interfaces/IKeycloakAdminClient.cs/#L5" class="edit-link">Edit this page</a>
         </div>
 
 

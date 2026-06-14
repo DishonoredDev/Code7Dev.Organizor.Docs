@@ -87,7 +87,7 @@
         <article data-uid="">
 <h1 id="api-integration--portal-ui">API Integration — Portal UI</h1>
 
-<p>The Portal UI communicates with the Organizor API through a named <code>HttpClient</code> called <code>api</code>. All tenant administration actions go through this client.</p>
+<p>The Portal UI communicates with the Organizor API through named HTTP clients. Authenticated backend calls use the <code>api</code> client. Anonymous public registration uses the <code>public-api</code> client without the authorization message handler.</p>
 <h2 id="local-development-configuration">Local Development Configuration</h2>
 <table>
 <thead>
@@ -128,7 +128,7 @@
 })
 .AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;();
 </code></pre>
-<p><code>AdminTenantService</code> and <code>TenantConfigService</code> use <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call API endpoints.</p>
+<p><code>AdminTenantService</code>, <code>TenantUserService</code>, and <code>TenantConfigService</code> use <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call authenticated API endpoints.</p>
 <h2 id="authorization-handler">Authorization Handler</h2>
 <p><code>ApiAuthorizationMessageHandler</code> extends Blazor's <code>AuthorizationMessageHandler</code>. It is responsible for:</p>
 <ul>
@@ -202,6 +202,11 @@
 <td><code>PUT /api/admin/tenant-plans/{planKey}</code></td>
 <td>Updates tenant plan defaults.</td>
 </tr>
+<tr>
+<td>tenant user methods</td>
+<td><code>/api/admin/tenants/{tenantId}/users/*</code></td>
+<td>Manage users for a selected tenant from the platform control plane.</td>
+</tr>
 </tbody>
 </table>
 <p>The backend also exposes <code>GET /api/admin/tenants/{id}</code> for admin detail lookups. The current portal grid does not call that endpoint directly.</p>
@@ -219,8 +224,12 @@
 }
 </code></pre>
 <p><code>GET /api/v1/tenants</code> returns only non-deleted catalog records. <code>GET /api/admin/tenants</code> intentionally includes soft-deleted records so the portal can show deleted tenants and allow hard deletion.</p>
+<h2 id="tenant-user-api-client">Tenant User API Client</h2>
+<p><code>TenantUserService</code> wraps tenant-scoped user-management endpoints used by <code>/tenant/users</code>.</p>
+<p>These requests require a bearer token with <code>tenant-admin</code> and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
+<p>Tenant admins can create users, list users, toggle enabled state, assign tenant roles, and delete users inside their own tenant. Regular <code>tenant-user</code> accounts do not get this portal route.</p>
 <h2 id="tenant-config-api-client">Tenant Config API Client</h2>
-<p><code>TenantConfigService</code> wraps the tenant-scoped config endpoint used by <code>/tenant/config</code>.</p>
+<p><code>TenantConfigService</code> wraps the tenant-scoped config endpoint used by tenant admins at <code>/tenant/config</code>.</p>
 <table>
 <thead>
 <tr>
@@ -237,7 +246,16 @@
 </tr>
 </tbody>
 </table>
-<p>The request must include a bearer token with a tenant role and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
+<p>The request must include a bearer token with <code>tenant-admin</code> and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
+<h2 id="static-tenant-website-api-contract">Static Tenant Website API Contract</h2>
+<p>Tenant-specific static websites should first call:</p>
+<pre><code class="lang-http">GET /api/public/tenants/{slug}/auth
+</code></pre>
+<p>The response contains the tenant's website base URL, public Keycloak authority, generated client id, PKCE requirement, scopes, redirect metadata, tenant header name, tenant claim name, expected tenant roles, expected tenant group paths, and public registration endpoint. This endpoint intentionally returns no secrets.</p>
+<p>After login, static tenant websites must send <code>Authorization: Bearer &lt;token&gt;</code> and <code>X-Tenant-Slug: {slug}</code> on tenant-scoped authenticated API calls.</p>
+<h2 id="public-registration-api-client">Public Registration API Client</h2>
+<p><code>PublicRegistrationService</code> wraps <code>POST /api/public/register</code> for the temporary <code>/register</code> shell. It uses the named <code>public-api</code> client instead of the authenticated <code>api</code> client because registration is anonymous and the tenant slug is supplied in the request body.</p>
+<p>The future tenant-specific static websites should reuse the same public registration contract with their own UI.</p>
 <h2 id="error-handling">Error Handling</h2>
 <p>The tenant API client uses <code>EnsureSuccessAsync</code> to surface failed API responses as <code>InvalidOperationException</code>. The exception message includes the status code and response body when present. The Radzen tenant page catches those exceptions and displays both a page alert and a Radzen notification.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>

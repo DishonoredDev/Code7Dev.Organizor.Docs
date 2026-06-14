@@ -103,7 +103,7 @@ Class TenantConfigController  <a class="header-action link-secondary" title="Vie
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ApiController]
-[Authorize(Policy = &quot;RequireTenantUserRole&quot;)]
+[Authorize(Policy = &quot;RequireTenantAdminRole&quot;)]
 [Route(&quot;api/v1/tenant/config&quot;)]
 public sealed class TenantConfigController : ControllerBase</code></pre>
   </div>

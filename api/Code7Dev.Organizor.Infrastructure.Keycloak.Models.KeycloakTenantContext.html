@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext" class="text-break">
-Class KeycloakTenantContext  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Class KeycloakTenantContext  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,16 +157,16 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
 
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext__ctor_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext__ctor_System_Guid_System_String_System_String_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor(System.Guid,System.String,System.String)">
-  KeycloakTenantContext(Guid, string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L3"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext__ctor_System_Guid_System_String_System_String_Code7Dev_Organizor_Application_Tenants_Models_TenantAuthSettingsModel_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.#ctor(System.Guid,System.String,System.String,Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel)">
+  KeycloakTenantContext(Guid, string, string, TenantAuthSettingsModel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeycloakTenantContext(Guid TenantId, string Slug, string Name)</code></pre>
+    <pre><code class="lang-csharp hljs">public KeycloakTenantContext(Guid TenantId, string Slug, string Name, TenantAuthSettingsModel AuthSettings)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -176,6 +176,8 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
     <dt><code>Slug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
     <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>AuthSettings</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html">TenantAuthSettingsModel</a></dt>
     <dd></dd>
   </dl>
 
@@ -194,11 +196,42 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
 </h2>
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_AuthSettings_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.AuthSettings*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_AuthSettings" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.AuthSettings">
+  AuthSettings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TenantAuthSettingsModel AuthSettings { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html">TenantAuthSettingsModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Name_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Name" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -229,7 +262,7 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_Slug" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.Slug">
   Slug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -260,7 +293,7 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_TenantId" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.TenantId">
   TenantId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L4"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -291,7 +324,7 @@ Class KeycloakTenantContext  <a class="header-action link-secondary" title="View
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Models/KeycloakTenantContext.cs/#L5" class="edit-link">Edit this page</a>
         </div>
 
 

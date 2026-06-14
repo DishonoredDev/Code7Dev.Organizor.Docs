@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Spec-Driven Development | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Spec-Driven Development | Organizor ">
+      
+      <meta name="description" content="Spec-Driven Development workflow for Organizor features, documentation, and GitHub pull requests.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/spec-driven-development.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="spec-driven-development">Spec-Driven Development</h1>
+
+<p>Organizor uses Spec-Driven Development for feature work. Accepted behavior is stored in repository specifications under <code>spec/</code> so requirements, implementation, tests, and documentation are versioned with the code.</p>
+<h2 id="constitution">Constitution</h2>
+<p>Before feature work starts, read:</p>
+<ul>
+<li><code>brief.md</code></li>
+<li><code>tech-design.md</code></li>
+<li><code>roadmap.md</code></li>
+<li><code>rules.md</code></li>
+<li><code>workflow.md</code></li>
+<li><code>AGENTS.md</code></li>
+<li>the relevant feature files under <code>spec/features/</code></li>
+</ul>
+<p>These files define customer intent, architecture boundaries, implementation constraints, feature order, standing rules, workflow, and agent behavior.</p>
+<h2 id="feature-specs">Feature Specs</h2>
+<p>Each feature lives in <code>spec/features/{feature-slug}/</code> and contains:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>specification.md</code></td>
+<td>Defines behavior, scope, authorization, tenancy, persistence, API impact, acceptance criteria, and open questions.</td>
+</tr>
+<tr>
+<td><code>implementation.md</code></td>
+<td>Maps the spec to projects, layers, migrations, and rollback considerations.</td>
+</tr>
+<tr>
+<td><code>testing.md</code></td>
+<td>Defines automated and manual verification.</td>
+</tr>
+<tr>
+<td><code>documentation.md</code></td>
+<td>Defines DocFX, README, operator, and integration documentation updates.</td>
+</tr>
+<tr>
+<td><code>finalise.md</code></td>
+<td>Records completion checklist, verification results, residual risk, and follow-up work.</td>
+</tr>
+</tbody>
+</table>
+<p>Use <code>spec/_templates/feature/</code> when starting a feature.</p>
+<h2 id="github">GitHub</h2>
+<p>GitHub issues and projects are useful for discussion, prioritization, and traceability. They do not replace repository specs.</p>
+<p>Pull requests should link the relevant feature spec and confirm that:</p>
+<ul>
+<li>code matches the accepted specification;</li>
+<li>tenant isolation was reviewed;</li>
+<li>authorization was reviewed;</li>
+<li>catalog and tenant database impact was reviewed;</li>
+<li>DocFX documentation was updated or marked not applicable;</li>
+<li>generated API reference files were not manually edited.</li>
+</ul>
+<p>Before a local commit is created, the agent should summarize the changed files or feature areas, verification performed, checks not run, and proposed commit message. The commit should wait for explicit approval.</p>
+<h2 id="engineering-standards">Engineering Standards</h2>
+<p>Feature implementation must follow <code>rules.md</code>, including the repository's C#/.NET architecture and coding standards. Apply SOLID principles pragmatically: keep services cohesive, preserve dependency direction, expose clear contracts at layer boundaries, and avoid abstractions that do not protect a real boundary or improve testability.</p>
+<h2 id="drift-handling">Drift Handling</h2>
+<p>When code and spec disagree, update the spec first or stop for a decision. Do not silently implement behavior that is missing from the spec.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/spec-driven-development.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

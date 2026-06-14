@@ -118,7 +118,7 @@
 </tr>
 <tr>
 <td><code>tenant-user</code></td>
-<td><code>/tenant/config</code></td>
+<td><code>/tenant/profile</code></td>
 </tr>
 </tbody>
 </table>
@@ -132,6 +132,7 @@
 <li><code>resource_access.organizor-ui.roles</code></li>
 </ul>
 <p>This is separate from API role mapping, where the API also understands roles under <code>resource_access.organizor-api.roles</code>.</p>
+<p>The portal claims factory also promotes custom <code>tenant</code> and <code>groups</code> values when Keycloak returns them as token properties. Tenant onboarding ensures the <code>organizor-ui</code> client has the group-membership mapper needed to emit the <code>tenant</code> claim from <code>/tenants/{slug}/...</code> group membership.</p>
 <h2 id="protected-routes">Protected Routes</h2>
 <p>Portal pages use role attributes:</p>
 <pre><code class="lang-razor">@attribute [Authorize(Roles = &quot;organizor-admin&quot;)]
@@ -158,20 +159,32 @@
 <td><code>organizor-admin</code></td>
 </tr>
 <tr>
+<td><code>/admin/users</code></td>
+<td><code>organizor-admin</code></td>
+</tr>
+<tr>
 <td><code>/tenant</code></td>
 <td><code>tenant-admin</code></td>
 </tr>
 <tr>
-<td><code>/tenant/profile</code></td>
+<td><code>/tenant/users</code></td>
 <td><code>tenant-admin</code></td>
 </tr>
 <tr>
 <td><code>/tenant/config</code></td>
+<td><code>tenant-admin</code></td>
+</tr>
+<tr>
+<td><code>/tenant/profile</code></td>
 <td><code>tenant-admin</code>, <code>tenant-user</code></td>
+</tr>
+<tr>
+<td><code>/register</code></td>
+<td>anonymous</td>
 </tr>
 </tbody>
 </table>
-<p>The admin layout still contains a placeholder navigation link for <code>/admin/users</code>. There is no Razor page for that route yet.</p>
+<p>Tenant users are redirected to their profile because regular users should not see tenant platform configuration. Tenant admins can still open their profile from the tenant shell.</p>
 <h2 id="api-tokens">API Tokens</h2>
 <p>The Portal never sends credentials to the API. It sends bearer tokens through the configured API <code>HttpClient</code>. The API validates token signature, issuer, expiration, and then applies authorization policies.</p>
 <p>The local issuer must be consistent everywhere:</p>
@@ -225,11 +238,23 @@
 <td>Tenant context and <code>X-Tenant-Slug</code> header source.</td>
 </tr>
 <tr>
+<td><code>name</code>, <code>given_name</code>, <code>family_name</code></td>
+<td>Profile display fields when provided by Keycloak.</td>
+</tr>
+<tr>
+<td>role claims</td>
+<td>Sidebar and profile access display.</td>
+</tr>
+<tr>
 <td><code>groups</code></td>
 <td>Sidebar user context display.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="current-user-account-actions">Current-User Account Actions</h2>
+<p>The tenant profile page does not link tenant users or tenant admins directly to the Keycloak account console. Password and profile actions use an Organizor-mediated flow: the client calls a tenant-scoped API endpoint, the API validates the authenticated user and tenant access, and Keycloak completes the required action.</p>
+<p>Password-change initiation is exposed as <code>POST /api/v1/tenant/account-actions/change-password</code> and sets Keycloak <code>UPDATE_PASSWORD</code> for the authenticated user. Organizor must not collect, store, or log replacement passwords.</p>
+<p>Profile update is exposed as <code>PUT /api/v1/tenant/account-actions/profile</code> and updates only Keycloak <code>firstName</code> and <code>lastName</code> for the authenticated user. Username, email, tenant membership, groups, roles, credentials, enabled state, required actions, and arbitrary attributes are not editable through this current-user profile endpoint. Broader Keycloak <code>UPDATE_PROFILE</code> flows remain deferred until user-profile policy is specified.</p>
 
 </article>
 
