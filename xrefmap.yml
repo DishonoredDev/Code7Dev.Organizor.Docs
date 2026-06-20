@@ -7699,6 +7699,19 @@ references:
   isSpec: "True"
   fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.BaseUrl
   nameWithType: KeycloakSettings.BaseUrl
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword
+  name: DefaultTenantAdminTemporaryPassword
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_DefaultTenantAdminTemporaryPassword
+  commentId: P:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword
+  nameWithType: KeycloakSettings.DefaultTenantAdminTemporaryPassword
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword*
+  name: DefaultTenantAdminTemporaryPassword
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_DefaultTenantAdminTemporaryPassword_
+  commentId: Overload:Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword
+  isSpec: "True"
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.DefaultTenantAdminTemporaryPassword
+  nameWithType: KeycloakSettings.DefaultTenantAdminTemporaryPassword
 - uid: Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.Realm
   name: Realm
   href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html#Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings_Realm
@@ -8326,15 +8339,15 @@ references:
   commentId: T:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService
   fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService
   nameWithType: KeycloakTenantOnboardingService
-- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService})
-  name: KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>)
-  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__
-  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService})
-  name.vb: New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService))
-  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService>)
-  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.New(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService))
-  nameWithType: KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>)
-  nameWithType.vb: KeycloakTenantOnboardingService.New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService))
+- uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService},Microsoft.Extensions.Options.IOptions{Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings})
+  name: KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>, IOptions<KeycloakSettings>)
+  href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__Microsoft_Extensions_Options_IOptions_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings__
+  commentId: M:Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService},Microsoft.Extensions.Options.IOptions{Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings})
+  name.vb: New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService), IOptions(Of KeycloakSettings))
+  fullName: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger<Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService>, Microsoft.Extensions.Options.IOptions<Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings>)
+  fullName.vb: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.New(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient, Microsoft.Extensions.Logging.ILogger(Of Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService), Microsoft.Extensions.Options.IOptions(Of Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings))
+  nameWithType: KeycloakTenantOnboardingService.KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger<KeycloakTenantOnboardingService>, IOptions<KeycloakSettings>)
+  nameWithType.vb: KeycloakTenantOnboardingService.New(IKeycloakAdminClient, ILogger(Of KeycloakTenantOnboardingService), IOptions(Of KeycloakSettings))
 - uid: Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor*
   name: KeycloakTenantOnboardingService
   href: api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html#Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_

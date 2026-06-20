@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService" class="text-break">
-Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,16 +157,16 @@ Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" t
 
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService})">
-  KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger&lt;KeycloakTenantOnboardingService&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService__Microsoft_Extensions_Options_IOptions_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakSettings__" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService},Microsoft.Extensions.Options.IOptions{Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings})">
+  KeycloakTenantOnboardingService(IKeycloakAdminClient, ILogger&lt;KeycloakTenantOnboardingService&gt;, IOptions&lt;KeycloakSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeycloakTenantOnboardingService(IKeycloakAdminClient kc, ILogger&lt;KeycloakTenantOnboardingService&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public KeycloakTenantOnboardingService(IKeycloakAdminClient kc, ILogger&lt;KeycloakTenantOnboardingService&gt; logger, IOptions&lt;KeycloakSettings&gt; settings)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -174,6 +174,8 @@ Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" t
     <dt><code>kc</code> <a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html">IKeycloakAdminClient</a></dt>
     <dd></dd>
     <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html">KeycloakTenantOnboardingService</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1">IOptions</a>&lt;<a class="xref" href="Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html">KeycloakSettings</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -196,7 +198,7 @@ Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" t
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantOnboardingService_OnboardTenantAsync_Code7Dev_Organizor_Infrastructure_Keycloak_Models_KeycloakTenantContext_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.OnboardTenantAsync(Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext,System.Threading.CancellationToken)">
   OnboardTenantAsync(KeycloakTenantContext, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ensures all required Keycloak groups exist for the given tenant.</p>
@@ -235,7 +237,7 @@ Class KeycloakTenantOnboardingService  <a class="header-action link-secondary" t
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantOnboardingService.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

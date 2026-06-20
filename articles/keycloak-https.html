@@ -103,7 +103,7 @@
 <pre><code class="lang-powershell">mkcert -install
 mkcert -pkcs12 -p12-file .\keycloak\certs\keycloak.p12 localhost
 </code></pre>
-<p><code>mkcert</code> PKCS#12 files use the password <code>changeit</code>, which matches the Docker Compose configuration.</p>
+<p><code>mkcert</code> PKCS#12 files use a local keystore password. Put that password in <code>.env</code> as <code>ORGANIZOR_KEYCLOAK_HTTPS_KEYSTORE_PASSWORD</code> so it is not committed.</p>
 <p>Keep generated certificates out of source control. If the certificate is missing or not trusted, Keycloak may fail to start or the browser may reject the login page.</p>
 <h2 id="docker-compose">Docker Compose</h2>
 <p>The Keycloak service uses production mode with an HTTPS keystore:</p>
@@ -114,7 +114,7 @@ mkcert -pkcs12 -p12-file .\keycloak\certs\keycloak.p12 localhost
     - --hostname=localhost
     - --https-port=8443
     - --https-key-store-file=/opt/keycloak/conf/keycloak.p12
-    - --https-key-store-password=changeit
+    - --https-key-store-password=${ORGANIZOR_KEYCLOAK_HTTPS_KEYSTORE_PASSWORD:?Set ORGANIZOR_KEYCLOAK_HTTPS_KEYSTORE_PASSWORD in .env}
   volumes:
     - ./keycloak/certs/keycloak.p12:/opt/keycloak/conf/keycloak.p12
   ports:
@@ -127,8 +127,8 @@ docker compose up -d
 <p>Open the admin console at:</p>
 <pre><code class="lang-text">https://localhost:8443
 </code></pre>
-<p>Development admin credentials are configured in <code>docker-compose.yml</code>:</p>
-<pre><code class="lang-text">admin / admin
+<p>Development admin credentials are read from the untracked <code>.env</code> file:</p>
+<pre><code class="lang-text">ORGANIZOR_KEYCLOAK_ADMIN_USERNAME / ORGANIZOR_KEYCLOAK_ADMIN_PASSWORD
 </code></pre>
 <h2 id="browser-trust">Browser Trust</h2>
 <p>Chrome and Edge normally trust the <code>mkcert</code> root certificate through the Windows certificate store after <code>mkcert -install</code>.</p>

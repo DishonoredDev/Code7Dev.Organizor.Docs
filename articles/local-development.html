@@ -158,6 +158,7 @@
 </tbody>
 </table>
 <h2 id="required-local-configuration">Required Local Configuration</h2>
+<p>Copy <code>.env.example</code> to <code>.env</code> and fill the local Keycloak container credentials before running Docker Compose. Keep <code>.env</code> untracked.</p>
 <p>The API needs:</p>
 <ul>
 <li>a <code>ConnectionStrings:Catalog</code> connection string;</li>
@@ -165,8 +166,9 @@
 <li><code>Keycloak:Authority</code> set to <code>https://localhost:8443/realms/organizor-dev</code>;</li>
 <li><code>Keycloak:BaseUrl</code> set to <code>https://localhost:8443</code>;</li>
 <li><code>Keycloak:Realm</code> set to <code>organizor-dev</code>;</li>
-<li><code>Keycloak:AdminClientId</code> set to <code>organizor-api</code>;</li>
-<li><code>Keycloak:AdminClientSecret</code> from the Keycloak <code>organizor-api</code> client.</li>
+<li><code>Keycloak:AdminClientId</code> set to <code>organizor-admin</code>;</li>
+<li><code>Keycloak:AdminClientSecret</code> from the Keycloak <code>organizor-admin</code> client.</li>
+<li>optionally <code>Keycloak:DefaultTenantAdminTemporaryPassword</code> for predictable local-only tenant admin testing; omit it to generate a temporary password during onboarding.</li>
 </ul>
 <div class="code7-callout warning">
   <div class="code7-callout-title">Warning</div>
@@ -179,18 +181,27 @@
 <li>redirect login callbacks to <code>https://localhost:7025/authentication/login-callback</code>;</li>
 <li>call the API at <code>https://localhost:7184</code>.</li>
 </ul>
+<p>These portal values live in <code>Code7Dev.Organizor.Portal.Ui/wwwroot/appsettings.json</code> for local development and must be replaced with deployment URLs for server environments.</p>
 <h2 id="startup-order">Startup Order</h2>
 <ol>
 <li>Generate or verify the Keycloak HTTPS certificate at <code>keycloak/certs/keycloak.p12</code>.</li>
 <li>Start Keycloak with Docker Compose.</li>
-<li>Confirm the <code>organizor-dev</code> realm, clients, roles, groups, and users exist.</li>
+<li>On an empty Keycloak database, Docker Compose imports <code>docker/keycloak/import/organizor-dev-realm.json</code> and creates the <code>organizor-dev</code> realm, clients, roles, <code>/tenants</code> root group, and service-account permissions.</li>
 <li>Start the API with the HTTPS launch profile.</li>
 <li>Start the portal with the HTTPS launch profile.</li>
 <li>Sign in through the portal and verify the API accepts the issued token.</li>
 </ol>
 <h2 id="commands">Commands</h2>
 <p>Start Keycloak:</p>
-<pre><code class="lang-powershell">docker compose up -d
+<pre><code class="lang-powershell">Copy-Item .env.example .env
+docker compose up -d
+</code></pre>
+<p>Reset local Keycloak only when you intentionally want a fresh realm import:</p>
+<pre><code class="lang-powershell">docker compose down -v
+docker compose up -d
+</code></pre>
+<p><code>docker compose down -v</code> deletes the local Keycloak database volume. The next startup imports <code>docker/keycloak/import/organizor-dev-realm.json</code> again and Keycloak generates new client secrets. After a reset, copy the generated <code>organizor-admin</code> client secret from Keycloak and update API user secrets:</p>
+<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:AdminClientSecret&quot; &quot;&lt;client-secret&gt;&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
 </code></pre>
 <p>Run the API:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj --launch-profile https
@@ -201,6 +212,11 @@
 <p>Build the documentation:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json
 </code></pre>
+<p>Generate a local documentation deploy key only when you need to update the GitHub <code>DOCS_DEPLOY_KEY</code> secret:</p>
+<pre><code class="lang-powershell">New-Item -ItemType Directory -Force .\ssh
+ssh-keygen -t ed25519 -C &quot;organizor-docs-deploy&quot; -f .\ssh\organizor-docs-key
+</code></pre>
+<p>The private key stays at <code>ssh/organizor-docs-key</code> and <code>ssh/</code> is gitignored. Do not commit, copy into docs output, or delete this folder unless you are intentionally rotating the deploy key. Store the private key value in the GitHub Actions secret <code>DOCS_DEPLOY_KEY</code>, and add the public key <code>ssh/organizor-docs-key.pub</code> as a deploy key on the public documentation repository.</p>
 <h2 id="keycloak-client-requirements">Keycloak Client Requirements</h2>
 <p>The <code>organizor-ui</code> client must allow the portal origin:</p>
 <table>
@@ -225,7 +241,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <code>organizor-api</code> client is used for API service-account operations during tenant onboarding and hard deletion. Its client secret must be available to the API through configuration or user secrets.</p>
+<p>The <code>organizor-admin</code> client is used for API service-account operations during tenant onboarding and hard deletion. Its client secret must be available to the API through configuration or user secrets.</p>
 <div class="code7-callout production-checklist">
   <div class="code7-callout-title">Production Checklist</div>
   <p>Do not copy local wildcard origins, local certificates, or development secrets into deployed environments. Production should use real HTTPS certificates, explicit origins, and managed secret storage.</p>

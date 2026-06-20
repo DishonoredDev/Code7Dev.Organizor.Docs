@@ -93,7 +93,7 @@
 <p>Example shape:</p>
 <pre><code class="lang-json">{
   &quot;ConnectionStrings&quot;: {
-    &quot;Catalog&quot;: &quot;Host=localhost;Port=5432;Database=organizor_catalog;Username=postgres;Password=postgres&quot;
+    &quot;Catalog&quot;: &quot;Host=localhost;Port=5432;Database=organizor_catalog;Username=postgres;Password=&lt;postgres-password&gt;&quot;
   }
 }
 </code></pre>
@@ -104,7 +104,7 @@
     &quot;Host&quot;: &quot;localhost&quot;,
     &quot;Port&quot;: &quot;5432&quot;,
     &quot;User&quot;: &quot;postgres&quot;,
-    &quot;Password&quot;: &quot;postgres&quot;
+    &quot;Password&quot;: &quot;&lt;postgres-password&gt;&quot;
   }
 }
 </code></pre>
@@ -122,7 +122,8 @@
     &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
     &quot;Realm&quot;: &quot;organizor-dev&quot;,
     &quot;AdminClientId&quot;: &quot;organizor-admin&quot;,
-    &quot;AdminClientSecret&quot;: &quot;&lt;admin-client-secret&gt;&quot;
+    &quot;AdminClientSecret&quot;: &quot;&lt;admin-client-secret&gt;&quot;,
+    &quot;DefaultTenantAdminTemporaryPassword&quot;: &quot;&lt;optional-local-only-password&gt;&quot;
   }
 }
 </code></pre>
@@ -130,8 +131,18 @@
 <p>A mismatch between <code>http</code> and <code>https</code> is enough to make API authentication fail with <code>401 Unauthorized</code>.</p>
 <p>The development API configures the Keycloak admin <code>HttpClient</code> to accept the local self-signed Keycloak certificate. This is development-only behavior and should not be used for production identity-provider calls.</p>
 <p>Store client secrets in user secrets, environment variables, or deployment secrets rather than committing them to source.</p>
+<p>Outside Development, the API refuses to start when Keycloak authority/base URL are missing, non-HTTPS, or loopback URLs. It also requires <code>Keycloak:Realm</code>, <code>Keycloak:AdminClientId</code>, and <code>Keycloak:AdminClientSecret</code>.</p>
+<p><code>Keycloak:DefaultTenantAdminTemporaryPassword</code> is optional. When omitted, onboarding generates a temporary password for the default <code>{slug}-admin</code> user. Do not configure development passwords such as <code>ChangeMe123!</code> or <code>Admin123!</code> outside Development.</p>
 <h2 id="portal-ui">Portal UI</h2>
 <p>The Blazor WebAssembly portal uses Keycloak for OIDC login and calls the API with bearer tokens. Admin tenant management uses Radzen components and <code>AdminTenantService</code> over the named <code>api</code> HttpClient.</p>
+<p>The portal reads these values from <code>wwwroot/appsettings.json</code> or the matching environment-specific Blazor configuration file:</p>
+<ul>
+<li><code>Api:BaseUrl</code></li>
+<li><code>Keycloak:Authority</code></li>
+<li><code>Keycloak:ClientId</code></li>
+<li><code>Authentication:RedirectUri</code></li>
+<li><code>Authentication:PostLogoutRedirectUri</code></li>
+</ul>
 <p>Current local development endpoints:</p>
 <table>
 <thead>
