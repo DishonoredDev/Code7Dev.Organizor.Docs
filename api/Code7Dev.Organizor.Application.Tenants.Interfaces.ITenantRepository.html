@@ -125,7 +125,7 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_AddAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.AddAsync(Code7Dev.Organizor.Domain.Tenants.Tenant)">
   AddAsync(Tenant)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L112"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a tenant catalog record.</p>
@@ -163,7 +163,7 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_DeleteAsync_System_Guid_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.DeleteAsync(System.Guid)">
   DeleteAsync(Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes a tenant catalog record.</p>
@@ -201,7 +201,7 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetAllAsync_System_Boolean_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetAllAsync(System.Boolean)">
   GetAllAsync(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Lists tenants from the catalog.</p>
@@ -223,6 +223,51 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Tenants.Tenant.html">Tenant</a>&gt;&gt;</dt>
     <dd><p>Tenant catalog records.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByAdminPortalBaseUrlAsync_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByAdminPortalBaseUrlAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByAdminPortalBaseUrlAsync_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByAdminPortalBaseUrlAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+  GetByAdminPortalBaseUrlAsync(string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a tenant by its normalized administration portal base URL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Tenant?&gt; GetByAdminPortalBaseUrlAsync(string adminPortalBaseUrl, bool includeSoftDeleted = false, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>adminPortalBaseUrl</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The normalized administration portal base URL.</p>
+</dd>
+    <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether soft-deleted tenants should be included.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token used to cancel the lookup.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Tenants.Tenant.html">Tenant</a>&gt;</dt>
+    <dd><p>The tenant when found; otherwise, null.</p>
 </dd>
   </dl>
 
@@ -297,6 +342,93 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
     <dd><p>Tenant catalog identifier.</p>
+</dd>
+    <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether soft-deleted tenants should be included.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token used to cancel the lookup.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Tenants.Tenant.html">Tenant</a>&gt;</dt>
+    <dd><p>The tenant when found; otherwise, null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdentityRealmAsync_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdentityRealmAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdentityRealmAsync_System_String_System_Boolean_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdentityRealmAsync(System.String,System.Boolean)">
+  GetByIdentityRealmAsync(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a tenant by its catalog-owned Keycloak realm identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Tenant?&gt; GetByIdentityRealmAsync(string identityRealm, bool includeSoftDeleted = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Tenant Keycloak realm identifier.</p>
+</dd>
+    <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether soft-deleted tenants should be included.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Tenants.Tenant.html">Tenant</a>&gt;</dt>
+    <dd><p>The tenant when found; otherwise, null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdentityRealmAsync_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdentityRealmAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_GetByIdentityRealmAsync_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.GetByIdentityRealmAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+  GetByIdentityRealmAsync(string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a tenant by its catalog-owned Keycloak realm identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Tenant?&gt; GetByIdentityRealmAsync(string identityRealm, bool includeSoftDeleted, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Tenant Keycloak realm identifier.</p>
 </dd>
     <dt><code>includeSoftDeleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Whether soft-deleted tenants should be included.</p>
@@ -414,7 +546,7 @@ Interface ITenantRepository  <a class="header-action link-secondary" title="View
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_UpdateAsync_Code7Dev_Organizor_Domain_Tenants_Tenant_" data-uid="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.UpdateAsync(Code7Dev.Organizor.Domain.Tenants.Tenant)">
   UpdateAsync(Tenant)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Interfaces/ITenantRepository.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates an existing tenant catalog record.</p>

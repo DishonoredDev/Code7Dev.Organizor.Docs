@@ -133,6 +133,27 @@
 </tbody>
 </table>
 <p>Use <code>spec/_templates/feature/</code> when starting a feature.</p>
+<h2 id="feature-discovery-and-health">Feature Discovery And Health</h2>
+<p>New and newly touched feature specifications add a lightweight discovery block directly below <code>Status</code>:</p>
+<pre><code class="lang-md">Status: accepted
+Delivery: not-started
+Area: portal
+Tags: tenant-admin, registration
+Next Action: Implement the queue/detail review UI.
+Depends On: tenant-registration-management
+</code></pre>
+<p>Legacy specifications without this block remain valid. The repository tool derives their delivery state from the existing specification, implementation, and finalise status files.</p>
+<p>After reading the constitution, use the discovery command to find the smallest relevant specification set:</p>
+<pre><code class="lang-powershell">pwsh ./scripts/spec.ps1 catalog
+pwsh ./scripts/spec.ps1 next
+pwsh ./scripts/spec.ps1 find registration
+pwsh ./scripts/spec.ps1 area portal
+</code></pre>
+<p><code>next</code> lists buildable candidates; it does not replace roadmap ordering. After changing feature status or discovery metadata, refresh and validate the generated feature index:</p>
+<pre><code class="lang-powershell">pwsh ./scripts/spec.ps1 sync
+pwsh ./scripts/spec.ps1 health
+</code></pre>
+<p>The generated catalog in <code>spec/README.md</code> must not be hand-edited. GitHub Actions runs the same health command for SDD-relevant pull requests and default-branch pushes.</p>
 <h2 id="github">GitHub</h2>
 <p>GitHub issues and projects are useful for discussion, prioritization, and traceability. They do not replace repository specs.</p>
 <p>Pull requests should link the relevant feature spec and confirm that:</p>

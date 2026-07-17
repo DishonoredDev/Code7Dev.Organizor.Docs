@@ -87,11 +87,11 @@
         <article data-uid="">
 <h1 id="introduction">Introduction</h1>
 
-<p>Organizor is the backend API for managing tenant environments. It keeps tenant records in a central catalog database and provisions a separate PostgreSQL database for each tenant.</p>
+<p>Organizor is the backend API for managing tenant environments. It keeps tenant records in a central catalog database, provisions a separate PostgreSQL database for each tenant, and gives every tenant a separate Keycloak realm for identity isolation.</p>
 <p>The current implementation focuses on tenant lifecycle operations:</p>
 <ul>
 <li>creating tenant catalog records;</li>
-<li>onboarding tenants by creating a tenant database and applying migrations through internal operations;</li>
+<li>onboarding tenants by creating a tenant Keycloak realm, tenant database, and applying migrations through internal operations;</li>
 <li>resolving tenant context for tenant-scoped requests;</li>
 <li>upgrading tenant databases by running migrations;</li>
 <li>soft-deleting tenants before hard deletion;</li>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td>Tenant</td>
-<td>A customer or isolated workspace tracked by <code>Id</code>, <code>Name</code>, <code>Slug</code>, <code>DatabaseName</code>, lifecycle status, and deletion metadata.</td>
+<td>A customer or isolated workspace tracked by <code>Id</code>, <code>Name</code>, <code>Slug</code>, immutable <code>IdentityRealm</code>, <code>DatabaseName</code>, lifecycle status, and deletion metadata.</td>
 </tr>
 <tr>
 <td>Catalog database</td>
@@ -119,12 +119,20 @@
 <td>PostgreSQL database named from the tenant slug, currently using the <code>organizor_tenant_{slug}</code> convention.</td>
 </tr>
 <tr>
+<td>Tenant identity realm</td>
+<td>Keycloak realm named <code>tenant-{slug}</code> that contains only that tenant's users, credentials, roles, groups, and clients.</td>
+</tr>
+<tr>
+<td>Platform realm</td>
+<td>Keycloak realm containing Organizor-control-plane identities and <code>organizor-admin</code>.</td>
+</tr>
+<tr>
 <td>Tenant resolution</td>
 <td>Middleware step that reads <code>X-Tenant-Slug</code>, loads the tenant, and stores the current tenant in <code>ITenantContext</code>.</td>
 </tr>
 <tr>
 <td>Provisioning workflow</td>
-<td>Infrastructure workflow that creates the tenant database and applies tenant migrations.</td>
+<td>Infrastructure workflow that creates the tenant realm, tenant database, and applies tenant migrations.</td>
 </tr>
 </tbody>
 </table>

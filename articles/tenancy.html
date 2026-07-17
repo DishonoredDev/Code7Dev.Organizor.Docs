@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Tenancy | Organizor ">
       
-      <meta name="description" content="How Organizor resolves tenants, manages catalog records, creates tenant databases, and handles tenant lifecycle status.">
+      <meta name="description" content="Overview of Organizor database and Keycloak realm tenancy, with links to focused tenant resolution, config, onboarding, and lifecycle guides.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -87,490 +87,112 @@
         <article data-uid="">
 <h1 id="tenancy">Tenancy</h1>
 
-<p>Organizor uses catalog-driven, database-per-tenant tenancy.</p>
-<h2 id="tenant-catalog">Tenant Catalog</h2>
-<p>The catalog database stores tenant metadata through <code>CatalogDbContext</code>. Each tenant includes:</p>
+<p>Organizor uses catalog-driven, database-per-tenant business data and realm-per-tenant identity data.</p>
+<p>The catalog database stores tenant records, plan assignment, config overrides, lifecycle status, soft-delete metadata, database name, and immutable <code>IdentityRealm</code>. Each active tenant has a dedicated PostgreSQL database named from its slug and a dedicated Keycloak realm named <code>tenant-{normalized-slug}</code>.</p>
+<p>One Keycloak deployment and database can host all of these realms. A separate Keycloak database per tenant is not required; the realm is the identity isolation boundary.</p>
+<h2 id="identity-topology">Identity Topology</h2>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Realm</th>
+<th>Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organizor control plane</td>
+<td>configured platform realm, <code>organizor-dev</code> locally</td>
+<td>Platform users, <code>organizor-admin</code>, central portal client.</td>
+</tr>
+<tr>
+<td>Tenant environment</td>
+<td><code>tenant-{slug}</code></td>
+<td>That tenant's users, credentials, sessions, roles, groups, website client, tenant-admin portal client, and API audience client.</td>
+</tr>
+<tr>
+<td>Provisioning only</td>
+<td><code>master</code></td>
+<td>Backend-only <code>organizor-provisioner</code> service account.</td>
+</tr>
+</tbody>
+</table>
+<p>PJsabbe and TVDK therefore have independent user identities. A person using both has two separate accounts and credentials; a username can be reused because Keycloak uniqueness is realm-local.</p>
+<h2 id="focused-guides">Focused Guides</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant catalog, statuses, header resolution, and database resolution</td>
+<td><a href="tenant-resolution.html">Tenant Resolution</a></td>
+</tr>
+<tr>
+<td>Tenant request issuer binding</td>
+<td><a href="tenant-authorization.html">Tenant Authorization</a></td>
+</tr>
+<tr>
+<td>Plans, overrides, effective config, and config API behavior</td>
+<td><a href="tenant-config-model.html">Tenant Config Model</a></td>
+</tr>
+<tr>
+<td>Onboarding flow, tenant website auth settings, and deletion guardrails</td>
+<td><a href="tenant-onboarding-model.html">Tenant Onboarding Model</a></td>
+</tr>
+<tr>
+<td>Platform lifecycle endpoints</td>
+<td><a href="tenant-lifecycle-operations.html">Tenant Lifecycle Operations</a></td>
+</tr>
+<tr>
+<td>Keycloak realms, clients, and local bootstrap</td>
+<td><a href="keycloak-setup.html">Keycloak Setup</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rules-of-thumb">Rules Of Thumb</h2>
 <ul>
-<li><code>Id</code>;</li>
-<li><code>Name</code>;</li>
-<li><code>Slug</code>;</li>
-<li><code>DatabaseName</code>;</li>
-<li><code>PlanKey</code>;</li>
-<li>tenant feature overrides;</li>
-<li>tenant settings overrides;</li>
-<li><code>CreatedAt</code>;</li>
-<li><code>Status</code>;</li>
-<li><code>FailureReason</code>;</li>
-<li>soft-delete metadata.</li>
+<li>Catalog operations use the catalog database.</li>
+<li>Tenant-scoped operations require <code>X-Tenant-Slug</code> unless the endpoint documents another tenant selection mechanism.</li>
+<li>Tenant-owned domain data lives in the resolved tenant database.</li>
+<li>The catalog is the source of truth for the tenant slug, database, and immutable Keycloak <code>IdentityRealm</code> mapping.</li>
+<li>Tenant realm roles and groups are local: <code>/admins</code> and <code>/users</code>, not a shared <code>/tenants/{slug}</code> hierarchy.</li>
+<li>API authentication accepts only the platform issuer or active catalog tenant issuers, then binds a tenant-scoped request to the resolved tenant realm.</li>
+<li>Tenant onboarding is the only workflow that creates catalog state, Keycloak realm access, and tenant database state together.</li>
+<li>The central portal host is a platform-realm control plane. A tenant-admin Portal host resolves its catalog-owned portal URL, tenant realm, and separate portal client before login.</li>
 </ul>
-<p>The database name convention is <code>organizor_tenant_{slug}</code>. Slugs are normalized to lowercase before they are stored or used for lookups.</p>
-<p>Normal catalog reads exclude soft-deleted tenants. Repository methods can include soft-deleted records when an internal operation explicitly asks for them.</p>
-<h2 id="tenant-plans-and-config-overrides">Tenant Plans And Config Overrides</h2>
-<p>Tenant plans are persisted in the catalog database through the <code>tenant_plans</code> table. A plan defines default feature flags and structured settings for tenants assigned to that plan.</p>
-<p>Each tenant stores:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PlanKey</code></td>
-<td>Stable key of the selected plan, such as <code>starter</code> or <code>pro</code>.</td>
-</tr>
-<tr>
-<td><code>Features</code></td>
-<td>Tenant-level feature flag overrides stored as PostgreSQL <code>jsonb</code>.</td>
-</tr>
-<tr>
-<td><code>Settings</code></td>
-<td>Tenant-level structured setting overrides stored as PostgreSQL <code>jsonb</code>.</td>
-</tr>
-</tbody>
-</table>
-<p>Each plan stores:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Key</code></td>
-<td>Stable plan identifier referenced by tenants.</td>
-</tr>
-<tr>
-<td><code>Name</code></td>
-<td>Human-readable plan name.</td>
-</tr>
-<tr>
-<td><code>Description</code></td>
-<td>Optional operator-facing description.</td>
-</tr>
-<tr>
-<td><code>Features</code></td>
-<td>Plan default feature flags stored as PostgreSQL <code>jsonb</code>.</td>
-</tr>
-<tr>
-<td><code>Settings</code></td>
-<td>Plan default structured settings stored as PostgreSQL <code>jsonb</code>.</td>
-</tr>
-<tr>
-<td><code>IsActive</code></td>
-<td>Whether the plan can be assigned.</td>
-</tr>
-<tr>
-<td><code>SortOrder</code></td>
-<td>Display ordering for future admin UI surfaces.</td>
-</tr>
-<tr>
-<td><code>CreatedAt</code></td>
-<td>UTC creation timestamp.</td>
-</tr>
-</tbody>
-</table>
-<p>The catalog migration creates a minimal <code>starter</code> plan before adding the tenant foreign key. This allows existing tenants to receive <code>PlanKey = starter</code> safely during migration. Full seed data for <code>Starter</code> and <code>Pro</code> is handled separately by the tenant-plan seeding work.</p>
-<p>Startup seeding keeps the initial plans available and idempotently updates their defaults:</p>
-<table>
-<thead>
-<tr>
-<th>Plan key</th>
-<th>Name</th>
-<th>Intent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>starter</code></td>
-<td>Starter</td>
-<td>Default plan for new tenants with conservative limits.</td>
-</tr>
-<tr>
-<td><code>pro</code></td>
-<td>Pro</td>
-<td>Larger customer plan with higher limits and self-service registration.</td>
-</tr>
-</tbody>
-</table>
-<p>Initial feature keys:</p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Starter</th>
-<th>Pro</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>camps.enabled</code></td>
-<td><code>true</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>branding.customLogo</code></td>
-<td><code>false</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>registration.selfService</code></td>
-<td><code>false</code></td>
-<td><code>true</code></td>
-</tr>
-</tbody>
-</table>
-<p>Initial settings:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Starter</th>
-<th>Pro</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>limits.maxUsers</code></td>
-<td><code>50</code></td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>limits.maxCamps</code></td>
-<td><code>3</code></td>
-<td><code>25</code></td>
-</tr>
-<tr>
-<td><code>registration.enabled</code></td>
-<td><code>false</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>registration.requiresApproval</code></td>
-<td><code>true</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>branding.theme</code></td>
-<td><code>default</code></td>
-<td><code>default</code></td>
-</tr>
-</tbody>
-</table>
-<p><code>limits.maxUsers = 0</code> means unlimited users for the assigned plan. The system default <code>limits.maxUsers = 5</code> remains a fallback only; it is not the default sold plan limit.</p>
-<p>New tenants default to <code>PlanKey = starter</code> unless a later workflow explicitly allows a different plan to be supplied.</p>
-<h2 id="effective-tenant-config">Effective Tenant Config</h2>
-<p><code>ITenantConfigResolver</code> resolves the runtime configuration a tenant should receive. The resolver is registered in DI and can resolve by tenant id or tenant slug.</p>
-<p>Effective config is built in this order:</p>
-<pre><code class="lang-text">SystemDefaults -&gt; PlanDefaults -&gt; TenantOverrides
+<h2 id="runtime-shape">Runtime Shape</h2>
+<pre><code class="lang-mermaid">flowchart LR
+    Request[&quot;HTTP request&quot;]
+    Header[&quot;X-Tenant-Slug&quot;]
+    Catalog[&quot;Catalog DB: slug, database, IdentityRealm&quot;]
+    Context[&quot;ITenantContext&quot;]
+    TenantDb[&quot;Tenant PostgreSQL DB&quot;]
+    PlatformRealm[&quot;Platform realm\norganizor-admin&quot;]
+    TenantRealm[&quot;Tenant realm\ntenant-{slug}&quot;]
+
+    Request --&gt; Header
+    Header --&gt; Catalog
+    Catalog --&gt; Context
+    Context --&gt; TenantDb
+    PlatformRealm --&gt; Request
+    TenantRealm --&gt; Request
+    Context --&gt; TenantRealm
 </code></pre>
-<p>Later layers override earlier layers.</p>
-<p>The returned model contains:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>TenantId</code></td>
-<td>Catalog tenant identifier.</td>
-</tr>
-<tr>
-<td><code>TenantSlug</code></td>
-<td>Stable tenant slug.</td>
-</tr>
-<tr>
-<td><code>PlanKey</code></td>
-<td>Assigned plan key.</td>
-</tr>
-<tr>
-<td><code>PlanName</code></td>
-<td>Assigned plan name.</td>
-</tr>
-<tr>
-<td><code>Features</code></td>
-<td>Effective flat feature flag dictionary.</td>
-</tr>
-<tr>
-<td><code>Settings</code></td>
-<td>Effective structured JSON settings object.</td>
-</tr>
-</tbody>
-</table>
-<p>Feature merge rules:</p>
+<p>For a tenant-scoped authenticated request, the API accepts the tenant token only when its issuer is the realm held in the resolved tenant context. A platform <code>organizor-admin</code> is the explicit central-support exception where the endpoint policy permits it.</p>
+<blockquote>
+<p><strong>Superseded shared-realm model:</strong> older historical material that refers to <code>/tenants/{slug}</code> Keycloak groups describes the prior implementation. New tenant onboarding uses a separate tenant realm and realm-local groups.</p>
+</blockquote>
+<h2 id="related-feature-areas">Related Feature Areas</h2>
 <ul>
-<li>feature dictionaries are flat;</li>
-<li>plan defaults override system defaults by key;</li>
-<li>tenant overrides override plan defaults by key;</li>
-<li>missing keys do not remove earlier defaults.</li>
+<li><a href="user-capabilities.html">User Capabilities</a></li>
+<li><a href="tenant-domain-api.html">Tenant Domain API</a></li>
+<li><a href="public-website-api.html">Public Website API</a></li>
+<li><a href="database-provisioning.html">Database Provisioning</a></li>
 </ul>
-<p>Settings merge rules:</p>
-<ul>
-<li>JSON objects are deep-merged;</li>
-<li>scalar values replace earlier scalar or object values;</li>
-<li>arrays replace earlier arrays and their contents are not merged;</li>
-<li>type conflicts are resolved by replacement from the later layer;</li>
-<li>empty dictionaries behave as empty layers;</li>
-<li>JSON <code>null</code> values are preserved as explicit override values when supplied by the stored JSON model.</li>
-</ul>
-<p>Failure behavior:</p>
-<table>
-<thead>
-<tr>
-<th>Condition</th>
-<th>Result error code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tenant does not exist or is soft-deleted</td>
-<td><code>TENANT_NOT_FOUND</code></td>
-</tr>
-<tr>
-<td>Assigned plan key does not resolve</td>
-<td><code>TENANT_PLAN_NOT_FOUND</code></td>
-</tr>
-<tr>
-<td>Assigned plan is inactive</td>
-<td><code>TENANT_PLAN_INACTIVE</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="tenant-config-api">Tenant Config API</h3>
-<p>Tenant-facing clients can fetch effective config for the current tenant:</p>
-<pre><code class="lang-http">GET /api/v1/tenant/config
-Authorization: Bearer &lt;tenant-admin-token&gt;
-X-Tenant-Slug: acme
-</code></pre>
-<p>The route uses the tenant resolved from <code>X-Tenant-Slug</code>; the tenant id is not accepted in the URL for this endpoint.</p>
-<p>In the portal, this route is exposed only to tenant admins at <code>/tenant/config</code>. Regular tenant users are redirected to <code>/tenant/profile</code>.</p>
-<p>Platform administrators can inspect a tenant directly:</p>
-<pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;tenantId&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
-  &quot;tenantSlug&quot;: &quot;acme&quot;,
-  &quot;planKey&quot;: &quot;pro&quot;,
-  &quot;planName&quot;: &quot;Pro&quot;,
-  &quot;features&quot;: {
-    &quot;camps.enabled&quot;: true,
-    &quot;branding.customLogo&quot;: true,
-    &quot;registration.selfService&quot;: true
-  },
-  &quot;settings&quot;: {
-    &quot;limits&quot;: {
-      &quot;maxUsers&quot;: 0,
-      &quot;maxCamps&quot;: 25
-    },
-    &quot;registration&quot;: {
-      &quot;enabled&quot;: true,
-      &quot;requiresApproval&quot;: false
-    },
-    &quot;branding&quot;: {
-      &quot;theme&quot;: &quot;default&quot;
-    }
-  }
-}
-</code></pre>
-<p>Expected error behavior:</p>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Condition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>401 Unauthorized</code></td>
-<td>Missing or invalid bearer token.</td>
-</tr>
-<tr>
-<td><code>403 Forbidden</code></td>
-<td>Authenticated caller does not satisfy the endpoint policy or tenant access check.</td>
-</tr>
-<tr>
-<td><code>400 Bad Request</code></td>
-<td>Tenant-scoped route is missing <code>X-Tenant-Slug</code>.</td>
-</tr>
-<tr>
-<td><code>404 Not Found</code></td>
-<td>Tenant, assigned plan, or active plan cannot be resolved.</td>
-</tr>
-</tbody>
-</table>
-<p>Manual verification:</p>
-<ol>
-<li>Seed <code>starter</code> and <code>pro</code> plans.</li>
-<li>Create or onboard a tenant assigned to <code>pro</code>.</li>
-<li>Add a tenant-level feature or setting override in the catalog.</li>
-<li>Call <code>GET /api/v1/tenant/config</code> with <code>X-Tenant-Slug</code> set to that tenant.</li>
-<li>Confirm the response contains system defaults, plan defaults, and tenant overrides with tenant overrides taking precedence.</li>
-</ol>
-<h2 id="tenant-user-self-registration">Tenant User Self-Registration</h2>
-<p>Anonymous tenant-user registration is exposed through:</p>
-<pre><code class="lang-http">POST /api/public/register
-</code></pre>
-<p>The request body includes the tenant slug, username, email, and password. The endpoint does not use <code>X-Tenant-Slug</code>; tenant resolution for this operation comes from the submitted <code>tenantSlug</code>.</p>
-<p>The registration workflow:</p>
-<ol>
-<li>Resolves the tenant by slug and requires it to be active.</li>
-<li>Resolves the tenant's effective config.</li>
-<li>Verifies self-service registration is enabled and the user limit is not exceeded.</li>
-<li>Creates an enabled Keycloak user.</li>
-<li>Assigns the user to <code>/tenants/{slug}/users</code>.</li>
-</ol>
-<p>The portal <code>/register</code> page is a temporary shell for manual testing. Tenant-specific static websites are expected to provide their own branded registration UI later and call the same public API contract.</p>
-<h3 id="tenant-config-management">Tenant Config Management</h3>
-<p>Platform administrators can manage plan defaults and tenant-level overrides.</p>
-<p>Plan endpoints:</p>
-<pre><code class="lang-http">GET /api/admin/tenant-plans
-GET /api/admin/tenant-plans/{planKey}
-PUT /api/admin/tenant-plans/{planKey}
-</code></pre>
-<p>Tenant override endpoints:</p>
-<pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config-overrides
-PUT /api/admin/tenants/{tenantId}/config-overrides
-</code></pre>
-<p>Plan keys are immutable. A plan update can change name, description, feature defaults, settings defaults, active state, and sort order.</p>
-<p>Tenant override updates can change:</p>
-<ul>
-<li>assigned <code>planKey</code>;</li>
-<li>tenant-level feature overrides;</li>
-<li>tenant-level settings overrides.</li>
-</ul>
-<p>Tenant override updates replace the full persisted override dictionaries. Omitted keys are removed from that tenant's overrides and inherited again from the assigned plan or system defaults.</p>
-<p>Validation rules:</p>
-<ul>
-<li>feature keys must be non-empty;</li>
-<li>setting keys must be non-empty;</li>
-<li>undefined JSON setting values are invalid;</li>
-<li>assigned plan keys must resolve to active plans;</li>
-<li>invalid config payloads return <code>TENANT_CONFIG_INVALID</code>;</li>
-<li>missing tenants return <code>TENANT_NOT_FOUND</code>;</li>
-<li>missing or inactive plans return <code>TENANT_PLAN_NOT_FOUND</code> or <code>TENANT_PLAN_INACTIVE</code>.</li>
-</ul>
-<p>Portal surfaces:</p>
-<ul>
-<li><code>/admin/plans</code> lists and edits tenant plan defaults;</li>
-<li><code>/admin/tenants</code> exposes each tenant's effective config and tenant-level override editor through the <code>Config</code> action.</li>
-</ul>
-<p>Manual verification:</p>
-<ol>
-<li>Open <code>/admin/plans</code> as an <code>organizor-admin</code>.</li>
-<li>Edit a plan feature default or setting default and save.</li>
-<li>Open <code>/admin/tenants</code>, choose a tenant assigned to that plan, and click <code>Config</code>.</li>
-<li>Confirm the effective config reflects the plan default change.</li>
-<li>Add a tenant feature or setting override and save.</li>
-<li>Confirm the effective preview refreshes and tenant override values take precedence.</li>
-</ol>
-<h2 id="tenant-statuses">Tenant Statuses</h2>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Pending</code></td>
-<td>Tenant exists in the catalog but provisioning is not complete.</td>
-</tr>
-<tr>
-<td><code>Active</code></td>
-<td>Tenant provisioning completed successfully.</td>
-</tr>
-<tr>
-<td><code>Upgrading</code></td>
-<td>Reserved for upgrade lifecycle state.</td>
-</tr>
-<tr>
-<td><code>Failed</code></td>
-<td>Provisioning failed or an unexpected onboarding error occurred.</td>
-</tr>
-<tr>
-<td><code>Deleted</code></td>
-<td>Tenant has been soft-deleted.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="tenant-resolution">Tenant Resolution</h2>
-<p><code>TenantResolutionMiddleware</code> resolves tenant context for tenant-scoped routes.</p>
-<p>It skips platform endpoints such as:</p>
-<ul>
-<li><code>/api/admin</code>;</li>
-<li><code>/api/v1/tenants</code>;</li>
-<li><code>/health</code>;</li>
-<li><code>/scalar</code>;</li>
-<li><code>/openapi</code>;</li>
-<li>root and common static paths.</li>
-</ul>
-<p>For tenant-scoped requests, clients must send:</p>
-<pre><code class="lang-http">X-Tenant-Slug: acme
-</code></pre>
-<p>The middleware loads the tenant from the catalog and stores <code>TenantInfo</code> in <code>ITenantContext</code>. If the header is missing, the response is <code>400 Bad Request</code>. If the slug does not match a catalog tenant, the response is <code>404 Not Found</code>.</p>
-<h2 id="tenant-database-resolution">Tenant Database Resolution</h2>
-<p><code>OrganizorDbContext</code> uses a fallback in-memory database when no tenant has been resolved. This supports startup, Scalar, migrations, and design-time tooling.</p>
-<p>When a tenant is resolved, <code>PerTenantDbResolver</code> loads the catalog tenant, builds a PostgreSQL connection string for that tenant database, and <code>OrganizorDbContext</code> uses that database.</p>
-<h2 id="tenant-onboarding-flow">Tenant Onboarding Flow</h2>
-<pre><code class="lang-mermaid">flowchart TD
-    A[Onboard request] --&gt; B[Create catalog tenant as Pending]
-    B --&gt; C[Store centralized website/auth settings]
-    C --&gt; D[Create Keycloak tenant groups]
-    D --&gt; E[Assign tenant roles to groups]
-    E --&gt; F[Create or update tenant public website client]
-    F --&gt; G[Create default tenant admin]
-    G --&gt; H[Create tenant database]
-    H --&gt; I[Apply tenant migrations]
-    I --&gt; J{Success?}
-    J --&gt;|Yes| K[Mark tenant Active]
-    J --&gt;|No| L[Mark tenant Failed]
-</code></pre>
-<p>The preferred full tenant creation route is <code>POST /api/admin/tenants/onboard</code>. It creates the catalog record, stores centralized website/auth settings, provisions Keycloak tenant access, creates the tenant database, applies migrations, and marks the tenant <code>Active</code> only after the workflow succeeds.</p>
-<p>Onboarding accepts tenant website/auth settings for separate tenant UI projects:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>websiteBaseUrl</code></td>
-<td>Public tenant website base URL.</td>
-</tr>
-<tr>
-<td><code>loginRedirectUris</code></td>
-<td>OIDC login callback URLs allowed by Keycloak.</td>
-</tr>
-<tr>
-<td><code>logoutRedirectUris</code></td>
-<td>Post-logout redirect URLs allowed by Keycloak.</td>
-</tr>
-<tr>
-<td><code>webOrigins</code></td>
-<td>Browser origins allowed by the Keycloak public client. Defaults to the website origin when omitted.</td>
-</tr>
-<tr>
-<td><code>registrationRedirectUrl</code></td>
-<td>Optional tenant website URL used after registration flows.</td>
-</tr>
-</tbody>
-</table>
-<p>These values are stored in tenant <code>settings</code> under <code>website</code> and <code>auth</code>, so Organizor remains the source of truth. Organizor also stores a generated <code>auth.clientId</code> using the format <code>tenant-{slug}-web</code> and provisions that Keycloak public client during onboarding.</p>
-<p>The tenant public client is configured for Authorization Code Flow with PKCE, uses the configured login redirect URIs and web origins, stores the configured post-logout redirect URIs, and disables direct access grants, implicit flow, service accounts, and client authentication. Organizor also attaches a <code>tenant-membership</code> group mapper so tenant website tokens include the <code>tenant</code> claim used by API tenant authorization.</p>
-<p><code>POST /api/v1/tenants</code> creates only the catalog record with <code>Pending</code> status. It does not create Keycloak groups or a tenant database.</p>
-<p>Hard deletion is intentionally guarded: the tenant must be soft-deleted before <code>TenantLifecycleService</code> runs the hard-delete workflow. That workflow removes the tenant Keycloak public client, removes the Keycloak tenant group and default admin user, drops the tenant database, and removes the catalog record.</p>
 
 </article>
 

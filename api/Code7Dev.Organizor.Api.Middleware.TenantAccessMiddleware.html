@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware" data-uid="Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware" class="text-break">
-Class TenantAccessMiddleware  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class TenantAccessMiddleware  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,7 +156,7 @@ Class TenantAccessMiddleware  <a class="header-action link-secondary" title="Vie
 
   <h3 id="Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_" data-uid="Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
   TenantAccessMiddleware(RequestDelegate)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -189,16 +189,16 @@ Class TenantAccessMiddleware  <a class="header-action link-secondary" title="Vie
 
   <a id="Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware_InvokeAsync_" data-uid="Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantAccessService_" data-uid="Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService)">
-  InvokeAsync(HttpContext, ITenantContext, ITenantAccessService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Middleware_TenantAccessMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_Code7Dev_Organizor_Api_Authentication_IKeycloakIssuerResolver_" data-uid="Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext,Code7Dev.Organizor.Api.Authentication.IKeycloakIssuerResolver)">
+  InvokeAsync(HttpContext, ITenantContext, IKeycloakIssuerResolver)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task InvokeAsync(HttpContext context, ITenantContext tenantContext, ITenantAccessService tenantAccessService)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task InvokeAsync(HttpContext context, ITenantContext tenantContext, IKeycloakIssuerResolver issuerResolver)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -207,7 +207,7 @@ Class TenantAccessMiddleware  <a class="header-action link-secondary" title="Vie
     <dd></dd>
     <dt><code>tenantContext</code> <a class="xref" href="Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html">ITenantContext</a></dt>
     <dd></dd>
-    <dt><code>tenantAccessService</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html">ITenantAccessService</a></dt>
+    <dt><code>issuerResolver</code> <a class="xref" href="Code7Dev.Organizor.Api.Authentication.IKeycloakIssuerResolver.html">IKeycloakIssuerResolver</a></dt>
     <dd></dd>
   </dl>
 
@@ -231,7 +231,7 @@ Class TenantAccessMiddleware  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Middleware/TenantAccessMiddleware.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

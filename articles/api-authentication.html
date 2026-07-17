@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="API Authentication | Organizor ">
       
-      <meta name="description" content="Authentication behavior for Keycloak-issued JWT bearer tokens in the Organizor API.">
+      <meta name="description" content="Multi-realm Keycloak JWT authentication behavior for the Organizor API.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,65 +88,37 @@
 <h1 id="api-authentication">API Authentication</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This document explains how the Organizor API authenticates requests using Keycloak-issued JWT tokens.</p>
+<p>The API accepts Keycloak JWTs from a controlled set of realms, not from arbitrary OpenID Connect issuers:</p>
+<ul>
+<li>the configured platform realm (<code>organizor-dev</code> locally);</li>
+<li>the realm mapped to an active catalog tenant, such as <code>tenant-pjsabbe</code> or <code>tenant-tvdk</code>.</li>
+</ul>
+<p>The API checks the catalog mapping before fetching OpenID metadata or signing keys. A token cannot make the API contact an arbitrary issuer URL.</p>
 <h2 id="jwt-validation">JWT Validation</h2>
-<p>The API validates tokens using the Keycloak realm:</p>
+<p>Every accepted token must be:</p>
 <ul>
-<li>Authority: <code>https://localhost:8443/realms/organizor-dev</code></li>
-<li>Audience validation: disabled for the current development setup</li>
-<li>Token type: Bearer</li>
+<li>signed by the allow-listed realm's keys;</li>
+<li>issued by that exact realm;</li>
+<li>unexpired;</li>
+<li>addressed to the <code>organizor-api</code> audience.</li>
 </ul>
-<p>The authentication middleware:</p>
+<p>OpenID metadata and signing keys are cached per trusted issuer. The active tenant realm mapping is checked on authentication so a soft-deleted tenant's already-issued token is rejected immediately by the API.</p>
+<h2 id="roles-and-issuers">Roles And Issuers</h2>
 <ul>
-<li>validates the token signature;</li>
-<li>validates the issuer;</li>
-<li>validates token expiration;</li>
-<li>populates <code>HttpContext.User</code>.</li>
+<li><code>organizor-admin</code> is a platform role. It grants platform administration only when issued by the platform realm.</li>
+<li><code>tenant-admin</code> and <code>tenant-user</code> are tenant-realm roles.</li>
+<li>A tenant realm cannot gain platform access merely by defining a role named <code>organizor-admin</code>.</li>
 </ul>
-<p>Audience validation is intentionally disabled in code while the Keycloak client and token shape are still being finalized. Once the API has a stable audience claim, enable audience validation and document the expected value here.</p>
-<h2 id="authentication-flow">Authentication Flow</h2>
-<ol>
-<li>Frontend logs in via Keycloak.</li>
-<li>Keycloak issues a JWT.</li>
-<li>Frontend sends <code>Authorization: Bearer &lt;token&gt;</code>.</li>
-<li>Frontend also sends <code>X-Tenant-Slug: acme</code> for tenant-scoped routes.</li>
-<li>API validates the JWT.</li>
-<li><code>[Authorize]</code> attributes enforce authentication where applied.</li>
-</ol>
+<p>The platform portal uses a single platform-realm login. The backend master-realm service account is never used as a browser login.</p>
 <h2 id="service-accounts">Service Accounts</h2>
-<p>The <code>organizor-api</code> client can use the <code>client_credentials</code> flow for internal API-to-API communication. Service account tokens are identified by the <code>client_id</code> claim:</p>
-<pre><code class="lang-json">&quot;client_id&quot;: &quot;organizor-api&quot;
-</code></pre>
-<p>Service accounts bypass tenant access checks.</p>
-<h2 id="whoami-endpoint">WhoAmI Endpoint</h2>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;user&quot;: &quot;admin@acme.dev&quot;,
-  &quot;tenant&quot;: null,
-  &quot;tenantClaims&quot;: [
-    &quot;/tenants/acme/admins&quot;
-  ],
-  &quot;roles&quot;: [
-    &quot;tenant-admin&quot;,
-    &quot;tenant-user&quot;
-  ],
-  &quot;claims&quot;: [
-    { &quot;type&quot;: &quot;sub&quot;, &quot;value&quot;: &quot;...&quot; },
-    { &quot;type&quot;: &quot;tenant&quot;, &quot;value&quot;: &quot;/tenants/acme/admins&quot; },
-    { &quot;type&quot;: &quot;role&quot;, &quot;value&quot;: &quot;tenant-admin&quot; }
-  ]
-}
-</code></pre>
+<p>The master-realm <code>organizor-provisioner</code> client is used only by the backend to call Keycloak Admin REST endpoints. Its secret must never be sent to a browser.</p>
+<p>An internal <code>organizor-api</code> service account does not bypass issuer binding by itself. It must satisfy the same issuer-aware route policy as any other caller; cross-tenant support remains restricted to a platform-realm <code>organizor-admin</code> identity.</p>
 <h2 id="error-codes">Error Codes</h2>
 <ul>
-<li>401 Unauthorized -&gt; Missing or invalid token.</li>
-<li>403 Forbidden -&gt; Token is valid, but the user is not allowed.</li>
-<li>400 Bad Request -&gt; Missing or invalid tenant header on tenant-scoped routes.</li>
+<li><code>401 Unauthorized</code>: missing, expired, invalidly signed, unknown-issuer, or wrong-audience token.</li>
+<li><code>403 Forbidden</code>: valid token from the wrong tenant realm or without the required role.</li>
+<li><code>400 Bad Request</code>: missing or invalid tenant header on a tenant-scoped route.</li>
 </ul>
-<h2 id="test-request">Test Request</h2>
-<pre><code class="lang-http">GET https://localhost:7184/api/auth/whoami
-Authorization: Bearer &lt;token&gt;
-</code></pre>
 
 </article>
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Portal Tenant Workflows | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Portal Tenant Workflows | Organizor ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/portal-tenant-workflows.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="portal-tenant-workflows">Portal Tenant Workflows</h1>
+
+<p>Tenant business APIs require a token from the resolved tenant's own Keycloak realm, the realm-local <code>tenant-admin</code> role, and <code>X-Tenant-Slug</code> where the route is tenant-scoped. The API validates issuer-to-tenant binding; a <code>tenant</code> claim or group path is not that boundary.</p>
+<p>The central Portal host is configured only for the platform realm. The same Portal application serves <code>TenantLayout</code> through a tenant's configured portal host, which resolves a tenant-specific runtime OIDC contract before sign-in. Unless a section explicitly says <strong>Platform Administration</strong>, the workflows below describe that supported tenant-local portal surface and its tenant API contracts.</p>
+<blockquote>
+<p><strong>Tenant boundary:</strong> a tenant portal sends its resolved <code>X-Tenant-Slug</code> for tenant-scoped API calls, but the API authorizes it by the token issuer mapped to the catalog tenant. The old shared-realm automatic-header model must not be used.</p>
+</blockquote>
+<p>The tenant shell groups navigation into Overview, Operations, Directory, and Settings sections. Operations contains activity setup and registration review. Directory contains families and people, organizations, and users. Settings contains tenant configuration and the tenant-admin profile.</p>
+<h2 id="shared-list-and-detail-pattern">Shared List And Detail Pattern</h2>
+<p>Tenant-admin list pages are list-first: the directory or grid remains readable while selecting a record opens a right-side off-canvas drawer. Selected-record editing and related workflows stay inside that drawer rather than stacking another modal over it. A focused page-level create modal remains appropriate when no record has been selected.</p>
+<p>When a list row has several secondary actions, the portal groups them in a text-labelled three-dot overflow menu. Activity setup demonstrates both parts of this pattern. People demonstrates the drawer workflow; its current directory has no secondary row actions that need an overflow menu.</p>
+<p>When a list page has four summary metrics, it uses the shared horizontal icon KPI bar. The bar collapses responsively instead of presenting four separate metric cards.</p>
+<h2 id="platform-administration">Platform Administration</h2>
+<p>Platform administrators use <code>/admin</code> as the operational overview for tenant lifecycle, plan availability, catalog health, and recent tenant records. Its four summary metrics use the same horizontal icon KPI bar as the tenant-admin surfaces.</p>
+<p><code>/admin/tenants</code> is list-first: the catalog stays full-width for scanning and filtering, onboarding opens in a focused page-level modal, and selecting a tenant opens a right-side detail drawer. The drawer retains the existing effective configuration view, tenant overrides, upgrade, tenant-user navigation, and lifecycle actions. Secondary row actions are grouped in the existing three-dot action menu; soft and hard deletion keep explicit confirmations.</p>
+<p><code>/admin/plans</code> keeps plan defaults in the existing tabbed editor and makes the configuration order explicit: system defaults, plan defaults, then optional tenant overrides. <code>/admin/users?tenantId={id}</code> remains scoped to one active tenant and uses the same KPI, create-modal, and selected-user drawer pattern; it is not a global user directory.</p>
+<h2 id="dashboard">Dashboard</h2>
+<p>The <code>/tenant</code> dashboard is a read-only operational overview for tenant admins. It summarizes activity state, upcoming activities, tracked registrations, payment follow-up, capacity usage, people, and active organizations.</p>
+<p>The dashboard uses a compact KPI bar, action bar, and tab-style sections for overview, launch readiness, and activity operations. The overview keeps needs-attention as the primary panel, with upcoming activities and recent registrations beside it. The dashboard also shows tenant context, local verification status, last refreshed time, and remembers the last selected tab in browser storage. During first load it shows skeleton placeholders, and when the Organizor API is unreachable it shows one connection state instead of misleading zero metrics. If the tenant public website URL is discoverable from the public auth contract, the action bar includes a public-site link. The launch readiness checklist groups checks into tenant setup, activity setup, registration setup, communication, and parent access. It checks whether the tenant has basic configuration, SMTP settings, activity types, active upcoming activities, registration setup, public activity page content, validation rules, confirmation templates, and parent-managed registration prerequisites. Repeated dashboard rows use small reusable components for consistency. The checklist links each item to the existing management page and is operational guidance only; it is not a persisted launch approval.</p>
+<p>The first dashboard slice reuses existing tenant-scoped portal services. Registration metrics are loaded through bounded per-activity calls for current and upcoming activities, so very large tenants may see a scoped summary until a dedicated aggregation API is accepted.</p>
+<p>If one dashboard source is unavailable, the page renders available sections and shows a partial-data warning.</p>
+<h2 id="tenant-user-management">Tenant User Management</h2>
+<p>Tenant administrators can open <code>/tenant/users</code> to manage users for their own tenant. The shared horizontal icon KPI row summarizes total, enabled, tenant-admin, and required-action counts. The page is list-first: it supports client-side search across loaded users, visibly distinguishes roles, sign-in state, and required identity-provider actions, and opens a selected user in a right-side drawer. Create user opens in a focused modal with identity, sign-in setup, and tenant-access sections.</p>
+<p>The selected-user drawer keeps enable/disable, role-change, and removal actions close to the record they affect. Removal disables the user's realm-local identity and removes its realm-local role memberships; it cannot delete or disable any identity in another tenant realm. Platform administrators use the same interaction pattern from <code>/admin/users?tenantId={id}</code>, where the selected active tenant remains visible as the scope.</p>
+<p>Regular <code>tenant-user</code> accounts do not see either management route.</p>
+<h2 id="people">People</h2>
+<p>Tenant administrators can open <code>/tenant/people</code> to create and edit tenant-local people and manage directional relationships between them. Relationship direction is from the responsible/contact person to the child or related person.</p>
+<p>The page is directory-first. The default Directory tab is the complete canonical list of people. A separate Family tab shows current active family links while keeping each person on one row: responsible adults and contacts, people they manage, relationship type, primary-contact, communication, and registration-management signals remain together. This avoids duplicating a participant under several adults or implying ownership. People with no active family link remain visible in both views. Selecting a row or a linked-person name opens the existing off-canvas right-side detail drawer.</p>
+<p>The Family tab loads its people and active relationship links from the tenant-admin <code>GET /api/v1/people/family-directory</code> snapshot. It replaces the previous one-relationship-request-per-person summary preload. Inactive and archived relationship history remains in the selected person's drawer management workflow rather than being presented as a current family connection.</p>
+<p>The drawer has overview, relationship, management, and detail tabs for portal login state, responsible adults, managed children, and relationship flags for primary contact, registration management, and communication receipt. Page-level person creation uses a focused modal. Selected-person edit, portal login connect/disconnect, and relationship editing stay inside the drawer as workflow modes so admins do not stack competing overlays.</p>
+<p>The people page also lets tenant administrators connect or disconnect the selected person from an existing tenant user login. Parent-managed registration resolves the signed-in parent or guardian through this user-person link.</p>
+<p>The page exposes relationship flags for primary contact, registration management, and communication receipt. Only one active primary-contact relationship can exist for a child. Duplicate active relationships with the same source person, target person, and relationship type are rejected.</p>
+<h2 id="parent-managed-registration">Parent-Managed Registration</h2>
+<p>Parent-managed registration is not a portal workflow. Regular tenant users use tenant-specific public UIs such as TVDK for profile, family dashboard, managed-child registration, and child registration cancellation.</p>
+<p>Those clients use tenant-user read-only activity endpoints under <code>/api/v1/me</code> instead of tenant-admin activity setup endpoints. The child-registration request submits the child person id plus the activity-specific field payload to the backend. The backend enforces the same validation rules used by public registration and rejects unmanaged child selection.</p>
+<h2 id="organizations">Organizations</h2>
+<p>Tenant administrators can open <code>/tenant/organizations</code> to list, create, and edit tenant-local organizations. The shared horizontal icon KPI row summarizes total, active, inactive, and archived records. The directory remains full-width while text, type, and status filters help distinguish those records; archived records remain visible by default. Selecting an organization opens a right-side overview/edit drawer, while page-level creation opens a focused modal.</p>
+<p>The portal exposes name, type, status, contact fields, optional KBO number and bank account, and structured address fields. The edit workflow groups identity, contact, address, and administrative details. New organization forms default country to Belgium and create organizations as active. Status changes use the existing update workflow and stay with the selected organization.</p>
+<h2 id="activity-setup">Activity Setup</h2>
+<p>Tenant administrators can open <code>/tenant/activities</code> to manage tenant-local activity setup. The page has <code>Activity Types</code> and <code>Activities</code> tabs.</p>
+<p>The activity type tab supports list, create, edit, activate, and deactivate actions. Create and edit open in a right-side off-canvas editor so the configured activity type list stays full-width. Tenant admins can configure registration field definitions, enable fiscal or healthcare document capabilities on existing activity types, and configure default registration confirmation email templates.</p>
+<p>The activities tab supports list, create, edit, activate, and deactivate actions. Create and edit open in a right-side off-canvas editor so the configured activity list stays full-width. Activities can reference an activity type and optionally a tenant-local organization. Existing activities can define a registration confirmation email override or delete that override to fall back to the activity type default.</p>
+<p>Secondary activity type and activity row actions are grouped in a three-dot menu; selecting the row opens the drawer, so the list does not duplicate Edit as a visible row action.</p>
+<p>The public activity page editor can start from the backend-provided standard activity page template. Applying the template replaces the activity public detail content with an editable copy; tenant admins can then adjust the hero, reorder blocks, or add/remove sections for that activity. The editor also exposes explicit quick-add controls for the TVDK-rendered sections: practical information, day schedule, FAQ, testimonial, and gallery.</p>
+<p>Registration confirmation templates open in a dedicated reusable mail-template editor page from the activity type and activity rows. The activity setup drawers do not duplicate those template fields. The editor uses a WYSIWYG HTML body field, plain-text body, subject, recipient mode, culture, enable flag, sender name override, and reply-to email.</p>
+<p>Registration validation rules now open in a dedicated reusable editor page from the activity type and activity rows. The page is scope-based and concise: it edits backend-enforced rules for the current activity type or activity, shows the effective rule set, and keeps the rule catalog limited to the supported core targets.
+For regex rules, the editor offers preset helpers for common formats such as digits-only and email-like values, while still allowing a custom pattern when needed.</p>
+<h2 id="registration-management">Registration Management</h2>
+<p>Tenant administrators can open <code>/tenant/registrations</code> to review registrations for a selected activity. The default queue leads with submitted registrations needing a status decision. Separate queue filters expose payment follow-up (non-cancelled unpaid or pending registrations), confirmed registrations, cancelled registrations, or the complete activity list. Status, payment state, participant, payment reference, and registration id filters remain activity-scoped so the selected activity context stays visible.</p>
+<p>The page is list-first. Selecting a registration opens an off-canvas right-side drawer with overview, submitted core data, custom field values, status and manual-payment actions, payment metadata, available audit timestamps, and document actions. Tenant admins can confirm or cancel registrations. They can also mark non-cancelled registrations as paid with an optional payment reference, or mark them unpaid. Cancelled registrations reject later confirmation and payment updates.</p>
+<p>Low-frequency document actions are also available through a text-labelled three-dot overflow menu in the list. Fiscal and healthcare attestation downloads return PDF files. Send actions use tenant SMTP settings to email the generated PDF to the parent or guardian email when the selected registration, activity type capability, activity, person, relationship, and organization data are eligible.</p>
+<p>Public participant registration submission is API-only in this slice through <code>POST /api/v1/activities/{activityId}/public-registrations</code>.</p>
+<p>Registration confirmation preview, test-send, resend, and delivery history are exposed through backend tenant-admin APIs. Dedicated portal controls for those registration-level actions are deferred.</p>
+<h2 id="tenant-config">Tenant Config</h2>
+<p>Tenant admins can open <code>/tenant/config</code>. The page calls <code>GET /api/v1/tenant/config</code> through <code>TenantConfigService</code>.</p>
+<p>The default view is operational: it summarizes the resolved plan, enabled feature flags, registration behavior, public website/auth readiness, and SMTP readiness. Tenant mail setup and test delivery remain editable through the existing tenant settings endpoints. Raw effective settings JSON is available from the Diagnostics tab for troubleshooting.</p>
+<p>Regular <code>tenant-user</code> accounts should not see tenant configuration in the portal.</p>
+<h2 id="tenant-profile">Tenant Profile</h2>
+<p>Tenant admins can open <code>/tenant/profile</code>. A persistent signed-in account summary keeps display name, email, resolved tenant, and access context visible. Profile, Security, and Diagnostics tabs separate routine name updates, Keycloak-backed account actions, and troubleshooting claims.</p>
+<p>The Profile tab uses <code>PUT /api/v1/tenant/account-actions/profile</code> to update only Keycloak <code>firstName</code> and <code>lastName</code>; all other identity fields remain read-only. The Security tab explains that Keycloak owns credentials, makes password change available through <code>POST /api/v1/tenant/account-actions/change-password</code>, and keeps unavailable future security controls visibly disabled.</p>
+<p>The portal does not collect new passwords and does not expose a direct Keycloak account-console link. Tenant website return navigation remains in the shell account panel. Regular tenant users use tenant-specific public UIs for their own profile and account-action UX. These self-service actions operate only on the caller's own realm-local identity; platform support uses <code>/api/admin/tenants/{tenantId}/users</code> for another user's management.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/portal-tenant-workflows.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

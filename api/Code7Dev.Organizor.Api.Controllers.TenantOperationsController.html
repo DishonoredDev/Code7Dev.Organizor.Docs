@@ -728,7 +728,7 @@ public class TenantOperationsController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_HardDelete_System_Guid_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.HardDelete(System.Guid)">
   HardDelete(Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Permanently deletes a previously soft-deleted tenant and drops its tenant database.</p>
@@ -768,7 +768,7 @@ public Task&lt;IActionResult&gt; HardDelete(Guid id)</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Onboard_Code7Dev_Organizor_Api_Mappers_DTO_TenantOnboardingRequestDto_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Onboard(Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto)">
   Onboard(TenantOnboardingRequestDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Onboards a tenant by creating the catalog record, creating the tenant database, and applying migrations.</p>
@@ -790,7 +790,8 @@ public Task&lt;IActionResult&gt; Onboard(TenantOnboardingRequestDto request)</co
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
-    <dd><p>The onboarded tenant metadata when provisioning completes.</p>
+    <dd><p>The onboarded tenant metadata and, only when its default tenant administrator was newly created,
+one-time initial administrator credentials.</p>
 </dd>
   </dl>
 
@@ -808,7 +809,7 @@ public Task&lt;IActionResult&gt; Onboard(TenantOnboardingRequestDto request)</co
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_SoftDelete_System_Guid_Code7Dev_Organizor_Api_Mappers_DTO_TenantSoftDeleteRequest_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.SoftDelete(System.Guid,Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest)">
   SoftDelete(Guid, TenantSoftDeleteRequest)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Soft-deletes a tenant catalog record without dropping the tenant database.</p>
@@ -851,7 +852,7 @@ public Task&lt;IActionResult&gt; SoftDelete(Guid id, TenantSoftDeleteRequest req
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantOperationsController_Upgrade_System_Guid_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantOperationsController.Upgrade(System.Guid,System.Threading.CancellationToken)">
   Upgrade(Guid, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantOperationsController.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies pending migrations to an existing tenant database.</p>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Keycloak Groups And Users | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Keycloak Groups And Users | Organizor ">
+      
+      <meta name="description" content="Tenant-local Keycloak realms, groups, roles, and identity lifecycle.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-groups-users.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="keycloak-groups-and-users">Keycloak Groups And Users</h1>
+
+<p>Each tenant has its own Keycloak realm. Tenant identities do not use the old shared <code>/tenants/{slug}</code> group hierarchy.</p>
+<p>For tenant <code>acme</code>, onboarding creates realm <code>tenant-acme</code> with:</p>
+<ul>
+<li>realm roles <code>tenant-admin</code> and <code>tenant-user</code>;</li>
+<li>group <code>/admins</code> mapped to <code>tenant-admin</code>;</li>
+<li>group <code>/users</code> mapped to <code>tenant-user</code>;</li>
+<li>tenant website client <code>tenant-acme-web</code>;</li>
+<li>an internal <code>organizor-api</code> audience client;</li>
+<li>after successful database and included-module provisioning, default tenant admin <code>acme-admin</code> in <code>/admins</code>.</li>
+</ul>
+<p>The same username or email can be created in <code>tenant-pjsabbe</code> and <code>tenant-tvdk</code> because Keycloak uniqueness is realm-local. Their user IDs, credentials, sessions, and role assignments are independent.</p>
+<h2 id="platform-administrators">Platform Administrators</h2>
+<p>Platform administrators live only in the configured platform realm (<code>organizor-dev</code> locally) and carry <code>organizor-admin</code>. They manage tenant realms through the Organizor portal and API; they do not sign into each tenant realm or the Keycloak <code>master</code> realm.</p>
+<h2 id="tenant-claims-and-roles">Tenant Claims And Roles</h2>
+<p>Tenant website clients emit:</p>
+<ul>
+<li>realm roles so tenant users receive <code>tenant-user</code> or <code>tenant-admin</code>;</li>
+<li><code>aud: organizor-api</code> for API token validation;</li>
+<li>a direct <code>tenant</code> claim containing the tenant slug for client compatibility.</li>
+</ul>
+<p>The API does not use the <code>tenant</code> claim as its isolation boundary. It binds each tenant-scoped request to the JWT issuer and the catalog-owned tenant realm.</p>
+<h2 id="lifecycle">Lifecycle</h2>
+<ul>
+<li>Soft delete disables the tenant realm and removes it from API token issuer allow-listing.</li>
+<li>Hard delete removes the complete tenant realm, including all users, sessions, groups, roles, and clients, before deleting the tenant database and catalog record.</li>
+<li>Removing one tenant user affects only that realm-local identity. It cannot remove or disable a user in another tenant realm.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-groups-users.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

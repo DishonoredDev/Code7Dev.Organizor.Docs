@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tenant Onboarding Model | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tenant Onboarding Model | Organizor ">
+      
+      <meta name="description" content="Tenant onboarding model, tenant-realm identity setup, website auth settings, and deletion guardrails.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-onboarding-model.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tenant-onboarding-model">Tenant Onboarding Model</h1>
+
+<p>The preferred full tenant creation route is:</p>
+<pre><code class="lang-http">POST /api/admin/tenants/onboard
+</code></pre>
+<p>It creates the catalog record, assigns an immutable tenant Keycloak realm, stores centralized website/auth settings and a tenant-admin portal base URL, provisions tenant identity resources, creates the tenant database, applies migrations, installs the selected plan's included modules, and marks the tenant <code>Active</code> only after the workflow succeeds.</p>
+<h2 id="catalog-identity-mapping">Catalog Identity Mapping</h2>
+<p>Every tenant owns one Keycloak realm. The catalog assigns <code>Tenant.IdentityRealm</code> deterministically as <code>tenant-{normalized-slug}</code> before the tenant is persisted:</p>
+<table>
+<thead>
+<tr>
+<th>Tenant</th>
+<th>Slug</th>
+<th>Identity realm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PJsabbe</td>
+<td><code>pjsabbe</code></td>
+<td><code>tenant-pjsabbe</code></td>
+</tr>
+<tr>
+<td>TVDK</td>
+<td><code>tvdk</code></td>
+<td><code>tenant-tvdk</code></td>
+</tr>
+<tr>
+<td>Acme</td>
+<td><code>acme</code></td>
+<td><code>tenant-acme</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>IdentityRealm</code> is a required, unique, immutable catalog field. <code>AdminPortalBaseUrl</code> is a nullable, unique catalog field: catalog-only creation may leave it empty, but full onboarding requires it. Neither is an editable tenant JSON setting or inferred from a token or HTTP request.</p>
+<h2 id="flow">Flow</h2>
+<pre><code class="lang-mermaid">flowchart TD
+    A[Onboard request] --&gt; B[Create catalog tenant as Pending with IdentityRealm]
+    B --&gt; C[Store centralized website/auth settings]
+    C --&gt; D[Create or reuse tenant Keycloak realm]
+    D --&gt; E[Create realm-local roles and /admins,/users groups]
+    E --&gt; F[Create API-audience, tenant website, and tenant portal clients]
+    F --&gt; G[Create tenant database]
+    G --&gt; H[Apply tenant migrations]
+    H --&gt; I{Provisioning successful?}
+    I --&gt;|Yes| J[Mark tenant Active]
+    J --&gt; K[Install included modules]
+    K --&gt; L{Every included module enabled?}
+    L --&gt;|Yes| M[Create default realm-local tenant admin]
+    M --&gt; N[Onboarding succeeds]
+    L --&gt;|No| O[Mark tenant Failed: recoverable module failure]
+    O --&gt; P[Admin repairs and retries included modules]
+    P --&gt; L
+    I --&gt;|No| Q[Mark tenant Failed]
+</code></pre>
+<p>The Keycloak provisioning token is obtained by the backend-only <code>organizor-provisioner</code> service account in the <code>master</code> realm. Platform administrators use their normal platform-realm login and do not receive Keycloak <code>master</code> credentials.</p>
+<h2 id="tenant-realm-contents">Tenant Realm Contents</h2>
+<p>For tenant <code>acme</code>, onboarding creates or reuses <code>tenant-acme</code> and ensures:</p>
+<ul>
+<li>realm roles <code>tenant-admin</code> and <code>tenant-user</code>;</li>
+<li>realm-local <code>/admins</code> and <code>/users</code> groups, mapped to those roles;</li>
+<li>the internal <code>organizor-api</code> audience client;</li>
+<li>public PKCE client <code>tenant-acme-web</code>;</li>
+<li>public PKCE client <code>tenant-acme-portal</code>;</li>
+<li>default tenant admin <code>acme-admin</code> in <code>/admins</code>.</li>
+</ul>
+<p>There is no <code>/tenants/acme/...</code> group hierarchy. The realm itself is the tenant boundary. The same username or email can therefore be used independently in different tenant realms.</p>
+<h2 id="initial-tenant-administrator-credential">Initial Tenant Administrator Credential</h2>
+<p>The default administrator is created only after tenant database provisioning and included-module installation both succeed. When it is newly created, the successful <code>POST /api/admin/tenants/onboard</code> response includes its username and temporary password once, with <code>Cache-Control: no-store</code>. The portal shows a copyable one-time notice. The credential is never stored in the catalog, tenant settings, logs, or tenant list responses; dismissing the notice removes it from the portal's in-memory page state.</p>
+<p>Creating or reusing an existing default administrator never resets its password and does not return a credential. If the response is lost after the Keycloak account was created, the password cannot be recovered. Likewise, a tenant whose module installation initially failed may later recover without an automatically issued default administrator. In either case, create a replacement realm-local <code>tenant-admin</code> through <code>POST /api/admin/tenants/{tenantId}/users</code> with a temporary password and required <code>UPDATE_PASSWORD</code> action. If the tenant user limit is one, remove the stranded default account before adding the replacement. This API recovery path also works while the tenant is <code>Failed</code>; the portal user-management screen selects active tenants only.</p>
+<h2 id="plan-selection-and-included-modules">Plan Selection And Included Modules</h2>
+<p>The onboarding request accepts an optional <code>planKey</code>. When no plan key is supplied, Organizor assigns <code>starter</code>. The selected plan must be active.</p>
+<p>After provisioning succeeds, Organizor installs every module included by the selected plan in dependency order. Optional plan modules are not installed automatically; an Organizor administrator can add them later from the tenant module control plane. If included-module installation fails, the tenant is marked <code>Failed</code> with a recoverable module failure; only its included modules can be repaired, installed, re-enabled, or retried until the whole included bundle is enabled. Failed provisioning leaves the tenant inactive and its modules unavailable.</p>
+<p>The <code>starter</code> plan includes <code>activities</code>; the <code>pro</code> plan includes the full PJsabbe/TVDK family-activity bundle. Plan entitlement and tenant installation are separate from legacy <code>features</code> and <code>settings</code> JSON. See <a href="tenant-modules.html">Tenant Modules</a> for the catalog and operator workflow.</p>
+<h2 id="website-and-auth-settings">Website And Auth Settings</h2>
+<p>Onboarding accepts tenant website/auth settings for separate tenant UI projects:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>websiteBaseUrl</code></td>
+<td>Public tenant website base URL.</td>
+</tr>
+<tr>
+<td><code>loginRedirectUris</code></td>
+<td>OIDC login callback URLs allowed by the tenant website client.</td>
+</tr>
+<tr>
+<td><code>logoutRedirectUris</code></td>
+<td>Post-logout redirect URLs allowed by the tenant website client.</td>
+</tr>
+<tr>
+<td><code>webOrigins</code></td>
+<td>Browser origins allowed by the tenant website client. Defaults to the website origin when omitted.</td>
+</tr>
+<tr>
+<td><code>registrationRedirectUrl</code></td>
+<td>Optional tenant website URL used after registration flows.</td>
+</tr>
+</tbody>
+</table>
+<p>In the platform onboarding dialog, entering a valid <code>websiteBaseUrl</code> suggests editable values for the four related fields: <code>{base}/authentication/login-callback</code>, <code>{base}</code>, the website origin, and <code>{base}/register/complete</code>. The base path is retained in callback URLs, while the web origin contains only scheme, host, and optional port. A later base URL change updates only fields that still use a portal suggestion, so an operator's manual customization is preserved. <strong>Reset suggested values</strong> deliberately reapplies all four values from the current base URL.</p>
+<p>These values are stored in tenant <code>settings</code> under <code>website</code> and <code>auth</code>. Organizor also stores a generated <code>auth.clientId</code> using <code>tenant-{slug}-web</code> and provisions that public client in the tenant's own realm. The realm identifier itself remains the immutable relational <code>Tenant.IdentityRealm</code>, not JSON configuration.</p>
+<p>The tenant public client uses Authorization Code Flow with PKCE. It emits realm roles, <code>aud: organizor-api</code>, and a direct <code>tenant</code> claim containing the tenant slug for client compatibility. The API does not use the <code>tenant</code> claim to decide tenant access; it binds the JWT issuer to the catalog identity realm.</p>
+<p>Tenant websites must obtain their authority and client id from <code>GET /api/public/tenants/{slug}/auth</code>.</p>
+<h2 id="tenant-admin-portal-url">Tenant Admin Portal URL</h2>
+<p>Full onboarding also requires <code>tenantAdminPortalBaseUrl</code>, for example <code>https://localhost:7022</code> for local TVDK administration. It is a normalized, unique HTTPS base URL (with the existing local HTTP allowance), stored relationally as <code>AdminPortalBaseUrl</code> rather than in tenant JSON settings. The platform onboarding form keeps it visibly separate from the public website base URL and does not infer a production admin host from that website.</p>
+<p>The URL provisions a separate <code>tenant-{slug}-portal</code> client in the tenant's own realm. Its only redirect URI is <code>{portalBaseUrl}/authentication/login-callback</code>; its post-logout redirect URI is <code>{portalBaseUrl}</code>; and its web origin is the portal URL origin. The client uses Authorization Code Flow with PKCE and the same realm-role, <code>organizor-api</code> audience, and direct tenant-claim mappers as the website client.</p>
+<p>At the tenant portal host, the Portal loads <code>GET /api/public/tenant-portals/auth?baseUrl=...</code> before OIDC startup. That contract returns public configuration only and must match the actual host exactly. The central platform host remains fixed to the platform realm and never chooses a tenant realm from a user input.</p>
+<h2 id="catalog-only-creation">Catalog-Only Creation</h2>
+<p><code>POST /api/v1/tenants</code> creates only the catalog record with <code>Pending</code> status and assigns its deterministic <code>IdentityRealm</code>. It does not create the Keycloak realm, users, groups, clients, or tenant database.</p>
+<h2 id="deletion-lifecycle">Deletion Lifecycle</h2>
+<p>Soft deletion first disables the tenant realm. If Keycloak cannot disable it, Organizor keeps the catalog tenant active and returns <code>TENANT_IDENTITY_PROVIDER_FAILED</code>. Once soft-deleted, the tenant is removed from the API issuer allow-list, so previously issued tenant tokens are rejected immediately.</p>
+<p>Hard deletion is intentionally guarded: the tenant must already be soft-deleted. The workflow executes in this order:</p>
+<ol>
+<li>Delete the complete tenant realm, including users, sessions, roles, groups, and clients.</li>
+<li>Drop the tenant database.</li>
+<li>Remove the catalog record.</li>
+</ol>
+<p>A missing tenant realm is treated as already deleted so a partial cleanup can be retried. If realm deletion fails, database and catalog deletion do not run and the operation returns <code>TENANT_IDENTITY_PROVIDER_FAILED</code>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-onboarding-model.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

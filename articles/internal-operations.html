@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Internal Operations | Organizor ">
       
-      <meta name="description" content="Internal tenant operations for onboarding, tenant database upgrades, tenant config, tenant plans, soft deletion, hard deletion, documentation deployment, and sitemap output.">
+      <meta name="description" content="Overview of platform-control-plane tenant operations, including tenant realm lifecycle, configuration, plans, scheduled jobs, and documentation deployment.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -87,221 +87,97 @@
         <article data-uid="">
 <h1 id="internal-operations">Internal Operations</h1>
 
-<p>This page documents internal routes and workflows for developers and operators.</p>
-<h2 id="onboard-tenant">Onboard Tenant</h2>
-<pre><code class="lang-http">POST /api/admin/tenants/onboard
-Authorization: Bearer &lt;organizor-admin-token&gt;
-Content-Type: application/json
-
-{
-  &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;,
-  &quot;authSettings&quot;: {
-    &quot;websiteBaseUrl&quot;: &quot;https://acme.example.com&quot;,
-    &quot;loginRedirectUris&quot;: [
-      &quot;https://acme.example.com/authentication/login-callback&quot;
-    ],
-    &quot;logoutRedirectUris&quot;: [
-      &quot;https://acme.example.com&quot;
-    ],
-    &quot;webOrigins&quot;: [
-      &quot;https://acme.example.com&quot;
-    ],
-    &quot;registrationRedirectUrl&quot;: &quot;https://acme.example.com/register/complete&quot;
-  }
-}
-</code></pre>
-<p>The onboarding flow:</p>
-<ol>
-<li>normalizes the slug to lowercase;</li>
-<li>validates and normalizes tenant website/auth URLs;</li>
-<li>generates <code>auth.clientId</code> as <code>tenant-{slug}-web</code>;</li>
-<li>stores website/auth settings in the catalog tenant <code>settings</code> JSON;</li>
-<li>creates a catalog tenant with <code>Pending</code> status;</li>
-<li>provisions Keycloak tenant groups under <code>/tenants/{slug}</code>;</li>
-<li>assigns <code>tenant-admin</code> to <code>/tenants/{slug}/admins</code> and <code>tenant-user</code> to <code>/tenants/{slug}/users</code>;</li>
-<li>creates or updates the tenant Keycloak public client from the centralized auth settings;</li>
-<li>creates a default tenant admin user named <code>{slug}-admin</code> with a temporary password of <code>ChangeMe123!</code>;</li>
-<li>creates the tenant database using <code>organizor_tenant_{slug}</code>;</li>
-<li>initializes PostgreSQL extensions;</li>
-<li>applies tenant migrations;</li>
-<li>marks the tenant <code>Active</code> on success or <code>Failed</code> on provisioning failure.</li>
-</ol>
-<p>URL validation rejects wildcards, requires absolute HTTPS URLs, and allows HTTP only for local development hosts such as <code>localhost</code> and <code>127.0.0.1</code>. Web origins must be origins only.</p>
-<p>The generated Keycloak public client uses Authorization Code Flow with PKCE, client authentication off, direct access grants off, implicit flow off, service accounts off, and the validated redirect/web-origin settings from the onboarding request. It also gets a <code>tenant-membership</code> group mapper so tenant website tokens include the <code>tenant</code> claim.</p>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
-  &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;,
-  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
-  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
-  &quot;status&quot;: &quot;Active&quot;,
-  &quot;failureReason&quot;: null,
-  &quot;isDeleted&quot;: false
-}
-</code></pre>
-<h2 id="query-tenants-for-administration">Query Tenants For Administration</h2>
-<pre><code class="lang-http">GET /api/admin/tenants
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Returns all tenant catalog records, including soft-deleted tenants. This differs from <code>GET /api/v1/tenants</code>, which returns only non-deleted records.</p>
-<pre><code class="lang-http">GET /api/admin/tenants/{id}
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Returns one tenant by catalog ID, including soft-deleted records. These query endpoints are used by the portal tenant-management surface and are protected by the same <code>RequireOrganizorAdminRole</code> policy as lifecycle operations.</p>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
-  &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;,
-  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
-  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
-  &quot;status&quot;: &quot;Active&quot;,
-  &quot;failureReason&quot;: null,
-  &quot;isDeleted&quot;: false
-}
-</code></pre>
-<h2 id="tenant-config-administration">Tenant Config Administration</h2>
-<pre><code class="lang-http">GET /api/admin/tenants/{id}/config
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Returns the effective config for one tenant. Effective config is resolved from the tenant's assigned plan defaults plus any tenant-level overrides.</p>
-<pre><code class="lang-http">GET /api/admin/tenants/{id}/config-overrides
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Returns only explicit tenant-level overrides.</p>
-<pre><code class="lang-http">PUT /api/admin/tenants/{id}/config-overrides
-Authorization: Bearer &lt;organizor-admin-token&gt;
-Content-Type: application/json
-
-{
-  &quot;planKey&quot;: &quot;pro&quot;,
-  &quot;features&quot;: {
-    &quot;branding.customLogo&quot;: true
-  },
-  &quot;settings&quot;: {
-    &quot;limits&quot;: {
-      &quot;maxUsers&quot;: 25
-    }
-  }
-}
-</code></pre>
-<p>Override updates replace the tenant's full assigned plan key, feature override dictionary, and setting override dictionary. Omitted override keys are removed and inherited again from the assigned plan or system defaults.</p>
-<p>Tenant admins can view their own effective config through the tenant-scoped endpoint:</p>
-<pre><code class="lang-http">GET /api/v1/tenant/config
-Authorization: Bearer &lt;tenant-admin-token&gt;
-X-Tenant-Slug: acme
-</code></pre>
-<p>This endpoint requires tenant access and the <code>RequireTenantAdminRole</code> policy.</p>
-<h2 id="tenant-plan-administration">Tenant Plan Administration</h2>
-<pre><code class="lang-http">GET /api/admin/tenant-plans
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Returns available tenant plans and their default feature settings.</p>
-<pre><code class="lang-http">PUT /api/admin/tenant-plans/{planKey}
-Authorization: Bearer &lt;organizor-admin-token&gt;
-Content-Type: application/json
-
-{
-  &quot;name&quot;: &quot;Pro&quot;,
-  &quot;description&quot;: &quot;Larger customer plan with higher limits and self-service registration.&quot;,
-  &quot;features&quot;: {
-    &quot;registration.selfService&quot;: true
-  },
-  &quot;settings&quot;: {
-    &quot;limits&quot;: {
-      &quot;maxUsers&quot;: 0,
-      &quot;maxCamps&quot;: 25
-    }
-  },
-  &quot;isActive&quot;: true,
-  &quot;sortOrder&quot;: 20
-}
-</code></pre>
-<p>Plan updates replace the plan's editable metadata, feature defaults, setting defaults, active state, and sort order. Existing tenant overrides remain intact, so tenants can continue to diverge from their plan where an override is set.</p>
-<h2 id="upgrade-tenant">Upgrade Tenant</h2>
-<pre><code class="lang-http">POST /api/admin/tenants/{id}/upgrade
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Runs pending migrations for the tenant database.</p>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;database&quot;: &quot;organizor_tenant_acme&quot;,
-  &quot;success&quot;: true,
-  &quot;appliedMigrations&quot;: 2,
-  &quot;duration&quot;: &quot;00:00:01.2340000&quot;,
-  &quot;error&quot;: null
-}
-</code></pre>
-<h2 id="soft-delete-tenant">Soft Delete Tenant</h2>
-<pre><code class="lang-http">DELETE /api/admin/tenants/{id}
-Authorization: Bearer &lt;organizor-admin-token&gt;
-Content-Type: application/json
-
-{
-  &quot;reason&quot;: &quot;Customer cancellation&quot;
-}
-</code></pre>
-<p>Soft deletion marks the tenant as deleted, stores deletion metadata, and sets status to <code>Deleted</code>. The tenant database is not dropped.</p>
-<h2 id="hard-delete-tenant">Hard Delete Tenant</h2>
-<pre><code class="lang-http">POST /api/admin/tenants/{id}/hard-delete
-Authorization: Bearer &lt;organizor-admin-token&gt;
-</code></pre>
-<p>Hard deletion requires the tenant to already be soft-deleted. It:</p>
-<ol>
-<li>deletes the default Keycloak admin user named <code>{slug}-admin</code> when it exists;</li>
-<li>deletes the Keycloak tenant group <code>/tenants/{slug}</code> when it exists;</li>
-<li>drops the tenant database;</li>
-<li>removes the catalog record.</li>
-</ol>
-<p>Keycloak cleanup tolerates missing groups or users so a partially-provisioned tenant can still be cleaned up.</p>
-<h2 id="portal-admin-tenant-control">Portal Admin Tenant Control</h2>
-<p>The Blazor portal exposes the tenant operations above through <code>/admin/tenants</code> for users with the <code>organizor-admin</code> role.</p>
-<p>The page uses <code>AdminTenantService</code>, which calls the same admin endpoints documented in this article. Operators can:</p>
-<ul>
-<li>view all tenants, including soft-deleted tenants;</li>
-<li>filter the catalog by name, slug, database, or status;</li>
-<li>onboard a new tenant;</li>
-<li>inspect effective tenant config;</li>
-<li>edit tenant config overrides;</li>
-<li>manage plan default settings from <code>/admin/plans</code>;</li>
-<li>run a tenant upgrade;</li>
-<li>soft-delete a tenant with a reason;</li>
-<li>hard-delete a tenant after it has been soft-deleted.</li>
-</ul>
-<p>The portal does not bypass API authorization. Each operation still requires a bearer token accepted by <code>RequireOrganizorAdminRole</code>.</p>
-<h2 id="scheduled-tenant-jobs">Scheduled Tenant Jobs</h2>
-<p>Organizor is wired for Quartz recurring background work, but tenant job scheduling is not currently enabled on startup. <code>Program.cs</code> contains a commented-out scheduling block for future use.</p>
-<p>The scheduler:</p>
-<ol>
-<li>loads all tenants from the catalog database;</li>
-<li>creates a durable <code>SyncTenantJob</code> with job key <code>sync-{tenantId}</code> in the <code>tenant-jobs</code> group;</li>
-<li>stores <code>TenantId</code> and <code>TenantSlug</code> in the Quartz job data map;</li>
-<li>creates a trigger named <code>sync-{tenantId}-trigger</code> in the <code>tenant-triggers</code> group;</li>
-<li>schedules the job when it is new, or replaces and reschedules it when it already exists.</li>
-</ol>
-<p>Current trigger cadence:</p>
-<pre><code class="lang-text">0/10 * * * * ?
-</code></pre>
-<p>That Quartz cron expression would run the tenant synchronization job every 10 seconds when scheduling is enabled.</p>
-<p><code>SyncTenantJob</code> reads the tenant data from the job data map, sets <code>ITenantContext</code>, and then runs tenant-scoped work through <code>OrganizorDbContext</code>. The current implementation logs execution and contains placeholder synchronization work.</p>
-<p>Quartz persistence is stored in the catalog database and uses the PostgreSQL tables added by the <code>AddQuartzTables</code> migration. The API configures Quartz with the <code>Catalog</code> connection string, JSON serialization, and clustering enabled.</p>
-<h2 id="documentation-deployment">Documentation Deployment</h2>
-<p>The repository contains a GitHub Actions workflow at <code>.github/workflows/docfx-deploy.yml</code>.</p>
-<p>On pushes to <code>master</code>, it:</p>
-<ol>
-<li>checks out this repository;</li>
-<li>installs DocFX;</li>
-<li>builds <code>docs/docfx.json</code>;</li>
-<li>checks out the public documentation repository;</li>
-<li>copies <code>docs/_site</code> into that repository;</li>
-<li>commits and pushes the generated documentation.</li>
-</ol>
-<p>The workflow uses the <code>DOCS_DEPLOY_KEY</code> secret to push to the public docs repository.</p>
-<h2 id="sitemap-and-crawlers">Sitemap and Crawlers</h2>
-<p>DocFX generates <code>docs/_site/sitemap.xml</code> from the <code>build.sitemap.baseUrl</code> value in <code>docs/docfx.json</code>.</p>
-<p>The documentation source includes <code>robots.txt</code>, which is copied into the generated site and points crawlers to the sitemap.</p>
+<p>Internal operations are platform-control-plane workflows for tenant lifecycle, configuration, plans, scheduled jobs, and documentation deployment.</p>
+<p>An Organizor administrator uses one platform-realm <code>organizor-admin</code> login to manage every tenant. Tenant identities remain in separate tenant realms, and the backend alone uses the <code>master</code>-realm <code>organizor-provisioner</code> service account to operate Keycloak Admin REST APIs. The administrator does not need tenant-realm or <code>master</code> credentials.</p>
+<p>Use the focused pages below for implementation details:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant lifecycle and realm deletion order</td>
+<td><a href="tenant-lifecycle-operations.html">Tenant Lifecycle Operations</a></td>
+</tr>
+<tr>
+<td>Tenant config and plans</td>
+<td><a href="tenant-config-operations.html">Tenant Config Operations</a></td>
+</tr>
+<tr>
+<td>Portal admin workflows</td>
+<td><a href="portal-admin-workflows.html">Portal Admin Workflows</a></td>
+</tr>
+<tr>
+<td>Keycloak topology and provisioner bootstrap</td>
+<td><a href="keycloak-setup.html">Keycloak Setup</a></td>
+</tr>
+<tr>
+<td>Background jobs and docs deployment</td>
+<td><a href="background-jobs-and-docs-ops.html">Background Jobs And Docs Operations</a></td>
+</tr>
+</tbody>
+</table>
+<p>All tenant lifecycle, config, and plan administration endpoints require a platform-issued <code>organizor-admin</code> token. A role of the same name from a tenant realm does not satisfy that policy.</p>
+<h2 id="endpoint-map">Endpoint Map</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST /api/admin/tenants/onboard</code></td>
+<td>Creates the catalog tenant, its identity realm, database, included modules, and—only when newly created—the one-time default tenant-admin credential (<code>Cache-Control: no-store</code>).</td>
+</tr>
+<tr>
+<td><code>GET /api/admin/tenants</code></td>
+<td>Lists all tenants, including soft-deleted tenants.</td>
+</tr>
+<tr>
+<td><code>GET /api/admin/tenants/{id}</code></td>
+<td>Loads one tenant by catalog ID.</td>
+</tr>
+<tr>
+<td><code>POST /api/admin/tenants/{id}/upgrade</code></td>
+<td>Runs pending tenant database migrations.</td>
+</tr>
+<tr>
+<td><code>DELETE /api/admin/tenants/{id}</code></td>
+<td>Disables the tenant realm, then soft-deletes the tenant.</td>
+</tr>
+<tr>
+<td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
+<td>Deletes the tenant realm, then database and catalog record for a previously soft-deleted tenant.</td>
+</tr>
+<tr>
+<td><code>GET /api/admin/tenants/{id}/config</code></td>
+<td>Inspects effective tenant config.</td>
+</tr>
+<tr>
+<td><code>GET /api/admin/tenants/{id}/config-overrides</code></td>
+<td>Loads explicit tenant overrides.</td>
+</tr>
+<tr>
+<td><code>PUT /api/admin/tenants/{id}/config-overrides</code></td>
+<td>Replaces tenant plan assignment and overrides.</td>
+</tr>
+<tr>
+<td><code>GET /api/admin/tenant-plans</code></td>
+<td>Lists tenant plans.</td>
+</tr>
+<tr>
+<td><code>PUT /api/admin/tenant-plans/{planKey}</code></td>
+<td>Replaces editable tenant plan defaults.</td>
+</tr>
+</tbody>
+</table>
+<p>Tenant identity realm mappings are catalog lifecycle data and are not editable through configuration or plan endpoints. Realm failures return <code>TENANT_IDENTITY_PROVIDER_FAILED</code> and stop destructive lifecycle work before database/catalog cleanup.</p>
+<p>The Blazor portal exposes control-plane workflows through <code>/admin/tenants</code> and <code>/admin/plans</code>; it does not bypass API authorization. Tenant-admin hosting and login use the same Portal codebase at each tenant's configured portal host, with the tenant realm resolved before OIDC begins.</p>
 
 </article>
 

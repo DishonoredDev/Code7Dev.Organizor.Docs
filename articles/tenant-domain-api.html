@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tenant Domain API | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tenant Domain API | Organizor ">
+      
+      <meta name="description" content="Tenant-scoped API surface for people, relationships, organizations, activities, registrations, confirmation email, and document capabilities.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-domain-api.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tenant-domain-api">Tenant Domain API</h1>
+
+<p>Tenant domain endpoints are tenant-scoped and require:</p>
+<ul>
+<li><code>Authorization: Bearer &lt;token&gt;</code></li>
+<li><code>X-Tenant-Slug: &lt;tenant-slug&gt;</code></li>
+</ul>
+<p>Unless stated otherwise, these endpoints require a token satisfying the tenant-admin role policy and tenant access middleware verifies that the user belongs to the tenant selected by the header.</p>
+<h2 id="people-and-relationships">People And Relationships</h2>
+<p>Relationship direction is from the responsible/contact person to the child or related person:</p>
+<ul>
+<li><code>fromPersonId</code>: parent, guardian, emergency contact, or other responsible person.</li>
+<li><code>toPersonId</code>: child participant or related person.</li>
+</ul>
+<p>Supported relationship types are <code>Parent</code>, <code>Guardian</code>, <code>Mother</code>, <code>Father</code>, <code>StepParent</code>, <code>EmergencyContact</code>, and <code>Other</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/people</code></td>
+<td>List tenant-local people.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people</code></td>
+<td>Create a tenant-local person.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/people/{personId}</code></td>
+<td>Update a tenant-local person.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/link-user</code></td>
+<td>Link a tenant-local person to an existing tenant user id.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/unlink-user</code></td>
+<td>Clear the tenant user link for a person.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/people/{personId}/relationships</code></td>
+<td>List relationships connected to a person.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/relationships</code></td>
+<td>Create a relationship from <code>personId</code> to the request target.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/people/{personId}/relationships/{relationshipId}</code></td>
+<td>Update relationship type and flags.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/relationships/{relationshipId}/activate</code></td>
+<td>Mark a relationship active.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/relationships/{relationshipId}/deactivate</code></td>
+<td>Mark a relationship inactive.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/people/{personId}/relationships/{relationshipId}/archive</code></td>
+<td>Archive a relationship.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/me/children</code></td>
+<td>List active children managed by the current linked parent or guardian person.</td>
+</tr>
+</tbody>
+</table>
+<p>Relationship validation returns stable error codes:</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PERSON_NOT_FOUND</code></td>
+<td>The route or request person does not exist in the resolved tenant database.</td>
+</tr>
+<tr>
+<td><code>PERSON_LINKED_USER_ID_REQUIRED</code></td>
+<td>The link request did not include a non-blank linked user id.</td>
+</tr>
+<tr>
+<td><code>PERSON_LINKED_USER_CONFLICT</code></td>
+<td>The linked user id is already assigned to another person in the tenant.</td>
+</tr>
+<tr>
+<td><code>PERSON_RELATIONSHIP_NOT_FOUND</code></td>
+<td>The requested relationship does not exist for the route person.</td>
+</tr>
+<tr>
+<td><code>PERSON_RELATIONSHIP_SELF_REFERENCE</code></td>
+<td>The source and target person are the same.</td>
+</tr>
+<tr>
+<td><code>PERSON_RELATIONSHIP_ALREADY_EXISTS</code></td>
+<td>An active relationship with the same source, target, and type already exists.</td>
+</tr>
+<tr>
+<td><code>PERSON_RELATIONSHIP_PRIMARY_CONTACT_CONFLICT</code></td>
+<td>The child already has an active primary-contact relationship.</td>
+</tr>
+<tr>
+<td><code>PERSON_RELATIONSHIP_INVALID</code></td>
+<td>The relationship request is invalid.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="organizations">Organizations</h2>
+<p>Tenant organizations are tenant-local records used by activity setup and document capability eligibility.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/organizations</code></td>
+<td>List tenant-local organizations.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/organizations</code></td>
+<td>Create a tenant-local organization.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/organizations/{id}</code></td>
+<td>Update a tenant-local organization.</td>
+</tr>
+</tbody>
+</table>
+<p>Organization records include name, type, status, contact fields, optional KBO number and bank account, and structured address data.</p>
+<h2 id="activity-setup">Activity Setup</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activity-types</code></td>
+<td>List activity types.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activity-types</code></td>
+<td>Create an activity type.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activity-types/{id}</code></td>
+<td>Update an activity type.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activity-types/{id}/activate</code></td>
+<td>Activate an activity type.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activity-types/{id}/deactivate</code></td>
+<td>Deactivate an activity type.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activity-types/{id}/fields</code></td>
+<td>Create a registration field definition.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activity-types/{id}/fields/{fieldId}</code></td>
+<td>Update a registration field definition.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/activities</code></td>
+<td>List activities.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities</code></td>
+<td>Create an activity.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activities/{id}</code></td>
+<td>Update an activity.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities/{id}/activate</code></td>
+<td>Activate an activity.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities/{id}/deactivate</code></td>
+<td>Deactivate an activity.</td>
+</tr>
+</tbody>
+</table>
+<p>Activities can reference an activity type and optionally a tenant-local organization.</p>
+<p>Tenant admins can configure public activity page content separately from operational activity setup:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activities/{id}/public-detail</code></td>
+<td>Load tenant-admin public detail content JSON for one activity.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activities/{id}/public-detail</code></td>
+<td>Replace tenant-admin public detail content JSON for one activity.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/activity-public-page-templates</code></td>
+<td>List backend-provided public page templates.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities/{id}/public-detail/apply-template</code></td>
+<td>Replace one activity's public detail content with an editable copy of a template.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/public/activities/{activityId}</code></td>
+<td>Anonymous public-safe activity detail response for separate public websites.</td>
+</tr>
+</tbody>
+</table>
+<p>The public detail response contains a fixed <code>hero</code> object for the activity page, followed by ordered content <code>blocks</code>. The hero uses activity defaults unless tenant admins enable a hero override in the portal. Supported first-slice block types include <code>richText</code>, <code>practicalInfo</code>, <code>schedule</code>, <code>tabs</code>, <code>faq</code>, <code>testimonial</code>, <code>gallery</code>, and <code>registrationCta</code>; new authoring should prefer practical information tabs over standalone tabs, with those tabs presented above the general information rows. Gallery blocks may include a <code>displayMode</code> of <code>grid</code> or <code>slideshow</code>. Registration CTA blocks should render a visible registration action. Public websites should render <code>hero</code> before ordered blocks and ignore unknown future block types.</p>
+<p>Public page templates are backend-owned presets that use the same public detail block JSON contract. The current catalog exposes one standard activity page template for the TVDK-style public website layout. Applying a template copies the template content into the activity; the activity then owns its editable content independently from later template changes.</p>
+<p>Template listing is tenant-admin authorized but does not require tenant database resolution because templates are static backend presets. Applying a template remains tenant-scoped and requires the selected tenant context.</p>
+<h2 id="registration-validation-rules">Registration Validation Rules</h2>
+<p>Validation rules are configured per activity type or per activity. Activity-level rules replace activity-type rules when they use the same rule key. The current slice stores these rules in the existing tenant JSON configuration fields instead of a separate table.</p>
+<p>Supported rule types:</p>
+<ul>
+<li><code>required</code></li>
+<li><code>required-when</code></li>
+<li><code>age-range</code></li>
+<li><code>regex</code></li>
+<li><code>numeric-range</code></li>
+<li><code>accepted-boolean</code></li>
+</ul>
+<p><code>required-when</code> condition values are fixed to:</p>
+<ul>
+<li><code>present</code></li>
+<li><code>missing</code></li>
+</ul>
+<p>Supported targets are limited to core registration fields in this slice:</p>
+<ul>
+<li>participant data such as <code>participant.firstName</code>, <code>participant.lastName</code>, <code>participant.email</code>, <code>participant.phoneNumber</code>, <code>participant.dateOfBirth</code>, <code>participant.address</code>, and <code>participant.nationalNumber</code></li>
+<li>contact data such as <code>contact.firstName</code>, <code>contact.lastName</code>, <code>contact.email</code>, <code>contact.phoneNumber</code>, <code>contact.dateOfBirth</code>, <code>contact.address</code>, and <code>contact.nationalNumber</code></li>
+<li><code>registration.linkedUserId</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activity-types/{activityTypeId}/registration-validation-rules</code></td>
+<td>Load activity-type validation rules.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activity-types/{activityTypeId}/registration-validation-rules</code></td>
+<td>Replace activity-type validation rules.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/activities/{activityId}/registration-validation-rules</code></td>
+<td>Load activity validation rules.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activities/{activityId}/registration-validation-rules</code></td>
+<td>Replace activity validation rules.</td>
+</tr>
+</tbody>
+</table>
+<p>Public registration submissions reject invalid payloads with <code>REGISTRATION_VALIDATION_FAILED</code> and a structured <code>violations</code> extension payload. Invalid rule configuration is rejected with <code>REGISTRATION_RULE_INVALID</code>, <code>REGISTRATION_RULE_CONFLICT</code>, or <code>REGISTRATION_RULE_FIELD_UNKNOWN</code> before the rules are saved.</p>
+<h2 id="registration-confirmation-email">Registration Confirmation Email</h2>
+<p>Tenant admins can configure confirmation email templates for activity types and activity-specific overrides. Activity templates override activity-type templates for the same culture. If no enabled template exists, public registration succeeds and returns <code>confirmationStatus</code> as <code>not_configured</code>.</p>
+<p>Confirmation templates are stored in the shared tenant <code>email_templates</code> table with purpose <code>RegistrationConfirmation</code>; delivery attempts are stored in <code>email_deliveries</code> with the same purpose.</p>
+<p>For child or dependent registrations, the default recipient is the active primary parent or guardian. Until every public registration creates structured parent/guardian relationships, confirmation rendering can fall back to submitted parent data in <code>Registration.CoreDataJson</code>:</p>
+<ul>
+<li><code>parentFirstName</code></li>
+<li><code>parentLastName</code></li>
+<li><code>parentEmail</code></li>
+<li><code>parentPhone</code></li>
+</ul>
+<p>Templates support double-brace variables such as <code>{{participant.fullName}}</code>, <code>{{contact.fullName}}</code>, <code>{{activity.name}}</code>, <code>{{registration.paymentStatus}}</code>, and <code>{{tenant.slug}}</code>. Unknown variables are rejected when saving, previewing, or sending. HTML templates reject unsafe script, event handler, JavaScript URL, form, and iframe content.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activity-types/{activityTypeId}/confirmation-templates</code></td>
+<td>List activity-type confirmation templates.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activity-types/{activityTypeId}/confirmation-templates/{culture}</code></td>
+<td>Create or update an activity-type template.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/activities/{activityId}/confirmation-templates</code></td>
+<td>List activity override templates.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activities/{activityId}/confirmation-templates/{culture}</code></td>
+<td>Create or update an activity override template.</td>
+</tr>
+<tr>
+<td><code>DELETE /api/v1/activities/{activityId}/confirmation-templates/{culture}</code></td>
+<td>Delete an activity override template.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{registrationId}/confirmation-email/preview</code></td>
+<td>Render a confirmation email without sending it.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{registrationId}/confirmation-email/send-test</code></td>
+<td>Send a test email and log the attempt.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{registrationId}/confirmation-email/resend</code></td>
+<td>Send the confirmation email again and log the attempt.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/registrations/{registrationId}/confirmation-email/deliveries</code></td>
+<td>List confirmation delivery attempts for a registration.</td>
+</tr>
+</tbody>
+</table>
+<p><code>POST /api/v1/activities/{activityId}/public-registrations</code> attempts confirmation delivery after the registration is persisted. Delivery failure does not roll back registration creation. The public response includes <code>confirmationStatus</code> with one of:</p>
+<ul>
+<li><code>not_configured</code></li>
+<li><code>sent</code></li>
+<li><code>failed</code></li>
+</ul>
+<p>Confirmation email uses the same tenant SMTP settings as document delivery under <code>settings.email.smtp</code>. SMTP credentials are never returned by confirmation endpoints. Preview intentionally returns rendered content and is restricted to tenant admins.</p>
+<h2 id="registrations">Registrations</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activities/{activityId}/registrations</code></td>
+<td>List registrations for an activity.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/registrations/{id}</code></td>
+<td>Load one registration.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{id}/confirm</code></td>
+<td>Confirm a submitted registration.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{id}/cancel</code></td>
+<td>Cancel a registration.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{id}/mark-paid</code></td>
+<td>Mark a registration paid.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{id}/mark-unpaid</code></td>
+<td>Mark a registration unpaid.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities/{activityId}/public-registrations</code></td>
+<td>Submit a public participant registration. Rate limited with <code>PUBLIC_FORM_RATE_LIMITED</code> when excessive anonymous submissions are detected.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/activities/{activityId}/registrations/for-child</code></td>
+<td>Submit a parent-managed registration for a managed child.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/me/activities</code></td>
+<td>List active activities available to the current tenant user.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/me/activity-types</code></td>
+<td>List active activity types and fields available to the current tenant user.</td>
+</tr>
+</tbody>
+</table>
+<p>Cancelled registrations reject later confirmation and payment updates.</p>
+<p>Parent-managed registrations require the current linked user to resolve to a parent or guardian person and to have an active relationship to the selected child with <code>CanManageRegistrations</code> set to true. The participant stays the child person; the linked user stays the parent or guardian account.</p>
+<p>Registrations reject a second non-cancelled registration for the same person and activity with <code>REGISTRATION_ALREADY_EXISTS</code>. A cancelled registration does not block a later registration.</p>
+<p>Activities with positive capacity reject new public and parent-managed registrations once the non-cancelled registration count reaches capacity. Capacity <code>0</code> is treated as unlimited. Full activities return <code>ACTIVITY_CAPACITY_FULL</code>.</p>
+<p>These parent-managed endpoints require the <code>tenant-user</code> role. Tenant admin rights alone do not grant child registration access.</p>
+<h2 id="document-capabilities">Document Capabilities</h2>
+<p>The first supported capability keys are:</p>
+<ul>
+<li><code>fiscal-attestation</code></li>
+<li><code>healthcare-attestation</code></li>
+</ul>
+<p>Capabilities are assigned per activity type. Assignments are stored as tenant-local normalized data with optional <code>optionsJson</code> for capability-specific template or display configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/v1/activity-types/{activityTypeId}/document-capabilities</code></td>
+<td>List document capabilities configured for an activity type.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/activity-types/{activityTypeId}/document-capabilities</code></td>
+<td>Replace document capability assignments for an activity type.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/registrations/{registrationId}/document-eligibility</code></td>
+<td>Evaluate enabled document capabilities for a registration.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/registrations/{registrationId}/documents/{capabilityKey}/download</code></td>
+<td>Generate and download a PDF for an enabled document capability.</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/registrations/{registrationId}/documents/{capabilityKey}/send</code></td>
+<td>Generate and email a PDF for an enabled document capability.</td>
+</tr>
+</tbody>
+</table>
+<p>Eligibility is evaluated on demand. It returns one result per enabled capability with:</p>
+<ul>
+<li><code>isEligible</code></li>
+<li>stable <code>missingDataCodes</code></li>
+<li>stable <code>blockingReasonCodes</code></li>
+</ul>
+<p>Fiscal and healthcare eligibility require the activity to have ended, the registration to be non-cancelled, complete child person data, a primary active parent/guardian relationship when parent data is required, and the connected organization data required by the selected capability.</p>
+<p>Document download and delivery currently support <code>fiscal-attestation</code> and <code>healthcare-attestation</code>. Generation is tenant-local, returns <code>application/pdf</code>, and does not persist generated documents. The backend fills PJSabbe-compatible PDF templates from the runtime <code>documents</code> folder: <code>template_fiscalefiche_{activityStartYear}.pdf</code> for fiscal attestations and <code>template_healthcare_2024.pdf</code> for healthcare attestations. Structured parent or guardian data from active primary person relationships takes precedence. Until all registrations have structured relationship data, generation can also read temporary parent data from <code>Registration.CoreDataJson</code> with:</p>
+<ul>
+<li><code>parentFirstName</code></li>
+<li><code>parentLastName</code></li>
+<li><code>parentDateOfBirth</code></li>
+<li><code>parentNationalNumber</code></li>
+<li><code>parentEmail</code></li>
+<li><code>parentAddress</code></li>
+</ul>
+<p>Document delivery uses effective tenant configuration under <code>settings.email.smtp</code>:</p>
+<pre><code class="lang-json">{
+  &quot;email&quot;: {
+    &quot;smtp&quot;: {
+      &quot;host&quot;: &quot;smtp.gmail.com&quot;,
+      &quot;port&quot;: 465,
+      &quot;useSsl&quot;: true,
+      &quot;senderEmail&quot;: &quot;noreply@example.org&quot;,
+      &quot;senderName&quot;: &quot;Example Club&quot;,
+      &quot;username&quot;: &quot;noreply@example.org&quot;,
+      &quot;password&quot;: &quot;&lt;tenant-smtp-secret&gt;&quot;
+    }
+  }
+}
+</code></pre>
+<p>Use tenant overrides or deployment secrets for SMTP credentials. Do not commit real provider secrets to appsettings files.</p>
+<p>Address objects must include <code>street</code>, <code>number</code>, <code>zipCode</code> or <code>postalCode</code>, <code>city</code>, and <code>countryCode</code> or <code>country</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DOCUMENT_CAPABILITY_INVALID</code></td>
+<td>The capability key, duplicate assignment, or options JSON is invalid.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_CAPABILITY_NOT_FOUND</code></td>
+<td>A requested capability key is not configured or not supported.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_CAPABILITY_REQUIRES_UNIMPLEMENTED_DATA</code></td>
+<td>A capability requires data owned by an unimplemented feature.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_GENERATION_NOT_ELIGIBLE</code></td>
+<td>The registration or activity state blocks generation. The detail includes stable blocking reason codes.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_REQUIRED_DATA_MISSING</code></td>
+<td>Required data is missing for generation. The detail includes stable missing-data codes.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_TEMPLATE_NOT_FOUND</code></td>
+<td>The selected generation template cannot be resolved.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_DELIVERY_RECIPIENT_MISSING</code></td>
+<td>The parent or guardian email address is missing or invalid.</td>
+</tr>
+<tr>
+<td><code>DOCUMENT_DELIVERY_FAILED</code></td>
+<td>SMTP delivery failed.</td>
+</tr>
+<tr>
+<td><code>EMAIL_PROVIDER_NOT_CONFIGURED</code></td>
+<td>Tenant SMTP settings are missing or incomplete.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_TEMPLATE_NOT_FOUND</code></td>
+<td>No enabled confirmation template exists for the activity/culture.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_TEMPLATE_INVALID</code></td>
+<td>Required template fields or reply-to email are invalid.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_TEMPLATE_VARIABLE_INVALID</code></td>
+<td>The template contains an unsupported variable.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_TEMPLATE_HTML_UNSAFE</code></td>
+<td>The HTML body contains unsafe content.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_RECIPIENT_MISSING</code></td>
+<td>A valid confirmation recipient email cannot be resolved.</td>
+</tr>
+<tr>
+<td><code>CONFIRMATION_DELIVERY_FAILED</code></td>
+<td>SMTP confirmation delivery failed.</td>
+</tr>
+<tr>
+<td><code>ACTIVITY_TYPE_NOT_FOUND</code></td>
+<td>The activity type does not exist in the resolved tenant database.</td>
+</tr>
+<tr>
+<td><code>REGISTRATION_NOT_FOUND</code></td>
+<td>The registration does not exist in the resolved tenant database.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-domain-api.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

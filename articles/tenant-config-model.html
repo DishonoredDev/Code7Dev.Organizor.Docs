@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tenant Config Model | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tenant Config Model | Organizor ">
+      
+      <meta name="description" content="Tenant plans, overrides, effective config resolution, and tenant config API behavior.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-config-model.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tenant-config-model">Tenant Config Model</h1>
+
+<p>Tenant configuration is catalog-owned. It combines system defaults, plan defaults, and tenant overrides into one effective config model.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This page describes the legacy effective-configuration layer. It does not decide which product modules a tenant can use. Module deployment, plan entitlement, and tenant installation are separately managed through the <a href="tenant-modules.html">Tenant Modules</a> model.</p>
+</div>
+<h2 id="plans-and-overrides">Plans And Overrides</h2>
+<p>Tenant plans are persisted in the catalog database through the <code>tenant_plans</code> table. A plan defines default feature flags and structured settings for tenants assigned to that plan.</p>
+<p>Each tenant stores the following compatibility configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlanKey</code></td>
+<td>Stable key of the selected plan, such as <code>starter</code> or <code>pro</code>.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Tenant-level legacy feature flag overrides stored as PostgreSQL <code>jsonb</code>. It is not module entitlement.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Tenant-level structured setting overrides stored as PostgreSQL <code>jsonb</code>. It is not module installation state.</td>
+</tr>
+</tbody>
+</table>
+<p>Each plan stores:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Key</code></td>
+<td>Stable plan identifier referenced by tenants.</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Human-readable plan name.</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>Optional operator-facing description.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Plan default legacy feature flags stored as PostgreSQL <code>jsonb</code>. It is not module entitlement.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Plan default structured settings stored as PostgreSQL <code>jsonb</code>. It is not module configuration unless an owning typed contract validates it.</td>
+</tr>
+<tr>
+<td><code>IsActive</code></td>
+<td>Whether the plan can be assigned.</td>
+</tr>
+<tr>
+<td><code>SortOrder</code></td>
+<td>Display ordering for future admin UI surfaces.</td>
+</tr>
+</tbody>
+</table>
+<p>Startup seeding keeps the initial plans available. It creates missing plan definitions but does not overwrite existing operator-managed plan metadata, legacy configuration, or module entitlements:</p>
+<table>
+<thead>
+<tr>
+<th>Plan key</th>
+<th>Intent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>starter</code></td>
+<td>Default plan for new tenants with conservative limits.</td>
+</tr>
+<tr>
+<td><code>pro</code></td>
+<td>Larger customer plan with higher limits and self-service registration.</td>
+</tr>
+</tbody>
+</table>
+<p><code>limits.maxUsers = 0</code> means unlimited users for the assigned plan. The system default <code>limits.maxUsers = 5</code> remains a fallback only.</p>
+<p>The <code>starter</code> and <code>pro</code> plans also have separate module bundles. The <code>starter</code> plan includes <code>activities</code> and offers the other initial modules as add-ons; <code>pro</code> includes the full family-activity bundle. See <a href="tenant-modules.html#plans-and-tenant-installations">Tenant Modules</a>.</p>
+<h2 id="effective-config">Effective Config</h2>
+<p><code>ITenantConfigResolver</code> resolves runtime config by tenant id or tenant slug.</p>
+<p>Effective config is built in this order:</p>
+<pre><code class="lang-text">SystemDefaults -&gt; PlanDefaults -&gt; TenantOverrides
+</code></pre>
+<p>Later layers override earlier layers.</p>
+<p>The returned model contains:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TenantId</code></td>
+<td>Catalog tenant identifier.</td>
+</tr>
+<tr>
+<td><code>TenantSlug</code></td>
+<td>Stable tenant slug.</td>
+</tr>
+<tr>
+<td><code>PlanKey</code></td>
+<td>Assigned plan key.</td>
+</tr>
+<tr>
+<td><code>PlanName</code></td>
+<td>Assigned plan name.</td>
+</tr>
+<tr>
+<td><code>Features</code></td>
+<td>Effective flat feature flag dictionary.</td>
+</tr>
+<tr>
+<td><code>Settings</code></td>
+<td>Effective structured JSON settings object.</td>
+</tr>
+</tbody>
+</table>
+<p>Legacy feature merge rules:</p>
+<ul>
+<li>feature dictionaries are flat;</li>
+<li>plan defaults override system defaults by key;</li>
+<li>tenant overrides override plan defaults by key;</li>
+<li>missing keys do not remove earlier defaults.</li>
+</ul>
+<p>Settings merge rules:</p>
+<ul>
+<li>JSON objects are deep-merged;</li>
+<li>scalar values replace earlier scalar or object values;</li>
+<li>arrays replace earlier arrays;</li>
+<li>type conflicts are replaced by the later layer;</li>
+<li>JSON <code>null</code> values are preserved as explicit override values.</li>
+</ul>
+<p>Failure behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Result error code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant does not exist or is soft-deleted</td>
+<td><code>TENANT_NOT_FOUND</code></td>
+</tr>
+<tr>
+<td>Assigned plan key does not resolve</td>
+<td><code>TENANT_PLAN_NOT_FOUND</code></td>
+</tr>
+<tr>
+<td>Assigned plan is inactive</td>
+<td><code>TENANT_PLAN_INACTIVE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tenant-config-api">Tenant Config API</h2>
+<p>Tenant admins fetch effective config for their current tenant:</p>
+<pre><code class="lang-http">GET /api/v1/tenant/config
+Authorization: Bearer &lt;tenant-admin-token&gt;
+X-Tenant-Slug: acme
+</code></pre>
+<p>Platform administrators inspect a tenant directly:</p>
+<pre><code class="lang-http">GET /api/admin/tenants/{tenantId}/config
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>See <a href="tenant-config-operations.html">Tenant Config Operations</a> for platform admin update endpoints.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-config-model.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

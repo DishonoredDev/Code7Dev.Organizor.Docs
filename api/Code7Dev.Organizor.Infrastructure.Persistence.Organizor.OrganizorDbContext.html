@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext" class="text-break">
-Class OrganizorDbContext  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Class OrganizorDbContext  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Class OrganizorDbContext  <a class="header-action link-secondary" title="View so
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrganizorDbContext : DbContext, IInfrastructure&lt;IServiceProvider&gt;, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrganizorDbContext : DbContext, IInfrastructure&lt;IServiceProvider&gt;, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IOrganizorDbContext</code></pre>
   </div>
 
 
@@ -126,6 +126,7 @@ Class OrganizorDbContext  <a class="header-action link-secondary" title="View so
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iresettableservice">IResettableService</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+      <div><a class="xref" href="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.IOrganizorDbContext.html">IOrganizorDbContext</a></div>
     </dd>
   </dl>
 
@@ -307,7 +308,7 @@ Class OrganizorDbContext  <a class="header-action link-secondary" title="View so
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext__" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext})">
   OrganizorDbContext(DbContextOptions&lt;OrganizorDbContext&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -334,6 +335,351 @@ Class OrganizorDbContext  <a class="header-action link-secondary" title="View so
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Activities_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Activities*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Activities" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Activities">
+  Activities
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Activity&gt; Activities { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.Activity.html">Activity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypeDocumentCapabilities_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypeDocumentCapabilities*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypeDocumentCapabilities" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypeDocumentCapabilities">
+  ActivityTypeDocumentCapabilities
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;ActivityTypeDocumentCapability&gt; ActivityTypeDocumentCapabilities { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.ActivityTypeDocumentCapability.html">ActivityTypeDocumentCapability</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypeRegistrationFields_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypeRegistrationFields*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypeRegistrationFields" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypeRegistrationFields">
+  ActivityTypeRegistrationFields
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;RegistrationFieldDefinition&gt; ActivityTypeRegistrationFields { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.RegistrationFieldDefinition.html">RegistrationFieldDefinition</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypes_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypes*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_ActivityTypes" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.ActivityTypes">
+  ActivityTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;ActivityType&gt; ActivityTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.ActivityType.html">ActivityType</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_EmailDeliveries_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.EmailDeliveries*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_EmailDeliveries" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.EmailDeliveries">
+  EmailDeliveries
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;EmailDelivery&gt; EmailDeliveries { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.EmailDelivery.html">EmailDelivery</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_EmailTemplates_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.EmailTemplates*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_EmailTemplates" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.EmailTemplates">
+  EmailTemplates
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;EmailTemplate&gt; EmailTemplates { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.html">EmailTemplate</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_OrganizationMemberships_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.OrganizationMemberships*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_OrganizationMemberships" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.OrganizationMemberships">
+  OrganizationMemberships
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;OrganizationMembership&gt; OrganizationMemberships { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.OrganizationMembership.html">OrganizationMembership</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Organizations_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Organizations*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Organizations" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Organizations">
+  Organizations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Organization&gt; Organizations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.Organization.html">Organization</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_People_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.People*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_People" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.People">
+  People
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Person&gt; People { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.Person.html">Person</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_PersonRelationships_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.PersonRelationships*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_PersonRelationships" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.PersonRelationships">
+  PersonRelationships
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;PersonRelationship&gt; PersonRelationships { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.PersonRelationship.html">PersonRelationship</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Registrations_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Registrations*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_Registrations" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.Registrations">
+  Registrations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Registration&gt; Registrations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.html">Registration</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -342,7 +688,7 @@ Class OrganizorDbContext  <a class="header-action link-secondary" title="View so
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Persistence_Organizor_OrganizorDbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_" data-uid="Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
   OnModelCreating(ModelBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Override this method to further configure the model that was discovered by convention from the entity types
@@ -389,7 +735,7 @@ to a given database.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Persistence/Organizor/OrganizorDbContext.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

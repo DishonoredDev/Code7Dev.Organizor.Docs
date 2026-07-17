@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Keycloak Clients | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Keycloak Clients | Organizor ">
+      
+      <meta name="description" content="Keycloak client configuration for the Organizor platform and tenant realms.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-clients.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="keycloak-clients">Keycloak Clients</h1>
+
+<p>Keycloak clients are scoped to their realm. Client ids may be repeated only when their realm is intentionally different; tenant website client ids remain deterministic because their tenant realm is already unique.</p>
+<h2 id="platform-realm-clients">Platform Realm Clients</h2>
+<p>The local <code>organizor-dev</code> platform realm import creates:</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>organizor-ui</code></td>
+<td>Public PKCE client for the central Organizor-admin portal. It emits realm roles and the <code>organizor-api</code> audience.</td>
+</tr>
+<tr>
+<td><code>organizor-api</code></td>
+<td>Internal API audience/service client for platform automation.</td>
+</tr>
+</tbody>
+</table>
+<p>The control-plane Portal host is configured only for the platform realm. It is not a username- or query-driven runtime tenant-realm switcher.</p>
+<h2 id="master-realm-provisioner">Master-Realm Provisioner</h2>
+<p><code>organizor-provisioner</code> is created in the Keycloak <code>master</code> realm by <code>scripts/bootstrap-keycloak-provisioner.ps1</code>. It is a confidential, service-account-only client. The API uses its secret to call Keycloak Admin REST APIs for tenant realm lifecycle; no browser or tenant website uses it.</p>
+<p>API configuration:</p>
+<pre><code class="lang-json">{
+  &quot;Keycloak&quot;: {
+    &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
+    &quot;PlatformRealm&quot;: &quot;organizor-dev&quot;,
+    &quot;AdminRealm&quot;: &quot;master&quot;,
+    &quot;AdminClientId&quot;: &quot;organizor-provisioner&quot;,
+    &quot;AdminClientSecret&quot;: &quot;&lt;deployment secret&gt;&quot;
+  }
+}
+</code></pre>
+<h2 id="tenant-realm-clients">Tenant Realm Clients</h2>
+<p>Onboarding tenant <code>acme</code> creates <code>tenant-acme</code> and configures:</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>organizor-api</code></td>
+<td>Internal audience client required by API JWT validation.</td>
+</tr>
+<tr>
+<td><code>tenant-acme-web</code></td>
+<td>Public PKCE client for Acme's website, with the onboarding redirect URIs and origins.</td>
+</tr>
+<tr>
+<td><code>tenant-acme-portal</code></td>
+<td>Separate public PKCE client for Acme's tenant-admin portal host.</td>
+</tr>
+</tbody>
+</table>
+<p>Both tenant public clients:</p>
+<ul>
+<li>uses Authorization Code with PKCE <code>S256</code>;</li>
+<li>has direct grants, implicit flow, and service accounts disabled;</li>
+<li>emits realm roles, <code>aud: organizor-api</code>, and a direct <code>tenant: acme</code> compatibility claim;</li>
+<li>are deleted as part of deleting the tenant realm.</li>
+</ul>
+<p>Tenant websites must obtain their authority and website client id from:</p>
+<pre><code class="lang-http">GET /api/public/tenants/{slug}/auth
+</code></pre>
+<p>Tenant portals instead resolve their authority and portal client id by exact current base URL:</p>
+<pre><code class="lang-http">GET /api/public/tenant-portals/auth?baseUrl={url-encoded-portal-base-url}
+</code></pre>
+<p>Do not hard-code the old <code>organizor-dev</code> authority in a TVDK/PJsabbe website or tenant portal. The website and portal clients are intentionally separate even when they use the same tenant realm.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/keycloak-clients.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

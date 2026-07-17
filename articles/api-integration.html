@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>API Integration — Portal UI | Organizor </title>
+      <title>API Integration — Platform Portal And Tenant Clients | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="API Integration — Portal UI | Organizor ">
+      <meta name="title" content="API Integration — Platform Portal And Tenant Clients | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -85,9 +85,9 @@
         </div>
 
         <article data-uid="">
-<h1 id="api-integration--portal-ui">API Integration — Portal UI</h1>
+<h1 id="api-integration--platform-portal-and-tenant-clients">API Integration — Platform Portal And Tenant Clients</h1>
 
-<p>The Portal UI communicates with the Organizor API through named HTTP clients. Authenticated backend calls use the <code>api</code> client. Anonymous public registration uses the <code>public-api</code> client without the authorization message handler.</p>
+<p>The Blazor portal communicates with the Organizor API through named HTTP clients. The central portal is an Organizor-admin control plane; tenant websites and tenant-admin portal hosts are separate clients with their own Keycloak realm configuration.</p>
 <h2 id="local-development-configuration">Local Development Configuration</h2>
 <table>
 <thead>
@@ -102,6 +102,10 @@
 <td><code>https://localhost:7025</code></td>
 </tr>
 <tr>
+<td>TVDK tenant-admin portal origin</td>
+<td><code>https://localhost:7022</code></td>
+</tr>
+<tr>
 <td>API base URL</td>
 <td><code>https://localhost:7184</code></td>
 </tr>
@@ -110,39 +114,42 @@
 <td><code>https://localhost:7184</code></td>
 </tr>
 <tr>
-<td>Token issuer</td>
+<td>Platform token issuer</td>
 <td><code>https://localhost:8443/realms/organizor-dev</code></td>
 </tr>
 <tr>
-<td>Portal OIDC client</td>
+<td>Platform portal OIDC client</td>
 <td><code>organizor-ui</code></td>
 </tr>
 </tbody>
 </table>
-<p>The portal and API must agree on the Keycloak issuer. If the portal logs in through HTTPS but the API validates against the old HTTP authority, API requests fail with <code>401 Unauthorized</code>.</p>
+<p>The API derives trusted issuers from <code>Keycloak:BaseUrl</code>, <code>Keycloak:PlatformRealm</code>, and active catalog tenant realms. It accepts platform portal tokens from the platform issuer and tenant tokens only from the realm mapped to the selected tenant. HTTPS and HTTP Keycloak endpoints are different issuers; using a different scheme causes <code>401 Unauthorized</code>.</p>
 <h2 id="httpclient-registration">HttpClient Registration</h2>
-<p>The portal registers the API client in <code>Program.cs</code>:</p>
+<p>The portal registers the authenticated API client in <code>Program.cs</code>:</p>
 <pre><code class="lang-csharp">builder.Services.AddHttpClient(&quot;api&quot;, client =&gt;
 {
     client.BaseAddress = new Uri(&quot;https://localhost:7184&quot;);
 })
 .AddHttpMessageHandler&lt;ApiAuthorizationMessageHandler&gt;();
 </code></pre>
-<p><code>AdminTenantService</code>, <code>TenantUserService</code>, and <code>TenantConfigService</code> use <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call authenticated API endpoints.</p>
+<p><code>AdminTenantService</code> uses <code>IHttpClientFactory.CreateClient(&quot;api&quot;)</code> to call platform-control-plane endpoints. Anonymous public registration uses the separate <code>public-api</code> client without the authorization message handler.</p>
 <h2 id="authorization-handler">Authorization Handler</h2>
 <p><code>ApiAuthorizationMessageHandler</code> extends Blazor's <code>AuthorizationMessageHandler</code>. It is responsible for:</p>
 <ul>
 <li>configuring the authorized API URL;</li>
-<li>requesting the portal OIDC scopes;</li>
-<li>attaching the access token to outgoing API requests;</li>
-<li>adding the <code>X-Tenant-Slug</code> header when a tenant claim is available.</li>
+<li>requesting portal OIDC scopes;</li>
+<li>attaching the platform access token to outgoing requests.</li>
 </ul>
 <p>The handler is registered in DI and configured once in its constructor. This matters because <code>AuthorizationMessageHandler.ConfigureHandler(...)</code> can only be called once per handler instance. Calling <code>ConfigureHandler(...)</code> again for the same handler instance can cause this runtime error:</p>
 <pre><code class="lang-text">handler already configured
 </code></pre>
 <p>Keep handler configuration inside the handler constructor or inside the <code>AddHttpMessageHandler</code> factory, but not both. The current branch uses the constructor approach.</p>
-<h2 id="tenant-admin-api-client">Tenant Admin API Client</h2>
-<p><code>AdminTenantService</code> wraps the admin tenant API surface used by <code>/admin/tenants</code> and <code>/admin/plans</code>. Tenant query, lifecycle, effective config, override, and plan-management endpoints require the Organizor admin policy.</p>
+<p>The platform portal does not derive a tenant boundary from a <code>tenant</code> claim. Platform administration routes select a tenant by catalog id in their path. A tenant-specific client must send <code>X-Tenant-Slug</code> only for its own known tenant environment; the API still verifies that header against the token issuer.</p>
+<blockquote>
+<p><strong>Tenant boundary:</strong> the <code>tenant</code> claim is compatibility data only and is never an authorization boundary. The API binds a tenant-scoped request to the catalog-owned realm for the supplied tenant header.</p>
+</blockquote>
+<h2 id="platform-tenant-api-client">Platform Tenant API Client</h2>
+<p><code>AdminTenantService</code> wraps the admin tenant API surface used by <code>/admin/tenants</code> and <code>/admin/plans</code>. All of these endpoints require a platform-realm <code>organizor-admin</code> token.</p>
 <table>
 <thead>
 <tr>
@@ -160,7 +167,7 @@
 <tr>
 <td><code>OnboardAsync</code></td>
 <td><code>POST /api/admin/tenants/onboard</code></td>
-<td>Creates the catalog tenant, provisions Keycloak resources, creates the database, and applies migrations.</td>
+<td>Creates the catalog tenant, provisions its Keycloak realm, creates the database, and applies migrations.</td>
 </tr>
 <tr>
 <td><code>UpgradeAsync</code></td>
@@ -170,12 +177,12 @@
 <tr>
 <td><code>SoftDeleteAsync</code></td>
 <td><code>DELETE /api/admin/tenants/{id}</code></td>
-<td>Marks a tenant as deleted without dropping the database.</td>
+<td>Disables the tenant realm, then marks the tenant deleted without dropping the database.</td>
 </tr>
 <tr>
 <td><code>HardDeleteAsync</code></td>
 <td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
-<td>Drops the tenant database and removes the catalog record after soft deletion.</td>
+<td>Deletes the complete tenant realm, then drops the database and catalog record after soft deletion.</td>
 </tr>
 <tr>
 <td><code>GetConfigAsync</code></td>
@@ -205,57 +212,44 @@
 <tr>
 <td>tenant user methods</td>
 <td><code>/api/admin/tenants/{tenantId}/users/*</code></td>
-<td>Manage users for a selected tenant from the platform control plane.</td>
+<td>Manages users inside the selected tenant realm from the platform control plane.</td>
 </tr>
 </tbody>
 </table>
 <p>The backend also exposes <code>GET /api/admin/tenants/{id}</code> for admin detail lookups. The current portal grid does not call that endpoint directly.</p>
-<p>All methods expect an authenticated <code>organizor-admin</code> user. <code>401 Unauthorized</code> means the token is missing or invalid. <code>403 Forbidden</code> means the token is valid but lacks the required role.</p>
-<p>Tenant query responses include lifecycle fields that the portal relies on:</p>
-<pre><code class="lang-json">{
-  &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
-  &quot;name&quot;: &quot;Acme&quot;,
-  &quot;slug&quot;: &quot;acme&quot;,
-  &quot;databaseName&quot;: &quot;organizor_tenant_acme&quot;,
-  &quot;createdAt&quot;: &quot;2026-06-09T10:30:00Z&quot;,
-  &quot;status&quot;: &quot;Active&quot;,
-  &quot;failureReason&quot;: null,
-  &quot;isDeleted&quot;: false
-}
-</code></pre>
-<p><code>GET /api/v1/tenants</code> returns only non-deleted catalog records. <code>GET /api/admin/tenants</code> intentionally includes soft-deleted records so the portal can show deleted tenants and allow hard deletion.</p>
-<h2 id="tenant-user-api-client">Tenant User API Client</h2>
-<p><code>TenantUserService</code> wraps tenant-scoped user-management endpoints used by <code>/tenant/users</code>.</p>
-<p>These requests require a bearer token with <code>tenant-admin</code> and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
-<p>Tenant admins can create users, list users, toggle enabled state, assign tenant roles, and delete users inside their own tenant. Regular <code>tenant-user</code> accounts do not get this portal route.</p>
-<h2 id="tenant-config-api-client">Tenant Config API Client</h2>
-<p><code>TenantConfigService</code> wraps the tenant-scoped config endpoint used by tenant admins at <code>/tenant/config</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Endpoint</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GetConfigAsync</code></td>
-<td><code>GET /api/v1/tenant/config</code></td>
-<td>Loads the current tenant's effective config.</td>
-</tr>
-</tbody>
-</table>
-<p>The request must include a bearer token with <code>tenant-admin</code> and the <code>X-Tenant-Slug</code> header. <code>ApiAuthorizationMessageHandler</code> adds the tenant header when the authenticated user has a tenant claim.</p>
+<p><code>401 Unauthorized</code> means the token is missing, invalid, from an untrusted issuer, or lacks the <code>organizor-api</code> audience. <code>403 Forbidden</code> means the token is valid but lacks the platform-realm <code>organizor-admin</code> role.</p>
+<p><code>GET /api/v1/tenants</code> is a platform-only catalog read and returns only non-deleted records. <code>GET /api/admin/tenants</code> intentionally includes soft-deleted records so the portal can show deleted tenants and allow hard deletion. Tenant-realm identities cannot use either route to discover or enumerate other tenants.</p>
+<h2 id="tenant-scoped-api-clients">Tenant-Scoped API Clients</h2>
+<p>Tenant user-management, tenant configuration, activity, people, and registration APIs are tenant-scoped. A caller needs:</p>
+<ul>
+<li>a token from that tenant's catalog-owned realm;</li>
+<li>the required realm-local role (<code>tenant-admin</code> or <code>tenant-user</code>);</li>
+<li><code>X-Tenant-Slug</code> for the matching tenant where the route requires a header.</li>
+</ul>
+<p>For example, a <code>tenant-pjsabbe</code> token with <code>X-Tenant-Slug: tvdk</code> is rejected with <code>403 Forbidden</code>. A platform-realm <code>organizor-admin</code> is the explicit centralized-support exception where the endpoint policy permits it.</p>
+<p>The central Blazor portal is not a tenant-realm OIDC client. A tenant-admin uses the same Portal codebase at their tenant's configured host, which resolves a realm-local portal client before OIDC begins. The API message handler sends <code>X-Tenant-Slug</code> for tenant-scoped paths after login; the API then verifies it against the token issuer.</p>
+<p>Tenant self-service account-action endpoints act only on the caller's own identity in the matching tenant realm. A platform administrator manages another tenant user through <code>/api/admin/tenants/{tenantId}/users</code>, never through that user's self-service account-action route.</p>
 <h2 id="static-tenant-website-api-contract">Static Tenant Website API Contract</h2>
-<p>Tenant-specific static websites should first call:</p>
+<p>Tenant-specific websites must first call:</p>
 <pre><code class="lang-http">GET /api/public/tenants/{slug}/auth
 </code></pre>
-<p>The response contains the tenant's website base URL, public Keycloak authority, generated client id, PKCE requirement, scopes, redirect metadata, tenant header name, tenant claim name, expected tenant roles, expected tenant group paths, and public registration endpoint. This endpoint intentionally returns no secrets.</p>
-<p>After login, static tenant websites must send <code>Authorization: Bearer &lt;token&gt;</code> and <code>X-Tenant-Slug: {slug}</code> on tenant-scoped authenticated API calls.</p>
+<p>The response contains the tenant's own Keycloak authority, generated client id, PKCE requirement, scopes, redirect metadata, tenant header name, tenant claim name, expected tenant roles, realm-local group paths, and public registration endpoint. This endpoint intentionally returns no secrets. A tenant website fetches it during startup, before registering its OIDC client; it must not use the central portal's <code>organizor-dev</code> authority or <code>organizor-ui</code> client as a fallback.</p>
+<p>After login, a tenant website sends <code>Authorization: Bearer &lt;token&gt;</code> and <code>X-Tenant-Slug: {slug}</code> on tenant-scoped authenticated API calls. It must use the authority returned by the contract rather than hard-coding the platform realm. Before starting login, it should also verify that its own callback URL, logout URL, and browser origin occur in the returned allow-lists; a mismatch means the tenant needs corrected onboarding/auth settings.</p>
+<h2 id="tenant-admin-portal-runtime-contract">Tenant Admin Portal Runtime Contract</h2>
+<p>At any Portal host other than <code>Portal:PlatformBaseUrl</code>, the browser starts by calling:</p>
+<pre><code class="lang-http">GET /api/public/tenant-portals/auth?baseUrl={url-encoded-current-base-url}
+</code></pre>
+<p>The anonymous response contains the resolved tenant slug, tenant realm authority, separate <code>tenant-{slug}-portal</code> client id, tenant website base URL, PKCE/scopes, and exact login/logout/origin values. It contains no client secret or Keycloak administration details. The Portal must reject a mismatch rather than falling back to the platform client.</p>
 <h2 id="public-registration-api-client">Public Registration API Client</h2>
 <p><code>PublicRegistrationService</code> wraps <code>POST /api/public/register</code> for the temporary <code>/register</code> shell. It uses the named <code>public-api</code> client instead of the authenticated <code>api</code> client because registration is anonymous and the tenant slug is supplied in the request body.</p>
 <p>The future tenant-specific static websites should reuse the same public registration contract with their own UI.</p>
+<p>Anonymous public form endpoints are rate limited by endpoint, tenant, and client address. A limited request returns <code>429 Too Many Requests</code> with error code <code>PUBLIC_FORM_RATE_LIMITED</code>. Local development limits can be configured with dotnet user-secrets under:</p>
+<ul>
+<li><code>PublicFormRateLimit:ActivityRegistration:PermitLimit</code></li>
+<li><code>PublicFormRateLimit:ActivityRegistration:WindowMinutes</code></li>
+<li><code>PublicFormRateLimit:TenantUserRegistration:PermitLimit</code></li>
+<li><code>PublicFormRateLimit:TenantUserRegistration:WindowMinutes</code></li>
+</ul>
 <h2 id="error-handling">Error Handling</h2>
 <p>The tenant API client uses <code>EnsureSuccessAsync</code> to surface failed API responses as <code>InvalidOperationException</code>. The exception message includes the status code and response body when present. The Radzen tenant page catches those exceptions and displays both a page alert and a Radzen notification.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -275,18 +269,18 @@
 </tr>
 <tr>
 <td><code>401 Unauthorized</code> while logged in</td>
-<td>API <code>Keycloak:Authority</code> does not match the token issuer, or no access token was attached.</td>
-<td>Align API authority with <code>https://localhost:8443/realms/organizor-dev</code> and verify the named API client uses the auth handler.</td>
+<td>Token issuer is not the configured platform realm or an active catalog tenant realm, its audience is wrong, or no token was attached.</td>
+<td>Align <code>Keycloak:BaseUrl</code> with the token issuer's HTTPS base URL, verify the correct realm client, and request an <code>organizor-api</code> audience token.</td>
 </tr>
 <tr>
 <td><code>403 Forbidden</code> while logged in</td>
-<td>The token is valid but does not include <code>organizor-admin</code>.</td>
-<td>Assign the role in Keycloak and log in again to get a fresh token.</td>
+<td>The token has the wrong issuer/tenant pairing or lacks the issuer-appropriate role.</td>
+<td>Use a platform <code>organizor-admin</code> token for platform routes, or a matching tenant realm token for tenant routes.</td>
 </tr>
 <tr>
 <td>Tenant-scoped API returns bad tenant errors</td>
 <td>Tenant header is missing or invalid.</td>
-<td>Verify the user has a tenant claim and <code>ApiAuthorizationMessageHandler</code> adds the header for tenant-scoped endpoints.</td>
+<td>Send the tenant's known slug in <code>X-Tenant-Slug</code>; do not rely on a <code>tenant</code> claim as proof of access.</td>
 </tr>
 </tbody>
 </table>

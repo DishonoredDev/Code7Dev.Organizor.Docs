@@ -96,6 +96,7 @@
 <pre><code class="lang-mermaid">flowchart LR
     Browser[&quot;Browser&quot;]
     Portal[&quot;Portal UI\nhttps://localhost:7025&quot;]
+    Tvdk[&quot;TVDK Website\nhttps://localhost:7122&quot;]
     Keycloak[&quot;Keycloak\nhttps://localhost:8443&quot;]
     Api[&quot;Organizor API\nhttps://localhost:7184&quot;]
     CatalogDb[&quot;Catalog PostgreSQL&quot;]
@@ -103,8 +104,11 @@
     KeycloakDb[&quot;Keycloak PostgreSQL\nDocker service&quot;]
 
     Browser --&gt; Portal
+    Browser --&gt; Tvdk
     Portal --&gt;|OIDC login| Keycloak
     Portal --&gt;|Bearer token API calls| Api
+    Tvdk --&gt;|OIDC login| Keycloak
+    Tvdk --&gt;|Bearer token API calls| Api
     Api --&gt;|JWT issuer metadata| Keycloak
     Api --&gt; CatalogDb
     Api --&gt; TenantDb
@@ -121,13 +125,28 @@
 </thead>
 <tbody>
 <tr>
-<td>Portal UI</td>
+<td>Platform Portal UI</td>
 <td><code>https://localhost:7025</code></td>
-<td>Blazor WebAssembly HTTPS launch profile.</td>
+<td>Blazor WebAssembly control-plane HTTPS launch profile.</td>
+</tr>
+<tr>
+<td>TVDK tenant-admin Portal UI</td>
+<td><code>https://localhost:7022</code></td>
+<td>Blazor WebAssembly tenant HTTPS launch profile.</td>
 </tr>
 <tr>
 <td>Portal UI HTTP</td>
 <td><code>http://localhost:5080</code></td>
+<td>Development fallback profile. Prefer HTTPS for auth testing.</td>
+</tr>
+<tr>
+<td>TVDK website</td>
+<td><code>https://localhost:7122</code></td>
+<td>Separate tenant website HTTPS launch profile.</td>
+</tr>
+<tr>
+<td>TVDK website HTTP</td>
+<td><code>http://localhost:5085</code></td>
 <td>Development fallback profile. Prefer HTTPS for auth testing.</td>
 </tr>
 <tr>
@@ -146,68 +165,135 @@
 <td>Docker Compose service with local HTTPS certificate.</td>
 </tr>
 <tr>
-<td>Keycloak realm issuer</td>
+<td>Platform realm issuer</td>
 <td><code>https://localhost:8443/realms/organizor-dev</code></td>
-<td>Must match API <code>Keycloak:Authority</code>.</td>
+<td>Used by the central platform portal.</td>
 </tr>
 <tr>
-<td>Keycloak token endpoint</td>
+<td>Tenant realm issuer</td>
+<td><code>https://localhost:8443/realms/tenant-{slug}</code></td>
+<td>Created by tenant onboarding and returned by public auth discovery.</td>
+</tr>
+<tr>
+<td>Platform token endpoint</td>
 <td><code>https://localhost:8443/realms/organizor-dev/protocol/openid-connect/token</code></td>
-<td>Used for manual token testing.</td>
+<td>Used for platform-token testing.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="required-local-configuration">Required Local Configuration</h2>
-<p>Copy <code>.env.example</code> to <code>.env</code> and fill the local Keycloak container credentials before running Docker Compose. Keep <code>.env</code> untracked.</p>
+<p>Copy <code>.env.example</code> to <code>.env</code> and fill the local Keycloak container credentials before running Docker Compose. Keep <code>.env</code> untracked. If your <code>.env</code> predates tenant realm isolation, add the new <code>ORGANIZOR_KEYCLOAK_PROVISIONER_CLIENT_ID</code> and <code>ORGANIZOR_KEYCLOAK_PROVISIONER_CLIENT_SECRET</code> entries from <code>.env.example</code>; existing <code>.env</code> files are not updated automatically.</p>
 <p>The API needs:</p>
 <ul>
 <li>a <code>ConnectionStrings:Catalog</code> connection string;</li>
 <li><code>Postgres</code> settings for tenant database creation and resolution;</li>
-<li><code>Keycloak:Authority</code> set to <code>https://localhost:8443/realms/organizor-dev</code>;</li>
 <li><code>Keycloak:BaseUrl</code> set to <code>https://localhost:8443</code>;</li>
-<li><code>Keycloak:Realm</code> set to <code>organizor-dev</code>;</li>
-<li><code>Keycloak:AdminClientId</code> set to <code>organizor-admin</code>;</li>
-<li><code>Keycloak:AdminClientSecret</code> from the Keycloak <code>organizor-admin</code> client.</li>
-<li>optionally <code>Keycloak:DefaultTenantAdminTemporaryPassword</code> for predictable local-only tenant admin testing; omit it to generate a temporary password during onboarding.</li>
+<li><code>Keycloak:PlatformRealm</code> set to <code>organizor-dev</code>;</li>
+<li>optionally <code>Keycloak:AdminRealm</code> set explicitly to <code>master</code> (it defaults to <code>master</code>);</li>
+<li><code>Keycloak:AdminClientId</code> set to <code>organizor-provisioner</code>;</li>
+<li><code>Keycloak:AdminClientSecret</code> from the local provisioner settings in <code>.env</code>.</li>
+<li>optionally <code>Keycloak:DefaultTenantAdminTemporaryPassword</code> for predictable local-only tenant admin testing; omit it to generate a random temporary password. A newly created default tenant-admin credential is shown only in the successful portal onboarding notice, so copy it before dismissing the notice.</li>
+<li><code>Keycloak:DevelopmentAdmin:Username</code> and <code>Keycloak:DevelopmentAdmin:Email</code> for the local platform admin identity.</li>
+<li><code>Keycloak:DevelopmentAdmin:Password</code> when you want API startup to seed the local platform admin with the <code>organizor-admin</code> role.</li>
 </ul>
 <div class="code7-callout warning">
   <div class="code7-callout-title">Warning</div>
-  <p>The API authority must match the token issuer exactly. A token issued by <code>https://localhost:8443/realms/organizor-dev</code> will not validate against any different scheme, host, port, or realm.</p>
+  <p>The API accepts only its configured platform issuer and active catalog tenant issuers. A tenant token must be issued by the realm owned by the tenant in <code>X-Tenant-Slug</code>.</p>
 </div>
-<p>The portal is currently configured to:</p>
+<p>At <code>https://localhost:7025</code>, the Portal is configured to:</p>
 <ul>
 <li>use Keycloak authority <code>https://localhost:8443/realms/organizor-dev</code>;</li>
 <li>use Keycloak client ID <code>organizor-ui</code>;</li>
 <li>redirect login callbacks to <code>https://localhost:7025/authentication/login-callback</code>;</li>
 <li>call the API at <code>https://localhost:7184</code>.</li>
 </ul>
-<p>These portal values live in <code>Code7Dev.Organizor.Portal.Ui/wwwroot/appsettings.json</code> for local development and must be replaced with deployment URLs for server environments.</p>
+<p>At a tenant portal host such as <code>https://localhost:7022</code>, the same Portal first resolves <code>GET /api/public/tenant-portals/auth?baseUrl=https%3A%2F%2Flocalhost%3A7022</code>, validates the returned host/callback/origin values, and then uses the resolved tenant realm and <code>tenant-tvdk-portal</code> client. <code>Portal:PlatformBaseUrl</code> identifies the one fixed platform host. These portal values live in <code>Code7Dev.Organizor.Portal.Ui/wwwroot/appsettings.json</code> for local development and must be replaced with deployment URLs for server environments.</p>
+<p>The separate TVDK tenant website must discover its authority and client id from <code>GET /api/public/tenants/tvdk/auth</code>, then send <code>X-Tenant-Slug: tvdk</code> on authenticated API calls. Its former static shared-realm configuration needs that coordinated update before it is used with this identity model.</p>
 <h2 id="startup-order">Startup Order</h2>
 <ol>
 <li>Generate or verify the Keycloak HTTPS certificate at <code>keycloak/certs/keycloak.p12</code>.</li>
 <li>Start Keycloak with Docker Compose.</li>
-<li>On an empty Keycloak database, Docker Compose imports <code>docker/keycloak/import/organizor-dev-realm.json</code> and creates the <code>organizor-dev</code> realm, clients, roles, <code>/tenants</code> root group, and service-account permissions.</li>
+<li>On an empty Keycloak database, Docker Compose imports <code>docker/keycloak/import/organizor-dev-realm.json</code> and creates the platform realm, clients, roles, and local platform admin user.</li>
+<li>Run <code>pwsh ./scripts/bootstrap-keycloak-provisioner.ps1 -SkipCertificateCheck</code> to create the master-realm backend provisioner. The switch is restricted to the local loopback Keycloak URL; omit it when the local certificate is trusted by PowerShell.</li>
 <li>Start the API with the HTTPS launch profile.</li>
 <li>Start the portal with the HTTPS launch profile.</li>
-<li>Sign in through the portal and verify the API accepts the issued token.</li>
+<li>Sign in through the platform portal, onboard a tenant, and verify its public auth contract returns a tenant-specific authority.</li>
 </ol>
 <h2 id="commands">Commands</h2>
 <p>Start Keycloak:</p>
-<pre><code class="lang-powershell">Copy-Item .env.example .env
-docker compose up -d
+<pre><code class="lang-powershell">Copy-Item .\.env.example .\.env
+docker compose --env-file .\.env up -d
 </code></pre>
-<p>Reset local Keycloak only when you intentionally want a fresh realm import:</p>
-<pre><code class="lang-powershell">docker compose down -v
-docker compose up -d
+<p>Run Docker Compose commands from the repository root. From the <code>docs</code> folder, use:</p>
+<pre><code class="lang-powershell">docker compose --project-directory .. --env-file ..\.env up -d
 </code></pre>
-<p><code>docker compose down -v</code> deletes the local Keycloak database volume. The next startup imports <code>docker/keycloak/import/organizor-dev-realm.json</code> again and Keycloak generates new client secrets. After a reset, copy the generated <code>organizor-admin</code> client secret from Keycloak and update API user secrets:</p>
-<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:AdminClientSecret&quot; &quot;&lt;client-secret&gt;&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+<p>Reset local Keycloak identity data only when you intentionally want a fresh realm import. This does <strong>not</strong> delete the API catalog database or tenant PostgreSQL databases:</p>
+<pre><code class="lang-powershell">docker compose --env-file .\.env down -v
+docker compose --env-file .\.env up -d
 </code></pre>
+<p>From the <code>docs</code> folder:</p>
+<pre><code class="lang-powershell">docker compose --project-directory .. --env-file ..\.env down -v
+docker compose --project-directory .. --env-file ..\.env up -d
+</code></pre>
+<p><code>docker compose down -v</code> deletes the local Keycloak database volume. The next startup imports <code>docker/keycloak/import/organizor-dev-realm.json</code> again. Run the provisioner bootstrap script after every Keycloak-only reset, then configure API user secrets:</p>
+<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:BaseUrl&quot; &quot;https://localhost:8443&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:PlatformRealm&quot; &quot;organizor-dev&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminRealm&quot; &quot;master&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminClientId&quot; &quot;organizor-provisioner&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminClientSecret&quot; &quot;&lt;value from .env&gt;&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:DevelopmentAdmin:Username&quot; &quot;admin@organizor.dev&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:DevelopmentAdmin:Email&quot; &quot;admin@organizor.dev&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:DevelopmentAdmin:Password&quot; &quot;&lt;local-only-password&gt;&quot; --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
+</code></pre>
+<p>The development admin seeder creates the configured platform admin when missing and assigns the <code>organizor-admin</code> role. It does not reset an existing password unless <code>Keycloak:DevelopmentAdmin:ResetPasswordOnStartup</code> is set to <code>true</code>.</p>
+<p>The realm import also creates <code>admin@organizor.dev</code> with password <code>Admin123!</code> and realm role <code>organizor-admin</code> for local development. If the API starts before Keycloak finishes a fresh import, it logs a warning and continues; restart the API after Keycloak is ready if you need the API seeder to repair the user.</p>
+<p>Keep Docker Compose values in <code>.env</code>. Keep API development-admin values in user secrets; user secrets are loaded automatically in Development.</p>
+<h2 id="full-local-test-reset-destructive">Full Local Test Reset (Destructive)</h2>
+<p>Use this procedure only for an intentionally disposable local test environment. It permanently deletes all local Keycloak identities, the Organizor catalog, and every local tenant database. It must never be used against shared, staging, or production PostgreSQL servers.</p>
+<ol>
+<li><p>Stop the local API and portal so they do not keep PostgreSQL connections open.</p>
+</li>
+<li><p>Type the following confirmation in PowerShell before continuing:</p>
+<pre><code class="lang-powershell">$confirmation = Read-Host 'Type RESET-ORGANIZOR-LOCAL to erase local Keycloak, catalog, and tenant data'
+if ($confirmation -cne 'RESET-ORGANIZOR-LOCAL') { throw 'Full reset cancelled.' }
+</code></pre>
+</li>
+<li><p>Reset the Keycloak Docker volume:</p>
+<pre><code class="lang-powershell">docker compose --env-file .\.env down -v
+</code></pre>
+</li>
+<li><p>Connect to the <strong>local test</strong> PostgreSQL server's <code>postgres</code> database with an administrator role from your <code>Postgres</code>/<code>Catalog</code> development configuration. First inventory the exact databases that will be removed:</p>
+<pre><code class="lang-sql">SELECT datname
+FROM pg_database
+WHERE datname = 'organizor_catalog'
+   OR datname LIKE 'organizor_tenant_%'
+ORDER BY datname;
+</code></pre>
+</li>
+<li><p>Verify the result contains only disposable local Organizor databases. Then run one explicit statement for every listed tenant database, followed by the catalog. For example:</p>
+<pre><code class="lang-sql">DROP DATABASE IF EXISTS &quot;organizor_tenant_tvdk&quot; WITH (FORCE);
+DROP DATABASE IF EXISTS &quot;organizor_tenant_pjsabbe&quot; WITH (FORCE);
+DROP DATABASE IF EXISTS &quot;organizor_catalog&quot; WITH (FORCE);
+</code></pre>
+<p>Do not replace the explicit names with a broad wildcard or run these commands on a non-local server. <code>WITH (FORCE)</code> disconnects local test clients.</p>
+</li>
+<li><p>Start Keycloak again, wait for its health/startup to complete, then bootstrap the provisioner:</p>
+<pre><code class="lang-powershell">docker compose --env-file .\.env up -d
+pwsh ./scripts/bootstrap-keycloak-provisioner.ps1 -SkipCertificateCheck
+</code></pre>
+</li>
+<li><p>Start the API. It recreates and migrates the empty catalog. Sign in through the platform portal, onboard new test tenants with both their public website and tenant-admin portal URLs, and obtain each tenant website's realm authority from public auth discovery.</p>
+</li>
+</ol>
+<p>The API PostgreSQL server is not managed by <code>docker-compose.yml</code>; only the Keycloak PostgreSQL volume is. That is why both the Docker reset and the explicit catalog/tenant database reset are required for a true clean test environment.</p>
 <p>Run the API:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj --launch-profile https
 </code></pre>
 <p>Run the portal:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Portal.Ui\Code7Dev.Organizor.Portal.Ui.csproj --launch-profile https
+</code></pre>
+<p>Run the tenant-admin portal profile after onboarding TVDK with <code>tenantAdminPortalBaseUrl</code> set to <code>https://localhost:7022</code>:</p>
+<pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Portal.Ui\Code7Dev.Organizor.Portal.Ui.csproj --launch-profile tenant-https
 </code></pre>
 <p>Build the documentation:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json
@@ -241,7 +327,55 @@ ssh-keygen -t ed25519 -C &quot;organizor-docs-deploy&quot; -f .\ssh\organizor-do
 </tr>
 </tbody>
 </table>
-<p>The <code>organizor-admin</code> client is used for API service-account operations during tenant onboarding and hard deletion. Its client secret must be available to the API through configuration or user secrets.</p>
+<p>After TVDK is onboarded, its realm-local <code>tenant-tvdk-web</code> client must allow the local TVDK origin:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valid redirect URI</td>
+<td><code>https://localhost:7122/authentication/login-callback</code></td>
+</tr>
+<tr>
+<td>Web origin</td>
+<td><code>https://localhost:7122</code></td>
+</tr>
+<tr>
+<td>Post-logout redirect URI</td>
+<td><code>https://localhost:7122/</code></td>
+</tr>
+</tbody>
+</table>
+<p>If the TVDK sign-in flow shows <code>Invalid parameter: redirect_uri</code>, update the <code>tenant-tvdk-web</code> client in the <code>tenant-tvdk</code> realm with the exact callback URI above. For HTTP-profile testing, also allow <code>http://localhost:5085/authentication/login-callback</code>, <code>http://localhost:5085</code>, and <code>http://localhost:5085/</code>. The TVDK website must still discover its authority and client id from <code>GET /api/public/tenants/tvdk/auth</code> rather than hard-coding the platform realm.</p>
+<p>The same onboarding also creates <code>tenant-tvdk-portal</code> in <code>tenant-tvdk</code> for the tenant-admin Portal host:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valid redirect URI</td>
+<td><code>https://localhost:7022/authentication/login-callback</code></td>
+</tr>
+<tr>
+<td>Post-logout redirect URI</td>
+<td><code>https://localhost:7022</code></td>
+</tr>
+<tr>
+<td>Web origin</td>
+<td><code>https://localhost:7022</code></td>
+</tr>
+</tbody>
+</table>
+<p>The portal client is distinct from <code>tenant-tvdk-web</code>; do not merge their redirect/origin settings.</p>
+<p>The backend-only <code>organizor-provisioner</code> client in the Keycloak <code>master</code> realm performs API service-account operations during tenant onboarding and deletion. <code>pwsh ./scripts/bootstrap-keycloak-provisioner.ps1 -SkipCertificateCheck</code> explicitly maps and scopes its master <code>admin</code> role, then smoke-verifies an Admin REST call without printing its secret or token. The certificate-bypass switch is allowed only for loopback URLs. Keep that client secret only in API configuration or deployment secrets.</p>
 <div class="code7-callout production-checklist">
   <div class="code7-callout-title">Production Checklist</div>
   <p>Do not copy local wildcard origins, local certificates, or development secrets into deployed environments. Production should use real HTTPS certificates, explicit origins, and managed secret storage.</p>
@@ -250,12 +384,13 @@ ssh-keygen -t ed25519 -C &quot;organizor-docs-deploy&quot; -f .\ssh\organizor-do
 <p>Use this checklist when local authentication or API calls fail:</p>
 <ul>
 <li>Keycloak opens at <code>https://localhost:8443</code> without a certificate warning.</li>
-<li>The API <code>Keycloak:Authority</code> exactly matches <code>https://localhost:8443/realms/organizor-dev</code>.</li>
+<li>The API <code>Keycloak:BaseUrl</code> is exactly <code>https://localhost:8443</code>, <code>Keycloak:PlatformRealm</code> is <code>organizor-dev</code>, and the provisioner settings point to <code>master</code> / <code>organizor-provisioner</code>.</li>
 <li>The portal login callback is allowed by the <code>organizor-ui</code> client.</li>
+<li>The TVDK login callback is allowed by the <code>tenant-tvdk-web</code> client when testing the separate tenant website.</li>
 <li>The portal calls <code>https://localhost:7184</code>, not the API HTTP endpoint.</li>
 <li>The API HTTPS profile is running before logging in through the portal.</li>
-<li>The signed-in user has the expected realm roles and tenant groups.</li>
-<li>The portal user information panel shows the expected <code>tenant</code>, <code>preferred_username</code>, <code>email</code>, and <code>groups</code> claim values.</li>
+<li>A platform portal token has <code>organizor-admin</code> from the platform realm and the <code>organizor-api</code> audience.</li>
+<li>A tenant website token has realm-local tenant roles, the <code>organizor-api</code> audience, and an issuer matching its <code>X-Tenant-Slug</code>; its optional <code>tenant</code> claim is not used as the access boundary.</li>
 </ul>
 <h2 id="related-guides">Related Guides</h2>
 <ul>

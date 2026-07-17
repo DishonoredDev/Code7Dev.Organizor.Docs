@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Role-Based Authorization | Organizor ">
       
-      <meta name="description" content="Keycloak role mapping and ASP.NET Core authorization policies for Organizor API endpoints.">
+      <meta name="description" content="Issuer-aware Keycloak role mapping and ASP.NET Core authorization policies for Organizor API endpoints.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,64 +88,73 @@
 <h1 id="role-based-authorization">Role-Based Authorization</h1>
 
 <h2 id="overview">Overview</h2>
-<p>The API authorizes requests with ASP.NET Core policies backed by Keycloak roles. Authentication validates the JWT first, tenant access middleware enforces tenant membership next, and endpoint authorization policies run after that.</p>
-<h2 id="roles">Roles</h2>
+<p>The API authorizes requests with issuer-aware ASP.NET Core policies backed by Keycloak realm roles. Authentication validates the JWT first, tenant access middleware binds a tenant-scoped request to its catalog-owned realm, and endpoint authorization policies apply the issuer-appropriate role rule.</p>
+<p>A role string alone never grants access. The realm that issued it matters.</p>
+<h2 id="realm-roles">Realm Roles</h2>
 <table>
 <thead>
 <tr>
 <th>Role</th>
+<th>Owning realm</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>organizor-admin</code></td>
-<td>Platform administrator. Can manage tenants and call admin operations.</td>
+<td>Platform realm only</td>
+<td>Platform administrator. Manages catalog tenants and control-plane operations.</td>
 </tr>
 <tr>
 <td><code>tenant-admin</code></td>
-<td>Tenant administrator. Can use tenant-aware application endpoints and tenant catalog reads.</td>
+<td>Tenant realm only</td>
+<td>Tenant administrator. Uses tenant-aware application endpoints for that realm.</td>
 </tr>
 <tr>
 <td><code>tenant-user</code></td>
-<td>Tenant member. Can use shared tenant-aware application endpoints and tenant catalog reads.</td>
+<td>Tenant realm only</td>
+<td>Tenant member. Uses shared tenant-aware application endpoints for that realm.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="jwt-role-sources">JWT Role Sources</h2>
-<p>The API maps these Keycloak claim shapes to ASP.NET Core role claims:</p>
+<p>Tenant realms contain no platform administrator identities. A tenant realm role named <code>organizor-admin</code> cannot grant control-plane access.</p>
+<h2 id="jwt-trust-and-role-sources">JWT Trust And Role Sources</h2>
+<p>The API accepts a JWT only when all of the following are true:</p>
+<ul>
+<li>its issuer is the configured platform realm or an active catalog tenant realm;</li>
+<li>its signature, expiry, and issuer are valid;</li>
+<li>it contains <code>aud: organizor-api</code>.</li>
+</ul>
+<p>OpenID metadata and signing keys are fetched only after the issuer passes the allow-list. The API maps roles from Keycloak <code>realm_access.roles</code> to ASP.NET Core <code>ClaimTypes.Role</code>:</p>
 <pre><code class="lang-json">{
+  &quot;iss&quot;: &quot;https://localhost:8443/realms/tenant-acme&quot;,
+  &quot;aud&quot;: [&quot;organizor-api&quot;],
   &quot;realm_access&quot;: {
-    &quot;roles&quot;: [&quot;organizor-admin&quot;]
-  },
-  &quot;resource_access&quot;: {
-    &quot;organizor-api&quot;: {
-      &quot;roles&quot;: [&quot;tenant-user&quot;]
-    }
+    &quot;roles&quot;: [&quot;tenant-user&quot;]
   }
 }
 </code></pre>
-<p>Only client roles under <code>resource_access.organizor-api.roles</code> are promoted. Roles for other clients, such as <code>account</code>, are ignored for API authorization.</p>
+<p>Client roles from arbitrary Keycloak clients are not the authorization source for Organizor policies. Tenant website clients are configured to emit the required realm roles and API audience.</p>
 <h2 id="policies">Policies</h2>
 <table>
 <thead>
 <tr>
 <th>Policy</th>
-<th>Accepted roles</th>
+<th>Accepted issuer and role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>RequireOrganizorAdminRole</code></td>
-<td><code>organizor-admin</code></td>
+<td>Platform issuer with <code>organizor-admin</code> only.</td>
 </tr>
 <tr>
 <td><code>RequireTenantUserRole</code></td>
-<td><code>organizor-admin</code>, <code>tenant-admin</code>, <code>tenant-user</code></td>
+<td>Matching tenant issuer with <code>tenant-admin</code> or <code>tenant-user</code>; a platform <code>organizor-admin</code> is the centralized-support exception.</td>
 </tr>
 <tr>
 <td><code>RequireTenantAdminRole</code></td>
-<td><code>organizor-admin</code>, <code>tenant-admin</code></td>
+<td>Matching tenant issuer with <code>tenant-admin</code>; a platform <code>organizor-admin</code> is the centralized-support exception.</td>
 </tr>
 </tbody>
 </table>
@@ -175,11 +184,11 @@
 </tr>
 <tr>
 <td><code>GET /api/v1/tenants</code></td>
-<td><code>RequireTenantUserRole</code></td>
+<td><code>RequireOrganizorAdminRole</code></td>
 </tr>
 <tr>
 <td><code>GET /api/v1/tenants/{slug}</code></td>
-<td><code>RequireTenantUserRole</code></td>
+<td><code>RequireOrganizorAdminRole</code></td>
 </tr>
 <tr>
 <td><code>GET /api/v1/tenant/config</code></td>
@@ -198,20 +207,18 @@
 <h2 id="tenant-interaction">Tenant Interaction</h2>
 <p>Role checks do not replace tenant checks. For tenant-scoped routes, a user must pass both:</p>
 <ul>
-<li>Tenant authorization in <code>TenantAccessMiddleware</code>.</li>
-<li>Endpoint role or policy authorization in ASP.NET Core.</li>
+<li>issuer-to-tenant authorization in <code>TenantAccessMiddleware</code>;</li>
+<li>endpoint role or policy authorization in ASP.NET Core.</li>
 </ul>
-<p>This means a <code>tenant-user</code> token for <code>acme</code> is still denied when it sends <code>X-Tenant-Slug: contoso</code>.</p>
-<h2 id="assigning-roles-in-keycloak">Assigning Roles in Keycloak</h2>
-<p>Realm roles are assigned from the user details screen:</p>
-<ol>
-<li>Open Keycloak Admin Console.</li>
-<li>Select the <code>organizor-dev</code> realm.</li>
-<li>Open Users and select the user.</li>
-<li>Open Role mapping.</li>
-<li>Assign one of <code>organizor-admin</code>, <code>tenant-admin</code>, or <code>tenant-user</code>.</li>
-</ol>
-<p>Client roles can also be assigned under the <code>organizor-api</code> client. If client roles are used, verify they appear in <code>resource_access.organizor-api.roles</code>.</p>
+<p>This means a <code>tenant-acme</code> token is denied when it sends <code>X-Tenant-Slug: contoso</code>, even when its role is otherwise valid. The <code>tenant</code> claim is a compatibility hint, not evidence of membership. The old behavior that treated a token with no <code>tenant</code> claim as a platform superadmin is removed.</p>
+<h2 id="managing-roles">Managing Roles</h2>
+<p>Platform administrators use the Organizor portal/API with their normal platform login. Tenant users and roles are managed through the selected tenant's Organizor administration endpoints, which target that tenant's catalog-owned realm. The backend <code>organizor-provisioner</code> service account performs Keycloak Admin REST work; its secret and the Keycloak <code>master</code> realm are never browser or tenant administrator credentials.</p>
+<p>For local diagnosis, inspect the correct realm in Keycloak:</p>
+<ul>
+<li><code>organizor-dev</code> contains platform <code>organizor-admin</code> identities;</li>
+<li><code>tenant-{slug}</code> contains that tenant's <code>tenant-admin</code> and <code>tenant-user</code> identities.</li>
+</ul>
+<p>Do not use a Keycloak console role assignment as the normal production workflow, because it bypasses Organizor's application-level user management and audit path.</p>
 <h2 id="test-matrix">Test Matrix</h2>
 <table>
 <thead>
@@ -222,40 +229,44 @@
 </thead>
 <tbody>
 <tr>
-<td><code>organizor-admin</code> calls <code>/api/admin/tenants</code></td>
+<td>Platform <code>organizor-admin</code> calls <code>/api/admin/tenants</code></td>
 <td>Allowed</td>
 </tr>
 <tr>
-<td><code>tenant-user</code> calls <code>/api/admin/tenants</code></td>
+<td>Tenant <code>tenant-user</code> calls <code>/api/admin/tenants</code></td>
 <td><code>403 Forbidden</code></td>
 </tr>
 <tr>
-<td><code>tenant-admin</code> calls <code>GET /api/v1/tenants</code></td>
+<td>Tenant <code>tenant-admin</code> calls <code>GET /api/v1/tenants</code></td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>Tenant <code>tenant-user</code> calls <code>GET /api/v1/tenants</code></td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>Tenant <code>tenant-user</code> calls <code>GET /api/v1/tenant/config</code> for their tenant</td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>Tenant <code>tenant-user</code> from <code>tenant-acme</code> calls a contoso tenant route</td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>Tenant realm role named <code>organizor-admin</code> calls a platform route</td>
+<td><code>403 Forbidden</code></td>
+</tr>
+<tr>
+<td>Platform <code>organizor-admin</code> supports a selected active tenant</td>
+<td>Allowed where the endpoint policy permits it</td>
+</tr>
+<tr>
+<td>Token from a soft-deleted tenant realm</td>
+<td><code>401 Unauthorized</code></td>
+</tr>
+<tr>
+<td>Anonymous user calls <code>POST /api/public/register</code> for an active tenant with registration enabled</td>
 <td>Allowed</td>
-</tr>
-<tr>
-<td><code>tenant-user</code> calls <code>GET /api/v1/tenants</code></td>
-<td>Allowed</td>
-</tr>
-<tr>
-<td><code>tenant-user</code> calls <code>GET /api/v1/tenant/config</code> for their tenant</td>
-<td><code>403 Forbidden</code></td>
-</tr>
-<tr>
-<td>anonymous user calls <code>POST /api/public/register</code> for an active tenant with registration enabled</td>
-<td>Allowed</td>
-</tr>
-<tr>
-<td><code>tenant-user</code> calls <code>/api/admin/tenant-plans</code></td>
-<td><code>403 Forbidden</code></td>
-</tr>
-<tr>
-<td>Token has no Organizor role and calls protected endpoint</td>
-<td><code>403 Forbidden</code></td>
-</tr>
-<tr>
-<td>Valid role with wrong tenant slug on tenant-scoped route</td>
-<td><code>403 Forbidden</code></td>
 </tr>
 </tbody>
 </table>

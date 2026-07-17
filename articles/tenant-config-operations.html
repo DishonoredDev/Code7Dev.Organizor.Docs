@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tenant Config Operations | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tenant Config Operations | Organizor ">
+      
+      <meta name="description" content="Platform admin operations for tenant effective config, tenant overrides, and tenant plan defaults.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-config-operations.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tenant-config-operations">Tenant Config Operations</h1>
+
+<p>All admin endpoints on this page require a bearer token satisfying the <code>organizor-admin</code> role policy.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>These compatibility routes manage effective legacy configuration and plan assignment. They do not install, enable, disable, or entitle modules. Use <a href="tenant-modules.html#platform-operator-api">Tenant Modules</a> for module lifecycle operations.</p>
+</div>
+<h2 id="effective-config">Effective Config</h2>
+<pre><code class="lang-http">GET /api/admin/tenants/{id}/config
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns effective config for one tenant. Effective config is resolved from system defaults, the tenant's assigned plan defaults, and tenant-level overrides.</p>
+<p>Tenant admins can view their own effective config through the tenant-scoped endpoint:</p>
+<pre><code class="lang-http">GET /api/v1/tenant/config
+Authorization: Bearer &lt;tenant-admin-token&gt;
+X-Tenant-Slug: acme
+</code></pre>
+<h2 id="tenant-overrides">Tenant Overrides</h2>
+<pre><code class="lang-http">GET /api/admin/tenants/{id}/config-overrides
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns only explicit tenant-level overrides.</p>
+<pre><code class="lang-http">PUT /api/admin/tenants/{id}/config-overrides
+Authorization: Bearer &lt;organizor-admin-token&gt;
+Content-Type: application/json
+
+{
+  &quot;planKey&quot;: &quot;pro&quot;,
+  &quot;features&quot;: {
+    &quot;branding.customLogo&quot;: true
+  },
+  &quot;settings&quot;: {
+    &quot;limits&quot;: {
+      &quot;maxUsers&quot;: 25
+    }
+  }
+}
+</code></pre>
+<p>Override updates replace the tenant's full assigned plan key, legacy feature override dictionary, and setting override dictionary. Omitted override keys are removed and inherited again from the assigned plan or system defaults. Changing <code>planKey</code> can change which modules are entitled, but it does not silently install or remove a tenant module; an incompatible active installation causes a plan-module conflict until an operator resolves it.</p>
+<h2 id="tenant-plans">Tenant Plans</h2>
+<pre><code class="lang-http">GET /api/admin/tenant-plans
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns available tenant plans and their default legacy feature settings. Retrieve and manage the plan's module bundle through the dedicated module-entitlement routes documented in <a href="tenant-modules.html#manage-plan-bundles">Tenant Modules</a>.</p>
+<pre><code class="lang-http">PUT /api/admin/tenant-plans/{planKey}
+Authorization: Bearer &lt;organizor-admin-token&gt;
+Content-Type: application/json
+
+{
+  &quot;name&quot;: &quot;Pro&quot;,
+  &quot;description&quot;: &quot;Larger customer plan with higher limits and self-service registration.&quot;,
+  &quot;features&quot;: {
+    &quot;registration.selfService&quot;: true
+  },
+  &quot;settings&quot;: {
+    &quot;limits&quot;: {
+      &quot;maxUsers&quot;: 0,
+      &quot;maxCamps&quot;: 25
+    }
+  },
+  &quot;isActive&quot;: true,
+  &quot;sortOrder&quot;: 20
+}
+</code></pre>
+<p>Plan updates replace editable metadata, legacy feature defaults, setting defaults, active state, and sort order. Existing tenant overrides remain intact. Module entitlements are a separate atomic operation so arbitrary feature JSON cannot become the module system.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-config-operations.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

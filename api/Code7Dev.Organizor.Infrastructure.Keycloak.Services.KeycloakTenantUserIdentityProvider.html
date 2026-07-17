@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider" class="text-break">
-Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -160,7 +160,7 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider__ctor_Code7Dev_Organizor_Infrastructure_Keycloak_Interfaces_IKeycloakAdminClient_Microsoft_Extensions_Logging_ILogger_Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider__" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.#ctor(Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient,Microsoft.Extensions.Logging.ILogger{Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider})">
   KeycloakTenantUserIdentityProvider(IKeycloakAdminClient, ILogger&lt;KeycloakTenantUserIdentityProvider&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -197,7 +197,7 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_CreateUserAsync_System_String_Code7Dev_Organizor_Application_TenantUsers_Models_TenantUserCreateModel_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.CreateUserAsync(System.String,Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel,System.Threading.CancellationToken)">
   CreateUserAsync(string, TenantUserCreateModel, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -233,11 +233,93 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_CreateUserAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.CreateUserAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_CreateUserAsync_System_String_System_String_Code7Dev_Organizor_Application_TenantUsers_Models_TenantUserCreateModel_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.CreateUserAsync(System.String,System.String,Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel,System.Threading.CancellationToken)">
+  CreateUserAsync(string, string, TenantUserCreateModel, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&lt;TenantUserModel&gt;&gt; CreateUserAsync(string tenantSlug, string identityRealm, TenantUserCreateModel model, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel.html">TenantUserCreateModel</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel.html">TenantUserModel</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_GetUsersAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.GetUsersAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_GetUsersAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.GetUsersAsync(System.String,System.String,System.Threading.CancellationToken)">
+  GetUsersAsync(string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&lt;IReadOnlyList&lt;TenantUserModel&gt;&gt;&gt; GetUsersAsync(string tenantSlug, string identityRealm, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result-1.html">Result</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel.html">TenantUserModel</a>&gt;&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_GetUsersAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.GetUsersAsync*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_GetUsersAsync_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.GetUsersAsync(System.String,System.Threading.CancellationToken)">
   GetUsersAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -273,9 +355,51 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_RemoveUserAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.RemoveUserAsync*"></a>
 
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_RemoveUserAsync_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.RemoveUserAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+  RemoveUserAsync(string, string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; RemoveUserAsync(string tenantSlug, string identityRealm, string userId, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result.html">Result</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_RemoveUserAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.RemoveUserAsync*"></a>
+
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_RemoveUserAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.RemoveUserAsync(System.String,System.String,System.Threading.CancellationToken)">
   RemoveUserAsync(string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L194"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -315,7 +439,7 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetEnabledAsync_System_String_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetEnabledAsync(System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
   SetEnabledAsync(string, string, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -353,11 +477,99 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetEnabledAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetEnabledAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetEnabledAsync_System_String_System_String_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetEnabledAsync(System.String,System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
+  SetEnabledAsync(string, string, string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; SetEnabledAsync(string tenantSlug, string identityRealm, string userId, bool enabled, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result.html">Result</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetRoleAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetRoleAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetRoleAsync_System_String_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetRoleAsync(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)">
+  SetRoleAsync(string, string, string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; SetRoleAsync(string tenantSlug, string identityRealm, string userId, string role, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>role</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result.html">Result</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetRoleAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetRoleAsync*"></a>
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_SetRoleAsync_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.SetRoleAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
   SetRoleAsync(string, string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -397,9 +609,51 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_StartPasswordChangeAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.StartPasswordChangeAsync*"></a>
 
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_StartPasswordChangeAsync_System_String_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.StartPasswordChangeAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+  StartPasswordChangeAsync(string, string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; StartPasswordChangeAsync(string tenantSlug, string identityRealm, string userId, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result.html">Result</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_StartPasswordChangeAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.StartPasswordChangeAsync*"></a>
+
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_StartPasswordChangeAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.StartPasswordChangeAsync(System.String,System.String,System.Threading.CancellationToken)">
   StartPasswordChangeAsync(string, string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L232"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -439,7 +693,7 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
   <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_UpdateProfileAsync_System_String_System_String_Code7Dev_Organizor_Application_TenantUsers_Models_TenantUserProfileUpdateModel_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.UpdateProfileAsync(System.String,System.String,Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel,System.Threading.CancellationToken)">
   UpdateProfileAsync(string, string, TenantUserProfileUpdateModel, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L267"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -477,11 +731,55 @@ Class KeycloakTenantUserIdentityProvider  <a class="header-action link-secondary
 
 
 
+  <a id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_UpdateProfileAsync_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.UpdateProfileAsync*"></a>
+
+  <h3 id="Code7Dev_Organizor_Infrastructure_Keycloak_Services_KeycloakTenantUserIdentityProvider_UpdateProfileAsync_System_String_System_String_System_String_Code7Dev_Organizor_Application_TenantUsers_Models_TenantUserProfileUpdateModel_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.UpdateProfileAsync(System.String,System.String,System.String,Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel,System.Threading.CancellationToken)">
+  UpdateProfileAsync(string, string, string, TenantUserProfileUpdateModel, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; UpdateProfileAsync(string tenantSlug, string identityRealm, string userId, TenantUserProfileUpdateModel model, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tenantSlug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>identityRealm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel.html">TenantUserProfileUpdateModel</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Code7Dev.Organizor.Application.Common.Result.html">Result</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Infrastructure/Keycloak/Services/KeycloakTenantUserIdentityProvider.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

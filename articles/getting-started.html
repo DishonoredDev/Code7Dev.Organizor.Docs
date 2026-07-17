@@ -102,9 +102,11 @@
 <pre><code class="lang-powershell">dotnet tool install -g docfx
 </code></pre>
 <p>Start the development Keycloak instance:</p>
-<pre><code class="lang-powershell">docker compose up -d
+<pre><code class="lang-powershell">Copy-Item .\.env.example .\.env
+docker compose --env-file .\.env up -d
+pwsh ./scripts/bootstrap-keycloak-provisioner.ps1 -SkipCertificateCheck
 </code></pre>
-<p>The compose file starts Keycloak at <code>https://localhost:8443</code>. Generate and trust the local certificate first if <code>keycloak/certs/keycloak.p12</code> does not exist. Configure the <code>organizor-dev</code> realm, clients, roles, and users as described in <a href="keycloak-setup.html">Keycloak Setup</a>.</p>
+<p>The compose file starts Keycloak at <code>https://localhost:8443</code>. Generate and trust the local certificate first if <code>keycloak/certs/keycloak.p12</code> does not exist. On a fresh Keycloak database, Compose imports the <code>organizor-dev</code> platform realm; the bootstrap script creates the backend-only <code>master</code>-realm <code>organizor-provisioner</code> client and verifies its Admin REST access. Tenant realms are created later by onboarding. See <a href="keycloak-setup.html">Keycloak Setup</a> for API user-secret configuration.</p>
 <h2 id="run-the-api">Run the API</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Api\Code7Dev.Organizor.Api.csproj
@@ -169,7 +171,7 @@ Invoke-RestMethod `
   -ContentType &quot;application/json&quot; `
   -Body '{&quot;name&quot;:&quot;Acme&quot;,&quot;slug&quot;:&quot;acme&quot;}'
 </code></pre>
-<p><code>POST /api/v1/tenants</code> creates a catalog record only and requires an <code>organizor-admin</code> token. Use <code>POST /api/admin/tenants/onboard</code> when you also need tenant database and Keycloak provisioning.</p>
+<p><code>POST /api/v1/tenants</code> creates a catalog record only and requires a platform-realm <code>organizor-admin</code> token. Use <code>POST /api/admin/tenants/onboard</code> when you also need tenant realm and database provisioning.</p>
 <h2 id="run-the-portal-ui">Run the Portal UI</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">dotnet run --project .\Code7Dev.Organizor.Portal.Ui\Code7Dev.Organizor.Portal.Ui.csproj --launch-profile https
@@ -181,6 +183,7 @@ Invoke-RestMethod `
 <li>receive login callbacks at <code>https://localhost:7025/authentication/login-callback</code>;</li>
 <li>call the API at <code>https://localhost:7184</code>.</li>
 </ul>
+<p>This is the central platform portal. Tenant websites obtain their own authority and client id from <code>GET /api/public/tenants/{slug}/auth</code>. After onboarding a tenant with <code>tenantAdminPortalBaseUrl</code>, start the same Portal project with the <code>tenant-https</code> profile at <code>https://localhost:7022</code>; it resolves the tenant realm and separate portal client from <code>GET /api/public/tenant-portals/auth</code>.</p>
 <h2 id="build-the-documentation">Build the Documentation</h2>
 <p>From the repository root:</p>
 <pre><code class="lang-powershell">docfx .\docs\docfx.json

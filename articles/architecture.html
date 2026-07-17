@@ -101,7 +101,7 @@
 <h2 id="api-layer">API Layer</h2>
 <p>The API project owns transport concerns:</p>
 <ul>
-<li>controller routes for public tenant catalog operations and internal tenant operations;</li>
+<li>controller routes for platform tenant catalog operations, public tenant contracts, and internal tenant operations;</li>
 <li>request and response DTOs;</li>
 <li>mapping between API DTOs and application models;</li>
 <li>correlation ID, exception handling, and tenant resolution middleware;</li>
@@ -122,7 +122,7 @@
 <tbody>
 <tr>
 <td><code>TenantService</code></td>
-<td>Creates catalog tenant records and reads tenants by slug or as a list.</td>
+<td>Creates catalog tenant records and supports platform-control-plane reads by slug or list.</td>
 </tr>
 <tr>
 <td><code>TenantOnboardingService</code></td>
@@ -151,7 +151,7 @@
 </tbody>
 </table>
 <h2 id="domain-layer">Domain Layer</h2>
-<p>The domain project contains the tenant entity, tenant plan entity, tenant feature-settings value object, and tenant status enum. A tenant stores identity, slug, database name, plan key, config overrides, creation date, lifecycle status, provisioning failure reason, and deletion metadata. Tenant plans store reusable defaults for feature limits and behavior.</p>
+<p>The domain project contains the tenant entity, tenant plan entity, tenant feature-settings value object, and tenant status enum. A tenant stores identity, immutable Keycloak realm mapping, slug, database name, plan key, config overrides, creation date, lifecycle status, provisioning failure reason, and deletion metadata. Tenant plans store reusable defaults for feature limits and behavior.</p>
 <h2 id="infrastructure-layer">Infrastructure Layer</h2>
 <p>The infrastructure project owns external resources:</p>
 <ul>
@@ -162,6 +162,7 @@
 <li><code>ConnectionStringBuilder</code> builds PostgreSQL connection strings from configuration.</li>
 <li><code>TenantDatabaseManager</code> creates and drops tenant databases.</li>
 <li><code>TenantMigrator</code> applies EF Core migrations to tenant databases.</li>
+<li>Keycloak infrastructure provisions, disables, and deletes catalog-owned tenant realms through the backend master-realm provisioner.</li>
 <li><code>TenantProvisioningWorkflow</code> creates a tenant database and applies migrations during onboarding.</li>
 <li><code>TenantJobScheduler</code> schedules tenant-scoped Quartz jobs from catalog tenant records.</li>
 <li><code>TenantAwareJobFactory</code> creates Quartz jobs through dependency injection.</li>

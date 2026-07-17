@@ -152,11 +152,50 @@ Class TenantAuthSettingsValidator  <a class="header-action link-secondary" title
 </h2>
 
 
+  <a id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryGetOrigin_" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryGetOrigin*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryGetOrigin_System_String_System_String__" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryGetOrigin(System.String,System.String@)">
+  TryGetOrigin(string?, out string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Services/TenantAuthSettingsValidator.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the normalized origin for a tenant browser application's base URL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryGetOrigin(string? value, out string origin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryNormalize_" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryNormalize*"></a>
 
   <h3 id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryNormalize_Code7Dev_Organizor_Application_Tenants_Models_TenantAuthSettingsModel_Code7Dev_Organizor_Application_Tenants_Models_TenantAuthSettingsModel__" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryNormalize(Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel,Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel@)">
   TryNormalize(TenantAuthSettingsModel, out TenantAuthSettingsModel)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Services/TenantAuthSettingsValidator.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Services/TenantAuthSettingsValidator.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -171,6 +210,45 @@ Class TenantAuthSettingsValidator  <a class="header-action link-secondary" title
     <dt><code>settings</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html">TenantAuthSettingsModel</a></dt>
     <dd></dd>
     <dt><code>normalized</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html">TenantAuthSettingsModel</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryNormalizeBaseUrl_" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryNormalizeBaseUrl*"></a>
+
+  <h3 id="Code7Dev_Organizor_Application_Tenants_Services_TenantAuthSettingsValidator_TryNormalizeBaseUrl_System_String_System_String__" data-uid="Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.TryNormalizeBaseUrl(System.String,System.String@)">
+  TryNormalizeBaseUrl(string?, out string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/Tenants/Services/TenantAuthSettingsValidator.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Normalizes a tenant browser application's base URL using the shared website URL policy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryNormalizeBaseUrl(string? value, out string normalized)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>normalized</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 

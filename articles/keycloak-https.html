@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Keycloak HTTPS Setup | Organizor ">
       
-      <meta name="description" content="Local HTTPS setup for the development Keycloak container used by the API and Blazor portal.">
+      <meta name="description" content="Local HTTPS setup for the development Keycloak container used by the Organizor platform, tenant realms, and API provisioning client.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -87,11 +87,12 @@
         <article data-uid="">
 <h1 id="keycloak-https-setup">Keycloak HTTPS Setup</h1>
 
-<p>The development Keycloak container runs over HTTPS at <code>https://localhost:8443</code>. The Blazor WebAssembly portal uses this endpoint for OIDC Authorization Code Flow with PKCE, and the API uses the same realm issuer when validating bearer tokens.</p>
+<p>The development Keycloak container runs over HTTPS at <code>https://localhost:8443</code>. The Blazor platform portal, tenant websites, and API must all use this same HTTPS base URL so their realm issuers remain canonical.</p>
+<p>The platform portal signs in through <code>organizor-dev</code>. Tenant realms such as <code>tenant-pjsabbe</code> and <code>tenant-tvdk</code> are created by onboarding. The API accepts only the platform issuer and active catalog tenant issuers; it does not use one static API <code>Keycloak:Authority</code> setting.</p>
 <h2 id="why-https-is-required">Why HTTPS Is Required</h2>
 <ul>
-<li>The portal runs as a browser application and should not mix HTTPS portal/API calls with HTTP identity-provider redirects.</li>
-<li>OIDC redirect URIs must match the portal origin exactly.</li>
+<li>Browser applications should not mix HTTPS portal/API calls with HTTP identity-provider redirects.</li>
+<li>OIDC redirect URIs must match the browser origin exactly.</li>
 <li>Keycloak 24 runs with explicit hostname and HTTPS configuration when started in production mode.</li>
 <li>Local HTTPS keeps browser, API, and identity-provider behavior closer to production.</li>
 </ul>
@@ -121,15 +122,20 @@ mkcert -pkcs12 -p12-file .\keycloak\certs\keycloak.p12 localhost
     - &quot;8443:8443&quot;
 </code></pre>
 <p>Start or restart Keycloak from the repository root:</p>
-<pre><code class="lang-powershell">docker compose down
-docker compose up -d
+<pre><code class="lang-powershell">docker compose --env-file .\.env down
+docker compose --env-file .\.env up -d
 </code></pre>
-<p>Open the admin console at:</p>
-<pre><code class="lang-text">https://localhost:8443
-</code></pre>
-<p>Development admin credentials are read from the untracked <code>.env</code> file:</p>
+<p>With an empty Keycloak database, Docker Compose imports only the platform realm resources from <code>docker/keycloak/import/organizor-dev-realm.json</code>. Tenant realms are created by tenant onboarding.</p>
+<p>Development Keycloak master-admin credentials are read from the untracked <code>.env</code> file:</p>
 <pre><code class="lang-text">ORGANIZOR_KEYCLOAK_ADMIN_USERNAME / ORGANIZOR_KEYCLOAK_ADMIN_PASSWORD
 </code></pre>
+<p>They are used only to bootstrap the backend provisioner after a reset. Organizor administrators do not need a Keycloak <code>master</code> login for normal work.</p>
+<h2 id="backend-provisioner-bootstrap">Backend Provisioner Bootstrap</h2>
+<p>After a fresh Keycloak start, run:</p>
+<pre><code class="lang-powershell">pwsh ./scripts/bootstrap-keycloak-provisioner.ps1 -SkipCertificateCheck
+</code></pre>
+<p>The script creates or updates confidential, service-account-only client <code>organizor-provisioner</code> in <code>master</code>. It assigns and explicitly scopes the master <code>admin</code> role, then smoke-verifies that its client-credentials token can call the Admin REST API. It does not print the client secret or bearer token.</p>
+<p>Configure the API with the matching <code>Keycloak:BaseUrl</code>, <code>Keycloak:PlatformRealm</code>, <code>Keycloak:AdminRealm</code>, <code>Keycloak:AdminClientId</code>, and <code>Keycloak:AdminClientSecret</code> values. See <a href="keycloak-setup.html">Keycloak Setup</a> for the complete reset and secret configuration steps.</p>
 <h2 id="browser-trust">Browser Trust</h2>
 <p>Chrome and Edge normally trust the <code>mkcert</code> root certificate through the Windows certificate store after <code>mkcert -install</code>.</p>
 <p>If Edge still reports <code>ERR_CERT_AUTHORITY_INVALID</code>, import the mkcert root certificate manually into Trusted Root Certification Authorities:</p>
@@ -146,12 +152,16 @@ docker compose up -d
 </thead>
 <tbody>
 <tr>
-<td>Keycloak</td>
+<td>Keycloak base URL</td>
 <td><code>https://localhost:8443</code></td>
 </tr>
 <tr>
-<td>Keycloak realm issuer</td>
+<td>Platform realm issuer</td>
 <td><code>https://localhost:8443/realms/organizor-dev</code></td>
+</tr>
+<tr>
+<td>Tenant realm issuer pattern</td>
+<td><code>https://localhost:8443/realms/tenant-{slug}</code></td>
 </tr>
 <tr>
 <td>Portal UI</td>
@@ -163,14 +173,18 @@ docker compose up -d
 </tr>
 </tbody>
 </table>
-<p>The portal and API must both use the HTTPS Keycloak authority. Tokens issued by <code>https://localhost:8443/realms/organizor-dev</code> will not validate against an API configured for the old HTTP Keycloak endpoint. In local development, set both <code>Keycloak:Authority</code> and <code>Keycloak:BaseUrl</code> to HTTPS in API user secrets.</p>
+<p>The central portal's browser configuration uses the platform authority <code>https://localhost:8443/realms/organizor-dev</code>. Tenant websites must use the tenant authority returned from <code>GET /api/public/tenants/{slug}/auth</code>.</p>
+<p>The API configuration uses the HTTPS base URL, not a fixed realm authority. <code>Keycloak:BaseUrl</code> must therefore be <code>https://localhost:8443</code>; an API configured with the old HTTP base URL rejects HTTPS-issued tokens because the issuer does not match.</p>
 <h2 id="api-user-secrets">API User Secrets</h2>
-<p>For local development, verify the API user secrets use HTTPS:</p>
-<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:Authority&quot; &quot;https://localhost:8443/realms/organizor-dev&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
-dotnet user-secrets set &quot;Keycloak:BaseUrl&quot; &quot;https://localhost:8443&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+<p>For local development, configure the API after bootstrap:</p>
+<pre><code class="lang-powershell">dotnet user-secrets set &quot;Keycloak:BaseUrl&quot; &quot;https://localhost:8443&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:PlatformRealm&quot; &quot;organizor-dev&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminRealm&quot; &quot;master&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminClientId&quot; &quot;organizor-provisioner&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
+dotnet user-secrets set &quot;Keycloak:AdminClientSecret&quot; &quot;&lt;value from .env&gt;&quot; --project Code7Dev.Organizor.Api/Code7Dev.Organizor.Api.csproj
 </code></pre>
 <p>Restart the API after changing these values. Running API processes keep the old configuration in memory.</p>
-<p>The development API accepts the local Keycloak certificate for admin-client calls. Browser trust is still required for portal login.</p>
+<p>The development API accepts the local Keycloak certificate for metadata and admin-client calls. Browser trust is still required for portal and tenant website login.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <table>
 <thead>
@@ -193,13 +207,23 @@ dotnet user-secrets set &quot;Keycloak:BaseUrl&quot; &quot;https://localhost:844
 </tr>
 <tr>
 <td>Portal login redirects fail</td>
-<td>Keycloak client redirect URI does not include <code>https://localhost:7025/*</code></td>
-<td>Update the <code>organizor-ui</code> client redirect URIs.</td>
+<td>Platform client redirect URI does not include <code>https://localhost:7025/*</code></td>
+<td>Update the platform-realm <code>organizor-ui</code> client redirect URIs.</td>
 </tr>
 <tr>
-<td>API returns 401 for portal tokens</td>
-<td>API <code>Keycloak:Authority</code> still points to HTTP</td>
-<td>Set authority to <code>https://localhost:8443/realms/organizor-dev</code>.</td>
+<td>Tenant website login redirects fail</td>
+<td>The tenant website client has stale redirect URIs or authority.</td>
+<td>Re-onboard/update the tenant settings and use its public auth contract.</td>
+</tr>
+<tr>
+<td>API returns 401 for a valid token</td>
+<td>API <code>Keycloak:BaseUrl</code> uses HTTP, the issuer is not an active platform/tenant realm, or the audience is missing.</td>
+<td>Use <code>https://localhost:8443</code>, verify the tenant is active, and request an <code>organizor-api</code> audience token.</td>
+</tr>
+<tr>
+<td>Provisioner bootstrap fails</td>
+<td>Master admin credentials, provisioner values, or local certificate are wrong.</td>
+<td>Correct <code>.env</code>, wait for Keycloak startup, then rerun the script; it is safe to rerun.</td>
 </tr>
 </tbody>
 </table>

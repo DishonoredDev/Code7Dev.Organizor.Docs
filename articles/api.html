@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Public API Behavior | Organizor </title>
+      <title>API Behavior | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Public API Behavior | Organizor ">
+      <meta name="title" content="API Behavior | Organizor ">
       
-      <meta name="description" content="Public HTTP endpoint guide for tenant catalog and tenant-scoped config operations, response shapes, status codes, and client examples.">
+      <meta name="description" content="HTTP endpoint guide for tenant catalog and tenant-scoped config operations, issuer-aware authorization, response shapes, status codes, and client examples.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,130 +85,22 @@
         </div>
 
         <article data-uid="">
-<h1 id="public-api-behavior">Public API Behavior</h1>
+<h1 id="api-behavior">API Behavior</h1>
 
-<p>The public API exposes tenant catalog endpoints, tenant-scoped config reads, anonymous tenant-user self-registration, and static tenant website authentication discovery. Tenant catalog endpoints are platform/catalog routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They are still authenticated:</p>
+<p>This page covers the platform catalog endpoints, tenant config read endpoint, and development utility endpoints. Feature-specific API surfaces are split into focused pages:</p>
 <ul>
-<li><code>POST /api/v1/tenants</code> requires <code>organizor-admin</code>.</li>
-<li><code>GET /api/v1/tenants</code> and <code>GET /api/v1/tenants/{slug}</code> require <code>organizor-admin</code>, <code>tenant-admin</code>, or <code>tenant-user</code>.</li>
+<li><a href="public-website-api.html">Public Website API</a> covers anonymous tenant website auth discovery and tenant-user self-registration.</li>
+<li><a href="tenant-domain-api.html">Tenant Domain API</a> covers people, relationships, organizations, activities, registrations, and document capabilities.</li>
+<li><a href="internal-operations.html">Internal Operations</a> covers platform administration endpoints.</li>
+<li><a href="tenant-modules.html">Tenant Modules</a> covers the code-deployed catalog, plan entitlements, tenant installations, and module operator endpoints.</li>
 </ul>
-<p>Tenant-scoped application endpoints, including <code>GET /api/v1/tenant/config</code> and tenant user-management routes, must include the <code>X-Tenant-Slug</code> header unless the path is explicitly skipped by tenant resolution.</p>
-<p>Internal tenant administration endpoints are documented separately in <a href="internal-operations.html">Internal Operations</a>.</p>
-<h2 id="static-tenant-website-auth-contract">Static Tenant Website Auth Contract</h2>
-<pre><code class="lang-http">GET /api/public/tenants/acme/auth
-Accept: application/json
-</code></pre>
-<p>Returns the public OIDC settings a tenant-specific static website needs before login. The endpoint is anonymous and only returns data for active, non-deleted tenants.</p>
-<p>Example response:</p>
-<pre><code class="lang-json">{
-  &quot;tenantSlug&quot;: &quot;acme&quot;,
-  &quot;authority&quot;: &quot;https://localhost:8443/realms/organizor-dev&quot;,
-  &quot;clientId&quot;: &quot;tenant-acme-web&quot;,
-  &quot;websiteBaseUrl&quot;: &quot;https://acme.example.com&quot;,
-  &quot;responseType&quot;: &quot;code&quot;,
-  &quot;usePkce&quot;: true,
-  &quot;tenantHeaderName&quot;: &quot;X-Tenant-Slug&quot;,
-  &quot;tenantClaimName&quot;: &quot;tenant&quot;,
-  &quot;tenantUserRole&quot;: &quot;tenant-user&quot;,
-  &quot;tenantAdminRole&quot;: &quot;tenant-admin&quot;,
-  &quot;tenantUserGroupPath&quot;: &quot;/tenants/acme/users&quot;,
-  &quot;tenantAdminGroupPath&quot;: &quot;/tenants/acme/admins&quot;,
-  &quot;scopes&quot;: [&quot;openid&quot;, &quot;profile&quot;, &quot;email&quot;],
-  &quot;loginRedirectUris&quot;: [
-    &quot;https://acme.example.com/authentication/login-callback&quot;
-  ],
-  &quot;logoutRedirectUris&quot;: [
-    &quot;https://acme.example.com&quot;
-  ],
-  &quot;webOrigins&quot;: [
-    &quot;https://acme.example.com&quot;
-  ],
-  &quot;registrationRedirectUrl&quot;: &quot;https://acme.example.com/register/complete&quot;,
-  &quot;publicRegistrationEndpoint&quot;: &quot;/api/public/register&quot;
-}
-</code></pre>
-<p>Static tenant websites should use this contract to:</p>
+<p>Tenant catalog endpoints are platform/control-plane routes, so tenant resolution does not require <code>X-Tenant-Slug</code> for them. They require a platform-realm <code>organizor-admin</code> token:</p>
 <ul>
-<li>configure OIDC Authorization Code Flow with PKCE;</li>
-<li>link back to the tenant website using <code>websiteBaseUrl</code>;</li>
-<li>use the generated tenant client id;</li>
-<li>request <code>openid profile email</code>;</li>
-<li>send <code>X-Tenant-Slug: {tenantSlug}</code> on tenant-scoped authenticated API calls;</li>
-<li>expect the Keycloak token to contain a <code>tenant</code> claim from the <code>tenant-membership</code> mapper.</li>
-<li>expect user tokens to be members of <code>/tenants/{tenantSlug}/users</code> or <code>/tenants/{tenantSlug}/admins</code> and to carry the matching <code>tenant-user</code> or <code>tenant-admin</code> role required by the target endpoint.</li>
+<li><code>POST /api/v1/tenants</code> requires the platform-realm <code>organizor-admin</code> role.</li>
+<li><code>GET /api/v1/tenants</code> and <code>GET /api/v1/tenants/{slug}</code> require the platform-realm <code>organizor-admin</code> role.</li>
 </ul>
-<p>Possible responses:</p>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>200 OK</code></td>
-<td>Contract returned for an active tenant.</td>
-</tr>
-<tr>
-<td><code>400 Bad Request</code></td>
-<td>Tenant slug or stored auth settings are invalid.</td>
-</tr>
-<tr>
-<td><code>404 Not Found</code></td>
-<td>Tenant does not exist, is deleted, or is not active.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-tenant-user-registration">Public Tenant User Registration</h2>
-<pre><code class="lang-http">POST /api/public/register
-Content-Type: application/json
-
-{
-  &quot;tenantSlug&quot;: &quot;acme&quot;,
-  &quot;username&quot;: &quot;jane.doe&quot;,
-  &quot;email&quot;: &quot;jane@example.com&quot;,
-  &quot;password&quot;: &quot;correct-horse-battery-staple&quot;
-}
-</code></pre>
-<p>Creates an enabled <code>tenant-user</code> account for an active tenant. This endpoint is anonymous and does not use <code>X-Tenant-Slug</code>; the tenant is selected from the request body.</p>
-<p>Registration uses Keycloak as the source of truth and assigns the user to <code>/tenants/{slug}/users</code>. The API validates the tenant exists, is active, has effective <code>settings.registration.enabled</code> set to boolean <code>true</code>, and has not reached its configured user limit.</p>
-<p>The portal <code>/register</code> page is only a temporary shell for testing this feature. Future tenant-specific static websites should provide their own UI and call this API contract directly.</p>
-<p>Possible responses:</p>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>200 OK</code></td>
-<td>User was created and assigned to the tenant user group.</td>
-</tr>
-<tr>
-<td><code>400 Bad Request</code></td>
-<td>Request validation failed, effective registration config is invalid, or registration is disabled.</td>
-</tr>
-<tr>
-<td><code>404 Not Found</code></td>
-<td>Tenant slug does not resolve to an active tenant.</td>
-</tr>
-<tr>
-<td><code>409 Conflict</code></td>
-<td>Username or email already exists in Keycloak, or the tenant user limit was reached.</td>
-</tr>
-<tr>
-<td><code>502 Bad Gateway</code></td>
-<td>Keycloak rejected the user operation or could not complete it.</td>
-</tr>
-<tr>
-<td><code>500 Internal Server Error</code></td>
-<td>Unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
-</tr>
-</tbody>
-</table>
+<p>Tenant administrators and tenant users cannot enumerate the catalog or inspect another tenant through these routes. They use their own tenant-scoped API routes and the public auth-discovery contract instead.</p>
+<p>Tenant-scoped application endpoints, including <code>GET /api/v1/tenant/config</code>, must include the <code>X-Tenant-Slug</code> header unless the path explicitly documents a different tenant selection mechanism. The API verifies that a tenant token's issuer is the catalog-owned realm for that header; the <code>tenant</code> claim is not used as the isolation boundary.</p>
 <h2 id="tenant-catalog">Tenant Catalog</h2>
 <h3 id="create-tenant">Create Tenant</h3>
 <pre><code class="lang-http">POST /api/v1/tenants
@@ -220,7 +112,7 @@ Content-Type: application/json
   &quot;slug&quot;: &quot;acme&quot;
 }
 </code></pre>
-<p>Creates a catalog tenant record with <code>Pending</code> status and returns tenant metadata. This route does not provision Keycloak groups, a default tenant admin, or a tenant database. Use <code>POST /api/admin/tenants/onboard</code> for the full onboarding workflow.</p>
+<p>Creates a catalog tenant record with <code>Pending</code> status, assigns its immutable <code>IdentityRealm</code>, and returns tenant metadata. This route does not provision a Keycloak realm, a default tenant admin, or a tenant database. Use <code>POST /api/admin/tenants/onboard</code> for the full onboarding workflow.</p>
 <p>Example response:</p>
 <pre><code class="lang-json">{
   &quot;id&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,
@@ -311,19 +203,19 @@ Content-Type: application/json
 <pre><code class="lang-http">GET /api/v1/tenants/acme
 Authorization: Bearer &lt;token&gt;
 </code></pre>
-<p>Returns a tenant by slug using the tenant catalog response shape above, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded.</p>
+<p>Returns a tenant by slug using the tenant catalog response shape above, or <code>404 Not Found</code> when no tenant exists. Soft-deleted tenants are excluded. Only a platform <code>organizor-admin</code> can call this route.</p>
 <h3 id="list-tenants">List Tenants</h3>
 <pre><code class="lang-http">GET /api/v1/tenants
 Authorization: Bearer &lt;token&gt;
 </code></pre>
-<p>Returns all catalog tenants visible through the tenant repository using the tenant catalog response shape above. Soft-deleted tenants are excluded.</p>
+<p>Returns all catalog tenants visible to the platform control plane using the tenant catalog response shape above. Soft-deleted tenants are excluded. Tenant-realm identities have no catalog-list visibility.</p>
 <h2 id="tenant-config">Tenant Config</h2>
 <pre><code class="lang-http">GET /api/v1/tenant/config
 Authorization: Bearer &lt;tenant-token&gt;
 X-Tenant-Slug: acme
 </code></pre>
 <p>Returns the current tenant's effective config. Effective config is resolved from the tenant's assigned plan defaults plus tenant-specific overrides.</p>
-<p>This endpoint requires <code>organizor-admin</code> or <code>tenant-admin</code> through the <code>RequireTenantAdminRole</code> policy. Tenant access middleware also verifies that the authenticated user belongs to the tenant identified by <code>X-Tenant-Slug</code>.</p>
+<p>This endpoint requires a matching tenant-realm <code>tenant-admin</code> or the platform-realm <code>organizor-admin</code> support exception through the issuer-aware <code>RequireTenantAdminRole</code> policy. Tenant access middleware also verifies that the authenticated token issuer matches the realm identified by <code>X-Tenant-Slug</code>.</p>
 <h2 id="platform-endpoints">Platform Endpoints</h2>
 <table>
 <thead>

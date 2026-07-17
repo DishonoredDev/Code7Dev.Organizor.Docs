@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Tenant Authorization | Organizor ">
       
-      <meta name="description" content="Tenant resolution and tenant-level authorization behavior for Organizor API requests.">
+      <meta name="description" content="Tenant resolution and issuer-bound authorization behavior for Organizor API requests.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,58 +88,28 @@
 <h1 id="tenant-authorization">Tenant Authorization</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Tenant-scoped API routes require both a valid JWT and an <code>X-Tenant-Slug</code> header. The API resolves the header to a catalog tenant, validates that the JWT is allowed to use that tenant, then lets controller authorization policies run.</p>
+<p>Tenant-scoped API routes require a valid bearer token and an <code>X-Tenant-Slug</code> header. The catalog maps that slug to a tenant database and an immutable Keycloak realm. The API then requires the token issuer to match that realm.</p>
 <h2 id="tenant-resolution">Tenant Resolution</h2>
-<p>Tenant-scoped routes must include:</p>
+<p>Tenant-scoped routes include:</p>
 <pre><code class="lang-http">X-Tenant-Slug: acme
 </code></pre>
-<p>The tenant resolution middleware skips platform and infrastructure routes, including:</p>
-<ul>
-<li><code>/api/admin</code></li>
-<li><code>/api/public</code></li>
-<li><code>/api/v1/tenants</code></li>
-<li><code>/api/auth</code></li>
-<li><code>/health</code></li>
-<li><code>/openapi</code></li>
-<li><code>/scalar</code></li>
-<li><code>/favicon</code></li>
-<li><code>/robots</code></li>
-</ul>
-<p>Resolution steps:</p>
-<ol>
-<li>Middleware reads <code>X-Tenant-Slug</code>.</li>
-<li>Middleware looks up the tenant in the catalog database.</li>
-<li>Middleware sets <code>tenantContext.Current</code>.</li>
-<li>Middleware logs tenant metadata.</li>
-</ol>
-<h2 id="jwt-tenant-claim">JWT Tenant Claim</h2>
-<p>Tenant membership is represented by one or more <code>tenant</code> claims. The middleware accepts either direct slugs or Keycloak-style paths:</p>
-<pre><code class="lang-json">{
-  &quot;tenant&quot;: [&quot;/tenants/acme/admins&quot;, &quot;/tenants/contoso/users&quot;]
-}
-</code></pre>
-<p>The slug is extracted from the segment after <code>/tenants/</code>. For <code>/tenants/acme/admins</code>, the effective tenant slug is <code>acme</code>.</p>
-<p>Static tenant websites discover the expected tenant header and claim names through <code>GET /api/public/tenants/{slug}/auth</code>. That endpoint is anonymous and bypasses tenant resolution; authenticated tenant-scoped calls still require <code>X-Tenant-Slug</code>.</p>
+<p>Resolution reads the active catalog tenant and stores its id, slug, and <code>IdentityRealm</code> in the request tenant context. Platform routes, public routes, and health/documentation routes bypass tenant resolution.</p>
 <h2 id="enforcement-rules">Enforcement Rules</h2>
-<p>For tenant-scoped routes:</p>
+<p>For a tenant-scoped route:</p>
 <ul>
-<li>Missing or invalid <code>Authorization</code> returns <code>401 Unauthorized</code> when the endpoint requires <code>[Authorize]</code>.</li>
-<li>Missing endpoint roles such as <code>tenant-user</code> or <code>tenant-admin</code> returns <code>403 Forbidden</code>.</li>
-<li>Missing <code>X-Tenant-Slug</code> returns <code>400 Bad Request</code>.</li>
-<li>Unknown <code>X-Tenant-Slug</code> returns <code>404 Not Found</code>.</li>
-<li>A JWT with tenant claims must include the same slug as <code>X-Tenant-Slug</code>.</li>
-<li>A JWT tenant/header mismatch returns <code>403 Forbidden</code>.</li>
-<li>A JWT without tenant claims is treated as a platform superadmin token and bypasses tenant membership checks.</li>
-<li>The <code>organizor-api</code> service account, identified by <code>client_id = organizor-api</code>, bypasses tenant membership checks.</li>
-<li>Matching tenant JWTs are still checked through <code>ITenantAccessService.UserHasAccessAsync(userId, tenantId)</code>.</li>
-<li>If <code>ITenantAccessService</code> denies access, the API returns <code>403 Forbidden</code>.</li>
+<li>a <code>tenant-acme</code> token may call only requests resolved as <code>acme</code>;</li>
+<li>a <code>tenant-contoso</code> token calling <code>X-Tenant-Slug: acme</code> receives <code>403 Forbidden</code>;</li>
+<li>a platform-realm token is cross-tenant only when it carries <code>organizor-admin</code>;</li>
+<li>the old no-<code>tenant</code>-claim superadmin bypass does not exist;</li>
+<li>the <code>tenant</code> claim is informational compatibility data, not an access decision;</li>
+<li>an <code>organizor-api</code> service-account token does not bypass issuer binding merely because it is a service account.</li>
 </ul>
 <h2 id="middleware-chain">Middleware Chain</h2>
 <pre><code class="lang-mermaid">flowchart TD
-    A[Request] --&gt; B[TenantResolutionMiddleware]
-    B --&gt; C[Authentication]
-    C --&gt; D[TenantAccessMiddleware]
-    D --&gt; E[Authorization Policies]
+    A[Request with X-Tenant-Slug] --&gt; B[Tenant resolution]
+    B --&gt; C[Trusted multi-issuer authentication]
+    C --&gt; D[Issuer-to-tenant access binding]
+    D --&gt; E[Issuer-aware role policy]
     E --&gt; F[Controller]
 </code></pre>
 <h2 id="http-test-matrix">HTTP Test Matrix</h2>
@@ -147,87 +117,50 @@
 <thead>
 <tr>
 <th>Scenario</th>
-<th>Authorization</th>
-<th>X-Tenant-Slug</th>
+<th>Token issuer</th>
+<th>Header</th>
 <th>Expected</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Tenant token for <code>acme</code> calls <code>acme</code></td>
-<td>tenant JWT</td>
-<td><code>acme</code></td>
-<td>Allowed if <code>ITenantAccessService</code> allows</td>
+<td>PJsabbe user calls PJsabbe</td>
+<td><code>tenant-pjsabbe</code></td>
+<td><code>pjsabbe</code></td>
+<td>Allowed with required role</td>
 </tr>
 <tr>
-<td>Tenant token for <code>acme</code> calls <code>contoso</code></td>
-<td>tenant JWT</td>
-<td><code>contoso</code></td>
+<td>PJsabbe user calls TVDK</td>
+<td><code>tenant-pjsabbe</code></td>
+<td><code>tvdk</code></td>
 <td><code>403 Forbidden</code></td>
 </tr>
 <tr>
-<td>Superadmin token has no tenant claim</td>
-<td>superadmin JWT</td>
-<td>any valid slug</td>
-<td>Allowed</td>
+<td>Platform admin supports TVDK</td>
+<td>platform realm + <code>organizor-admin</code></td>
+<td><code>tvdk</code></td>
+<td>Allowed where policy permits</td>
 </tr>
 <tr>
-<td>Service account token</td>
-<td><code>client_id = organizor-api</code></td>
-<td>any valid slug</td>
-<td>Allowed</td>
+<td>Tenant role named <code>organizor-admin</code> calls platform route</td>
+<td>tenant realm</td>
+<td>none</td>
+<td><code>403 Forbidden</code></td>
 </tr>
 <tr>
-<td>Missing tenant header on tenant route</td>
-<td>valid JWT</td>
-<td>omitted</td>
-<td><code>400 Bad Request</code></td>
-</tr>
-<tr>
-<td>Unknown tenant header on tenant route</td>
-<td>valid JWT</td>
-<td>unknown slug</td>
-<td><code>404 Not Found</code></td>
-</tr>
-<tr>
-<td>Missing token on authorized route</td>
-<td>omitted</td>
-<td>valid slug</td>
+<td>Soft-deleted tenant token</td>
+<td>disabled/removed tenant realm</td>
+<td>matching slug</td>
 <td><code>401 Unauthorized</code></td>
 </tr>
 <tr>
-<td>Missing endpoint role</td>
-<td>tenant JWT without required role</td>
-<td>valid slug</td>
-<td><code>403 Forbidden</code></td>
-</tr>
-<tr>
-<td><code>ITenantAccessService</code> denies matching user</td>
-<td>tenant JWT</td>
-<td>matching slug</td>
-<td><code>403 Forbidden</code></td>
+<td>Missing tenant header</td>
+<td>valid tenant token</td>
+<td>omitted</td>
+<td><code>400 Bad Request</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="sample-requests">Sample Requests</h2>
-<p>Tenant-scoped request:</p>
-<pre><code class="lang-http">GET http://localhost:5100/api/some-tenant-scoped-route
-Authorization: Bearer &lt;tenant-token&gt;
-X-Tenant-Slug: acme
-Accept: application/json
-</code></pre>
-<p>Cross-tenant denial:</p>
-<pre><code class="lang-http">GET http://localhost:5100/api/some-tenant-scoped-route
-Authorization: Bearer &lt;token-with-tenant-acme&gt;
-X-Tenant-Slug: contoso
-Accept: application/json
-</code></pre>
-<p>Superadmin bypass:</p>
-<pre><code class="lang-http">GET http://localhost:5100/api/some-tenant-scoped-route
-Authorization: Bearer &lt;token-without-tenant-claim&gt;
-X-Tenant-Slug: acme
-Accept: application/json
-</code></pre>
 
 </article>
 

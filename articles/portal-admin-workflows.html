@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Portal Admin Workflows | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Portal Admin Workflows | Organizor ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/portal-admin-workflows.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="portal-admin-workflows">Portal Admin Workflows</h1>
+
+<p>Platform administration routes use <code>AdminLayout</code> and require <code>organizor-admin</code> issued by the configured platform realm. The admin shell groups navigation into Overview and Platform sections, with <code>/admin/users</code> intentionally remaining a tenant-row deep link rather than a standalone sidebar item. A platform administrator has one control-plane login; the backend provisioner manages separate tenant realms without giving the administrator tenant or <code>master</code> credentials.</p>
+<h2 id="dashboard">Dashboard</h2>
+<p>The <code>/admin</code> dashboard is a read-only platform overview. It loads tenant and plan data through <code>AdminTenantService</code>, summarizes tenant lifecycle state, highlights failed tenant records, shows active and inactive plan counts, and links to tenant and plan management.</p>
+<p>The dashboard does not add new API endpoints or mutate tenant data.</p>
+<h2 id="tenant-management">Tenant Management</h2>
+<p>The admin tenant page uses Radzen components and the <code>AdminTenantService</code> client. It supports:</p>
+<ul>
+<li>loading all tenants including soft-deleted tenants;</li>
+<li>filtering tenants by name, slug, database name, or status;</li>
+<li>viewing active, deleted, and failed tenant counts;</li>
+<li>onboarding a tenant with website and auth metadata;</li>
+<li>upgrading a tenant database by running pending migrations;</li>
+<li>soft-deleting a tenant with an operator reason;</li>
+<li>hard-deleting a previously soft-deleted tenant;</li>
+<li>opening user management for active tenants;</li>
+<li>inspecting effective tenant config;</li>
+<li>editing tenant plan assignment and tenant-level overrides.</li>
+<li>inspecting a tenant's entitled and installed modules;</li>
+<li>installing an optional add-on, retrying a failed or interrupted installation, or enabling/disabling an installed module without deleting its business data.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>UI action</th>
+<th>API endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load tenants</td>
+<td><code>GET /api/admin/tenants</code></td>
+</tr>
+<tr>
+<td>Load one tenant</td>
+<td><code>GET /api/admin/tenants/{id}</code></td>
+</tr>
+<tr>
+<td>Onboard tenant</td>
+<td><code>POST /api/admin/tenants/onboard</code></td>
+</tr>
+<tr>
+<td>Upgrade tenant</td>
+<td><code>POST /api/admin/tenants/{id}/upgrade</code></td>
+</tr>
+<tr>
+<td>Inspect effective config</td>
+<td><code>GET /api/admin/tenants/{id}/config</code></td>
+</tr>
+<tr>
+<td>Load tenant overrides</td>
+<td><code>GET /api/admin/tenants/{id}/config-overrides</code></td>
+</tr>
+<tr>
+<td>Save tenant overrides</td>
+<td><code>PUT /api/admin/tenants/{id}/config-overrides</code></td>
+</tr>
+<tr>
+<td>Inspect tenant modules</td>
+<td><code>GET /api/admin/tenants/{id}/modules</code></td>
+</tr>
+<tr>
+<td>Install tenant module</td>
+<td><code>POST /api/admin/tenants/{id}/modules/{moduleKey}/install</code></td>
+</tr>
+<tr>
+<td>Retry failed or interrupted module installation</td>
+<td><code>POST /api/admin/tenants/{id}/modules/{moduleKey}/retry</code></td>
+</tr>
+<tr>
+<td>Enable tenant module</td>
+<td><code>POST /api/admin/tenants/{id}/modules/{moduleKey}/enable</code></td>
+</tr>
+<tr>
+<td>Disable tenant module</td>
+<td><code>POST /api/admin/tenants/{id}/modules/{moduleKey}/disable</code></td>
+</tr>
+<tr>
+<td>Soft delete tenant</td>
+<td><code>DELETE /api/admin/tenants/{id}</code></td>
+</tr>
+<tr>
+<td>Hard delete tenant</td>
+<td><code>POST /api/admin/tenants/{id}/hard-delete</code></td>
+</tr>
+</tbody>
+</table>
+<p>Tenant onboarding stores website/auth settings in centralized tenant config, assigns immutable <code>IdentityRealm</code> <code>tenant-{slug}</code>, and provisions that realm so tenant website auth can use Organizor as the source of truth. The onboarding dialog also selects an active plan; successful onboarding automatically installs that plan's included modules.</p>
+<p>Soft delete disables the tenant realm before catalog deletion state is recorded. Hard delete removes the complete tenant realm before database and catalog cleanup. An identity-provider failure stops the destructive action and is surfaced as <code>TENANT_IDENTITY_PROVIDER_FAILED</code>.</p>
+<p>The tenant drawer separates <strong>Modules</strong> from legacy configuration. Its module section shows plan availability, installation state, source, dependency readiness, and any failure reason. A disabled module retains data, and a module with an enabled dependent cannot be disabled.</p>
+<h2 id="plan-management">Plan Management</h2>
+<p>The admin plans page uses <code>AdminTenantService</code> and supports loading and editing tenant plan definitions. Its <strong>Modules</strong> tab manages the plan's product bundle separately from legacy feature and settings defaults.</p>
+<table>
+<thead>
+<tr>
+<th>UI action</th>
+<th>API endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load plans</td>
+<td><code>GET /api/admin/tenant-plans</code></td>
+</tr>
+<tr>
+<td>Save plan defaults</td>
+<td><code>PUT /api/admin/tenant-plans/{planKey}</code></td>
+</tr>
+<tr>
+<td>Load deployed module catalog</td>
+<td><code>GET /api/admin/modules</code></td>
+</tr>
+<tr>
+<td>Load plan module entitlements</td>
+<td><code>GET /api/admin/tenant-plans/{planKey}/module-entitlements</code></td>
+</tr>
+<tr>
+<td>Save plan module entitlements</td>
+<td><code>PUT /api/admin/tenant-plans/{planKey}/module-entitlements</code></td>
+</tr>
+</tbody>
+</table>
+<p>Plan keys are intentionally immutable. The entitlement editor assigns every deployed module one of Included, Optional add-on, or Unavailable. An included module is installed at successful onboarding; an optional module needs an explicit tenant action. See <a href="tenant-modules.html">Tenant Modules</a> for the lifecycle constraints.</p>
+<h2 id="tenant-user-control-plane">Tenant User Control Plane</h2>
+<p>The tenant catalog page is the entry point for platform tenant-user management. Platform administrators open users from an active tenant row, which navigates to <code>/admin/users?tenantId={id}</code>.</p>
+<p>The admin users page manages only that tenant's realm-local Keycloak users. It can create users, list users, toggle enabled state, delete users, and assign tenant roles within the selected tenant. The same username may exist in another tenant realm without being the same identity.</p>
+<p>The admin sidebar does not expose <code>/admin/users</code> as a standalone global directory. <code>/admin/users</code> without a valid active tenant id redirects to <code>/admin/tenants</code>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/portal-admin-workflows.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

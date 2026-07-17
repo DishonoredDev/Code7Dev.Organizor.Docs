@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Configuration | Organizor ">
       
-      <meta name="description" content="Configuration reference for catalog connection strings, PostgreSQL tenant settings, logging, CORS, OpenAPI, and Scalar.">
+      <meta name="description" content="Configuration reference for catalog connection strings, PostgreSQL tenant settings, Keycloak realm isolation, logging, CORS, OpenAPI, and Scalar.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -110,39 +110,49 @@
 </code></pre>
 <p>The admin connection uses the <code>postgres</code> database. Tenant connections use the tenant database name stored in the catalog.</p>
 <h2 id="keycloak">Keycloak</h2>
-<p>The API requires Keycloak settings for two separate concerns:</p>
+<p>The API uses one Keycloak deployment but does not use one application realm for every tenant:</p>
 <ul>
-<li>JWT validation uses <code>Keycloak:Authority</code>.</li>
-<li>Tenant onboarding uses the Keycloak admin client settings to create tenant groups, assign roles, create/update tenant website clients, and create the default tenant admin user.</li>
+<li><code>Keycloak:PlatformRealm</code> identifies the Organizor control-plane realm. Local development uses <code>organizor-dev</code>.</li>
+<li>Every active catalog tenant has its own immutable <code>Tenant.IdentityRealm</code>, such as <code>tenant-pjsabbe</code> or <code>tenant-tvdk</code>.</li>
+<li><code>Keycloak:AdminRealm</code> identifies the realm that issues the backend provisioning token. It defaults to <code>master</code>.</li>
+<li><code>Keycloak:AdminClientId</code> and <code>Keycloak:AdminClientSecret</code> identify the backend-only <code>organizor-provisioner</code> service account in that admin realm.</li>
 </ul>
+<p>The API constructs the platform issuer from <code>Keycloak:BaseUrl</code> and <code>Keycloak:PlatformRealm</code>, then accepts only that issuer and issuers of active catalog tenant realms. It validates the <code>organizor-api</code> audience and never follows OpenID metadata from an issuer supplied by an untrusted token. There is no API setting named <code>Keycloak:Authority</code> or <code>Keycloak:Realm</code> in this model.</p>
 <p>Example development shape:</p>
 <pre><code class="lang-json">{
   &quot;Keycloak&quot;: {
-    &quot;Authority&quot;: &quot;https://localhost:8443/realms/organizor-dev&quot;,
     &quot;BaseUrl&quot;: &quot;https://localhost:8443&quot;,
-    &quot;Realm&quot;: &quot;organizor-dev&quot;,
-    &quot;AdminClientId&quot;: &quot;organizor-admin&quot;,
-    &quot;AdminClientSecret&quot;: &quot;&lt;admin-client-secret&gt;&quot;,
-    &quot;DefaultTenantAdminTemporaryPassword&quot;: &quot;&lt;optional-local-only-password&gt;&quot;
+    &quot;PlatformRealm&quot;: &quot;organizor-dev&quot;,
+    &quot;AdminRealm&quot;: &quot;master&quot;,
+    &quot;AdminClientId&quot;: &quot;organizor-provisioner&quot;,
+    &quot;AdminClientSecret&quot;: &quot;&lt;provisioner-client-secret&gt;&quot;,
+    &quot;DefaultTenantAdminTemporaryPassword&quot;: &quot;&lt;optional-local-only-password&gt;&quot;,
+    &quot;DevelopmentAdmin&quot;: {
+      &quot;Username&quot;: &quot;admin@organizor.dev&quot;,
+      &quot;Email&quot;: &quot;admin@organizor.dev&quot;,
+      &quot;Password&quot;: &quot;&lt;local-only-organizor-admin-password&gt;&quot;
+    }
   }
 }
 </code></pre>
-<p><code>Authority</code> must match the token issuer exactly. The local Keycloak container runs at <code>https://localhost:8443</code>, so tokens from the Blazor portal have issuer <code>https://localhost:8443/realms/organizor-dev</code>.</p>
-<p>A mismatch between <code>http</code> and <code>https</code> is enough to make API authentication fail with <code>401 Unauthorized</code>.</p>
-<p>The development API configures the Keycloak admin <code>HttpClient</code> to accept the local self-signed Keycloak certificate. This is development-only behavior and should not be used for production identity-provider calls.</p>
-<p>Store client secrets in user secrets, environment variables, or deployment secrets rather than committing them to source.</p>
-<p>Outside Development, the API refuses to start when Keycloak authority/base URL are missing, non-HTTPS, or loopback URLs. It also requires <code>Keycloak:Realm</code>, <code>Keycloak:AdminClientId</code>, and <code>Keycloak:AdminClientSecret</code>.</p>
-<p><code>Keycloak:DefaultTenantAdminTemporaryPassword</code> is optional. When omitted, onboarding generates a temporary password for the default <code>{slug}-admin</code> user. Do not configure development passwords such as <code>ChangeMe123!</code> or <code>Admin123!</code> outside Development.</p>
+<p><code>BaseUrl</code> must be the canonical Keycloak HTTP(S) base URL. A mismatch between <code>http</code> and <code>https</code> changes the issuer and makes token validation fail with <code>401 Unauthorized</code>.</p>
+<p>The development API accepts the local self-signed Keycloak certificate for metadata and admin-client calls. This is development-only behavior and must not be used for production identity-provider calls.</p>
+<p>Store the provisioner secret in user secrets, environment variables, or deployment secret storage. It must never appear in the portal, a tenant website, or a public auth-discovery response. Use <a href="keycloak-setup.html">Keycloak Setup</a> to bootstrap the local provisioner after a Keycloak reset.</p>
+<p>Outside Development, the API refuses to start when the Keycloak base URL, platform realm, admin client id, or admin client secret is missing, non-HTTPS where required, or uses a loopback URL. <code>Keycloak:AdminRealm</code> is optional and defaults to <code>master</code>; setting it explicitly is useful for clarity or an intentionally different administration realm.</p>
+<p><code>Keycloak:DefaultTenantAdminTemporaryPassword</code> is optional and supported only in Development for predictable local testing. When omitted, onboarding generates a unique temporary password for the default <code>{slug}-admin</code> user. Production refuses to start if this setting is configured.</p>
+<p>In Development, the API can seed the configured <code>Keycloak:DevelopmentAdmin:Username</code> with the platform-realm <code>organizor-admin</code> role when <code>Keycloak:DevelopmentAdmin:Username</code>, <code>Keycloak:DevelopmentAdmin:Email</code>, and <code>Keycloak:DevelopmentAdmin:Password</code> are configured. Store development-admin values in user secrets, not Docker <code>.env</code> files or source. Existing users keep their current password unless <code>Keycloak:DevelopmentAdmin:ResetPasswordOnStartup</code> is explicitly set to <code>true</code>.</p>
 <h2 id="portal-ui">Portal UI</h2>
-<p>The Blazor WebAssembly portal uses Keycloak for OIDC login and calls the API with bearer tokens. Admin tenant management uses Radzen components and <code>AdminTenantService</code> over the named <code>api</code> HttpClient.</p>
+<p>The current Blazor WebAssembly portal is the central Organizor-admin control plane. It uses the platform realm and calls the API with platform-realm bearer tokens.</p>
 <p>The portal reads these values from <code>wwwroot/appsettings.json</code> or the matching environment-specific Blazor configuration file:</p>
 <ul>
 <li><code>Api:BaseUrl</code></li>
+<li><code>Portal:PlatformBaseUrl</code></li>
 <li><code>Keycloak:Authority</code></li>
 <li><code>Keycloak:ClientId</code></li>
 <li><code>Authentication:RedirectUri</code></li>
 <li><code>Authentication:PostLogoutRedirectUri</code></li>
 </ul>
+<p><code>Keycloak:Authority</code> remains a browser-client setting, not an API setting. Its local value is <code>https://localhost:8443/realms/organizor-dev</code>.</p>
 <p>Current local development endpoints:</p>
 <table>
 <thead>
@@ -157,11 +167,11 @@
 <td><code>https://localhost:7025</code></td>
 </tr>
 <tr>
-<td>Keycloak authority</td>
+<td>Platform Keycloak authority</td>
 <td><code>https://localhost:8443/realms/organizor-dev</code></td>
 </tr>
 <tr>
-<td>Keycloak client ID</td>
+<td>Portal client ID</td>
 <td><code>organizor-ui</code></td>
 </tr>
 <tr>
@@ -174,7 +184,7 @@
 </tr>
 </tbody>
 </table>
-<p>These values must stay aligned with the <code>organizor-ui</code> client redirect URIs and web origins in Keycloak.</p>
+<p>These values must stay aligned with the <code>organizor-ui</code> client redirect URIs and web origins in the platform realm. <code>Portal:PlatformBaseUrl</code> identifies that one fixed host. At every other Portal host, startup resolves and validates a trusted tenant-specific runtime configuration and tenant-local client through the anonymous portal auth contract; it never falls back to the platform configuration.</p>
 <h2 id="quartz">Quartz</h2>
 <p>Quartz uses the <code>Catalog</code> connection string for its persistent store. The same catalog database stores tenant records and Quartz scheduler tables.</p>
 <p>The API registration configures:</p>
@@ -199,13 +209,14 @@
 <li><code>DatabaseName</code>;</li>
 <li><code>CorrelationId</code>.</li>
 </ul>
+<p>Identity lifecycle logs additionally identify the catalog tenant realm where useful. Never log provisioner secrets or bearer tokens.</p>
 <h2 id="cors">CORS</h2>
 <p>The API selects a CORS policy by environment:</p>
 <ul>
 <li><code>DevCors</code> in development allows any origin, header, and method.</li>
 <li><code>ProdCors</code> outside development dynamically allows origins from active tenant website configuration in the catalog.</li>
 </ul>
-<p>Production CORS uses tenant <code>auth.webOrigins</code> values and the origin of <code>website.baseUrl</code> as the allow-list source. Wildcards, malformed origins, URL fragments, non-origin <code>webOrigins</code>, and non-local HTTP origins are rejected. CORS is not authorization; bearer tokens, role policies, tenant resolution, and tenant access checks still enforce API access.</p>
+<p>Production CORS uses tenant <code>auth.webOrigins</code> values and the origin of <code>website.baseUrl</code> as the allow-list source. Wildcards, malformed origins, URL fragments, non-origin <code>webOrigins</code>, and non-local HTTP origins are rejected. CORS is not authorization; bearer tokens, issuer-aware role policies, tenant resolution, and issuer-to-tenant checks still enforce API access.</p>
 <h2 id="openapi-and-scalar">OpenAPI and Scalar</h2>
 <p>OpenAPI and Scalar endpoints are mapped only in development. This keeps the production surface smaller while retaining local API exploration during development.</p>
 

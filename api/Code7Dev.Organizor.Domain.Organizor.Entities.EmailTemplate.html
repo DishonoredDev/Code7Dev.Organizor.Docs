@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EmailTemplate | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EmailTemplate | Organizor ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate">
+
+
+
+  <h1 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate" class="text-break">
+Class EmailTemplate  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Code7Dev.html">Code7Dev</a>.<a class="xref" href="Code7Dev.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Domain.html">Domain</a>.<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Domain.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class EmailTemplate</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EmailTemplate</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_CreatedAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.CreatedAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_CreatedAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.CreatedAt">
+  CreatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset CreatedAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Culture_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Culture*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Culture" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Culture">
+  Culture
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Culture { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_DisplayName_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.DisplayName*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_DisplayName" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.DisplayName">
+  DisplayName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DisplayName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_HtmlBodyTemplate_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.HtmlBodyTemplate*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_HtmlBodyTemplate" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.HtmlBodyTemplate">
+  HtmlBodyTemplate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HtmlBodyTemplate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Id_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Id*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Id" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_IsEnabled_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.IsEnabled*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_IsEnabled" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.IsEnabled">
+  IsEnabled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Purpose_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Purpose*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Purpose" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Purpose">
+  Purpose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmailTemplatePurpose Purpose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplatePurpose.html">EmailTemplatePurpose</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_RecipientMode_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.RecipientMode*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_RecipientMode" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.RecipientMode">
+  RecipientMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmailRecipientMode RecipientMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode.html">EmailRecipientMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ReplyToEmail_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ReplyToEmail*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ReplyToEmail" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ReplyToEmail">
+  ReplyToEmail
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? ReplyToEmail { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ScopeId_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ScopeId*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ScopeId" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ScopeId">
+  ScopeId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid ScopeId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ScopeType_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ScopeType*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_ScopeType" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.ScopeType">
+  ScopeType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmailTemplateScopeType ScopeType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplateScopeType.html">EmailTemplateScopeType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_SenderNameOverride_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.SenderNameOverride*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_SenderNameOverride" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.SenderNameOverride">
+  SenderNameOverride
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? SenderNameOverride { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_SubjectTemplate_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.SubjectTemplate*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_SubjectTemplate" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.SubjectTemplate">
+  SubjectTemplate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SubjectTemplate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_TextBodyTemplate_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.TextBodyTemplate*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_TextBodyTemplate" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.TextBodyTemplate">
+  TextBodyTemplate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TextBodyTemplate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_UpdatedAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.UpdatedAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_UpdatedAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.UpdatedAt">
+  UpdatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset UpdatedAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Create_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Create*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Create_Code7Dev_Organizor_Domain_Organizor_Enums_EmailTemplatePurpose_Code7Dev_Organizor_Domain_Organizor_Enums_EmailTemplateScopeType_System_Guid_System_String_System_String_System_Boolean_Code7Dev_Organizor_Domain_Organizor_Enums_EmailRecipientMode_System_String_System_String_System_String_System_String_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Create(Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplatePurpose,Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplateScopeType,System.Guid,System.String,System.String,System.Boolean,Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTimeOffset})">
+  Create(EmailTemplatePurpose, EmailTemplateScopeType, Guid, string, string, bool, EmailRecipientMode, string, string, string, string?, string?, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EmailTemplate Create(EmailTemplatePurpose purpose, EmailTemplateScopeType scopeType, Guid scopeId, string culture, string displayName, bool isEnabled, EmailRecipientMode recipientMode, string subjectTemplate, string textBodyTemplate, string htmlBodyTemplate, string? senderNameOverride = null, string? replyToEmail = null, DateTimeOffset? createdAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>purpose</code> <a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplatePurpose.html">EmailTemplatePurpose</a></dt>
+    <dd></dd>
+    <dt><code>scopeType</code> <a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplateScopeType.html">EmailTemplateScopeType</a></dt>
+    <dd></dd>
+    <dt><code>scopeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+    <dt><code>culture</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>displayName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>recipientMode</code> <a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode.html">EmailRecipientMode</a></dt>
+    <dd></dd>
+    <dt><code>subjectTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>textBodyTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>htmlBodyTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>senderNameOverride</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>replyToEmail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>createdAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.html">EmailTemplate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_NormalizeCulture_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.NormalizeCulture*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_NormalizeCulture_System_String_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.NormalizeCulture(System.String)">
+  NormalizeCulture(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string NormalizeCulture(string culture)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>culture</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Update_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Update*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_EmailTemplate_Update_System_String_System_Boolean_Code7Dev_Organizor_Domain_Organizor_Enums_EmailRecipientMode_System_String_System_String_System_String_System_String_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.Update(System.String,System.Boolean,Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTimeOffset})">
+  Update(string, bool, EmailRecipientMode, string, string, string, string?, string?, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update(string displayName, bool isEnabled, EmailRecipientMode recipientMode, string subjectTemplate, string textBodyTemplate, string htmlBodyTemplate, string? senderNameOverride, string? replyToEmail, DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displayName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>recipientMode</code> <a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode.html">EmailRecipientMode</a></dt>
+    <dd></dd>
+    <dt><code>subjectTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>textBodyTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>htmlBodyTemplate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>senderNameOverride</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>replyToEmail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/EmailTemplate.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

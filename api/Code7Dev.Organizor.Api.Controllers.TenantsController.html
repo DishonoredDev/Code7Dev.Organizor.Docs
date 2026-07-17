@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class TenantsController | Organizor ">
       
-      <meta name="description" content="Exposes public tenant catalog operations.">
+      <meta name="description" content="Exposes Organizor control-plane tenant catalog operations.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,13 +97,13 @@ Class TenantsController  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Api.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Exposes public tenant catalog operations.</p>
+  <div class="markdown summary"><p>Exposes Organizor control-plane tenant catalog operations.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ApiController]
-[Authorize(Policy = &quot;RequireTenantUserRole&quot;)]
+[Authorize(Policy = &quot;RequireOrganizorAdminRole&quot;)]
 [Route(&quot;api/v1/tenants&quot;)]
 public class TenantsController : ControllerBase</code></pre>
   </div>
@@ -677,7 +677,7 @@ public class TenantsController : ControllerBase</code></pre>
 
 
   <h2 id="Code7Dev_Organizor_Api_Controllers_TenantsController_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>These endpoints manage catalog records only. Creating a tenant through this controller does not provision the tenant database.</p>
+  <div class="markdown level0 remarks"><p>These endpoints are restricted to platform administrators. Creating a tenant through this controller does not provision the tenant database.</p>
 </div>
 
 

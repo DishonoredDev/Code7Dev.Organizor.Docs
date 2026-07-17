@@ -88,6 +88,7 @@
 <h1 id="portal-ui-structure--high-level">Portal UI Structure — High-Level</h1>
 
 <p>The Portal UI is organized into pages, layouts, components, services, and models.</p>
+<p>The Portal selects a runtime once from its browser host. The configured platform host is the Organizor-admin control plane; a tenant portal host resolves and validates its tenant-realm configuration before OIDC starts. Tenant-admin components below are served only in that matching tenant portal mode.</p>
 <h2 id="pages">Pages</h2>
 <table>
 <thead>
@@ -136,22 +137,27 @@
 <tr>
 <td><code>TenantAdmin/Dashboard</code></td>
 <td><code>/tenant</code></td>
-<td>Tenant dashboard placeholder.</td>
+<td>Tenant dashboard at a matching tenant portal host.</td>
 </tr>
 <tr>
 <td><code>TenantAdmin/Users</code></td>
 <td><code>/tenant/users</code></td>
-<td>Tenant-scoped user management.</td>
+<td>Tenant-scoped user management at a matching tenant portal host.</td>
 </tr>
 <tr>
 <td><code>TenantAdmin/Config</code></td>
 <td><code>/tenant/config</code></td>
-<td>Tenant-admin effective tenant configuration.</td>
+<td>Tenant effective-config UI at a matching tenant portal host.</td>
+</tr>
+<tr>
+<td><code>AccessDenied</code></td>
+<td><code>/access-denied</code></td>
+<td>Fallback page for authenticated users without portal roles.</td>
 </tr>
 <tr>
 <td><code>TenantShared/Profile</code></td>
 <td><code>/tenant/profile</code></td>
-<td>Shared read-only profile for tenant admins and tenant users.</td>
+<td>Tenant-admin account-action UI at a matching tenant portal host.</td>
 </tr>
 <tr>
 <td><code>Register</code></td>
@@ -165,7 +171,7 @@
 </tr>
 </tbody>
 </table>
-<p>Tenant-admin-only pages live under <code>Pages/TenantAdmin</code>. Shared tenant pages live under <code>Pages/TenantShared</code>. This keeps future tenant-user-specific pages separate from tenant platform administration.</p>
+<p>Tenant-admin-only pages live under <code>Pages/TenantAdmin</code>. Tenant-admin current-user pages live under <code>Pages/TenantShared</code>. They require the matching tenant-local portal host/client configuration. Regular tenant-user-specific pages belong in tenant-specific public UI repositories such as TVDK, not in the Organizor portal.</p>
 <h2 id="layouts">Layouts</h2>
 <table>
 <thead>
@@ -185,7 +191,7 @@
 </tr>
 <tr>
 <td><code>TenantLayout</code></td>
-<td>Tenant shell with role-aware tenant navigation, current-user panel, logout, and public-site navigation.</td>
+<td>Tenant administration shell for a matching tenant portal host; never a central-platform login target.</td>
 </tr>
 </tbody>
 </table>
@@ -200,11 +206,11 @@
 <tbody>
 <tr>
 <td><code>UserInfo</code></td>
-<td>Displays tenant, username, email, and Keycloak groups from the current authentication state.</td>
+<td>Displays available username, email, tenant compatibility, and Keycloak group claims from the current authentication state. Platform users normally have no tenant context.</td>
 </tr>
 <tr>
 <td><code>CurrentUserPanel</code></td>
-<td>Sidebar user card used in admin and tenant shells. Shows display name, email, tenant, groups, logout, and tenant website navigation when available.</td>
+<td>Sidebar user card used in admin and legacy tenant shells. Shows available display, account, and navigation context without treating <code>tenant</code> or groups as authorization.</td>
 </tr>
 <tr>
 <td><code>LogoutButton</code></td>
@@ -212,7 +218,7 @@
 </tr>
 <tr>
 <td><code>RoleRedirector</code></td>
-<td>Redirects authenticated users from neutral entry routes to <code>/admin</code>, <code>/tenant</code>, or <code>/tenant/profile</code> based on role.</td>
+<td>Sends a matching platform <code>organizor-admin</code> from neutral entry routes to <code>/admin</code>, or a matching tenant-realm <code>tenant-admin</code> at a tenant portal host to <code>/tenant</code>.</td>
 </tr>
 <tr>
 <td><code>RedirectToLogin</code></td>
@@ -233,6 +239,14 @@
 <tr>
 <td><code>UserGrid</code></td>
 <td>Shared user grid used by platform and tenant user-management pages.</td>
+</tr>
+<tr>
+<td><code>UserDetailDrawer</code></td>
+<td>Shared selected-user drawer with tenant access actions and removal confirmation.</td>
+</tr>
+<tr>
+<td><code>OrganizationEditorForm</code></td>
+<td>Shared grouped organization form used by focused create and selected-record edit workflows.</td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +283,7 @@
 </tr>
 <tr>
 <td><code>ApiAuthorizationMessageHandler</code></td>
-<td>Attaches access tokens to API requests and adds tenant header context when available.</td>
+<td>Attaches the active portal token to API requests and sends <code>X-Tenant-Slug</code> only for a matching tenant portal context. It does not establish tenant authorization from claims.</td>
 </tr>
 <tr>
 <td><code>AdminTenantService</code></td>
@@ -277,11 +291,11 @@
 </tr>
 <tr>
 <td><code>TenantUserService</code></td>
-<td>Typed client for tenant-scoped user-management operations used by <code>/tenant/users</code>.</td>
+<td>Typed client for tenant user administration.</td>
 </tr>
 <tr>
 <td><code>TenantConfigService</code></td>
-<td>Typed client for the tenant-scoped effective config endpoint used by tenant admins at <code>/tenant/config</code>.</td>
+<td>Typed client for tenant configuration administration.</td>
 </tr>
 <tr>
 <td><code>PublicRegistrationService</code></td>

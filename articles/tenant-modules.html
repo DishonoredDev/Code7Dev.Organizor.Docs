@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tenant Modules | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tenant Modules | Organizor ">
+      
+      <meta name="description" content="Modular tenant architecture, plan entitlements, tenant installations, and platform operator workflows.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-modules.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tenant-modules">Tenant Modules</h1>
+
+<p>Organizor is a modular monolith: one deployed API and one database-per-tenant platform, with a code-owned module catalog. It does not load third-party assemblies at runtime or split every module into a microservice.</p>
+<p>A module answers a product-composition question: which business workflows a tenant can use. It is deliberately separate from tenant settings, user roles, and sport labels.</p>
+<h2 id="five-separate-concerns">Five Separate Concerns</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Owner</th>
+<th>Source of truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is code available in this deployment?</td>
+<td>Module registry</td>
+<td>Compiled, startup-registered module definition.</td>
+</tr>
+<tr>
+<td>Is the module part of a plan or available as an add-on?</td>
+<td>Tenant plan</td>
+<td>Plan-module entitlement.</td>
+</tr>
+<tr>
+<td>Has a tenant activated the module?</td>
+<td>Tenant installation</td>
+<td>Tenant-module installation record.</td>
+</tr>
+<tr>
+<td>May a user perform an action?</td>
+<td>Authorization and tenant access</td>
+<td>Existing roles and tenant-access checks.</td>
+</tr>
+<tr>
+<td>How should an active module behave?</td>
+<td>Module-owned configuration</td>
+<td>Typed, validated configuration contract.</td>
+</tr>
+</tbody>
+</table>
+<p>A module is available to tenant-owned behavior only when its code is deployed, the tenant plan entitles it, the tenant has an installation record in <code>Enabled</code> state, and all of its dependencies are enabled. API enforcement is server-side; hiding a portal navigation item is not security.</p>
+<p>The first foundation slice exposes the reusable availability gate, but does not retroactively gate every existing compatibility endpoint. Existing module-owned endpoints are attached to the gate in their own rollout work so existing tenants are not silently broken before their installation state is explicitly configured.</p>
+<h2 id="module-catalog">Module Catalog</h2>
+<p>The initial catalog is organized by business workflow, not by sport or customer brand.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Purpose</th>
+<th>Required modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activities</code></td>
+<td>Activity types, activities, schedules, pricing, capacity, and public activity content.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>registrations</code></td>
+<td>Registration forms, validation, capacity, status, payment tracking, and confirmations.</td>
+<td><code>activities</code></td>
+</tr>
+<tr>
+<td><code>participants-families</code></td>
+<td>People, guardian/parent-child relationships, contact responsibility, and reusable family data.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>parent-self-service</code></td>
+<td>Guardian access to managed children, child registration, registration visibility, and permitted cancellation.</td>
+<td><code>registrations</code>, <code>participants-families</code></td>
+</tr>
+<tr>
+<td><code>organizations</code></td>
+<td>Tenant organization records, including legal issuer data used by qualifying workflows.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>attestations</code></td>
+<td>Activity-type attestation eligibility and fiscal or healthcare document workflows.</td>
+<td><code>activities</code>, <code>registrations</code>, <code>participants-families</code>, <code>organizations</code></td>
+</tr>
+</tbody>
+</table>
+<p>Football, swimming, camps, training, and EAD lessons are tenant-local activity types and activity configuration. They are not modules.</p>
+<p>PJsabbe and TVDK therefore use the same full bundle:</p>
+<pre><code class="lang-text">activities
+registrations
+participants-families
+parent-self-service
+organizations
+attestations
+</code></pre>
+<p>They differ through their activity types, organization/legal-issuer data, public content, and other typed tenant settings. A future tenant can select a smaller compatible bundle, such as <code>activities</code> alone or <code>activities</code> and <code>registrations</code>.</p>
+<h2 id="plans-and-tenant-installations">Plans And Tenant Installations</h2>
+<p>A plan has one entitlement for every deployed module:</p>
+<table>
+<thead>
+<tr>
+<th>Entitlement</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Included</code></td>
+<td>The plan supplies the module. It is installed automatically during successful onboarding.</td>
+</tr>
+<tr>
+<td><code>Optional</code></td>
+<td>A platform administrator can install it later as a tenant add-on.</td>
+</tr>
+<tr>
+<td><code>Unavailable</code></td>
+<td>The plan cannot activate the module.</td>
+</tr>
+</tbody>
+</table>
+<p>The seeded plans are intentionally simple:</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Included modules</th>
+<th>Add-ons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>starter</code></td>
+<td><code>activities</code></td>
+<td>All other initial modules are optional.</td>
+</tr>
+<tr>
+<td><code>pro</code></td>
+<td>The full PJsabbe/TVDK family-activity bundle.</td>
+<td>None in the initial catalog.</td>
+</tr>
+</tbody>
+</table>
+<p>Each tenant installation records its source (<code>PlanIncluded</code> or <code>PlanAddOn</code>) and its state:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Installing</code></td>
+<td>Installation has started. If an interruption leaves it in this state, an operator can retry it.</td>
+</tr>
+<tr>
+<td><code>Enabled</code></td>
+<td>The module can be used, subject to normal authorization.</td>
+</tr>
+<tr>
+<td><code>Disabled</code></td>
+<td>The module is intentionally inactive; its business data is retained.</td>
+</tr>
+<tr>
+<td><code>Failed</code></td>
+<td>Installation failed and records a machine-readable reason; an operator can retry it.</td>
+</tr>
+</tbody>
+</table>
+<p>Installing a module requires an active tenant, a plan entitlement, and enabled dependencies. A tenant whose provisioning completed but whose included modules failed can recover only its included modules until the full included bundle is enabled. An enabled module cannot be disabled while another enabled module depends on it. Re-enabling preserves module business data. Changing a plan entitlement to <code>Unavailable</code> is blocked while an enabled, failed, or installing non-exception tenant installation still uses that entitlement; disable the module first or choose a compatible plan.</p>
+<h2 id="onboarding">Onboarding</h2>
+<p><code>POST /api/admin/tenants/onboard</code> accepts an optional <code>planKey</code>. When omitted, Organizor uses <code>starter</code>. The requested plan must exist and be active.</p>
+<pre><code class="lang-json">{
+  &quot;name&quot;: &quot;TVDK&quot;,
+  &quot;slug&quot;: &quot;tvdk&quot;,
+  &quot;planKey&quot;: &quot;pro&quot;,
+  &quot;authSettings&quot;: {
+    &quot;websiteBaseUrl&quot;: &quot;https://www.example.org&quot;
+  }
+}
+</code></pre>
+<p>After Keycloak provisioning, tenant database creation, and tenant migrations succeed, Organizor installs every included module in dependency order. Optional modules remain a deliberate platform-admin action. If included-module installation fails, the tenant is marked <code>Failed</code> with a recoverable module-installation reason; the platform admin can repair and retry its included modules, and the tenant becomes active once they are all enabled. A failed tenant onboarding does not make its modules available.</p>
+<p>Existing tenants are not inferred from legacy feature flags or JSON settings. A platform administrator configures their installations explicitly during the transition.</p>
+<h2 id="platform-operator-api">Platform Operator API</h2>
+<p>All module-management routes are catalog-scoped, require <code>organizor-admin</code>, and do not use <code>X-Tenant-Slug</code>.</p>
+<h3 id="inspect-the-deployed-catalog">Inspect the deployed catalog</h3>
+<pre><code class="lang-http">GET /api/admin/modules
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>Returns every code-deployed module with its stable key, display metadata, version, and dependencies.</p>
+<h3 id="manage-plan-bundles">Manage plan bundles</h3>
+<pre><code class="lang-http">GET /api/admin/tenant-plans/{planKey}/module-entitlements
+PUT /api/admin/tenant-plans/{planKey}/module-entitlements
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>The <code>PUT</code> body replaces the plan's complete entitlement set atomically. It must include every deployed module and use <code>Included</code>, <code>Optional</code>, or <code>Unavailable</code> for each one.</p>
+<pre><code class="lang-json">{
+  &quot;modules&quot;: [
+    { &quot;moduleKey&quot;: &quot;activities&quot;, &quot;availability&quot;: &quot;Included&quot; },
+    { &quot;moduleKey&quot;: &quot;registrations&quot;, &quot;availability&quot;: &quot;Optional&quot; },
+    { &quot;moduleKey&quot;: &quot;participants-families&quot;, &quot;availability&quot;: &quot;Optional&quot; },
+    { &quot;moduleKey&quot;: &quot;parent-self-service&quot;, &quot;availability&quot;: &quot;Optional&quot; },
+    { &quot;moduleKey&quot;: &quot;organizations&quot;, &quot;availability&quot;: &quot;Optional&quot; },
+    { &quot;moduleKey&quot;: &quot;attestations&quot;, &quot;availability&quot;: &quot;Optional&quot; }
+  ]
+}
+</code></pre>
+<h3 id="manage-a-tenants-installed-modules">Manage a tenant's installed modules</h3>
+<pre><code class="lang-http">GET  /api/admin/tenants/{tenantId}/modules
+POST /api/admin/tenants/{tenantId}/modules/{moduleKey}/install
+POST /api/admin/tenants/{tenantId}/modules/{moduleKey}/retry
+POST /api/admin/tenants/{tenantId}/modules/{moduleKey}/enable
+POST /api/admin/tenants/{tenantId}/modules/{moduleKey}/disable
+Authorization: Bearer &lt;organizor-admin-token&gt;
+</code></pre>
+<p>The list response provides each module's plan availability, installation state/source/failure reason, dependency state, and the actions currently permitted to the operator. Install, retry, enable, and disable return the updated module record.</p>
+<p>Relevant stable errors include <code>TENANT_MODULE_NOT_FOUND</code>, <code>TENANT_MODULE_NOT_ENTITLED</code>, <code>TENANT_MODULE_DEPENDENCY_NOT_ENABLED</code>, <code>TENANT_MODULE_INVALID_STATE</code>, <code>TENANT_MODULE_PLAN_CONFLICT</code>, and <code>TENANT_MODULE_TENANT_NOT_ACTIVE</code>.</p>
+<h2 id="platform-portal-workflow">Platform Portal Workflow</h2>
+<p>The platform portal presents module lifecycle in plain language:</p>
+<ul>
+<li>The <strong>Plans</strong> page has a <strong>Modules</strong> tab where an Organizor admin selects Included, Optional add-on, or Unavailable for every deployed module.</li>
+<li>The tenant onboarding dialog lists active plans and sends the chosen <code>planKey</code>.</li>
+<li>The tenant detail drawer has a <strong>Modules</strong> section showing entitlement, installation state, source, dependencies, and a contextual Install, Retry, Enable, or Disable action.</li>
+</ul>
+<p>Tenant administrators continue to manage only the typed settings that an enabled module explicitly delegates to them. They do not manage plan entitlements or tenant module lifecycle.</p>
+<h2 id="configuration-and-legacy-json">Configuration And Legacy JSON</h2>
+<p>The existing <code>tenant_plans.features</code>, <code>tenant_plans.settings</code>, <code>tenants.features</code>, and <code>tenants.settings</code> JSONB-backed configuration remains supported as a compatibility layer. It still supplies effective legacy config through the existing system defaults -&gt; plan defaults -&gt; tenant overrides merge.</p>
+<p>That JSON is not the module system:</p>
+<ul>
+<li>Do not use a generic feature flag to decide whether a tenant has a module.</li>
+<li>Do not store module installation state, entitlement, authorization, queryable limits, or secrets in an arbitrary JSON editor.</li>
+<li>Use a typed, validated module contract for settings owned by a module. Bounded, validated JSONB can still be appropriate for optional module settings, but it never determines module availability.</li>
+<li>SMTP and OIDC are integrations with typed configuration and write-only/redacted secrets; they are not sellable modules.</li>
+</ul>
+<p>The first migration preserves existing JSON values and does not reinterpret them as installations. A later migration will classify each existing feature flag as a temporary release flag, module entitlement, module setting, or obsolete configuration before retirement.</p>
+<h2 id="catalog-persistence">Catalog Persistence</h2>
+<p>Module lifecycle metadata lives in the catalog database; module business data remains in the tenant database.</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Key columns</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenant_plan_module_entitlements</code></td>
+<td><code>plan_key</code>, <code>module_key</code>, <code>availability</code>, timestamps</td>
+<td>One entitlement per deployed module for each plan. <code>plan_key</code> references <code>tenant_plans.key</code>.</td>
+</tr>
+<tr>
+<td><code>tenant_module_installations</code></td>
+<td><code>tenant_id</code>, <code>module_key</code>, <code>state</code>, <code>source</code>, <code>failure_reason</code>, timestamps</td>
+<td>One lifecycle record per installed tenant module. <code>tenant_id</code> references <code>tenants.id</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Both tables use composite primary keys of their two identity columns. Deleting a plan or tenant cascades its matching catalog module metadata. The installation table is indexed by tenant and state for operator and availability lookups.</p>
+<p>Startup seeding creates missing initial plans and missing entitlement rows, but does not overwrite operator-managed plan metadata, settings, or entitlement choices.</p>
+<h2 id="relationship-to-activity-attestations">Relationship To Activity Attestations</h2>
+<p>The <code>attestations</code> module enables the capability family, but it does not make every activity eligible. Tenant administrators configure fiscal and healthcare capabilities per activity type. For the PJsabbe and TVDK composition, eligible camps can enable attestations while football, swimming, and EAD training types remain ineligible unless their own accepted rules say otherwise.</p>
+<p>Historical registration and attestation input must be preserved when people or guardian relationships later change. The separate PJsabbe import and historical snapshot migration is deferred to its own feature.</p>
+<p>For effective configuration details, see <a href="tenant-config-model.html">Tenant Config Model</a>. For the broader onboarding workflow, see <a href="tenant-onboarding-model.html">Tenant Onboarding Model</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/tenant-modules.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

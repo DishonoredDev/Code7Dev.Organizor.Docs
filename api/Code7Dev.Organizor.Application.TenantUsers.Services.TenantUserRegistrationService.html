@@ -157,16 +157,16 @@ Class TenantUserRegistrationService  <a class="header-action link-secondary" tit
 
   <a id="Code7Dev_Organizor_Application_TenantUsers_Services_TenantUserRegistrationService__ctor_" data-uid="Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Application_TenantUsers_Services_TenantUserRegistrationService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Application_TenantUsers_Interfaces_ITenantUserManagementService_" data-uid="Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService)">
-  TenantUserRegistrationService(ITenantRepository, ITenantConfigResolver, ITenantUserManagementService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/TenantUsers/Services/TenantUserRegistrationService.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Application_TenantUsers_Services_TenantUserRegistrationService__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantRepository_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Application_TenantUsers_Interfaces_ITenantUserManagementService_Code7Dev_Organizor_Application_TenantUsers_Interfaces_ITenantUserPersonProvisioner_" data-uid="Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService,Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserPersonProvisioner)">
+  TenantUserRegistrationService(ITenantRepository, ITenantConfigResolver, ITenantUserManagementService, ITenantUserPersonProvisioner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/TenantUsers/Services/TenantUserRegistrationService.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TenantUserRegistrationService(ITenantRepository tenantRepository, ITenantConfigResolver tenantConfigResolver, ITenantUserManagementService tenantUserManagement)</code></pre>
+    <pre><code class="lang-csharp hljs">public TenantUserRegistrationService(ITenantRepository tenantRepository, ITenantConfigResolver tenantConfigResolver, ITenantUserManagementService tenantUserManagement, ITenantUserPersonProvisioner personProvisioner)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -176,6 +176,8 @@ Class TenantUserRegistrationService  <a class="header-action link-secondary" tit
     <dt><code>tenantConfigResolver</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html">ITenantConfigResolver</a></dt>
     <dd></dd>
     <dt><code>tenantUserManagement</code> <a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService.html">ITenantUserManagementService</a></dt>
+    <dd></dd>
+    <dt><code>personProvisioner</code> <a class="xref" href="Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserPersonProvisioner.html">ITenantUserPersonProvisioner</a></dt>
     <dd></dd>
   </dl>
 
@@ -198,7 +200,7 @@ Class TenantUserRegistrationService  <a class="header-action link-secondary" tit
 
   <h3 id="Code7Dev_Organizor_Application_TenantUsers_Services_TenantUserRegistrationService_RegisterAsync_Code7Dev_Organizor_Application_TenantUsers_Models_TenantUserRegistrationModel_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.RegisterAsync(Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRegistrationModel,System.Threading.CancellationToken)">
   RegisterAsync(TenantUserRegistrationModel, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/TenantUsers/Services/TenantUserRegistrationService.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Application/TenantUsers/Services/TenantUserRegistrationService.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

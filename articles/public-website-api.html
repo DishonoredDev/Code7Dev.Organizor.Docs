@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Public Website API | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Public Website API | Organizor ">
+      
+      <meta name="description" content="Public API contracts used by tenant websites before login and during tenant-user self-registration.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/public-website-api.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="public-website-api">Public Website API</h1>
+
+<p>Public website endpoints are anonymous by design. They return non-secret tenant auth metadata, public activity registration metadata, or create tenant/user-facing records through explicitly public contracts.</p>
+<h2 id="public-activity-registration-discovery">Public Activity Registration Discovery</h2>
+<p>Tenant public websites can list active anonymous-registerable activity-type segments for navigation, list activities for their configured tenant, and load a direct registration form by activity id.</p>
+<p>These discovery endpoints require <code>X-Tenant-Slug</code> because they read tenant-scoped activity data from the resolved tenant database.</p>
+<pre><code class="lang-http">GET /api/v1/public/activity-types
+X-Tenant-Slug: acme
+Accept: application/json
+</code></pre>
+<p>Returns active anonymous-registerable activity types that have at least one active public activity. Tenant websites can use this response for segment navigation such as a sidebar.</p>
+<pre><code class="lang-http">GET /api/v1/public/activities
+X-Tenant-Slug: acme
+Accept: application/json
+</code></pre>
+<p>Returns active activities whose activity type is active and uses anonymous registration mode. Each item includes the activity GUID, activity type metadata, display fields, price, image URL when configured, and registration availability. Use <code>GET /api/v1/public/activities?activityTypeKey=swimming</code> to list only one activity-type segment.</p>
+<pre><code class="lang-http">GET /api/v1/public/activities/00000000-0000-0000-0000-000000000000/registration-form
+X-Tenant-Slug: acme
+Accept: application/json
+</code></pre>
+<p>Returns the same public activity display data plus active registration fields. Field options are returned as public option objects with <code>value</code> and <code>label</code>. The first-slice availability values are <code>open</code> and <code>full</code>.</p>
+<p>Public websites submit the completed form through the existing endpoint:</p>
+<pre><code class="lang-http">POST /api/v1/activities/00000000-0000-0000-0000-000000000000/public-registrations
+X-Tenant-Slug: acme
+Content-Type: application/json
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>Public activity metadata or registration form metadata returned.</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Tenant slug is missing/invalid, the activity is inactive, or the activity is not publicly registerable.</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>Activity or activity type was not found for the resolved tenant.</td>
+</tr>
+<tr>
+<td><code>500 Internal Server Error</code></td>
+<td>Unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="static-tenant-website-auth-contract">Static Tenant Website Auth Contract</h2>
+<pre><code class="lang-http">GET /api/public/tenants/acme/auth
+Accept: application/json
+</code></pre>
+<p>Returns the public OIDC settings a tenant-specific website needs before login. The endpoint returns data only for active, non-deleted tenants.</p>
+<p>Example response:</p>
+<pre><code class="lang-json">{
+  &quot;tenantSlug&quot;: &quot;acme&quot;,
+  &quot;authority&quot;: &quot;https://localhost:8443/realms/tenant-acme&quot;,
+  &quot;clientId&quot;: &quot;tenant-acme-web&quot;,
+  &quot;websiteBaseUrl&quot;: &quot;https://acme.example.com&quot;,
+  &quot;responseType&quot;: &quot;code&quot;,
+  &quot;usePkce&quot;: true,
+  &quot;tenantHeaderName&quot;: &quot;X-Tenant-Slug&quot;,
+  &quot;tenantClaimName&quot;: &quot;tenant&quot;,
+  &quot;tenantUserRole&quot;: &quot;tenant-user&quot;,
+  &quot;tenantAdminRole&quot;: &quot;tenant-admin&quot;,
+  &quot;tenantUserGroupPath&quot;: &quot;/users&quot;,
+  &quot;tenantAdminGroupPath&quot;: &quot;/admins&quot;,
+  &quot;scopes&quot;: [&quot;openid&quot;, &quot;profile&quot;, &quot;email&quot;],
+  &quot;loginRedirectUris&quot;: [&quot;https://acme.example.com/authentication/login-callback&quot;],
+  &quot;logoutRedirectUris&quot;: [&quot;https://acme.example.com&quot;],
+  &quot;webOrigins&quot;: [&quot;https://acme.example.com&quot;],
+  &quot;registrationRedirectUrl&quot;: &quot;https://acme.example.com/register/complete&quot;,
+  &quot;publicRegistrationEndpoint&quot;: &quot;/api/public/register&quot;
+}
+</code></pre>
+<p>The authority is the catalog tenant's own Keycloak realm. A PJsabbe website receives <code>tenant-pjsabbe</code>; a TVDK website receives <code>tenant-tvdk</code>. Do not replace that authority with the platform realm or hard-code a shared realm in a tenant website.</p>
+<p>Static tenant websites use this contract during startup to configure OIDC Authorization Code Flow with PKCE, select the generated tenant client id, request <code>openid profile email</code>, and send <code>X-Tenant-Slug</code> on authenticated tenant-scoped API calls after login. They derive callback and logout URLs from their own deployed base URL and must verify those URLs and their browser origin appear in the contract before they start login. A mismatch is an onboarding/deployment configuration problem; never fall back to the platform authority or client.</p>
+<p>Tenant website tokens contain realm-local <code>tenant-user</code> or <code>tenant-admin</code> roles and an <code>organizor-api</code> audience. They may also contain <code>tenant: acme</code> for client compatibility, but the API authorizes using the issuer-to-tenant binding, not that claim or the group-path strings.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>Contract returned for an active tenant.</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Tenant slug or stored auth settings are invalid.</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>Tenant does not exist, is deleted, or is not active.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tenant-admin-portal-auth-contract">Tenant-Admin Portal Auth Contract</h2>
+<pre><code class="lang-http">GET /api/public/tenant-portals/auth?baseUrl=https%3A%2F%2Flocalhost%3A7022
+Accept: application/json
+</code></pre>
+<p>This anonymous endpoint exists so the Portal can configure OIDC before a tenant administrator signs in. It normalizes the supplied base URL, resolves exactly one active tenant by its catalog-owned <code>AdminPortalBaseUrl</code>, and returns only public client metadata.</p>
+<pre><code class="lang-json">{
+  &quot;tenantSlug&quot;: &quot;tvdk&quot;,
+  &quot;authority&quot;: &quot;https://localhost:8443/realms/tenant-tvdk&quot;,
+  &quot;clientId&quot;: &quot;tenant-tvdk-portal&quot;,
+  &quot;websiteBaseUrl&quot;: &quot;https://localhost:7122&quot;,
+  &quot;responseType&quot;: &quot;code&quot;,
+  &quot;usePkce&quot;: true,
+  &quot;scopes&quot;: [&quot;openid&quot;, &quot;profile&quot;, &quot;email&quot;],
+  &quot;loginRedirectUri&quot;: &quot;https://localhost:7022/authentication/login-callback&quot;,
+  &quot;logoutRedirectUri&quot;: &quot;https://localhost:7022&quot;,
+  &quot;webOrigin&quot;: &quot;https://localhost:7022&quot;
+}
+</code></pre>
+<p>The Portal validates its actual base URL, callback URL, logout URL, and origin against this contract before starting OIDC. An unknown or inactive portal URL returns <code>TENANT_NOT_FOUND</code>; an invalid URL returns <code>TENANT_CONFIG_INVALID</code>. The endpoint never returns a secret, Keycloak administration credential, or platform OIDC configuration.</p>
+<h2 id="public-tenant-user-registration">Public Tenant User Registration</h2>
+<pre><code class="lang-http">POST /api/public/register
+Content-Type: application/json
+
+{
+  &quot;tenantSlug&quot;: &quot;acme&quot;,
+  &quot;username&quot;: &quot;jane.doe&quot;,
+  &quot;email&quot;: &quot;jane@example.com&quot;,
+  &quot;password&quot;: &quot;correct-horse-battery-staple&quot;
+}
+</code></pre>
+<p>Creates an enabled <code>tenant-user</code> account for an active tenant. This endpoint does not use <code>X-Tenant-Slug</code>; the tenant is selected from the request body.</p>
+<p>Registration creates the identity in the tenant's own Keycloak realm and assigns it to realm-local <code>/users</code>. The API validates that the tenant exists, is active, has effective <code>settings.registration.enabled</code> set to boolean <code>true</code>, and has not reached its configured user limit. Username and email uniqueness are evaluated inside that realm, so the same login name can exist independently in another tenant realm.</p>
+<p>The portal <code>/register</code> page is a temporary shell for testing this feature. Tenant-specific websites should provide their own UI and call this API contract directly. Tenant administrators use their tenant-specific Portal host rather than the public website client.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>User was created and assigned to the realm-local tenant-user group.</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Request validation failed, effective registration config is invalid, or registration is disabled.</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>Tenant slug does not resolve to an active tenant.</td>
+</tr>
+<tr>
+<td><code>409 Conflict</code></td>
+<td>Username or email already exists in that tenant realm, or the tenant user limit was reached.</td>
+</tr>
+<tr>
+<td><code>502 Bad Gateway</code></td>
+<td>Keycloak rejected the user operation or could not complete it.</td>
+</tr>
+<tr>
+<td><code>500 Internal Server Error</code></td>
+<td>Unexpected server error. See <a href="errors-and-observability.html">Errors and Observability</a>.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/docs/articles/public-website-api.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

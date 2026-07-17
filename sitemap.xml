@@ -1,1304 +1,3278 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.CatalogTrustedTokenIssuerResolver.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.IKeycloakIssuerResolver.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.ITrustedOpenIdConfigurationProvider.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.ITrustedTokenIssuerResolver.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.KeycloakIssuerResolver.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.KeycloakOpenIdConfigurationProvider.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.MultiIssuerJwtAuthenticationHandler.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.TrustedTokenIssuer.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.TrustedTokenIssuerKind.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authentication.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.AuthorizationPolicies.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.IssuerAwareRoleAuthorizationHandler.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.KeycloakRoleClaimsTransformation.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.PlatformOrganizorAdminRequirement.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.RequireTenantModuleAttribute.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.TenantModuleRequirementFilter.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.TenantRoleRequirement.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Authorization.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminModulesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantConfigController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantModulesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlanModulesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantPlansController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantUsersController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AdminTenantsQueryController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.AuthController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.ActivitiesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.ActivityPublicPageTemplatesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.ActivityTypesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.OrganizationsController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.PeopleController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.PublicActivitiesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.PublicActivityTypesController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.PublicRegistrationsController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.RegistrationsController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.Organizor.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.PublicRegistrationController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.PublicTenantAuthController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.PublicTenantPortalAuthController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantAccountActionsController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantActivityRegistrationsController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantConfigController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantMeController.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantOperationsController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantUsersController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.TenantsController.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Controllers.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Cors.TenantCorsPolicyProvider.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Cors.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.ApplicationBuilderExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.CorsExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.HealthCheckExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.LoggingExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.OpenApiExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.SerilogExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.ServiceCollectionExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Extensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.InitialTenantAdminCredentialResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ActivityPublicDetailContentResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ActivityPublicPageTemplateResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ActivityResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ActivityTypeResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.AddOrganizationMembershipRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.AddPersonRelationshipRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ApplyActivityPublicPageTemplateRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationPreviewRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationResendRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationSendResultResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationTemplateResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationTemplateUpdateRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.ConfirmationTestSendRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateActivityRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateActivityTypeRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateChildRegistrationRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateOrganizationRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreatePersonRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateRegistrationFieldDefinitionRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.CreateRegistrationRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.DocumentCapabilityEligibilityResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.DocumentCapabilityResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.DocumentCapabilityUpdateItemRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.DocumentCapabilityUpdateRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.EmailDeliveryResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.FamilyChildRegistrationResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.FamilyChildResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.FamilyDashboardResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.FamilyDirectoryResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.LinkPersonUserRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.MarkRegistrationPaidRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.OrganizationMembershipResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.OrganizationResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PersonRelationshipResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PersonResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityDetailBlockResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityDetailResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityHeroResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityListItemResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityRegistrationFormResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicActivityTypeSegmentResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicRegistrationFieldOptionResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicRegistrationFieldResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.PublicRegistrationResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationDocumentDeliveryResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationDocumentEligibilityResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationFieldDefinitionResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationValidationRuleResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationValidationRulesResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RegistrationValidationRulesUpdateRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.RenderedConfirmationEmailResponse.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdateActivityPublicDetailContentRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdateActivityRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdateActivityTypeRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdateOrganizationRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdatePersonRelationshipRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdatePersonRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.UpdateRegistrationFieldDefinitionRequest.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.Organizor.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.PublicTenantRegistrationRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.StaticTenantAuthContractResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantAdminPortalAuthContractResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantAuthSettingsDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantConfigOverridesUpdateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantEffectiveConfigResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantMailSettingsResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantMailSettingsUpdateRequestDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantMailTestRequestDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantMailTestResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantModuleCatalogItemResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantModuleResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantOnboardingResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanModuleEntitlementResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanModuleEntitlementUpdateItemRequestDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanModuleEntitlementUpdateRequestDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantPlanUpdateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSettingsResponseDto.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantSoftDeleteRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserCreateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserEnabledUpdateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserProfileUpdateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserResponseDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.TenantUserRoleUpdateRequestDto.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.DTO.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.Organizor.DocumentCapabilityMappings.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.Organizor.OrganizorMappings.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.Organizor.ResultMapper.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.Organizor.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.TenantAdminPortalAuthContractApiMapper.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.TenantApiMapper.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.TenantModuleApiMapper.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.TenantOnboardingApiMapper.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Mappers.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Middleware.CorrelationIdMiddleware.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Middleware.ExceptionHandlingMiddleware.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Middleware.TenantAccessMiddleware.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Middleware.TenantResolutionMiddleware.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Middleware.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.RateLimiting.PublicFormEndpointRateLimitOptions.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.RateLimiting.PublicFormRateLimitExtensions.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.RateLimiting.PublicFormRateLimitOptions.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.RateLimiting.PublicFormRateLimitPolicies.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.RateLimiting.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Resources.Shared.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Api.Resources.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.ApiException.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.ErrorCodes.General.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.ErrorCodes.Tenant.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.ErrorCodes.User.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.ErrorCodes.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.Result-1.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.Result.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Common.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Extensions.DependencyInjection.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Extensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Jobs.TestEmailJob.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Jobs.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IActivityRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IActivityTypeDocumentCapabilityRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IActivityTypeRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IEmailDeliveryProvider.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IEmailDeliveryRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IEmailTemplateRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IOrganizationRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IPersonRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IRegistrationDocumentGenerator.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IRegistrationRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.IRegistrationSchemaValidator.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Abstractions.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.ActivityPublicPageTemplate.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.ActivityPublicPageTemplateService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.ActivityService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.CreateActivityCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.UpdateActivityCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Activities.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.ActivityTypeService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.CreateActivityTypeCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.CreateRegistrationFieldDefinitionCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.UpdateActivityTypeCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.UpdateRegistrationFieldDefinitionCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ActivityTypes.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Common.ApplicationError.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Common.ApplicationResult-1.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Common.ApplicationResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Common.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationDeliveryPublicStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationEmailService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationPreviewCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationSendCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationSendResultModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationTemplateModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationTemplateUpdateCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.ConfirmationTestSendCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.EmailDeliveryModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.RegistrationCreationResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.RenderedConfirmationEmailModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.ConfirmationEmails.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DependencyInjection.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityAssignmentModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityDefinition.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityEligibilityResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityKeys.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityRegistry.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityUpdateCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.DocumentCapabilityUpdateItem.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.RegistrationDocumentEligibilityModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentCapabilities.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.EmailAttachment.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.EmailDeliveryMessage.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.EmailDeliveryProviderResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.RegistrationDocumentDeliveryResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.RegistrationDocumentDeliveryService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.TenantSmtpSettings.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentDelivery.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.GeneratedDocumentContent.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.GeneratedRegistrationDocument.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.GeneratedRegistrationDocumentEnvelope.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentActivity.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentAddress.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentOrganization.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentPayload.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentPerson.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.RegistrationDocumentService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.DocumentGeneration.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Organizations.AddOrganizationMembershipCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Organizations.CreateOrganizationCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Organizations.OrganizationService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Organizations.UpdateOrganizationCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Organizations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.AddPersonRelationshipCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.ChangePersonRelationshipStatusCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.CreatePersonCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.FamilyDirectory.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.LinkPersonUserCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.PersonService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.UnlinkPersonUserCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.UpdatePersonCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.UpdatePersonRelationshipCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.People.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityDetailBlockModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityDetailModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityHeroModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityListItemModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityQueryService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityRegistrationFormModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicActivityTypeSegmentModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicRegistrationFieldModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.PublicRegistrationFieldOptionModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.PublicRegistrationClient.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.CreateChildRegistrationCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.CreateRegistrationCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.FamilyChildModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.FamilyChildRegistrationModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.FamilyDashboardModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.MarkRegistrationPaidCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationSchemaValidator.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationConditionValues.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleTargets.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleTargetsDisplay.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleTypeDisplay.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleTypes.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRuleViolationModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRulesDocument.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRulesModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationRulesUpdateCommand.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.RegistrationValidationService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.Registrations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Organizor.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionIdentityProvider.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserAccountActionService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserIdentityProvider.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserPersonProvisioner.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserRegistrationService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Interfaces.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.KeycloakRequiredActions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserCreateModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserProfileUpdateModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRegistrationModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.TenantUserRoles.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Models.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserAccountActionService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Services.TenantUserRegistrationService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.TenantUsers.Services.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Configuration.StaticTenantConfigDefaults.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Configuration.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.IConnectionStringBuilder.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.IStaticTenantAuthContractService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAdminPortalAuthContractService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantCorsOriginService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantDatabaseManager.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantHardDeleteWorkflow.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantIdentityLifecycle.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleAvailabilityService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleInstallationRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleInstaller.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleManagementService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleRegistry.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantOnboardingWorkflow.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanModuleEntitlementRepository.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantRepository.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantSettingsManagementService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantUpgradeService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Interfaces.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.InitialTenantAdminCredential.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.ProvisioningResult.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantAuthContractModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.StaticTenantWebsiteAuthOptions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantAdminPortalAuthContractModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantAuthSettingsModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigDefaultsModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantConfigOverridesUpdateModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantCreateModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantEffectiveConfigModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantMailSettingsModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantMailSettingsUpdateModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantMailTestModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantMailTestResultModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantMigrationResult.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantModuleCatalogItemModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantModuleDefinition.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantModuleModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantOnboardingResult.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModuleEntitlementModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModuleEntitlementUpdateItemModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanModuleEntitlementUpdateModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantPlanUpdateModel.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.TenantSettingsModel.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Models.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.AllowAllTenantAccessService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.StaticTenantAuthContractService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantAdminPortalAuthContractService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthClientId.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantAuthSettingsValidator.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantConfigResolver.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantLifecycleService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantModuleManagementService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantModuleRegistry.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantOnboardingService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantPlanManagementService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantSettingsManagementService.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.TenantUpgradeService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Application.Tenants.Services.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Common.DomainException.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Common.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.Activity.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.ActivityType.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.ActivityTypeDocumentCapability.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.EmailDelivery.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.EmailTemplate.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.Organization.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.OrganizationMembership.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.Person.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.PersonRelationship.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.Registration.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.RegistrationFieldDefinition.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Entities.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.ActivityLifecycleStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EmailDeliveryKind.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EmailDeliveryStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EmailRecipientMode.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplatePurpose.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EmailTemplateScopeType.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.EntityStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.MembershipRole.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.MembershipStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.OrganizationType.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.PaymentStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.PersonRelationshipType.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.RegistrationFieldType.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.RegistrationMode.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.RegistrationStatus.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Organizor.Enums.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.Tenant.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantIdentityRealm.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleEntitlementAvailability.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleFailureReasons.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleInstallation.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleInstallationSource.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleInstallationState.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantModuleKeys.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantPlan.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantPlanKeys.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantPlanModuleEntitlement.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.TenantStatus.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Domain.Tenants.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Extensions.DbExtensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Extensions.DependencyInjection.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Extensions.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakAdminClient.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantCleanupService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.IKeycloakTenantOnboardingService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Interfaces.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakClientRepresentation.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateGroupRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakCreateUserRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Clients.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Groups.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.Roles.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDefaults.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakDevelopmentAdminSettings.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakGroup.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakInitialTenantAdminCredential.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakProtocolMapperRepresentation.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakPublicClientRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRealmRepresentation.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakResetPasswordRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakRole.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakSettings.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantContext.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakTenantOnboardingResult.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUpdateUserRequest.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.KeycloakUser.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Models.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakAdminClient.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakDevelopmentAdminSeeder.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantCleanupService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantOnboardingService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.KeycloakTenantUserIdentityProvider.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Keycloak.Services.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Migrations.AddQuartzSchema.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Migrations.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.CatalogDbContext.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantAdminPortalBaseUrl.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantIdentityRealm.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantModuleFoundation.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.AddTenantPlansAndConfig.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.Init.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.Migrations.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Catalog.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Configuration.OrganizationConfiguration.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Configuration.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.IOrganizorDbContext.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddActivityPublicDetailContent.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddConfirmationEmailModelDrift.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddEmailTemplates.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddTenantActivitySetup.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddTenantDocumentCapabilities.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddTenantPersonRelationships.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.AddTenantRegistrationManagement.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.InitialOrganizorTenantSchema.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.Migrations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContext.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.OrganizorDbContextFactory.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Persistence.Organizor.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.SyncTenantJob.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.Jobs.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.Migrations.AddQuartzSchema.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.Migrations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.TenantAwareJobFactory.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.TenantJobScheduler.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Quartz.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.TenantDbNaming.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Helpers.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantDatabaseResolver.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.TenantInfo.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Models.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.ConnectionStringBuilder.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantCorsOriginService.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantDatabaseManager.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantHardDeleteWorkflow.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantMigrator.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.TenantOnboardingWorkflow.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/api/Code7Dev.Organizor.Infrastructure.Tenancy.Services.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/api-authentication.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/api-integration.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/api.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/architecture.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/authentication-flow.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/background-jobs-and-docs-ops.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/component-structure.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/configuration.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/database-provisioning.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/developer-guide.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/errors-and-observability.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/features-overview.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/getting-started.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/internal-operations.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/introduction.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/keycloak-clients.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/keycloak-groups-users.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/keycloak-https.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/keycloak-setup.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/keycloak-token-testing.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/local-development.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/localization.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/portal-admin-workflows.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/portal-overview.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/portal-tenant-workflows.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/public-website-api.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/role-based-authorization.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/security.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/spec-driven-development.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenancy.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-authorization.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-config-model.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-config-operations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-domain-api.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-lifecycle-operations.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-modules.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-onboarding-model.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/tenant-resolution.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/articles/user-capabilities.html</loc>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dishonoreddev.github.io/Code7Dev.Organizor.Docs/index.html</loc>
-    <lastmod>2026-06-20T01:21:48+00:00</lastmod>
+    <lastmod>2026-07-17T07:27:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

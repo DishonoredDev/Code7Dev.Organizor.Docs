@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Registration | Organizor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Registration | Organizor ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/new/master/apiSpec/new?filename=Code7Dev_Organizor_Domain_Organizor_Entities_Registration.md&amp;value=---%0Auid%3A%20Code7Dev.Organizor.Domain.Organizor.Entities.Registration%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="Organizor">
+            Organizor
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration">
+
+
+
+  <h1 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration" class="text-break">
+Class Registration  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Code7Dev.html">Code7Dev</a>.<a class="xref" href="Code7Dev.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Domain.html">Domain</a>.<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.html">Organizor</a>.<a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Code7Dev.Organizor.Domain.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Registration</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Registration</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_ActivityId_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.ActivityId*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_ActivityId" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.ActivityId">
+  ActivityId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid ActivityId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CoreDataJson_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CoreDataJson*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CoreDataJson" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CoreDataJson">
+  CoreDataJson
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? CoreDataJson { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CreatedAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CreatedAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CreatedAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CreatedAt">
+  CreatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset CreatedAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CustomFieldValuesJson_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CustomFieldValuesJson*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_CustomFieldValuesJson" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.CustomFieldValuesJson">
+  CustomFieldValuesJson
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? CustomFieldValuesJson { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Id_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Id*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Id" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_LinkedUserId_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.LinkedUserId*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_LinkedUserId" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.LinkedUserId">
+  LinkedUserId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? LinkedUserId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkedPaidByUserId_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkedPaidByUserId*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkedPaidByUserId" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkedPaidByUserId">
+  MarkedPaidByUserId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? MarkedPaidByUserId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaidAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaidAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaidAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaidAt">
+  PaidAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset? PaidAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaymentReference_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaymentReference*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaymentReference" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaymentReference">
+  PaymentReference
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? PaymentReference { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaymentStatus_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaymentStatus*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PaymentStatus" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PaymentStatus">
+  PaymentStatus
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PaymentStatus PaymentStatus { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.PaymentStatus.html">PaymentStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PersonId_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PersonId*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_PersonId" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.PersonId">
+  PersonId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid PersonId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Status_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Status*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Status" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Status">
+  Status
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RegistrationStatus Status { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Enums.RegistrationStatus.html">RegistrationStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_SubmittedAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.SubmittedAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_SubmittedAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.SubmittedAt">
+  SubmittedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset SubmittedAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UpdatedAt_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UpdatedAt*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UpdatedAt" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UpdatedAt">
+  UpdatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset UpdatedAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Cancel_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Cancel*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Cancel_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Cancel(System.Nullable{System.DateTimeOffset})">
+  Cancel(DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cancel(DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Confirm_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Confirm*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Confirm_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Confirm(System.Nullable{System.DateTimeOffset})">
+  Confirm(DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Confirm(DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Create_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Create*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Create_System_Guid_System_Guid_System_String_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Create(System.Guid,System.Guid,System.String,System.String,System.Nullable{System.DateTimeOffset})">
+  Create(Guid, Guid, string?, string?, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Registration Create(Guid activityId, Guid personId, string? coreDataJson = null, string? customFieldValuesJson = null, DateTimeOffset? submittedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>activityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+    <dt><code>coreDataJson</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>customFieldValuesJson</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>submittedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.html">Registration</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_LinkUser_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.LinkUser*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_LinkUser_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.LinkUser(System.String,System.Nullable{System.DateTimeOffset})">
+  LinkUser(string, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LinkUser(string linkedUserId, DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>linkedUserId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkPaid_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkPaid*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkPaid_System_String_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkPaid(System.String,System.String,System.Nullable{System.DateTimeOffset})">
+  MarkPaid(string?, string, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkPaid(string? paymentReference, string markedPaidByUserId, DateTimeOffset? paidAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paymentReference</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>markedPaidByUserId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>paidAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkPaymentPending_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkPaymentPending*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkPaymentPending_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkPaymentPending(System.String,System.Nullable{System.DateTimeOffset})">
+  MarkPaymentPending(string?, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkPaymentPending(string? paymentReference, DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paymentReference</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkUnpaid_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkUnpaid*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_MarkUnpaid_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.MarkUnpaid(System.Nullable{System.DateTimeOffset})">
+  MarkUnpaid(DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkUnpaid(DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Refund_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Refund*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_Refund_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.Refund(System.Nullable{System.DateTimeOffset})">
+  Refund(DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Refund(DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UnlinkUser_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UnlinkUser*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UnlinkUser_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UnlinkUser(System.Nullable{System.DateTimeOffset})">
+  UnlinkUser(DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnlinkUser(DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UpdateFormData_" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UpdateFormData*"></a>
+
+  <h3 id="Code7Dev_Organizor_Domain_Organizor_Entities_Registration_UpdateFormData_System_String_System_String_System_Nullable_System_DateTimeOffset__" data-uid="Code7Dev.Organizor.Domain.Organizor.Entities.Registration.UpdateFormData(System.String,System.String,System.Nullable{System.DateTimeOffset})">
+  UpdateFormData(string?, string?, DateTimeOffset?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateFormData(string? coreDataJson, string? customFieldValuesJson, DateTimeOffset? updatedAt = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coreDataJson</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>customFieldValuesJson</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>updatedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Domain/Organizor/Entities/Registration.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

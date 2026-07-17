@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController" class="text-break">
-Class TenantConfigController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class TenantConfigController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -681,21 +681,23 @@ public sealed class TenantConfigController : ControllerBase</code></pre>
 
   <a id="Code7Dev_Organizor_Api_Controllers_TenantConfigController__ctor_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor*"></a>
 
-  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)">
-  TenantConfigController(ITenantConfigResolver, ITenantContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController__ctor_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantConfigResolver_Code7Dev_Organizor_Application_Tenants_Interfaces_ITenantSettingsManagementService_Code7Dev_Organizor_Infrastructure_Tenancy_Interfaces_ITenantContext_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.#ctor(Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver,Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantSettingsManagementService,Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext)">
+  TenantConfigController(ITenantConfigResolver, ITenantSettingsManagementService, ITenantContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TenantConfigController(ITenantConfigResolver resolver, ITenantContext tenantContext)</code></pre>
+    <pre><code class="lang-csharp hljs">public TenantConfigController(ITenantConfigResolver resolver, ITenantSettingsManagementService settingsManagement, ITenantContext tenantContext)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>resolver</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigResolver.html">ITenantConfigResolver</a></dt>
+    <dd></dd>
+    <dt><code>settingsManagement</code> <a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantSettingsManagementService.html">ITenantSettingsManagementService</a></dt>
     <dd></dd>
     <dt><code>tenantContext</code> <a class="xref" href="Code7Dev.Organizor.Infrastructure.Tenancy.Interfaces.ITenantContext.html">ITenantContext</a></dt>
     <dd></dd>
@@ -720,7 +722,7 @@ public sealed class TenantConfigController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_GetCurrentTenantConfig_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantConfig(System.Threading.CancellationToken)">
   GetCurrentTenantConfig(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the effective configuration for the tenant resolved from the request context.</p>
@@ -756,11 +758,140 @@ public Task&lt;IActionResult&gt; GetCurrentTenantConfig(CancellationToken cancel
 
 
 
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_GetCurrentTenantSettings_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantSettings*"></a>
+
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_GetCurrentTenantSettings_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.GetCurrentTenantSettings(System.Threading.CancellationToken)">
+  GetCurrentTenantSettings(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns typed settings for the tenant resolved from the request context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpGet(&quot;settings&quot;)]
+[HttpGet(&quot;~/api/v1/tenant/settings&quot;)]
+public Task&lt;IActionResult&gt; GetCurrentTenantSettings(CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>Typed tenant settings.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_SendCurrentTenantMailTest_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.SendCurrentTenantMailTest*"></a>
+
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_SendCurrentTenantMailTest_Code7Dev_Organizor_Api_Mappers_DTO_TenantMailTestRequestDto_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.SendCurrentTenantMailTest(Code7Dev.Organizor.Api.Mappers.DTO.TenantMailTestRequestDto,System.Threading.CancellationToken)">
+  SendCurrentTenantMailTest(TenantMailTestRequestDto, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a test mail using the current tenant SMTP configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;settings/mail/test&quot;)]
+[HttpPost(&quot;~/api/v1/tenant/settings/mail/test&quot;)]
+public Task&lt;IActionResult&gt; SendCurrentTenantMailTest(TenantMailTestRequestDto request, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Api.Mappers.DTO.TenantMailTestRequestDto.html">TenantMailTestRequestDto</a></dt>
+    <dd><p>Optional test recipient override.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>Mail test result.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_UpdateCurrentTenantMailSettings_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.UpdateCurrentTenantMailSettings*"></a>
+
+  <h3 id="Code7Dev_Organizor_Api_Controllers_TenantConfigController_UpdateCurrentTenantMailSettings_Code7Dev_Organizor_Api_Mappers_DTO_TenantMailSettingsUpdateRequestDto_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.TenantConfigController.UpdateCurrentTenantMailSettings(Code7Dev.Organizor.Api.Mappers.DTO.TenantMailSettingsUpdateRequestDto,System.Threading.CancellationToken)">
+  UpdateCurrentTenantMailSettings(TenantMailSettingsUpdateRequestDto, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the current tenant SMTP configuration while preserving unrelated JSON settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPut(&quot;settings/mail&quot;)]
+[HttpPut(&quot;~/api/v1/tenant/settings/mail&quot;)]
+public Task&lt;IActionResult&gt; UpdateCurrentTenantMailSettings(TenantMailSettingsUpdateRequestDto request, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="Code7Dev.Organizor.Api.Mappers.DTO.TenantMailSettingsUpdateRequestDto.html">TenantMailSettingsUpdateRequestDto</a></dt>
+    <dd><p>SMTP settings update request.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd><p>Updated typed tenant settings.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/TenantConfigController.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -205,7 +205,7 @@ order by sort_order;
 </code></pre>
 <p>Creating or onboarding a tenant without explicit plan selection should leave <code>tenants.plan_key</code> set to <code>starter</code>.</p>
 <p>On startup, the API checks whether the catalog database exists, creates it when needed, and applies catalog migrations.</p>
-<p>The full tenant onboarding workflow is documented in <a href="internal-operations.html">Internal Operations</a>. Database provisioning is one part of that workflow; Keycloak tenant access is provisioned before the tenant database is created.</p>
+<p>The full tenant onboarding workflow is documented in <a href="internal-operations.html">Internal Operations</a>. Database provisioning is one part of that workflow; the catalog-owned tenant Keycloak realm and its realm-local identity resources are provisioned before the tenant database is created.</p>
 <h2 id="tenant-database-naming">Tenant Database Naming</h2>
 <p>Tenant databases use:</p>
 <pre><code class="lang-text">organizor_tenant_{slug}
@@ -264,6 +264,58 @@ CREATE EXTENSION IF NOT EXISTS &quot;citext&quot;;
 </tr>
 </tbody>
 </table>
+<p>The active tenant migrations currently create only implemented tenant-business tables. As of tenant person relationships, that means:</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>organizations</code></td>
+<td>Tenant-local organization records managed from the portal.</td>
+</tr>
+<tr>
+<td><code>activity_types</code></td>
+<td>Tenant-local activity type definitions managed from the portal.</td>
+</tr>
+<tr>
+<td><code>activity_type_document_capabilities</code></td>
+<td>Activity-type document capability assignments and capability-specific options.</td>
+</tr>
+<tr>
+<td><code>activity_type_registration_fields</code></td>
+<td>Registration field metadata attached to activity types.</td>
+</tr>
+<tr>
+<td><code>activities</code></td>
+<td>Tenant-local activity records with optional organization references.</td>
+</tr>
+<tr>
+<td><code>people</code></td>
+<td>Minimal participant person records required by registration submission.</td>
+</tr>
+<tr>
+<td><code>registrations</code></td>
+<td>Activity registration records and manual payment state.</td>
+</tr>
+<tr>
+<td><code>person_relationships</code></td>
+<td>Tenant-local directional relationships from a responsible/contact person to a child or related person.</td>
+</tr>
+<tr>
+<td><code>email_templates</code></td>
+<td>Tenant-local configurable email templates keyed by mail purpose and scope.</td>
+</tr>
+<tr>
+<td><code>email_deliveries</code></td>
+<td>Tenant-local email delivery attempt log keyed by mail purpose.</td>
+</tr>
+</tbody>
+</table>
+<p>Organization membership tables are intentionally excluded until their owning feature specs are implemented and their migrations are added.</p>
 <h2 id="onboarding-and-cleanup">Onboarding and Cleanup</h2>
 <p>During <code>POST /api/admin/tenants/onboard</code>, the database steps are:</p>
 <ol>
@@ -273,7 +325,7 @@ CREATE EXTENSION IF NOT EXISTS &quot;citext&quot;;
 <li>return success so the tenant can be marked <code>Active</code>.</li>
 </ol>
 <p>If the migration result fails or onboarding throws unexpectedly, the catalog tenant is marked <code>Failed</code>.</p>
-<p>During hard deletion, the tenant must already be soft-deleted. The hard-delete workflow drops the tenant database with <code>DROP DATABASE IF EXISTS ... WITH (FORCE)</code> after Keycloak cleanup and then removes the catalog record.</p>
+<p>During hard deletion, the tenant must already be soft-deleted. The hard-delete workflow deletes the complete tenant realm first, drops the tenant database with <code>DROP DATABASE IF EXISTS ... WITH (FORCE)</code>, and then removes the catalog record. Realm deletion failure stops the database/catalog cleanup.</p>
 
 </article>
 

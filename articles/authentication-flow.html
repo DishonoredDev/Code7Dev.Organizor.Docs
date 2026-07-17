@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Authentication Flow — Portal UI | Organizor </title>
+      <title>Authentication Flow — Platform And Tenant-Admin Portals | Organizor </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Authentication Flow — Portal UI | Organizor ">
+      <meta name="title" content="Authentication Flow — Platform And Tenant-Admin Portals | Organizor ">
       
       
       <link rel="icon" href="../images/logo.svg">
@@ -85,114 +85,119 @@
         </div>
 
         <article data-uid="">
-<h1 id="authentication-flow--portal-ui">Authentication Flow — Portal UI</h1>
+<h1 id="authentication-flow--platform-and-tenant-admin-portals">Authentication Flow — Platform And Tenant-Admin Portals</h1>
 
-<p>The Portal UI uses Keycloak to authenticate users and determine which shell they should see. The process follows OpenID Connect Authorization Code Flow with PKCE.</p>
-<h2 id="login-flow">Login Flow</h2>
+<p>The Blazor Portal has two host-selected modes. The configured control-plane host uses the platform realm (<code>organizor-dev</code> locally) for <code>organizor-admin</code> users. A tenant-admin host resolves its own active tenant before OIDC starts, then uses that tenant's realm-local portal client.</p>
+<p>It is not a shared tenant login screen. PJsabbe, TVDK, and later tenants have separate Keycloak realms, identities, credentials, and sessions.</p>
+<h2 id="platform-login-flow">Platform Login Flow</h2>
 <ol>
-<li>The user clicks <strong>Login</strong> or navigates to a protected route.</li>
-<li>The Portal redirects to Keycloak at <code>https://localhost:8443/realms/organizor-dev</code>.</li>
-<li>Keycloak validates the credentials.</li>
+<li>An Organizor administrator clicks <strong>Login</strong> or navigates to a protected control-plane route.</li>
+<li>The portal redirects to the platform realm at <code>https://localhost:8443/realms/organizor-dev</code>.</li>
+<li>Keycloak validates the platform administrator's credentials.</li>
 <li>Keycloak redirects back to <code>https://localhost:7025/authentication/login-callback</code>.</li>
 <li>Blazor WebAssembly stores the authenticated state and access token.</li>
-<li><code>KeycloakClaimsPrincipalFactory</code> maps Keycloak roles into Blazor role claims.</li>
-<li><code>RoleRedirector</code> sends the user to the correct shell when they return from the neutral entry routes.</li>
+<li><code>KeycloakClaimsPrincipalFactory</code> maps platform realm roles into Blazor role claims.</li>
+<li><code>RoleRedirector</code> sends a platform <code>organizor-admin</code> to the control-plane shell.</li>
 </ol>
+<h2 id="tenant-admin-login-flow">Tenant-Admin Login Flow</h2>
+<ol>
+<li>A tenant administrator opens that tenant's configured portal host, for example <code>https://localhost:7022</code> for TVDK.</li>
+<li>Before OIDC is registered, the Portal calls <code>GET /api/public/tenant-portals/auth?baseUrl=...</code> using its actual base URL.</li>
+<li>The API resolves one active tenant by its catalog-owned portal URL and returns only public OIDC configuration.</li>
+<li>The Portal verifies its base URL, callback URL, logout URL, and origin match the contract exactly, then starts Authorization Code Flow with PKCE against that tenant realm.</li>
+<li>Keycloak redirects back to the same tenant portal host. A matching <code>tenant-admin</code> is sent to <code>/tenant</code> and can use the tenant administration screens.</li>
+</ol>
+<p>The tenant portal never selects a realm from a username, query string, or route. An unknown host fails startup rather than falling back to the platform realm.</p>
 <h2 id="role-redirects">Role Redirects</h2>
-<p><code>RoleRedirector</code> currently routes users as follows:</p>
 <table>
 <thead>
 <tr>
-<th>Role</th>
+<th>Portal mode</th>
+<th>Role and issuer</th>
 <th>Redirect target</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>organizor-admin</code></td>
+<td>Platform host</td>
+<td>Platform-realm <code>organizor-admin</code></td>
 <td><code>/admin</code></td>
 </tr>
 <tr>
-<td><code>tenant-admin</code></td>
+<td>Platform host</td>
+<td>Any tenant identity</td>
+<td><code>/access-denied</code></td>
+</tr>
+<tr>
+<td>Tenant host</td>
+<td>Matching tenant-realm <code>tenant-admin</code></td>
 <td><code>/tenant</code></td>
 </tr>
 <tr>
-<td><code>tenant-user</code></td>
-<td><code>/tenant/profile</code></td>
+<td>Tenant host</td>
+<td>Matching tenant-realm <code>tenant-user</code></td>
+<td>That tenant's public website</td>
+</tr>
+<tr>
+<td>Tenant host</td>
+<td>Platform issuer or tenant mismatch</td>
+<td><code>/access-denied</code></td>
 </tr>
 </tbody>
 </table>
-<p>The redirector must only redirect from neutral routes such as <code>/</code> and <code>authentication/login-callback</code>. It should not force navigation when the user is already on <code>/admin</code> or <code>/tenant</code>, because forced self-navigation can create a reload loop.</p>
-<p>Logout is initiated either by <code>LogoutButton</code> or the <code>/logout</code> route. Both call Blazor WebAssembly authentication through <code>NavigateToLogout(&quot;authentication/logout&quot;, &quot;/&quot;)</code>, which clears the local authentication state and returns the browser to <code>/</code> after the identity-provider logout flow.</p>
-<h2 id="role-claims-in-the-portal">Role Claims in the Portal</h2>
-<p>The portal role factory reads roles from Keycloak claims and adds <code>ClaimTypes.Role</code> entries for Blazor authorization.</p>
-<p>Supported sources:</p>
-<ul>
-<li><code>realm_access.roles</code></li>
-<li><code>resource_access.organizor-ui.roles</code></li>
-</ul>
-<p>This is separate from API role mapping, where the API also understands roles under <code>resource_access.organizor-api.roles</code>.</p>
-<p>The portal claims factory also promotes custom <code>tenant</code> and <code>groups</code> values when Keycloak returns them as token properties. Tenant onboarding ensures the <code>organizor-ui</code> client has the group-membership mapper needed to emit the <code>tenant</code> claim from <code>/tenants/{slug}/...</code> group membership.</p>
+<p>Tenant administrators and tenant users do not sign in to the central portal with the platform client. A tenant website starts OIDC from its own host after loading <code>GET /api/public/tenants/{slug}/auth</code>, so TVDK uses <code>tenant-tvdk</code> and <code>tenant-tvdk-web</code> rather than <code>organizor-dev</code> and <code>organizor-ui</code>. The tenant-admin portal instead uses <code>tenant-tvdk-portal</code>. Switching a running platform WebAssembly OIDC registration to a realm selected by query string is not supported.</p>
+<p>Logout is initiated by <code>LogoutButton</code> or the <code>/logout</code> route. Both call Blazor WebAssembly authentication through <code>NavigateToLogout(&quot;authentication/logout&quot;, &quot;/&quot;)</code>, which clears local authentication state and returns the browser to the active Portal host after its matching realm logout.</p>
+<h2 id="role-claims">Role Claims</h2>
+<p>The portal role factory maps roles from the platform token's <code>realm_access.roles</code> claim into <code>ClaimTypes.Role</code>. The local platform import maps the <code>organizor-api</code> audience so platform API calls carry the audience required by the API.</p>
+<p>Tenant website clients emit their own realm roles (<code>tenant-admin</code> or <code>tenant-user</code>), the <code>organizor-api</code> audience, and a <code>tenant</code> compatibility claim. The <code>tenant</code> claim is not an authorization boundary; the API binds a tenant request to the token issuer and catalog-owned tenant realm.</p>
 <h2 id="protected-routes">Protected Routes</h2>
-<p>Portal pages use role attributes:</p>
+<p>The supported central portal routes require the platform role:</p>
 <pre><code class="lang-razor">@attribute [Authorize(Roles = &quot;organizor-admin&quot;)]
 </code></pre>
-<p>Current route protection:</p>
 <table>
 <thead>
 <tr>
 <th>Route area</th>
-<th>Required role</th>
+<th>Required role and issuer</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>/admin</code></td>
-<td><code>organizor-admin</code></td>
+<td>platform <code>organizor-admin</code></td>
 </tr>
 <tr>
 <td><code>/admin/tenants</code></td>
-<td><code>organizor-admin</code></td>
+<td>platform <code>organizor-admin</code></td>
 </tr>
 <tr>
 <td><code>/admin/plans</code></td>
-<td><code>organizor-admin</code></td>
+<td>platform <code>organizor-admin</code></td>
 </tr>
 <tr>
 <td><code>/admin/users</code></td>
-<td><code>organizor-admin</code></td>
+<td>platform <code>organizor-admin</code></td>
 </tr>
 <tr>
-<td><code>/tenant</code></td>
-<td><code>tenant-admin</code></td>
-</tr>
-<tr>
-<td><code>/tenant/users</code></td>
-<td><code>tenant-admin</code></td>
-</tr>
-<tr>
-<td><code>/tenant/config</code></td>
-<td><code>tenant-admin</code></td>
-</tr>
-<tr>
-<td><code>/tenant/profile</code></td>
-<td><code>tenant-admin</code>, <code>tenant-user</code></td>
+<td><code>/tenant</code> and its child routes</td>
+<td>matching tenant-realm <code>tenant-admin</code> at the tenant portal host</td>
 </tr>
 <tr>
 <td><code>/register</code></td>
-<td>anonymous</td>
+<td>anonymous temporary test shell</td>
 </tr>
 </tbody>
 </table>
-<p>Tenant users are redirected to their profile because regular users should not see tenant platform configuration. Tenant admins can still open their profile from the tenant shell.</p>
+<p>Tenant business routes remain API contracts protected by tenant-realm roles. The tenant portal supplies the supported browser entry point for <code>tenant-admin</code>; tenant-specific public websites own regular tenant-user workflows.</p>
 <h2 id="api-tokens">API Tokens</h2>
-<p>The Portal never sends credentials to the API. It sends bearer tokens through the configured API <code>HttpClient</code>. The API validates token signature, issuer, expiration, and then applies authorization policies.</p>
-<p>The local issuer must be consistent everywhere:</p>
+<p>The portal never sends credentials to the API. It sends platform-realm bearer tokens through the configured API <code>HttpClient</code>.</p>
+<p>The API validates the token signature, expiry, <code>organizor-api</code> audience, and issuer. It accepts only the configured platform issuer or an active catalog tenant issuer. <code>organizor-admin</code> grants platform administration only when it comes from the platform issuer; a tenant realm cannot obtain control-plane access by using the same role name.</p>
+<p>The local platform issuer is:</p>
 <pre><code class="lang-text">https://localhost:8443/realms/organizor-dev
 </code></pre>
-<p>If the API is configured with <code>http://localhost:8443/realms/organizor-dev</code>, it will reject HTTPS-issued portal tokens with <code>401 Unauthorized</code>.</p>
-<h2 id="keycloak-client-requirements">Keycloak Client Requirements</h2>
-<p>The <code>organizor-ui</code> client must allow:</p>
+<p>If the portal logs in through HTTPS but the API <code>Keycloak:BaseUrl</code> uses the old HTTP endpoint, the issuer differs and API requests fail with <code>401 Unauthorized</code>.</p>
+<h2 id="platform-client-requirements">Platform Client Requirements</h2>
+<p>The platform-realm <code>organizor-ui</code> client must allow:</p>
 <table>
 <thead>
 <tr>
@@ -213,48 +218,51 @@
 <td>Flow</td>
 <td>Standard flow / Authorization Code with PKCE</td>
 </tr>
+<tr>
+<td>Token audience</td>
+<td><code>organizor-api</code></td>
+</tr>
 </tbody>
 </table>
-<p>Users must receive the appropriate Organizor role before logging in. If roles are changed in Keycloak, log out and back in to refresh the token and claims.</p>
-<p>The current-user display reads these claims when present:</p>
+<p>Platform users must receive <code>organizor-admin</code> in the platform realm before signing in. Log out and back in after a role change so the token and claims refresh.</p>
+<h2 id="tenant-portal-client-requirements">Tenant Portal Client Requirements</h2>
+<p>Onboarding tenant <code>tvdk</code> with portal base URL <code>https://localhost:7022</code> creates <code>tenant-tvdk-portal</code> in <code>tenant-tvdk</code> with these exact values:</p>
 <table>
 <thead>
 <tr>
-<th>Claim</th>
-<th>Use</th>
+<th>Setting</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>preferred_username</code></td>
-<td>Display name fallback before email.</td>
+<td>Valid redirect URI</td>
+<td><code>https://localhost:7022/authentication/login-callback</code></td>
 </tr>
 <tr>
-<td><code>email</code></td>
-<td>User contact display.</td>
+<td>Post-logout redirect URI</td>
+<td><code>https://localhost:7022</code></td>
 </tr>
 <tr>
-<td><code>tenant</code></td>
-<td>Tenant context and <code>X-Tenant-Slug</code> header source.</td>
+<td>Web origin</td>
+<td><code>https://localhost:7022</code></td>
 </tr>
 <tr>
-<td><code>name</code>, <code>given_name</code>, <code>family_name</code></td>
-<td>Profile display fields when provided by Keycloak.</td>
+<td>Flow</td>
+<td>Standard flow / Authorization Code with PKCE <code>S256</code></td>
 </tr>
 <tr>
-<td>role claims</td>
-<td>Sidebar and profile access display.</td>
-</tr>
-<tr>
-<td><code>groups</code></td>
-<td>Sidebar user context display.</td>
+<td>Token audience</td>
+<td><code>organizor-api</code></td>
 </tr>
 </tbody>
 </table>
+<p>This client is separate from <code>tenant-tvdk-web</code>, even though both are public PKCE clients in the same tenant realm.</p>
 <h2 id="current-user-account-actions">Current-User Account Actions</h2>
-<p>The tenant profile page does not link tenant users or tenant admins directly to the Keycloak account console. Password and profile actions use an Organizor-mediated flow: the client calls a tenant-scoped API endpoint, the API validates the authenticated user and tenant access, and Keycloak completes the required action.</p>
-<p>Password-change initiation is exposed as <code>POST /api/v1/tenant/account-actions/change-password</code> and sets Keycloak <code>UPDATE_PASSWORD</code> for the authenticated user. Organizor must not collect, store, or log replacement passwords.</p>
-<p>Profile update is exposed as <code>PUT /api/v1/tenant/account-actions/profile</code> and updates only Keycloak <code>firstName</code> and <code>lastName</code> for the authenticated user. Username, email, tenant membership, groups, roles, credentials, enabled state, required actions, and arbitrary attributes are not editable through this current-user profile endpoint. Broader Keycloak <code>UPDATE_PROFILE</code> flows remain deferred until user-profile policy is specified.</p>
+<p>Tenant current-user account actions are realm-local API contracts. A tenant caller uses its own tenant realm token and <code>X-Tenant-Slug</code>; the API then performs the Keycloak operation in the matching realm.</p>
+<p>Password-change initiation is exposed as <code>POST /api/v1/tenant/account-actions/change-password</code> and sets Keycloak <code>UPDATE_PASSWORD</code> for the authenticated user. Profile update is exposed as <code>PUT /api/v1/tenant/account-actions/profile</code> and updates only Keycloak <code>firstName</code> and <code>lastName</code> for that realm-local user. Organizor must not collect, store, or log replacement passwords.</p>
+<p>These self-service endpoints operate only on the caller's own tenant-realm identity. Platform support manages another tenant user's identity through <code>/api/admin/tenants/{tenantId}/users</code>; it does not use a user's self-service account-action endpoints.</p>
+<p>The central platform portal does not provide a tenant-realm login or account screen. Tenant administrator account workflows use that tenant's portal host; regular tenant-user account workflows belong to tenant websites.</p>
 
 </article>
 

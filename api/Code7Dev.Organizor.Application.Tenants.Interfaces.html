@@ -104,8 +104,9 @@ Interfaces
       <dd></dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAccessService.html">ITenantAccessService</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantAdminPortalAuthContractService.html">ITenantAdminPortalAuthContractService</a></dt>
+      <dd><p>Resolves the public OpenID Connect configuration for a tenant administration portal host.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantConfigDefaults.html">ITenantConfigDefaults</a></dt>
@@ -136,6 +137,11 @@ Interfaces
       <dd></dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantIdentityLifecycle.html">ITenantIdentityLifecycle</a></dt>
+      <dd><p>Controls the external identity boundary associated with a catalog tenant.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantLifecycleService.html">ITenantLifecycleService</a></dt>
       <dd><p>Handles tenant deletion lifecycle operations.</p>
 </dd>
@@ -143,6 +149,31 @@ Interfaces
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantMigrator.html">ITenantMigrator</a></dt>
       <dd><p>Applies EF Core migrations to a tenant database.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleAvailabilityService.html">ITenantModuleAvailabilityService</a></dt>
+      <dd><p>Evaluates whether a module is enabled for a tenant at runtime.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleInstallationRepository.html">ITenantModuleInstallationRepository</a></dt>
+      <dd><p>Persists catalog-owned module installations for tenants.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleInstaller.html">ITenantModuleInstaller</a></dt>
+      <dd><p>Applies the automatic module-installation part of tenant provisioning.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleManagementService.html">ITenantModuleManagementService</a></dt>
+      <dd><p>Provides platform-admin plan entitlement and tenant module lifecycle use cases.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantModuleRegistry.html">ITenantModuleRegistry</a></dt>
+      <dd><p>Provides code-deployed tenant module definitions.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -161,6 +192,11 @@ Interfaces
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanModuleEntitlementRepository.html">ITenantPlanModuleEntitlementRepository</a></dt>
+      <dd><p>Persists normalized module entitlements owned by tenant plans.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantPlanRepository.html">ITenantPlanRepository</a></dt>
       <dd><p>Queries persisted tenant plan definitions from the catalog.</p>
 </dd>
@@ -173,6 +209,11 @@ Interfaces
     <dl class="jumplist">
       <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantService.html">ITenantService</a></dt>
       <dd><p>Provides public tenant catalog use cases.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Code7Dev.Organizor.Application.Tenants.Interfaces.ITenantSettingsManagementService.html">ITenantSettingsManagementService</a></dt>
+      <dd><p>Provides typed configuration use cases over the tenant JSON backing store.</p>
 </dd>
     </dl>
     <dl class="jumplist">

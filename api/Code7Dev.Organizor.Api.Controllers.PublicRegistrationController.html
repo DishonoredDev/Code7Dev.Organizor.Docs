@@ -89,7 +89,7 @@
 
 
   <h1 id="Code7Dev_Organizor_Api_Controllers_PublicRegistrationController" data-uid="Code7Dev.Organizor.Api.Controllers.PublicRegistrationController" class="text-break">
-Class PublicRegistrationController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class PublicRegistrationController  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,6 +103,7 @@ Class PublicRegistrationController  <a class="header-action link-secondary" titl
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ApiController]
 [AllowAnonymous]
+[EnableRateLimiting(&quot;PublicTenantUserRegistration&quot;)]
 [Route(&quot;api/public/register&quot;)]
 public sealed class PublicRegistrationController : ControllerBase</code></pre>
   </div>
@@ -682,7 +683,7 @@ public sealed class PublicRegistrationController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_PublicRegistrationController__ctor_Code7Dev_Organizor_Application_TenantUsers_Interfaces_ITenantUserRegistrationService_" data-uid="Code7Dev.Organizor.Api.Controllers.PublicRegistrationController.#ctor(Code7Dev.Organizor.Application.TenantUsers.Interfaces.ITenantUserRegistrationService)">
   PublicRegistrationController(ITenantUserRegistrationService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -717,7 +718,7 @@ public sealed class PublicRegistrationController : ControllerBase</code></pre>
 
   <h3 id="Code7Dev_Organizor_Api_Controllers_PublicRegistrationController_Register_Code7Dev_Organizor_Api_Mappers_DTO_PublicTenantRegistrationRequestDto_System_Threading_CancellationToken_" data-uid="Code7Dev.Organizor.Api.Controllers.PublicRegistrationController.Register(Code7Dev.Organizor.Api.Mappers.DTO.PublicTenantRegistrationRequestDto,System.Threading.CancellationToken)">
   Register(PublicTenantRegistrationRequestDto, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -756,7 +757,7 @@ public Task&lt;IActionResult&gt; Register(PublicTenantRegistrationRequestDto req
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/DishonoredDev/Code7Dev.Organizor.Api/blob/master/Code7Dev.Organizor.Api/Controllers/PublicRegistrationController.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 
